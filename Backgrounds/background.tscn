@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://chthgw2hrq8w6"]
+
+[ext_resource type="Texture2D" uid="uid://bx6s88w7feyiy" path="res://Assets/Img/Backgrounds/Space_01-Sheet.png" id="1_8cnlw"]
+[ext_resource type="Script" path="res://Backgrounds/background.gd" id="1_fb85x"]
+
+[node name="Background" type="CanvasLayer"]
+script = ExtResource("1_fb85x")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+unique_name_in_owner = true
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(500, 500)
+metadata/_edit_lock_ = true
+
+[node name="Layer1Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+unique_name_in_owner = true
+texture = ExtResource("1_8cnlw")
+centered = false
+vframes = 5
+region_filter_clip_enabled = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(500, 500)
+metadata/_edit_lock_ = true
+
+[node name="Layer2Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+unique_name_in_owner = true
+texture = ExtResource("1_8cnlw")
+centered = false
+vframes = 5
+frame = 1
+region_filter_clip_enabled = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(500, 500)
+metadata/_edit_lock_ = true
+
+[node name="Layer3Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+unique_name_in_owner = true
+texture = ExtResource("1_8cnlw")
+centered = false
+vframes = 5
+frame = 2
+region_filter_clip_enabled = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(500, 500)
+metadata/_edit_lock_ = true
+
+[node name="Layer4Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+unique_name_in_owner = true
+texture = ExtResource("1_8cnlw")
+centered = false
+vframes = 5
+frame = 3
+region_filter_clip_enabled = true
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(500, 500)
+metadata/_edit_lock_ = true
+
+[node name="Layer5Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+unique_name_in_owner = true
+texture = ExtResource("1_8cnlw")
+centered = false
+vframes = 5
+frame = 4
+region_filter_clip_enabled = true

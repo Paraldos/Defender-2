@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7opjv8bcnlsj"]
+
+[ext_resource type="Script" path="res://Menus/StartMenu/start_menu.gd" id="1_vsr3c"]
+[ext_resource type="PackedScene" uid="uid://chthgw2hrq8w6" path="res://Backgrounds/background.tscn" id="1_x5mya"]
+[ext_resource type="Texture2D" uid="uid://bprhiaygpky5p" path="res://Assets/Img/Logo/ColonyDefender_Logo.png" id="2_8gumn"]
+[ext_resource type="Texture2D" uid="uid://dcuh7esjp08h7" path="res://Assets/Img/Backgrounds/Planet.png" id="2_ok2rw"]
+[ext_resource type="Theme" uid="uid://c7ow58aa04nex" path="res://Themes/StartMenuTheme/StartMenuTheme.tres" id="3_44g1p"]
+[ext_resource type="Texture2D" uid="uid://c2kunpmpwb60c" path="res://Assets/Img/Backgrounds/SpaceStation.png" id="3_s2qbf"]
+[ext_resource type="PackedScene" uid="uid://cvrm3toyyyext" path="res://Menus/StartMenu/btn.tscn" id="6_4mbtv"]
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_vsr3c")
+
+[node name="Background" parent="." instance=ExtResource("1_x5mya")]
+speed = Vector2(15, 0)
+
+[node name="Planet" type="TextureRect" parent="."]
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("2_ok2rw")
+
+[node name="SpaceStation" type="Sprite2D" parent="."]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
+position = Vector2(144, 176)
+rotation = 0.523599
+texture = ExtResource("3_s2qbf")
+
+[node name="Logo" type="TextureRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 480.0
+offset_bottom = 80.0
+grow_horizontal = 2
+texture = ExtResource("2_8gumn")
+stretch_mode = 3
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 504.0
+offset_bottom = 272.0
+theme = ExtResource("3_44g1p")
+alignment = 1
+
+[node name="BtnNewGame" parent="Buttons" instance=ExtResource("6_4mbtv")]
+layout_mode = 2
+text = "Start Game"
+
+[node name="BtnOptions" parent="Buttons" instance=ExtResource("6_4mbtv")]
+layout_mode = 2
+text = "Options"
+
+[node name="BtnCredits" parent="Buttons" instance=ExtResource("6_4mbtv")]
+layout_mode = 2
+text = "Credits"
+
+[node name="BtnQuit" parent="Buttons" instance=ExtResource("6_4mbtv")]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Buttons/BtnNewGame" to="." method="_on_btn_new_game_pressed"]

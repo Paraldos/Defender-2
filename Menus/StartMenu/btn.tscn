@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvrm3toyyyext"]
+
+[ext_resource type="Theme" uid="uid://c7ow58aa04nex" path="res://Themes/StartMenuTheme/StartMenuTheme.tres" id="1_n8x0c"]
+[ext_resource type="Script" path="res://Menus/StartMenu/btn.gd" id="2_5wt1n"]
+
+[node name="Btn1" type="Button"]
+offset_right = 40.0
+offset_bottom = 26.0
+theme = ExtResource("1_n8x0c")
+text = "Btn"
+alignment = 0
+script = ExtResource("2_5wt1n")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

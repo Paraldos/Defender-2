@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvs7biwurqq0y"]
+
+[ext_resource type="PackedScene" uid="uid://chthgw2hrq8w6" path="res://Backgrounds/background.tscn" id="1_wvqxx"]
+[ext_resource type="PackedScene" uid="uid://c0ttiy0hm5rnk" path="res://Game/Player/player.tscn" id="2_uyq6x"]
+[ext_resource type="PackedScene" uid="uid://cquqd06eutva8" path="res://Game/World/world_borders.tscn" id="3_uvd7b"]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_wvqxx")]
+speed = Vector2(-90, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_uyq6x")]
+position = Vector2(72, 135)
+
+[node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
