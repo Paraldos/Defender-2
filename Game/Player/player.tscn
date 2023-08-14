@@ -171,6 +171,9 @@ blend_mode = 1
 collision_layer = 2
 script = ExtResource("1_w3u5h")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(24, 0, 14, -5, 5, -5, 2, -10, -2, -11, -2, -17, -8, -23, -17, -23, -19, -19, -19, -10, -23, -10, -23, 10, -19, 10, -19, 19, -17, 23, -8, 23, -2, 17, -2, 11, 2, 10, 5, 5, 14, 5)
+
 [node name="Exhaust" type="GPUParticles2D" parent="."]
 position = Vector2(-21, 0)
 amount = 20
@@ -195,8 +198,4 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendSpace1D_ftskm")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/blend_position = -0.868104
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(24, 0, 14, -5, 5, -5, 2, -10, -2, -11, -2, -17, -8, -23, -17, -23, -19, -19, -19, -10, -23, -10, -23, 10, -19, 10, -19, 19, -17, 23, -8, 23, -2, 17, -2, 11, 2, 10, 5, 5, 14, 5)
+parameters/blend_position = 0.00570703
