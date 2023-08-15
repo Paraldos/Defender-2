@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1692043665
+::res://::1692081901
 icon.svg::CompressedTexture2D::2454184005228381453::1691999071::1691999077::1::::<><>::
 README.md::TextFile::-1::1692043521::0::1::::<><>::
 ::res://Assets/::1692015560
@@ -36,7 +36,7 @@ Player01-Sheet.png::CompressedTexture2D::9183633286779707606::1691999502::169199
 Credits-Sheet.png::CompressedTexture2D::5821775549767426444::1691999503::1691999512::1::::<><>::
 EnergyContainer.png::CompressedTexture2D::1763331656349231532::1691999503::1691999512::1::::<><>::
 HPContainer.png::CompressedTexture2D::6246380633687438232::1691999504::1691999512::1::::<><>::
-::res://Assets/Img/Projectiles And Explosions/::1692014357
+::res://Assets/Img/Projectiles And Explosions/::1692082679
 Bombe-Sheet.png::CompressedTexture2D::6308616457836639906::1691999504::1691999512::1::::<><>::
 Explosion01-Sheet.png::CompressedTexture2D::3481259988732590165::1691999504::1691999512::1::::<><>::
 Explosion02-Sheet.png::CompressedTexture2D::8196417173699568727::1691999505::1691999512::1::::<><>::
@@ -45,6 +45,7 @@ Explosion04-Sheet.png::CompressedTexture2D::8313513638530419839::1691999506::169
 Explosion04b-Sheet.png::CompressedTexture2D::33182891821947981::1691999507::1691999512::1::::<><>::
 Fragment01.png::CompressedTexture2D::6860326064150939076::1691999507::1691999512::1::::<><>::
 Fragment02.png::CompressedTexture2D::148938617467033635::1691999508::1691999512::1::::<><>::
+MuzzleFlash-Sheet.png::CompressedTexture2D::833662782528532329::1648510335::1692082682::1::::<><>::
 Projectile01.png::CompressedTexture2D::3047622394566412760::1691999508::1691999512::1::::<><>::
 Projectile02.png::CompressedTexture2D::8344974668103320862::1691999509::1691999512::1::::<><>::
 Projectile03.png::CompressedTexture2D::5958457608040898129::1691999509::1691999512::1::::<><>::
@@ -60,26 +61,32 @@ SeperatorH.png::CompressedTexture2D::1663939587991815559::1691999512::1691999512
 ::res://Backgrounds/::1692014392
 background.gd::GDScript::-1::1692001870::0::1::::<>CanvasLayer<>::
 background.tscn::PackedScene::5303823381457215039::1692001962::0::1::::<><>::uid://bx6s88w7feyiy
-::res://Game/::1692036817
-::res://Game/Player/::1692043635
+::res://Game/::1692080896
+::res://Game/Player/::1692082569
 player.gd::GDScript::-1::1692043010::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::6567954844393746520::1692043635::0::1::::<><>::uid://d33vdl37t8o8e::::res://Assets/Img/Player/Player01-Sheet.png<>res://Game/Player/player.gd
-::res://Game/World/::1692043635
-world.tscn::PackedScene::6285911068024962618::1692043635::0::1::::<><>::uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>uid://c0ttiy0hm5rnk::::res://Game/Player/player.tscn<>uid://cquqd06eutva8::::res://Game/World/world_borders.tscn
+player.tscn::PackedScene::6567954844393746520::1692082569::0::1::::<><>::uid://d33vdl37t8o8e::::res://Assets/Img/Player/Player01-Sheet.png<>res://Game/Player/player.gd<>res://Game/Player/AttackController.gd<>uid://ctoss36efuwjt::::res://Assets/Img/Projectiles And Explosions/Projectile04.png
+AttackController.gd::GDScript::-1::1692082568::0::1::::<>Node2D<>::
+::res://Game/Projectile/::1692082370
+projectile.tscn::PackedScene::6313489258352940430::1692082369::0::1::::<><>::res://Game/Projectile/projectile.gd
+player_projectile.tscn::PackedScene::313831442589117573::1692082370::0::1::::<><>::uid://cv7kil86lqphu::::res://Game/Projectile/projectile.tscn<>uid://bjoj5pjxrxivg::::res://Assets/Img/Projectiles And Explosions/Projectile01.png<>res://Game/Projectile/player_projectile.gd<>uid://cq5k6q03o13sn::::res://Assets/Img/Projectiles And Explosions/Projectile03.png
+projectile.gd::GDScript::-1::1692082302::0::1::::<>Area2D<>::
+player_projectile.gd::GDScript::-1::1692081720::0::1::::<>Area2D<>::
+::res://Game/World/::1692082568
+world.tscn::PackedScene::6285911068024962618::1692082568::0::1::::<><>::uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>uid://c0ttiy0hm5rnk::::res://Game/Player/player.tscn<>uid://cquqd06eutva8::::res://Game/World/world_borders.tscn
 world_borders.tscn::PackedScene::5938128611123823885::1692036961::0::1::::<><>::
 ::res://Menus/::1692014392
-::res://Menus/StartMenu/::1692043642
+::res://Menus/StartMenu/::1692082568
 btn.gd::GDScript::-1::1692035269::0::1::::<>Button<>::
 btn.tscn::PackedScene::6282681132440818545::1692036118::0::1::::<><>::uid://c7ow58aa04nex
 start_menu.gd::GDScript::-1::1692036832::0::1::::<>Node2D<>::
-start_menu.tscn::PackedScene::7048713633414247425::1692043642::0::1::::<><>::res://Menus/StartMenu/start_menu.gd<>uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>uid://bprhiaygpky5p::::res://Assets/Img/Logo/ColonyDefender_Logo.png<>uid://dcuh7esjp08h7::::res://Assets/Img/Backgrounds/Planet.png<>uid://c7ow58aa04nex::::res://Themes/StartMenuTheme/StartMenuTheme.tres<>uid://c2kunpmpwb60c::::res://Assets/Img/Backgrounds/SpaceStation.png<>uid://cvrm3toyyyext::::res://Menus/StartMenu/btn.tscn
+start_menu.tscn::PackedScene::7048713633414247425::1692082568::0::1::::<><>::res://Menus/StartMenu/start_menu.gd<>uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>uid://bprhiaygpky5p::::res://Assets/Img/Logo/ColonyDefender_Logo.png<>uid://dcuh7esjp08h7::::res://Assets/Img/Backgrounds/Planet.png<>uid://c7ow58aa04nex::::res://Themes/StartMenuTheme/StartMenuTheme.tres<>uid://c2kunpmpwb60c::::res://Assets/Img/Backgrounds/SpaceStation.png<>uid://cvrm3toyyyext::::res://Menus/StartMenu/btn.tscn
 ::res://Tec/::1692035961
-::res://Tec/SceneTransition/::1692043659
+::res://Tec/SceneTransition/::1692082569
 scene_transition.gd::GDScript::-1::1692035926::0::1::::<>CanvasLayer<>::
-scene_transition.gdshader::Shader::-1::1692043659::0::1::::<><>::
+scene_transition.gdshader::Shader::-1::1692082569::0::1::::<><>::
 scene_transition.tscn::PackedScene::2281830894926206268::1692036063::0::1::::<><>::res://Tec/SceneTransition/scene_transition.gd<>res://Tec/SceneTransition/scene_transition.gdshader
 ::res://Themes/::1692015555
-::res://Themes/StartMenuTheme/::1692043635
-StartMenuTheme.tres::Theme::7049176733323202507::1692043635::0::1::::<><>::uid://bm4ylpj3oubn1::::res://Themes/StartMenuTheme/stylebox_btn_hover.tres<>uid://bgo4yc41sr5em::::res://Assets/Fonts/PixelSimpel.otf<>uid://ugvjpjwesfiv::::res://Assets/Img/UI/Btn02.png
-stylebox_btn_hover.tres::StyleBoxTexture::3290031416821752344::1692043635::0::1::::<><>::uid://c4asx13e2dwm5::::res://Assets/Img/UI/Btn01.png
+::res://Themes/StartMenuTheme/::1692080818
+StartMenuTheme.tres::Theme::7049176733323202507::1692080818::0::1::::<><>::uid://bm4ylpj3oubn1::::res://Themes/StartMenuTheme/stylebox_btn_hover.tres<>uid://bgo4yc41sr5em::::res://Assets/Fonts/PixelSimpel.otf<>uid://ugvjpjwesfiv::::res://Assets/Img/UI/Btn02.png
+stylebox_btn_hover.tres::StyleBoxTexture::3290031416821752344::1692080818::0::1::::<><>::uid://c4asx13e2dwm5::::res://Assets/Img/UI/Btn01.png
 stylebox_btn_normal.tres::StyleBoxFlat::4880808883393833510::1692020227::0::1::::<><>::

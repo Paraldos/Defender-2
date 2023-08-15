@@ -1,6 +1,11 @@
-res://Menus/StartMenu/start_menu.tscn
+res://Game/Player/player.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
+res://Game/Player/AttackController.gd
+res://Game/Projectile/projectile.tscn
+res://Game/Projectile/player_projectile.tscn
+res://Game/Projectile/projectile.gd
+res://Game/Projectile/player_projectile.gd
+res://Menus/StartMenu/start_menu.tscn
 res://Game/World/world.tscn
-res://Game/Player/player.tscn
