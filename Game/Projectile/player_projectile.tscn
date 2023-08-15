@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cv7kil86lqphu" path="res://Game/Projectile/projectile.tscn" id="1_5m5rb"]
 [ext_resource type="Texture2D" uid="uid://bjoj5pjxrxivg" path="res://Assets/Img/Projectiles And Explosions/Projectile01.png" id="2_7u7jm"]
-[ext_resource type="Script" path="res://Game/Projectile/player_projectile.gd" id="2_uxj8h"]
 [ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="3_kcjgy"]
 
 [sub_resource type="Gradient" id="Gradient_trr33"]
@@ -32,9 +31,12 @@ scale_curve = SubResource("CurveTexture_7y0it")
 color = Color(1, 0.921569, 0.231373, 1)
 color_ramp = SubResource("GradientTexture1D_240xa")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nbul"]
+radius = 4.0
+height = 12.0
+
 [node name="PlayerProjectile" instance=ExtResource("1_5m5rb")]
 rotation = 1.5708
-script = ExtResource("2_uxj8h")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="0"]
 position = Vector2(0, 4)
@@ -46,3 +48,6 @@ lifetime = 0.2
 [node name="MainSprite" parent="." index="1"]
 self_modulate = Color(1, 0.921569, 0.231373, 1)
 texture = ExtResource("2_7u7jm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CapsuleShape2D_2nbul")

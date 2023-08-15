@@ -3,10 +3,13 @@
 [ext_resource type="Script" path="res://Game/Projectile/projectile.gd" id="1_cbvj5"]
 
 [node name="Projectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_cbvj5")
 
 [node name="MainSprite" type="Sprite2D" parent="."]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

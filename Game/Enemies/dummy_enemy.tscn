@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc8560c1s3y6t"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_dbvuk"]
+[ext_resource type="Texture2D" uid="uid://cwrf6bpu0pwfi" path="res://Assets/Img/Enemies/Pirate_Fighter.png" id="2_slh6l"]
+
+[node name="DummyEnemy" instance=ExtResource("1_dbvuk")]
+
+[node name="MainSprite" parent="." index="0"]
+rotation = 1.5708
+texture = ExtResource("2_slh6l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-23, 0, -12, -8, -9, -8, -9, -24, 0, -24, 3, -8, 18, -10, 22, -3, 22, 3, 18, 10, 3, 8, -1, 24, -9, 24, -9, 8, -12, 8)

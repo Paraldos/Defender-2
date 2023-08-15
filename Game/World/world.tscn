@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvs7biwurqq0y"]
+[gd_scene load_steps=5 format=3 uid="uid://cvs7biwurqq0y"]
 
 [ext_resource type="PackedScene" uid="uid://chthgw2hrq8w6" path="res://Backgrounds/background.tscn" id="1_wvqxx"]
 [ext_resource type="PackedScene" uid="uid://c0ttiy0hm5rnk" path="res://Game/Player/player.tscn" id="2_uyq6x"]
 [ext_resource type="PackedScene" uid="uid://cquqd06eutva8" path="res://Game/World/world_borders.tscn" id="3_uvd7b"]
+[ext_resource type="PackedScene" uid="uid://cc8560c1s3y6t" path="res://Game/Enemies/dummy_enemy.tscn" id="4_6wel6"]
 
 [node name="World" type="Node2D"]
 
@@ -13,3 +14,8 @@ speed = Vector2(-90, 0)
 position = Vector2(72, 135)
 
 [node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
+
+[node name="DummyEnemy" parent="." instance=ExtResource("4_6wel6")]
+position = Vector2(432, 128)
+collision_layer = 1
+collision_mask = 1
