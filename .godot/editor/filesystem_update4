@@ -1,11 +1,9 @@
+res://Game/Projectile/player_projectile.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
-res://Game/Enemies/enemy_template.tscn
-res://Game/Enemies/enemy_template.gd
 res://Game/Enemies/dummy_enemy.tscn
-res://Game/World/world.tscn
 res://Menus/StartMenu/start_menu.tscn
-res://Game/Projectile/player_projectile.tscn
-res://Game/Projectile/projectile.gd
+res://Game/World/world.tscn
+res://Game/Enemies/enemy_template.tscn
 res://Game/Projectile/projectile.tscn
