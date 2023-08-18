@@ -17,5 +17,3 @@ position = Vector2(72, 135)
 
 [node name="DummyEnemy" parent="." instance=ExtResource("4_6wel6")]
 position = Vector2(432, 128)
-collision_layer = 1
-collision_mask = 1

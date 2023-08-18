@@ -9,5 +9,8 @@
 rotation = 1.5708
 texture = ExtResource("2_slh6l")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+[node name="Hurtbox" parent="." index="1"]
+collision_layer = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-23, 0, -12, -8, -9, -8, -9, -24, 0, -24, 3, -8, 18, -10, 22, -3, 22, 3, 18, 10, 3, 8, -1, 24, -9, 24, -9, 8, -12, 8)

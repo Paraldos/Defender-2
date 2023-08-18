@@ -3,4 +3,16 @@ res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
 res://Game/World/world.tscn
-res://Game/Player/player.tscn
+res://Game/Enemies/dummy_enemy.tscn
+res://Game/Enemies/enemy_template.tscn
+res://Game/Projectile/player_projectile.tscn
+res://Game/Projectile/projectile.tscn
+res://Game/Projectile/projectile.gd
+res://Game/Enemies/enemy_template.gd
+res://Game/Collisions/hitbox.tscn
+res://Game/Collisions/hitbox.gd
+res://Game/Collisions/hurtbox.tscn
+res://Game/Collisions/hurtbox.gd
+res://Game/SFX/sfx_controller.tscn
+res://Game/SFX/sfx_controller.gd
+res://Game/SFX/explosion_01.tscn
