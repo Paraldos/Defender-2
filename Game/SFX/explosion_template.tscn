@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://g3dvrb6sjuoc"]
+[gd_scene load_steps=2 format=3 uid="uid://g3dvrb6sjuoc"]
+
+[ext_resource type="Script" path="res://Game/SFX/explosion_template.gd" id="1_ufmc3"]
 
 [node name="ExplosionTemplate" type="Node2D"]
+script = ExtResource("1_ufmc3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
