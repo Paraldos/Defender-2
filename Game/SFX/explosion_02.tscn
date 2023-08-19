@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk1rgird58k70"]
+[gd_scene load_steps=6 format=3 uid="uid://csm1m06q5dncj"]
 
-[ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_nnh2w"]
-[ext_resource type="Texture2D" uid="uid://bpul3w73n1h2d" path="res://Assets/Img/Projectiles And Explosions/Explosion01-Sheet.png" id="1_xftg3"]
+[ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_444r3"]
+[ext_resource type="Texture2D" uid="uid://do1n18dn4j1st" path="res://Assets/Img/Projectiles And Explosions/Explosion02-Sheet.png" id="2_dmyt5"]
 
-[sub_resource type="Animation" id="Animation_td4qm"]
+[sub_resource type="Animation" id="Animation_s6mrh"]
 resource_name = "explosion"
-length = 0.3
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,10 +13,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 4]
+"values": [0, 9]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -25,7 +25,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -33,7 +33,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_1kh85"]
+[sub_resource type="Animation" id="Animation_8h0ng"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -45,23 +45,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [9]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_60pha"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfbp0"]
 _data = {
-"RESET": SubResource("Animation_1kh85"),
-"explosion": SubResource("Animation_td4qm")
+"RESET": SubResource("Animation_8h0ng"),
+"explosion": SubResource("Animation_s6mrh")
 }
 
-[node name="Explosion01" instance=ExtResource("1_nnh2w")]
+[node name="Explosion02" instance=ExtResource("1_444r3")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("1_xftg3")
-hframes = 5
+texture = ExtResource("2_dmyt5")
+hframes = 10
+frame = 9
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "explosion"
 libraries = {
-"": SubResource("AnimationLibrary_60pha")
+"": SubResource("AnimationLibrary_lfbp0")
 }
