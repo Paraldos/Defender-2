@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnr41kpf8ical"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_fhcq2"]
+[ext_resource type="Texture2D" uid="uid://c17imrr2s5ool" path="res://Assets/Img/Enemies/fighter1.png" id="2_qaxhx"]
+
+[node name="EnemyFighter" instance=ExtResource("1_fhcq2")]
+
+[node name="MainSprite" parent="." index="0"]
+rotation = 1.5708
+texture = ExtResource("2_qaxhx")
