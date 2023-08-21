@@ -14,3 +14,6 @@ frame = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-24, -2, -9, -24, -1, -25, 2, -22, 3, -12, 13, -13, 22, -1, 22, 3, 6, 19, -5, 19, -13, 14, -24, 5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-24, -2, -9, -24, -1, -25, 2, -22, 3, -12, 13, -13, 22, -1, 22, 3, 6, 19, -5, 19, -13, 14, -24, 5)

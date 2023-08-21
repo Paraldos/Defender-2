@@ -1,14 +1,14 @@
+Timer
+Node2D
 CollisionPolygon2D
 Polygon2D
 RayCast2D
-Timer
 Node
 CollisionShape2D
 VisibleOnScreenNotifier2D
 AnimationPlayer
 AnimationTree
 Sprite2D
-Node2D
 Area2D
 GPUParticles2D
 CPUParticles2D

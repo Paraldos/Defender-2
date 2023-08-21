@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx4nevkhs5r7n"]
+
+[ext_resource type="Script" path="res://Game/World/enemy_spawner.gd" id="1_tnqcj"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_tnqcj")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(580, 135)
+
+[node name="WaveTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
