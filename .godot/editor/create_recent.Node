@@ -1,3 +1,5 @@
+CollisionPolygon2D
+Polygon2D
 RayCast2D
 Timer
 Node
@@ -8,7 +10,6 @@ AnimationTree
 Sprite2D
 Node2D
 Area2D
-CollisionPolygon2D
 GPUParticles2D
 CPUParticles2D
 StaticBody2D

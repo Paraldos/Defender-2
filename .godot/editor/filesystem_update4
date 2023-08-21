@@ -13,3 +13,14 @@ res://Tec/Utils/utils.gd
 res://Game/Player/player.gd
 res://Game/Enemies/asteroid_01.tscn
 res://Game/Enemies/asteroid.gd
+res://Game/Enemies/asteroid_02.tscn
+res://Game/Enemies/asteroid_03.tscn
+res://Game/Enemies/asteroid_04.tscn
+res://Game/Enemies/asteroid_05.tscn
+res://Game/Enemies/asteroid_06.tscn
+res://Game/Enemies/asteroid_07.tscn
+res://Game/Enemies/asteroid_08.tscn
+res://Game/Enemies/asteroid_09.tscn
+res://Game/Enemies/asteroid_10.tscn
+res://Game/Enemies/asteroid_11.tscn
+res://Game/Enemies/asetroid_12.tscn

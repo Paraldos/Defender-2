@@ -2,11 +2,15 @@ extends Node2D
 
 @export var hp = 5
 @export var credits = 1
+@onready var hurtbox = %Hurtbox
+@onready var hitbox = %Hitbox
 var rng = RandomNumberGenerator.new()
 
 ###############################################################################
 func _ready():
 	rng.randomize()
+	hurtbox.scale *= 1.1
+	hitbox.scale *= 1.1
 
 ###############################################################################
 func _process(_delta):

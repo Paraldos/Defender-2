@@ -5,13 +5,13 @@ var movement = Vector2(-100, 0)
 ###############################################################################
 func _ready():
 	super._ready()
-	movement.y = rng.randf_range(-10, 10)
+	movement.y = rng.randf_range(-20, 20)
 
 ###############################################################################
 func _process(delta):
 	super._process(delta)
-	_move()
+	_move(delta)
 
 #########################
-func _move():
-	global_position += movement
+func _move(delta):
+	global_position += movement * delta

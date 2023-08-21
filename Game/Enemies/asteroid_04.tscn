@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://kacpq8qxqbr"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_nudv7"]
+[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_r32j8"]
+[ext_resource type="Texture2D" uid="uid://4wm6fwfvimbb" path="res://Assets/Img/Enemies/Asteroids-Sheet.png" id="2_xea6h"]
+
+[node name="Asteroid04" instance=ExtResource("1_nudv7")]
+script = ExtResource("2_r32j8")
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_xea6h")
+hframes = 12
+frame = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
+polygon = PackedVector2Array(-18, -17, -14, -20, 9, -22, 15, -22, 20, -17, 20, -13, 11, -1, 11, 15, 4, 21, -2, 21, -18, -12)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-18, -17, -14, -20, 9, -22, 15, -22, 20, -17, 20, -13, 11, -1, 11, 15, 4, 21, -2, 21, -18, -12)

@@ -10,12 +10,15 @@ script = ExtResource("1_6ssg4")
 [node name="MainSprite" type="Sprite2D" parent="."]
 
 [node name="Hurtbox" parent="." instance=ExtResource("2_ttdr1")]
+unique_name_in_owner = true
 collision_layer = 4
 
 [node name="Hitbox" parent="." instance=ExtResource("3_upfnv")]
+unique_name_in_owner = true
 collision_mask = 2
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(3, 3)
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

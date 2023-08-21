@@ -1,3 +1,5 @@
+res://Menus/StartMenu
+res://Game/World
 res://Game/Enemies
 res://Tec/Utils
 res://Game/SFX
@@ -7,6 +9,5 @@ res://Game
 res://Game/Player
 res://Tec/SceneTransition
 res://Tec
-res://Menus/StartMenu
 res://Themes/StartMenuTheme
 res://Backgrounds
