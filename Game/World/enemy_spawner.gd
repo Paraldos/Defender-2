@@ -27,7 +27,7 @@ var possible_waves = [
 ]
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var current_wave = null
-var test_wave = 1
+var test_wave = null
 
 ###############################################################################
 func _ready():

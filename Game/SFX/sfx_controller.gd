@@ -11,7 +11,8 @@ func _spawn_explosion_02(pos):
 	_spawn_sfx(pos, explosion_02)
 
 func _spawn_explosion_03(pos):
-	_spawn_sfx(pos, explosion_03)
+	# _spawn_sfx(pos, explosion_03)
+	call_deferred('_spawn_sfx', pos, explosion_03)
 
 func _spawn_sfx(pos, effect):
 	var new = effect.instantiate()

@@ -27,4 +27,6 @@ func _spin(delta):
 	rotation += spin * delta
 
 func _destroy():
-	print('hi')
+	if explosive:
+		SfxController._spawn_explosion_03(global_position)
+	super._destroy()
