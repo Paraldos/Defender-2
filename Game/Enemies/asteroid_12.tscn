@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://w8hkdmsq8ssj"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_7ukuo"]
-[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_d63wq"]
-[ext_resource type="Texture2D" uid="uid://4wm6fwfvimbb" path="res://Assets/Img/Enemies/Asteroids-Sheet.png" id="3_iv232"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_ppo7d"]
+[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_dnk3r"]
+[ext_resource type="Texture2D" uid="uid://4wm6fwfvimbb" path="res://Assets/Img/Enemies/Asteroids-Sheet.png" id="3_luu4n"]
 
-[node name="Asetroid12" instance=ExtResource("1_7ukuo")]
-script = ExtResource("2_d63wq")
+[node name="Asteroid12" instance=ExtResource("1_ppo7d")]
+script = ExtResource("2_dnk3r")
+explosive = false
 
 [node name="MainSprite" parent="." index="0"]
-texture = ExtResource("3_iv232")
+texture = ExtResource("3_luu4n")
 hframes = 12
 frame = 11
 

@@ -17,3 +17,13 @@ res://Game/Enemies/asteroid_08.tscn
 res://Game/Enemies/asteroid_09.tscn
 res://Game/Enemies/asteroid_11.tscn
 res://Game/Projectile/player_projectile.tscn
+res://Backgrounds/asteroids_background.tscn
+res://Backgrounds/asteroids_background.gd
+res://Tec/Utils/utils.tscn
+res://Tec/Utils/utils.gd
+res://Game/Enemies/explosive_asteroid.tscn
+res://Game/Enemies/asteroid_12.tscn
+res://Game/SFX/explosion_03.tscn
+res://Game/SFX/sfx_controller.tscn
+res://Game/SFX/sfx_controller.gd
+res://Game/Enemies/enemy_template.tscn

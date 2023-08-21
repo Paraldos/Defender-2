@@ -18,13 +18,16 @@ var asteroids = [
 	preload("res://Game/Enemies/asteroid_09.tscn"),
 	preload("res://Game/Enemies/asteroid_10.tscn"),
 	preload("res://Game/Enemies/asteroid_11.tscn"),
+	preload("res://Game/Enemies/asteroid_12.tscn"),
+	preload("res://Game/Enemies/explosive_asteroid.tscn"),
 ]
 var possible_waves = [
-	{name = "Fighters", spawn_time = 1, wave_time = 15, after_wave_pause = 3},
-	{name = "Asteroids", spawn_time = 0.5, wave_time = 10, after_wave_pause = 3},
+	{name = "Fighters", spawn_time = 1.5, wave_time = 15, after_wave_pause = 3},
+	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 ]
+var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var current_wave = null
-var test_wave = null
+var test_wave = 1
 
 ###############################################################################
 func _ready():
@@ -32,6 +35,7 @@ func _ready():
 
 ###############################################################################
 func _on_wave_timer_timeout():
+	Utils.stop_wave.emit()
 	if current_wave != null:
 		spawn_timer.stop()
 		await get_tree().create_timer(current_wave.after_wave_pause).timeout
@@ -40,6 +44,9 @@ func _on_wave_timer_timeout():
 		current_wave = possible_waves[test_wave]
 	else:
 		current_wave = possible_waves.pick_random()
+	###
+	if current_wave.name == 'Asteroids':
+		_spawn_element(asteroids_background, Vector2.ZERO)
 	###
 	wave_timer.start(current_wave.wave_time)
 	spawn_timer.start(current_wave.spawn_time)
@@ -51,12 +58,12 @@ func _on_spawn_timer_timeout():
 	###
 	match current_wave.name:
 		'Fighters':
-			_spawn_enemy(enemy_fighter, spawn_position)
+			_spawn_element(enemy_fighter, spawn_position)
 		'Asteroids':
 			var asteroid = asteroids.pick_random()
-			_spawn_enemy(asteroid, spawn_position)
+			_spawn_element(asteroid, spawn_position)
 
-func _spawn_enemy(element, pos):
+func _spawn_element(element, pos):
 	var new = element.instantiate()
 	new.global_position = pos
 	get_tree().current_scene.add_child(new)

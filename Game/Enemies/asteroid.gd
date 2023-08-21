@@ -1,5 +1,6 @@
 extends "res://Game/Enemies/enemy_template.gd"
 
+@export var explosive = false
 var movement = Vector2(-150, 0)
 var spin = 0
 
@@ -24,3 +25,6 @@ func _move(delta):
 #########################
 func _spin(delta):
 	rotation += spin * delta
+
+func _destroy():
+	print('hi')

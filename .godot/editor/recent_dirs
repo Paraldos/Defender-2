@@ -1,8 +1,9 @@
+res://Game/SFX
+res://Game/Enemies
+res://Backgrounds
 res://Game/World
 res://Menus/StartMenu
-res://Game/Enemies
 res://Tec/Utils
-res://Game/SFX
 res://Game/Collisions
 res://Game/Projectile
 res://Game
@@ -10,4 +11,3 @@ res://Game/Player
 res://Tec/SceneTransition
 res://Tec
 res://Themes/StartMenuTheme
-res://Backgrounds
