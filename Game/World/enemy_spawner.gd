@@ -20,10 +20,11 @@ var asteroids = [
 	preload("res://Game/Enemies/asteroid_11.tscn"),
 ]
 var possible_waves = [
-	{name = "Fighters", spawn_time = 0.8, wave_time = 15},
-	{name = "Asteroids", spawn_time = 0.5, wave_time = 10},
+	{name = "Fighters", spawn_time = 1, wave_time = 15, after_wave_pause = 3},
+	{name = "Asteroids", spawn_time = 0.5, wave_time = 10, after_wave_pause = 3},
 ]
 var current_wave = null
+var test_wave = null
 
 ###############################################################################
 func _ready():
@@ -31,14 +32,20 @@ func _ready():
 
 ###############################################################################
 func _on_wave_timer_timeout():
-	current_wave = possible_waves.pick_random()
+	if current_wave != null:
+		spawn_timer.stop()
+		await get_tree().create_timer(current_wave.after_wave_pause).timeout
+	###
+	if test_wave != null:
+		current_wave = possible_waves[test_wave]
+	else:
+		current_wave = possible_waves.pick_random()
+	###
 	wave_timer.start(current_wave.wave_time)
 	spawn_timer.start(current_wave.spawn_time)
 
 ###############################################################################
 func _on_spawn_timer_timeout():
-	if current_wave == null: return
-	###
 	var spawn_position = spawn_point.global_position
 	spawn_position.y = randi_range(40, 270 - 40)
 	###

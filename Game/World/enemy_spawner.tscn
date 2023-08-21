@@ -16,7 +16,6 @@ autostart = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-autostart = true
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

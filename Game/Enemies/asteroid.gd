@@ -6,9 +6,10 @@ var spin = 0
 ###############################################################################
 func _ready():
 	super._ready()
+	movement.x = rng.randi_range(-150, -200)
 	movement.y = rng.randf_range(-30, 30)
-	spin = rng.randf_range(-1, 1)
-	scale *= rng.randi_range(0.8, 1.2)
+	spin = rng.randf_range(-0.8, 0.8)
+	scale *= rng.randf_range(0.9, 1.2)
 
 ###############################################################################
 func _process(delta):
