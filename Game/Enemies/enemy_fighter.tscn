@@ -1,10 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnr41kpf8ical"]
+[gd_scene load_steps=5 format=3 uid="uid://bnr41kpf8ical"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_fhcq2"]
 [ext_resource type="Texture2D" uid="uid://c17imrr2s5ool" path="res://Assets/Img/Enemies/fighter1.png" id="2_qaxhx"]
+[ext_resource type="Script" path="res://Game/Enemies/enemy_fighter.gd" id="2_t5axi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pe3te"]
+radius = 14.0
+height = 34.0
 
 [node name="EnemyFighter" instance=ExtResource("1_fhcq2")]
+script = ExtResource("2_t5axi")
 
 [node name="MainSprite" parent="." index="0"]
 rotation = 1.5708
 texture = ExtResource("2_qaxhx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_pe3te")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_pe3te")
+
+[node name="MovementTimer" type="Timer" parent="." index="3"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="RayCastUp" type="RayCast2D" parent="." index="5"]
+unique_name_in_owner = true
+position = Vector2(0, -10)
+target_position = Vector2(0, -50)
+
+[node name="RayCastDown" type="RayCast2D" parent="." index="6"]
+unique_name_in_owner = true
+position = Vector2(0, 10)
+
+[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]

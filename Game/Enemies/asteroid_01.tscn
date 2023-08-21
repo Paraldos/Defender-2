@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulrsrqryxvbd"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_mkvus"]
+[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_jmotg"]
+
+[node name="Asteroid01" instance=ExtResource("1_mkvus")]
+script = ExtResource("2_jmotg")

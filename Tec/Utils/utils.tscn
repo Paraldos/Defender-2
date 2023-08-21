@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gdvdynq5tjeh"]
+
+[ext_resource type="Script" path="res://Tec/Utils/utils.gd" id="1_ar2at"]
+
+[node name="Utils" type="Node"]
+script = ExtResource("1_ar2at")

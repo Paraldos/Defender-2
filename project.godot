@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneTransition="*res://Tec/SceneTransition/scene_transition.tscn"
 SfxController="*res://Game/SFX/sfx_controller.tscn"
+Utils="*res://Tec/Utils/utils.tscn"
 
 [display]
 
