@@ -39,7 +39,7 @@ func _get_input():
 	input = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
 
 ############################################################
-func _on_hurtbox_hurt(hitbox, dmg):
+func _on_hurtbox_hurt(_hitbox, dmg):
 	if invulnerable:
 		return
 	else:

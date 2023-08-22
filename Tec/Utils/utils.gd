@@ -13,4 +13,5 @@ var player = {
 	dmg = 5,
 	node = null,
 	position = Vector2.ZERO,
+	credits = 0,
 }

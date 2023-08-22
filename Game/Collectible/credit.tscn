@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbldsxamkp76i"]
+
+[ext_resource type="PackedScene" uid="uid://bt4hly88hupef" path="res://Game/Collectible/CollectibleTemplate.tscn" id="1_attay"]
+[ext_resource type="Script" path="res://Game/Collectible/credit.gd" id="2_hcrpl"]
+[ext_resource type="Texture2D" uid="uid://co7d17ntetdw3" path="res://Assets/Img/Powerup/Credits-Sheet.png" id="2_ovxgx"]
+
+[sub_resource type="Animation" id="Animation_qogyw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mmjt7"]
+resource_name = "loop"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vj41"]
+_data = {
+"RESET": SubResource("Animation_qogyw"),
+"loop": SubResource("Animation_mmjt7")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nw74x"]
+radius = 4.0
+
+[node name="Credit" instance=ExtResource("1_attay")]
+script = ExtResource("2_hcrpl")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ovxgx")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" index="0"]
+autoplay = "loop"
+libraries = {
+"": SubResource("AnimationLibrary_8vj41")
+}
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_nw74x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

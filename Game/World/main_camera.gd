@@ -18,7 +18,7 @@ func _on_screen_shakee(strength : float, duration : float):
 		duration
 	)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var offset_x = rng.randf_range(-shake_strength, shake_strength)
 	var offset_y = rng.randf_range(-shake_strength, shake_strength)
 	offset = Vector2(offset_x, offset_y)

@@ -5,4 +5,12 @@ res://Themes/StartMenuTheme/StartMenuTheme.tres
 res://Menus/StartMenu/start_menu.tscn
 res://Game/World/world.tscn
 res://Game/Player/player.tscn
-res://Game/Player/player.gd
+res://Game/Collectible/CollectibleTemplate.tscn
+res://Game/Collectible/credit.tscn
+res://Game/SFX/explosion_04.tscn
+res://Game/SFX/sfx_controller.tscn
+res://Game/SFX/sfx_controller.gd
+res://Game/Collectible/credit.gd
+res://Game/Collectible/CollectibleTemplate.gd
+res://Game/Enemies/enemy_template.gd
+res://Game/Enemies/enemy_template.tscn

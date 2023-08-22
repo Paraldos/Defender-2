@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=31 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -644,6 +644,9 @@ _data = {
 "hit": SubResource("Animation_vsukm")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gv8gc"]
+radius = 110.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w3u5h")
@@ -719,5 +722,12 @@ polygon = PackedVector2Array(-19, -6, -17, -14, -10, -14, 5, -5, 14, -5, 21, -3,
 
 [node name="HardRight" type="CollisionPolygon2D" parent="Hurtbox"]
 polygon = PackedVector2Array(14, -5, 5, -5, -6, -12, -18, -12, -22, -5, -22, 8, -7, 8, 5, 5, 14, 5, 21, 3, 23, 0, 21, -3)
+
+[node name="Magnet" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
+shape = SubResource("CircleShape2D_gv8gc")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
