@@ -10,6 +10,7 @@ height = 34.0
 
 [node name="EnemyFighter" instance=ExtResource("1_fhcq2")]
 script = ExtResource("2_t5axi")
+hp = 10
 
 [node name="MainSprite" parent="." index="0"]
 rotation = 1.5708

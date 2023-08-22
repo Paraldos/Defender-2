@@ -20,14 +20,14 @@ var asteroids = [
 	preload("res://Game/Enemies/explosive_asteroid.tscn"),
 ]
 var possible_waves = [
-	{name = "Fighters", spawn_time = 1.5, wave_time = 15, after_wave_pause = 3},
+	{name = "Fighters", spawn_time = 1.3, wave_time = 15, after_wave_pause = 3},
 	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 ]
 var rng = RandomNumberGenerator.new()
 var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var current_wave = null
-var test_wave = null
+@export var test_wave = -1
 
 ###############################################################################
 func _ready():
@@ -40,7 +40,7 @@ func _on_wave_timer_timeout():
 		spawn_timer.stop()
 		await get_tree().create_timer(current_wave.after_wave_pause).timeout
 	###
-	if test_wave != null:
+	if test_wave > -1:
 		current_wave = possible_waves[test_wave]
 	else:
 		current_wave = possible_waves.pick_random()
@@ -54,10 +54,15 @@ func _on_wave_timer_timeout():
 ###############################################################################
 func _on_spawn_timer_timeout():
 	var spawn_position = spawn_point.global_position
-	spawn_position.y = randi_range(40, 270 - 40)
+	var y_deviation = (270 - 40) / 2
+	spawn_position.y = randi_range(-y_deviation, y_deviation)
 	###
 	match current_wave.name:
 		'Fighters':
+			spawn_position.y = 270/2 + rng.randi_range(-60, 60)
+			_spawn_element(enemy_fighter, spawn_position)
+			await get_tree().create_timer(0.3).timeout
+			spawn_position.y = 270/2 + rng.randi_range(-60, 60)
 			_spawn_element(enemy_fighter, spawn_position)
 		'Asteroids':
 			var asteroid = asteroids.pick_random()
