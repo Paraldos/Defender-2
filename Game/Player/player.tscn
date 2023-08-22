@@ -38,7 +38,7 @@ color_ramp = SubResource("GradientTexture1D_xcl51")
 
 [sub_resource type="Animation" id="Animation_t6rj2"]
 resource_name = "Center"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,10 +51,70 @@ tracks/0/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hurtbox/Center:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtbox/Left:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtbox/HardLeft:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtbox/Right:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtbox/HardRight:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nicf6"]
 resource_name = "Left"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -67,10 +127,70 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hurtbox/Left:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtbox/Center:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtbox/HardLeft:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtbox/Right:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtbox/HardRight:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5lw03"]
 resource_name = "LeftHard"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,6 +202,66 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hurtbox/HardLeft:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtbox/Center:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtbox/Left:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtbox/Right:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtbox/HardRight:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_l1nr0"]
@@ -98,10 +278,70 @@ tracks/0/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hurtbox/Center:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtbox/Left:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtbox/HardLeft:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtbox/Right:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtbox/HardRight:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_u3rwu"]
 resource_name = "Right"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,10 +354,70 @@ tracks/0/keys = {
 "update": 1,
 "values": [3]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hurtbox/Right:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtbox/Center:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtbox/Left:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtbox/HardLeft:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtbox/HardRight:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_1r2m6"]
 resource_name = "RightHard"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -130,6 +430,66 @@ tracks/0/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hurtbox/HardRight:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hurtbox/Center:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurtbox/Left:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtbox/HardLeft:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtbox/Right:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8bxqm"]
 _data = {
@@ -141,33 +501,32 @@ _data = {
 "RightHard": SubResource("Animation_1r2m6")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u7875"]
-animation = &"Center"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fxc4o"]
-animation = &"Right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bqi1p"]
-animation = &"RightHard"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f2h6q"]
-animation = &"LeftHard"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kkn83"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mpibb"]
 animation = &"Left"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ftskm"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_u7875")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_fxc4o")
-blend_point_1/pos = 0.8
-blend_point_2/node = SubResource("AnimationNodeAnimation_bqi1p")
-blend_point_2/pos = 1.0
-blend_point_3/node = SubResource("AnimationNodeAnimation_f2h6q")
-blend_point_3/pos = -1.0
-blend_point_4/node = SubResource("AnimationNodeAnimation_kkn83")
-blend_point_4/pos = -0.8
-snap = 0.2
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ubibv"]
+animation = &"LeftHard"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ooqsf"]
+animation = &"Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wkvvq"]
+animation = &"RightHard"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kney3"]
+animation = &"Center"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_jyc6h"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_mpibb")
+blend_point_0/pos = -0.4
+blend_point_1/node = SubResource("AnimationNodeAnimation_ubibv")
+blend_point_1/pos = -0.7
+blend_point_2/node = SubResource("AnimationNodeAnimation_ooqsf")
+blend_point_2/pos = 0.4
+blend_point_3/node = SubResource("AnimationNodeAnimation_wkvvq")
+blend_point_3/pos = 0.7
+blend_point_4/node = SubResource("AnimationNodeAnimation_kney3")
+blend_point_4/pos = 0.0
 blend_mode = 1
 
 [sub_resource type="Animation" id="Animation_10rdm"]
@@ -231,6 +590,21 @@ _data = {
 "flash": SubResource("Animation_rjnc1")
 }
 
+[sub_resource type="Animation" id="Animation_j37db"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_vsukm"]
 resource_name = "hit"
 length = 0.3
@@ -264,21 +638,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_j37db"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amuds"]
 _data = {
 "RESET": SubResource("Animation_j37db"),
@@ -290,12 +649,7 @@ collision_layer = 2
 script = ExtResource("1_w3u5h")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(24, 0, 14, -5, 5, -5, 2, -10, -2, -11, -2, -17, -8, -23, -17, -23, -19, -19, -19, -10, -23, -10, -23, 10, -19, 10, -19, 19, -17, 23, -8, 23, -2, 17, -2, 11, 2, 10, 5, 5, 14, 5)
-
-[node name="Hurtbox" parent="." instance=ExtResource("2_yuc3g")]
-collision_layer = 2
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hurtbox"]
+visible = false
 polygon = PackedVector2Array(24, 0, 14, -5, 5, -5, 2, -10, -2, -11, -2, -17, -8, -23, -17, -23, -19, -19, -19, -10, -23, -10, -23, 10, -19, 10, -19, 19, -17, 23, -8, 23, -2, 17, -2, 11, 2, 10, 5, 5, 14, 5)
 
 [node name="Exhaust" type="GPUParticles2D" parent="."]
@@ -317,10 +671,10 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="MainSprite"]
-tree_root = SubResource("AnimationNodeBlendSpace1D_ftskm")
+tree_root = SubResource("AnimationNodeBlendSpace1D_jyc6h")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/blend_position = 0.00570703
+parameters/blend_position = -0.00192308
 
 [node name="AttackController" type="Node2D" parent="."]
 position = Vector2(35, 0)
@@ -337,10 +691,33 @@ libraries = {
 "": SubResource("AnimationLibrary_ja84q")
 }
 
-[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Hurtbox" parent="." instance=ExtResource("2_yuc3g")]
+collision_layer = 2
+
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="Hurtbox"]
 unique_name_in_owner = true
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_amuds")
 }
+
+[node name="Center" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, 5, 5, 14, 5, 21, 3, 23, 0)
+disabled = true
+
+[node name="Left" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(-19, -6, -17, -14, -10, -14, 5, -5, 14, -5, 21, -3, 23, 0, 21, 3, 14, 5, 6, 6, -8, 16, -19, 16, -19, 6, -23, 4, -23, -4)
+disabled = true
+
+[node name="HardLeft" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(-22, -8, -7, -8, 5, -5, 14, -5, 21, -3, 23, 0, 21, 3, 14, 5, 5, 5, -6, 12, -18, 12, -22, 5)
+disabled = true
+
+[node name="Right" type="CollisionPolygon2D" parent="Hurtbox"]
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(-19, -6, -17, -14, -10, -14, 5, -5, 14, -5, 21, -3, 23, 0, 21, 3, 14, 5, 6, 6, -8, 16, -19, 16, -19, 6, -23, 4, -23, -4)
+
+[node name="HardRight" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(14, -5, 5, -5, -6, -12, -18, -12, -22, -5, -22, 8, -7, 8, 5, 5, 14, 5, 21, 3, 23, 0, 21, -3)
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]

@@ -15,19 +15,25 @@ func _ready():
 
 ############################################################
 func _physics_process(delta):
+	_get_input()
 	_movement(delta)
+	_movement_animation()
 	Utils.player.position = global_position
 
 ###########################
+func _movement_animation():
+	var tween = get_tree().create_tween()
+	tween.tween_property(
+		main_sprite_animation_tree,
+		"parameters/blend_position",
+		input.y,
+		0.1
+	)
+
 func _movement(delta):
-	_get_input()
 	velocity.y = move_toward(velocity.y, input.y * MAX_SPEED, ACCELERATION * delta)
 	velocity.x = move_toward(velocity.x, input.x * MAX_SPEED, ACCELERATION * delta)
-	_animation()
 	move_and_slide()
-
-func _animation():
-	main_sprite_animation_tree.set('parameters/blend_position', input.y)
 
 func _get_input():
 	input = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
