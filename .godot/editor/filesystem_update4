@@ -14,3 +14,5 @@ res://Game/Collectible/credit.gd
 res://Game/Collectible/CollectibleTemplate.gd
 res://Game/Enemies/enemy_template.gd
 res://Game/Enemies/enemy_template.tscn
+res://Game/World/ui.tscn
+res://Game/World/ui.gd
