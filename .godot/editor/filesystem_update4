@@ -17,3 +17,6 @@ res://Game/World/main_camera.tscn
 res://Game/World/main_camera.gd
 res://Game/Projectile/player_projectile.tscn
 res://Game/Projectile/projectile.gd
+res://Game/SFX/explosion_02.tscn
+res://Game/SFX/explosion_template.gd
+res://Game/SFX/explosion_template.tscn

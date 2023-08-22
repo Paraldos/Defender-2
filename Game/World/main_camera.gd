@@ -8,7 +8,8 @@ func _ready():
 	Utils.screen_shake.connect(_on_screen_shakee)
 
 func _on_screen_shakee(strength : float, duration : float):
-	shake_strength = strength
+	if strength > shake_strength:
+		shake_strength = strength
 	var tween = get_tree().create_tween()
 	tween.tween_property(
 		self,

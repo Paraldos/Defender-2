@@ -3,6 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_444r3"]
 [ext_resource type="Texture2D" uid="uid://do1n18dn4j1st" path="res://Assets/Img/Projectiles And Explosions/Explosion02-Sheet.png" id="2_dmyt5"]
 
+[sub_resource type="Animation" id="Animation_8h0ng"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
 [sub_resource type="Animation" id="Animation_s6mrh"]
 resource_name = "explosion"
 length = 0.7
@@ -33,21 +48,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_8h0ng"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [9]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lfbp0"]
 _data = {
 "RESET": SubResource("Animation_8h0ng"),
@@ -55,6 +55,7 @@ _data = {
 }
 
 [node name="Explosion02" instance=ExtResource("1_444r3")]
+screen_shake = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_dmyt5")

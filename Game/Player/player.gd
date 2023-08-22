@@ -40,7 +40,7 @@ func _on_hurtbox_hurt(hitbox, dmg):
 		Utils.player.hp -= dmg
 		Utils.change_hp.emit()
 		hit_animation_player.play("hit")
-		Utils.screen_shake.emit(5.0, 0.3)
+		Utils.screen_shake.emit(6.0, 0.3)
 
 ###########################
 func _set_invulnerable(new_state : bool):

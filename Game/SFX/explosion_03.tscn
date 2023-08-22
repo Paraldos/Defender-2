@@ -82,6 +82,7 @@ _data = {
 radius = 68.1175
 
 [node name="Explosion_03" instance=ExtResource("1_a4bb5")]
+screen_shake = 4.0
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.4, 0.4)
