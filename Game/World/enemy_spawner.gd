@@ -4,8 +4,6 @@ extends Node2D
 @onready var spawn_timer = %SpawnTimer
 @onready var spawn_point = %SpawnPoint
 
-var rng = RandomNumberGenerator.new()
-var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
 var asteroids = [
 	preload("res://Game/Enemies/asteroid_01.tscn"),
 	preload("res://Game/Enemies/asteroid_02.tscn"),
@@ -25,6 +23,8 @@ var possible_waves = [
 	{name = "Fighters", spawn_time = 1.5, wave_time = 15, after_wave_pause = 3},
 	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 ]
+var rng = RandomNumberGenerator.new()
+var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var current_wave = null
 var test_wave = null

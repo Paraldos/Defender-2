@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs6om8hfg4kp1"]
+
+[ext_resource type="Script" path="res://Game/World/main_camera.gd" id="1_qndmi"]
+
+[node name="MainCamera" type="Camera2D"]
+anchor_mode = 0
+script = ExtResource("1_qndmi")

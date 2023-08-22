@@ -1,5 +1,9 @@
-CollisionShape2D
+Camera2D
 AnimationPlayer
+Control
+TextureProgressBar
+CanvasLayer
+CollisionShape2D
 Sprite2D
 CollisionPolygon2D
 GPUParticles2D
@@ -16,9 +20,7 @@ StaticBody2D
 CharacterBody2D
 AnimatableBody2D
 ColorRect
-CanvasLayer
 VBoxContainer
-Control
 TextureRect
 Button
 ParallaxLayer

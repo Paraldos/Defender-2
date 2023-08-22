@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvs7biwurqq0y"]
+[gd_scene load_steps=7 format=3 uid="uid://cvs7biwurqq0y"]
 
 [ext_resource type="PackedScene" uid="uid://chthgw2hrq8w6" path="res://Backgrounds/background.tscn" id="1_wvqxx"]
 [ext_resource type="PackedScene" uid="uid://c0ttiy0hm5rnk" path="res://Game/Player/player.tscn" id="2_uyq6x"]
 [ext_resource type="PackedScene" uid="uid://cquqd06eutva8" path="res://Game/World/world_borders.tscn" id="3_uvd7b"]
 [ext_resource type="PackedScene" uid="uid://cx4nevkhs5r7n" path="res://Game/World/enemy_spawner.tscn" id="4_kw1bo"]
+[ext_resource type="PackedScene" uid="uid://cimfq43jttxtd" path="res://Game/World/ui.tscn" id="5_qmqkm"]
+[ext_resource type="PackedScene" uid="uid://cs6om8hfg4kp1" path="res://Game/World/main_camera.tscn" id="6_tts0n"]
 
 [node name="World" type="Node2D"]
 
@@ -16,3 +18,7 @@ position = Vector2(72, 135)
 [node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_kw1bo")]
+
+[node name="UI" parent="." instance=ExtResource("5_qmqkm")]
+
+[node name="MainCamera" parent="." instance=ExtResource("6_tts0n")]

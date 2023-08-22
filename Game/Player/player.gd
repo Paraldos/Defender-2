@@ -3,11 +3,20 @@ extends CharacterBody2D
 const ACCELERATION = 3000.0
 const MAX_SPEED = 400.0
 var input = Vector2.ZERO
+var invulnerable = false
 @onready var main_sprite_animation_tree = $MainSprite/AnimationTree
+@onready var hit_animation_player = %HitAnimationPlayer
+
+############################################################
+func _ready():
+	await get_tree().create_timer(0.1).timeout
+	Utils.player.node = self
+	Utils.change_hp.emit()
 
 ############################################################
 func _physics_process(delta):
 	_movement(delta)
+	Utils.player.position = global_position
 
 ###########################
 func _movement(delta):
@@ -25,4 +34,16 @@ func _get_input():
 
 ############################################################
 func _on_hurtbox_hurt(hitbox, dmg):
-	pass
+	if invulnerable:
+		return
+	else:
+		Utils.player.hp -= dmg
+		Utils.change_hp.emit()
+		hit_animation_player.play("hit")
+		Utils.screen_shake.emit(5.0, 0.3)
+
+###########################
+func _set_invulnerable(new_state : bool):
+	invulnerable = new_state
+
+

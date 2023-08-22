@@ -16,6 +16,7 @@ collision_layer = 4
 [node name="Hitbox" parent="." instance=ExtResource("3_upfnv")]
 unique_name_in_owner = true
 collision_mask = 2
+dmg = 5
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(3, 3)
