@@ -22,9 +22,11 @@ var asteroids = [
 var possible_waves = [
 	{name = "Fighters", spawn_time = 1.3, wave_time = 15, after_wave_pause = 3},
 	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
+	{name = "GunShips", spawn_time = 2.0, wave_time = 15, after_wave_pause = 3},
 ]
 var rng = RandomNumberGenerator.new()
 var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
+var gun_ships = preload("res://Game/Enemies/gunship.tscn")
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var current_wave = null
 @export var test_wave = -1
@@ -53,22 +55,23 @@ func _on_wave_timer_timeout():
 
 ###############################################################################
 func _on_spawn_timer_timeout():
-	var spawn_position = spawn_point.global_position
-	var y_deviation = (270 - 40) / 2
-	spawn_position.y = randi_range(-y_deviation, y_deviation)
-	###
 	match current_wave.name:
 		'Fighters':
-			spawn_position.y = 270/2 + rng.randi_range(-60, 60)
-			_spawn_element(enemy_fighter, spawn_position)
+			_spawn_element(enemy_fighter)
 			await get_tree().create_timer(0.3).timeout
-			spawn_position.y = 270/2 + rng.randi_range(-60, 60)
-			_spawn_element(enemy_fighter, spawn_position)
+			_spawn_element(enemy_fighter)
 		'Asteroids':
 			var asteroid = asteroids.pick_random()
-			_spawn_element(asteroid, spawn_position)
+			_spawn_element(asteroid)
+		'GunShips': 
+			_spawn_element(gun_ships)
 
-func _spawn_element(element, pos):
+func _get_spawn_position(y_deviation = 100):
+	var spawn_position = spawn_point.global_position
+	spawn_position.y += randi_range(-y_deviation, y_deviation)
+	return spawn_position
+
+func _spawn_element(element, pos = _get_spawn_position()):
 	var new = element.instantiate()
 	new.global_position = pos
 	get_tree().current_scene.add_child(new)

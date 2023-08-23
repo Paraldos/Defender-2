@@ -6,14 +6,16 @@
 
 [node name="Asteroid11" instance=ExtResource("1_pkk6e")]
 script = ExtResource("2_iqdib")
-
-[node name="MainSprite" parent="." index="0"]
-texture = ExtResource("3_xk5pg")
-hframes = 12
-frame = 10
+explosive = false
+hp = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-19, 10, -17, 2, 8, -20, 11, -21, 13, -21, 16, -18, 17, -9, 13, 2, 12, 10, 9, 13, 0, 17, -6, 17, -14, 16)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
 polygon = PackedVector2Array(-19, 10, -17, 2, 8, -20, 11, -21, 13, -21, 16, -18, 17, -9, 13, 2, 12, 10, 9, 13, 0, 17, -6, 17, -14, 16)
+
+[node name="MainSprite" parent="." index="3"]
+texture = ExtResource("3_xk5pg")
+hframes = 12
+frame = 10

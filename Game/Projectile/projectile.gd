@@ -1,11 +1,11 @@
 extends Node2D
 
-var SPEED = Vector2(300, 0)
+var movement = Vector2(300, 0)
 @onready var hitbox = %Hitbox
 
 ###############################################################################
 func _ready():
-	hitbox.dmg = Utils.player.dmg
+	pass
 
 ###############################################################################
 func _process(delta):
@@ -13,7 +13,7 @@ func _process(delta):
 
 ###########################
 func _move(delta):
-	position += SPEED * delta
+	position += movement * delta
 
 ###############################################################################
 func _on_visible_on_screen_notifier_2d_screen_exited():

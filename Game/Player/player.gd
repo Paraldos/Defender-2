@@ -23,7 +23,6 @@ func _physics_process(delta):
 		_movement(delta)
 		_movement_animation()
 
-
 ###########################
 func _movement_animation():
 	var tween = get_tree().create_tween()

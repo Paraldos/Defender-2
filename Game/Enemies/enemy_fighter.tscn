@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnr41kpf8ical"]
+[gd_scene load_steps=6 format=3 uid="uid://bnr41kpf8ical"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_fhcq2"]
 [ext_resource type="Texture2D" uid="uid://c17imrr2s5ool" path="res://Assets/Img/Enemies/fighter1.png" id="2_qaxhx"]
 [ext_resource type="Script" path="res://Game/Enemies/enemy_fighter.gd" id="2_t5axi"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_0f03w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pe3te"]
 radius = 14.0
@@ -11,10 +12,6 @@ height = 34.0
 [node name="EnemyFighter" instance=ExtResource("1_fhcq2")]
 script = ExtResource("2_t5axi")
 hp = 10
-
-[node name="MainSprite" parent="." index="0"]
-rotation = 1.5708
-texture = ExtResource("2_qaxhx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-1, 0)
@@ -27,6 +24,14 @@ shape = SubResource("CapsuleShape2D_pe3te")
 [node name="MovementTimer" type="Timer" parent="." index="3"]
 unique_name_in_owner = true
 autostart = true
+
+[node name="MainSprite" parent="." index="4"]
+rotation = 1.5708
+texture = ExtResource("2_qaxhx")
+
+[node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("4_0f03w")]
+position = Vector2(-3.62396e-05, -10)
+rotation = 1.5708
 
 [node name="RayCastUp" type="RayCast2D" parent="." index="5"]
 unique_name_in_owner = true

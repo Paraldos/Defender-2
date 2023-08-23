@@ -12,7 +12,6 @@ func _ready():
 
 ###########################
 func _on_scene_transition_done():
-	await get_tree().create_timer(0.3).timeout
 	_start_warp_in()
 
 ############################################################

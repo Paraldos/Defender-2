@@ -1,12 +1,6 @@
 extends CanvasLayer
 
 ##############################################################################
-var background_textures = [
-	preload("res://Assets/Img/Backgrounds/Space_01-Sheet.png"),
-	preload("res://Assets/Img/Backgrounds/Space_02-Sheet.png"),
-	preload("res://Assets/Img/Backgrounds/Space_03-Sheet.png"),
-	preload("res://Assets/Img/Backgrounds/Space_04-Sheet.png")
-]
 @onready var parallax_background = %ParallaxBackground
 @onready var sprites = [
 	%Layer1Sprite,
@@ -15,13 +9,29 @@ var background_textures = [
 	%Layer4Sprite,
 	%Layer5Sprite
 ]
-@export var speed = Vector2(0.0, 50.0)
+@export var speed = Vector2(0.0, 0.0)
+var background_textures = [
+	preload("res://Assets/Img/Backgrounds/Space_01-Sheet.png"),
+	preload("res://Assets/Img/Backgrounds/Space_02-Sheet.png"),
+	preload("res://Assets/Img/Backgrounds/Space_03-Sheet.png"),
+	preload("res://Assets/Img/Backgrounds/Space_04-Sheet.png")
+]
 var rng = RandomNumberGenerator.new()
 
 ##############################################################################
 func _ready():
+	Utils.change_background_speed.connect(_on_change_background_speed)
 	rng.randomize()
 	_get_randome_background()
+
+#########################################
+func _on_change_background_speed(new_speed):
+	var tween = get_tree().create_tween()
+	tween.tween_property(
+		self,
+		'speed',
+		new_speed,
+		3)
 
 #########################################
 func _get_randome_background():

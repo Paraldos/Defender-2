@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://untxh8qat57p"]
+
+[sub_resource type="Gradient" id="Gradient_a77oh"]
+offsets = PackedFloat32Array(0.333333, 0.526627, 0.639053, 0.974359)
+colors = PackedColorArray(1, 1, 1, 1, 0.505882, 0.831373, 0.980392, 1, 0.00784314, 0.466667, 0.741176, 1, 0.000806359, 0.16933, 0.2875, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m2sqk"]
+gradient = SubResource("Gradient_a77oh")
+
+[sub_resource type="Curve" id="Curve_8w70l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.677083), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_resqf"]
+curve = SubResource("Curve_8w70l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_plsmp"]
+emission_shape = 3
+emission_box_extents = Vector3(0, 2, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_resqf")
+color_ramp = SubResource("GradientTexture1D_m2sqk")
+
+[node name="Exhaust" type="GPUParticles2D"]
+show_behind_parent = true
+position = Vector2(7.60198e-05, 21)
+rotation = -1.5708
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_plsmp")
+lifetime = 0.2
+local_coords = true

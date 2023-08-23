@@ -10,15 +10,15 @@
 [node name="World" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_wvqxx")]
-speed = Vector2(-90, 0)
+speed = Vector2(-120, 0)
+
+[node name="UI" parent="." instance=ExtResource("5_qmqkm")]
 
 [node name="Player" parent="." instance=ExtResource("2_uyq6x")]
-position = Vector2(232, 136)
+position = Vector2(160, 135)
 
 [node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_kw1bo")]
-
-[node name="UI" parent="." instance=ExtResource("5_qmqkm")]
 
 [node name="MainCamera" parent="." instance=ExtResource("6_tts0n")]
