@@ -8,10 +8,11 @@ var attack_wait_time = 0.2
 
 func _physics_process(delta):
 	attack_timer += delta
-	if Input.is_action_pressed('ui_attack'):
-		if attack_timer > attack_wait_time:
-			_attack()
-			attack_timer = 0
+	if get_parent().controlls_enabled:
+		if Input.is_action_pressed('ui_attack'):
+			if attack_timer > attack_wait_time:
+				_attack()
+				attack_timer = 0
 
 func _attack():
 	animation_player.play("flash")

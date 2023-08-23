@@ -4,6 +4,7 @@ const ACCELERATION = 3000.0
 const MAX_SPEED = 400.0
 var input = Vector2.ZERO
 var invulnerable = false
+@export var controlls_enabled = true
 @onready var main_sprite_animation_tree = $MainSprite/AnimationTree
 @onready var hit_animation_player = %HitAnimationPlayer
 
@@ -16,10 +17,12 @@ func _ready():
 
 ############################################################
 func _physics_process(delta):
-	_get_input()
-	_movement(delta)
-	_movement_animation()
 	Utils.player.position = global_position
+	if controlls_enabled:
+		_get_input()
+		_movement(delta)
+		_movement_animation()
+
 
 ###########################
 func _movement_animation():
@@ -52,5 +55,3 @@ func _on_hurtbox_hurt(_hitbox, dmg):
 ###########################
 func _set_invulnerable(new_state : bool):
 	invulnerable = new_state
-
-

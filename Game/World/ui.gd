@@ -38,7 +38,6 @@ func _on_change_ep():
 func _animate_bar(primary_bar, secondary_bar, target_value):
 	primary_bar.value = target_value
 	var tween = get_tree().create_tween()
-	print(secondary_bar)
 	tween.tween_property(
 		secondary_bar,
 		'value',

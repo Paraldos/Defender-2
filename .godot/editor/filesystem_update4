@@ -19,3 +19,12 @@ res://Game/World/ui.tscn
 res://Game/Player/player.gd
 res://Game/Collectible/mp_boost.gd
 res://Game/Collectible/mp_boost.tscn
+res://Game/Player/player_afterimage.tscn
+res://Game/Player/WarpController.gd
+res://Tec/SceneTransition/scene_transition.gd
+res://Tec/SceneTransition/scene_transition.tscn
+res://Game/SFX/warp_jump_effect.tscn
+res://Game/SFX/warp_jump_effect.gdshader
+res://Game/Player/AttackController.gd
+res://Game/Player/player_afterimage.gdshader
+res://Game/Player/player_afterimage.gd

@@ -1,5 +1,6 @@
-res://Game/Collectible
 res://Game/SFX
+res://Game/Player
+res://Game/Collectible
 res://Game/World
 res://Game/Enemies
 res://Backgrounds
@@ -8,7 +9,6 @@ res://Tec/Utils
 res://Game/Collisions
 res://Game/Projectile
 res://Game
-res://Game/Player
 res://Tec/SceneTransition
 res://Tec
 res://Themes/StartMenuTheme
