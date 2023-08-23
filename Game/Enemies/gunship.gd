@@ -18,7 +18,7 @@ func _move(delta):
 func _on_attack_timer_timeout():
 	for i in 3:
 		var x_speed = -250
-		var y_speed = 50
+		var y_speed = 75
 		_spawn_projectile(Vector2(x_speed, y_speed))
 		_spawn_projectile(Vector2(x_speed, -y_speed))
 		await get_tree().create_timer(0.4).timeout

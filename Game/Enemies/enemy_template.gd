@@ -54,7 +54,10 @@ func _spawn_credit():
 	var new = credit.instantiate()
 	var credit_move_speed = 100
 	new.global_position = global_position
-	new.movement = Vector2(rng.randi_range(-1, 1), rng.randi_range(-1, 1)) * credit_move_speed
+	new.movement = Vector2(
+		rng.randf_range(-1, 1), 
+		rng.randf_range(-1, 1)
+		) * credit_move_speed
 	get_tree().current_scene.add_child(new)
 
 ###############################################################################
