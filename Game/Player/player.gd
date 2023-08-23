@@ -12,6 +12,7 @@ func _ready():
 	await get_tree().create_timer(0.1).timeout
 	Utils.player.node = self
 	Utils.change_hp.emit()
+	Utils.change_mp.emit()
 
 ############################################################
 func _physics_process(delta):

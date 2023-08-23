@@ -16,3 +16,4 @@ res://Game/Collectible/hp_boost.tscn
 res://Game/Collectible/hp_boost.gd
 res://Tec/Utils/utils.gd
 res://Game/World/ui.tscn
+res://Game/Player/player.gd
