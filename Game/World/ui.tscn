@@ -101,5 +101,5 @@ offset_top = 10.0
 offset_right = 330.0
 offset_bottom = 50.0
 theme = ExtResource("3_qsv4h")
-text = "Credits: 0"
+text = "0"
 horizontal_alignment = 1

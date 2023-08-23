@@ -1,3 +1,4 @@
+Timer
 Label
 GPUParticles2D
 AnimationPlayer
@@ -9,7 +10,6 @@ Camera2D
 Control
 TextureProgressBar
 CanvasLayer
-Timer
 Node2D
 Polygon2D
 RayCast2D

@@ -6,6 +6,10 @@ extends Node2D
 @onready var hitbox = %Hitbox
 var rng = RandomNumberGenerator.new()
 var credit = preload("res://Game/Collectible/credit.tscn")
+var powerups = [
+	preload("res://Game/Collectible/hp_boost.tscn"),
+	preload("res://Game/Collectible/mp_boost.tscn")
+]
 
 ###############################################################################
 func _ready():
@@ -31,9 +35,20 @@ func _on_hitbox_area_entered(_area):
 func _destroy():
 	for i in credits:
 		call_deferred('_spawn_credit')
+	call_deferred('_spawn_powerup')
 	SfxController._spawn_explosion_02(global_position)
 	queue_free()
 
+#########################
+func _spawn_powerup():
+	if Utils.powerup:
+		Utils._start_powerup_timer()
+		var element = powerups.pick_random()
+		var new = element.instantiate()
+		new.global_position = global_position
+		get_tree().current_scene.add_child(new)
+
+#########################
 func _spawn_credit():
 	var new = credit.instantiate()
 	var credit_move_speed = 100
