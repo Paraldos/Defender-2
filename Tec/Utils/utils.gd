@@ -9,7 +9,7 @@ var viewport_height = 270
 
 var player = {
 	max_hp = 50,
-	hp = 50,
+	hp = 30,
 	dmg = 5,
 	node = null,
 	position = Vector2.ZERO,

@@ -27,7 +27,6 @@ func _on_hurtbox_hurt(_hitbox, dmg):
 func _on_hitbox_area_entered(_area):
 	_destroy()
 
-
 #########################
 func _destroy():
 	for i in credits:

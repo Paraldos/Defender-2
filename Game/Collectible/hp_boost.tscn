@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cargsjf3xh7mv"]
+
+[ext_resource type="PackedScene" uid="uid://bt4hly88hupef" path="res://Game/Collectible/CollectibleTemplate.tscn" id="1_20g3o"]
+[ext_resource type="Texture2D" uid="uid://cu818g0tqyo5e" path="res://Assets/Img/Powerup/HPContainer.png" id="2_3cpsb"]
+[ext_resource type="Script" path="res://Game/Collectible/hp_boost.gd" id="2_48oma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28vag"]
+
+[node name="HPBoost" instance=ExtResource("1_20g3o")]
+script = ExtResource("2_48oma")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_3cpsb")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_28vag")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

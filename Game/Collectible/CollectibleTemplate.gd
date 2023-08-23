@@ -22,7 +22,6 @@ func _physics_process(delta):
 	elif  movement != Vector2.ZERO:
 		global_position += movement * delta
 
-
 ############################################################
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	move_to_player = true

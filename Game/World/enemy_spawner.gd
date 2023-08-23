@@ -72,5 +72,3 @@ func _spawn_element(element, pos):
 	var new = element.instantiate()
 	new.global_position = pos
 	get_tree().current_scene.add_child(new)
-
-
