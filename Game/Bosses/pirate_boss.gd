@@ -6,31 +6,24 @@ extends "res://Game/Bosses/boss_template.gd"
 	$NormalGunController3,
 	$NormalGunController4,
 ]
-var waittime_between_actions = 0.3
-
-###############################################################################
-func _start_fight():
-	_move()
 
 ###############################################################################
 func _move():
-	var target_position = Vector2.ZERO
-	target_position.x = rng.randi_range(320, 440)
-	target_position.y = _get_target_y_position()
-	###
-	var tween = create_tween()
-	await tween.tween_property(
+	var target_position = Vector2(
+		_get_target_position_x(), 
+		_get_target_position_y())
+	await create_tween().tween_property(
 		self,
 		'global_position',
 		target_position,
 		0.5
 	).finished
-	###
-	await get_tree().create_timer(waittime_between_actions).timeout
-	_attack()
+	return true
 
-###########################
-func _get_target_y_position():
+func _get_target_position_x():
+	return rng.randi_range(320, 440)
+
+func _get_target_position_y():
 	if global_position.y >= 270/2:
 		return rng.randf_range(40, 130)
 	else:
@@ -38,17 +31,19 @@ func _get_target_y_position():
 
 ###############################################################################
 func _attack():
-	for i in 1:
-		match i:
-			0:
-				_attack0()
+	var attacks = [
+		await _attack0()
+	]
+	attacks.pick_random()
+	return true
 
-###########################
 func _attack0():
-	for gun in wing_guns:
-		gun._attack()
+	wing_guns[0]._attack()
+	wing_guns[1]._attack()
+	wing_guns[2]._attack()
+	await wing_guns[3]._attack()
+	return true
 
 ###############################################################################
 func _on_normal_gun_controller_attack_done():
-	await get_tree().create_timer(waittime_between_actions).timeout
 	_move()

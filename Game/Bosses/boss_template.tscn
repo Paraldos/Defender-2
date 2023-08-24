@@ -54,8 +54,10 @@ _data = {
 
 [node name="BossTemplate" type="Node2D"]
 script = ExtResource("1_3n5ba")
+invulnerable = false
 
 [node name="Hurtbox" parent="." instance=ExtResource("2_0xwpn")]
+unique_name_in_owner = true
 collision_layer = 4
 
 [node name="HurtboxAnimationPlayer" type="AnimationPlayer" parent="Hurtbox"]

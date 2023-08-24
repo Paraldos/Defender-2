@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgg8jg1k5vs54"]
+
+[ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_5c0ui"]
+[ext_resource type="Texture2D" uid="uid://dqpemcngx7l0r" path="res://Assets/Img/Projectiles And Explosions/Explosion04-Sheet.png" id="2_cn3p6"]
+
+[sub_resource type="Animation" id="Animation_e2pmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8n0na"]
+resource_name = "explosion"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 10]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjdpe"]
+_data = {
+"RESET": SubResource("Animation_e2pmq"),
+"explosion": SubResource("Animation_8n0na")
+}
+
+[node name="Explosion_05" instance=ExtResource("1_5c0ui")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_cn3p6")
+hframes = 11
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "explosion"
+libraries = {
+"": SubResource("AnimationLibrary_wjdpe")
+}
