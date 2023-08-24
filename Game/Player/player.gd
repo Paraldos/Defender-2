@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 ###########################
 func _movement_animation():
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(
 		main_sprite_animation_tree,
 		"parameters/blend_position",

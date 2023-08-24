@@ -15,10 +15,11 @@ speed = Vector2(-120, 0)
 [node name="UI" parent="." instance=ExtResource("5_qmqkm")]
 
 [node name="Player" parent="." instance=ExtResource("2_uyq6x")]
-position = Vector2(160, 135)
+position = Vector2(200, 135)
 
 [node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_kw1bo")]
+waves_till_boss = 0
 
 [node name="MainCamera" parent="." instance=ExtResource("6_tts0n")]

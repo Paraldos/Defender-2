@@ -2,7 +2,7 @@ extends "res://Game/Enemies/enemy_template.gd"
 
 @onready var muzzle = %Muzzle
 @onready var muzzle_animation_player = %MuzzleAnimationPlayer
-@export var speed = Vector2(-150, 0)
+@export var speed = Vector2(-200, 0)
 var projectile = preload("res://Game/Projectile/gunship_projectile.tscn")
 
 ###############################################################################
@@ -21,7 +21,7 @@ func _on_attack_timer_timeout():
 		var y_speed = 75
 		_spawn_projectile(Vector2(x_speed, y_speed))
 		_spawn_projectile(Vector2(x_speed, -y_speed))
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.3).timeout
 
 #########################
 func _spawn_projectile(movement):

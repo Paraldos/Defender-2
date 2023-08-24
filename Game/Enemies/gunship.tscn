@@ -46,8 +46,8 @@ _data = {
 
 [node name="Gunship" instance=ExtResource("1_1y8ff")]
 script = ExtResource("2_3yupk")
-speed = Vector2(-150, 0)
-hp = 15
+speed = Vector2(-200, 0)
+hp = 30
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-29, -17, 1, -17, 6, -31, 13, -31, 18, -13, 32, -13, 32, 13, 18, 13, 13, 31, 6, 31, 1, 17, -29, 17)
@@ -68,7 +68,7 @@ position = Vector2(4, -32)
 rotation = 1.5708
 
 [node name="AttackTimer" type="Timer" parent="." index="4"]
-wait_time = 2.0
+wait_time = 1.5
 autostart = true
 
 [node name="Muzzle" type="Sprite2D" parent="." index="5"]

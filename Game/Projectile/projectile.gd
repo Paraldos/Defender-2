@@ -1,6 +1,6 @@
 extends Node2D
 
-var movement = Vector2(300, 0)
+@export var movement = Vector2(300, 0)
 @onready var hitbox = %Hitbox
 
 ###############################################################################

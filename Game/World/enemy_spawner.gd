@@ -24,12 +24,17 @@ var possible_waves = [
 	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 	{name = "GunShips", spawn_time = 2.0, wave_time = 15, after_wave_pause = 3},
 ]
+var possible_bosses = [
+	{name = 'PirateBoss', node = preload('res://Game/Bosses/pirate_boss.tscn')}
+]
 var rng = RandomNumberGenerator.new()
 var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
 var gun_ships = preload("res://Game/Enemies/gunship.tscn")
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var current_wave = null
 @export var test_wave = -1
+@export var waves_till_boss = -1
+var wave_number = 0
 
 ###############################################################################
 func _ready():
@@ -38,20 +43,33 @@ func _ready():
 ###############################################################################
 func _on_wave_timer_timeout():
 	Utils.stop_wave.emit()
+	####### wait timer between waves
 	if current_wave != null:
 		spawn_timer.stop()
 		await get_tree().create_timer(current_wave.after_wave_pause).timeout
-	###
-	if test_wave > -1:
+	####### determinen next new wave
+	if test_wave > -1: # specific testwave
 		current_wave = possible_waves[test_wave]
-	else:
+	elif waves_till_boss != -1 and wave_number >= waves_till_boss: # boss
+		current_wave = null
+		_spawn_boss()
+	else: # normal randome wave
+		wave_number += 1
 		current_wave = possible_waves.pick_random()
-	###
-	if current_wave.name == 'Asteroids':
-		_spawn_element(asteroids_background, Vector2.ZERO)
-	###
-	wave_timer.start(current_wave.wave_time)
-	spawn_timer.start(current_wave.spawn_time)
+	####### spawn new wave
+	if current_wave != null:
+		wave_timer.start(current_wave.wave_time)
+		spawn_timer.start(current_wave.spawn_time)
+		if current_wave.name == 'Asteroids':
+			_spawn_element(asteroids_background, Vector2.ZERO)
+	else:
+		wave_timer.stop()
+		spawn_timer.stop()
+
+func _spawn_boss():
+	var boss = possible_bosses.pick_random()
+	await get_tree().create_timer(2.0).timeout
+	_spawn_element(boss.node, Vector2(-800, -800))
 
 ###############################################################################
 func _on_spawn_timer_timeout():

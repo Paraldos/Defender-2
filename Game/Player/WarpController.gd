@@ -21,7 +21,7 @@ func _start_warp_in():
 ############################################################
 func _physics_process(delta):
 	afterimage_timer += delta
-	if spawn_afterimage and afterimage_timer > 0.05:
+	if spawn_afterimage and afterimage_timer > 0.03:
 		afterimage_timer = 0
 		_spawn_afterimage()
 
