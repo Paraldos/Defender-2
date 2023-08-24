@@ -11,11 +11,11 @@ func _physics_process(delta):
 	if get_parent().controlls_enabled:
 		if Input.is_action_pressed('ui_attack'):
 			if attack_timer > attack_wait_time:
-				_attack()
+				_attack(global_position + Vector2.ZERO)
 				attack_timer = 0
 
-func _attack():
+func _attack(target_position):
 	animation_player.play("flash")
 	var new = projectile.instantiate()
-	new.global_position = global_position
+	new.global_position = target_position
 	get_tree().current_scene.add_child(new)

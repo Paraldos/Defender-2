@@ -78,6 +78,7 @@ func _attack(): return true
 
 # overwrite if needed
 func _death():
+	Utils.boss_dying.emit()
 	mini_explosions = true
 	await create_tween().tween_property(
 		self,
@@ -87,6 +88,8 @@ func _death():
 	).set_ease(Tween.EASE_IN_OUT).finished
 	await get_tree().create_timer(1).timeout
 	SfxController._spawn_explosion_05(global_position)
+	Utils.boss_dead.emit()
+	Utils.change_background_speed.emit(Vector2(25, 0))
 	queue_free()
 
 ###############################################################################

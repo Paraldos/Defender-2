@@ -4,16 +4,34 @@ const ACCELERATION = 3000.0
 const MAX_SPEED = 400.0
 var input = Vector2.ZERO
 var invulnerable = false
-@export var controlls_enabled = true
+@export var controlls_enabled = false
 @onready var main_sprite_animation_tree = $MainSprite/AnimationTree
 @onready var hit_animation_player = %HitAnimationPlayer
+@onready var warp_controller = %WarpController
+
 
 ############################################################
 func _ready():
+	Utils.boss_dying.connect(_on_boss_dying)
+	Utils.boss_dead.connect(_on_boss_dead)
 	await get_tree().create_timer(0.1).timeout
 	Utils.player.node = self
 	Utils.change_hp.emit()
 	Utils.change_ep.emit()
+
+###########################
+func _on_boss_dying():
+	invulnerable = true
+	controlls_enabled = false
+	await create_tween().tween_property(
+		self, 
+		'global_position', 
+		Vector2(160, 135), 
+		3.0).finished
+
+func _on_boss_dead():
+	await get_tree().create_timer(1.0).timeout
+	warp_controller._start_warp_out()
 
 ############################################################
 func _physics_process(delta):

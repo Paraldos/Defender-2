@@ -18,6 +18,9 @@ func _on_scene_transition_done():
 func _start_warp_in():
 	warp_animation_player.play("warp_in")
 
+func _start_warp_out():
+	warp_animation_player.play("warp_out")
+
 ############################################################
 func _physics_process(delta):
 	afterimage_timer += delta

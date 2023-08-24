@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=32 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -698,16 +698,56 @@ tracks/3/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_ee1yy"]
+resource_name = "warp_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%MainSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(800, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%MainSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 0.5), Vector2(0.5, 2), Vector2(0.5, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:spawn_afterimage")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ei32"]
 _data = {
 "RESET": SubResource("Animation_ew80f"),
-"warp_in": SubResource("Animation_h3cl7")
+"warp_in": SubResource("Animation_h3cl7"),
+"warp_out": SubResource("Animation_ee1yy")
 }
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w3u5h")
-controlls_enabled = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(24, 0, 14, -5, 5, -5, 2, -10, -2, -11, -2, -17, -8, -23, -17, -23, -19, -19, -19, -10, -23, -10, -23, 10, -19, 10, -19, 19, -17, 23, -8, 23, -2, 17, -2, 11, 2, 10, 5, 5, 14, 5)
@@ -770,12 +810,12 @@ active = true
 parameters/blend_position = -0.00192308
 
 [node name="AttackController" type="Node2D" parent="."]
-position = Vector2(35, 0)
+position = Vector2(34, 0)
 script = ExtResource("3_2l3qt")
 
 [node name="AttackSprite" type="Sprite2D" parent="AttackController"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-10, 0)
+position = Vector2(-9, 0)
 texture = ExtResource("4_6vyw6")
 hframes = 3
 
@@ -785,7 +825,9 @@ libraries = {
 }
 
 [node name="WarpController" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("6_yoehl")
+spawn_afterimage = true
 
 [node name="WarpAnimationPlayer" type="AnimationPlayer" parent="WarpController"]
 unique_name_in_owner = true

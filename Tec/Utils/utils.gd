@@ -6,6 +6,8 @@ signal change_ep
 signal screen_shake(strength : float, duration : float)
 signal scene_transition_done
 signal change_background_speed(new_speed : Vector2)
+signal boss_dying
+signal boss_dead
 
 var viewport_width = 480
 var viewport_height = 270

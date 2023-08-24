@@ -11,7 +11,7 @@ script = ExtResource("2_1aogg")
 hp = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
-polygon = PackedVector2Array(-11, -46, -16, -46, -22, -38, -11, -11, -23, -11, -23, -7, -27, -7, -36, -2, -36, 2, -27, 7, -23, 7, -23, 11, -11, 11, -22, 38, -16, 46, -11, 46, 7, 11, 15, 11, 24, 20, 33, 18, 33, -18, 24, -20, 15, -11, 7, -11)
+polygon = PackedVector2Array(-37, 0, -26, -6, -20, -15, -9, -15, -18, -42, -10, -50, 35, -4, 35, 4, -10, 50, -18, 42, -9, 15, -20, 15, -26, 6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 rotation = 1.5708
@@ -23,13 +23,13 @@ rotation = 1.5708
 scale = Vector2(1, 1.5)
 
 [node name="NormalGunController" parent="." index="2" instance=ExtResource("6_srip3")]
-position = Vector2(-29, -29)
+position = Vector2(-22, -28)
 
 [node name="NormalGunController2" parent="." index="3" instance=ExtResource("6_srip3")]
-position = Vector2(-25, -20)
+position = Vector2(-17, -18)
 
 [node name="NormalGunController3" parent="." index="4" instance=ExtResource("6_srip3")]
-position = Vector2(-25, 19)
+position = Vector2(-17, 18)
 
 [node name="NormalGunController4" parent="." index="5" instance=ExtResource("6_srip3")]
-position = Vector2(-29, 28)
+position = Vector2(-22, 28)
