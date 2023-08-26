@@ -1,14 +1,5 @@
-res://Tec/Utils/utils.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
 res://Game/SFX/warp_jump_effect.gdshader
-res://Tec/Utils/utils.gd
-res://Game/Player/player.tscn
-res://Game/Bosses/boss_template.gd
-res://Game/Player/player.gd
-res://Game/World/world.tscn
-res://Game/World/enemy_spawner.tscn
-res://Game/Bosses/boss_template.tscn
-res://Game/Bosses/pirate_boss.tscn
-res://Game/Player/WarpController.gd
+res://Menus/modal_template.tscn

@@ -1,3 +1,8 @@
+Label
+MarginContainer
+PanelContainer
+Panel
+CanvasLayer
 AnimationPlayer
 CollisionShape2D
 Node2D
@@ -7,13 +12,11 @@ Timer
 TextureRect
 ColorRect
 AnimationTree
-Label
 GPUParticles2D
 Area2D
 Camera2D
 Control
 TextureProgressBar
-CanvasLayer
 Polygon2D
 RayCast2D
 Node
