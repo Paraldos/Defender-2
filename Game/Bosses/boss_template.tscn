@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8meqgfjw42c3"]
+[gd_scene load_steps=7 format=3 uid="uid://c8meqgfjw42c3"]
 
 [ext_resource type="Script" path="res://Game/Bosses/boss_template.gd" id="1_3n5ba"]
 [ext_resource type="PackedScene" uid="uid://df14qn6f8hjyi" path="res://Game/Collisions/hurtbox.tscn" id="2_0xwpn"]
+[ext_resource type="PackedScene" uid="uid://be7x6qmtywpb4" path="res://Game/Collisions/hitbox.tscn" id="3_pew1c"]
 
 [sub_resource type="Animation" id="Animation_qi4sr"]
 length = 0.001
@@ -65,4 +66,9 @@ libraries = {
 "": SubResource("AnimationLibrary_ovne5")
 }
 
+[node name="Hitbox" parent="." instance=ExtResource("3_pew1c")]
+collision_mask = 2
+dmg = 10
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

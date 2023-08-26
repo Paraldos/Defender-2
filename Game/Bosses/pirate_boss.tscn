@@ -13,7 +13,10 @@ hp = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-37, 0, -26, -6, -20, -15, -9, -15, -18, -42, -10, -50, 35, -4, 35, 4, -10, 50, -18, 42, -9, 15, -20, 15, -26, 6)
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-37, 0, -26, -6, -20, -15, -9, -15, -18, -42, -10, -50, 35, -4, 35, 4, -10, 50, -18, 42, -9, 15, -20, 15, -26, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 rotation = 1.5708
 texture = ExtResource("2_maau3")
 
@@ -22,14 +25,14 @@ position = Vector2(0, -34)
 rotation = 1.5708
 scale = Vector2(1, 1.5)
 
-[node name="NormalGunController" parent="." index="2" instance=ExtResource("6_srip3")]
+[node name="NormalGunController" parent="." index="3" instance=ExtResource("6_srip3")]
 position = Vector2(-23, -29)
 
-[node name="NormalGunController2" parent="." index="3" instance=ExtResource("6_srip3")]
+[node name="NormalGunController2" parent="." index="4" instance=ExtResource("6_srip3")]
 position = Vector2(-17, -17)
 
-[node name="NormalGunController3" parent="." index="4" instance=ExtResource("6_srip3")]
+[node name="NormalGunController3" parent="." index="5" instance=ExtResource("6_srip3")]
 position = Vector2(-17, 17)
 
-[node name="NormalGunController4" parent="." index="5" instance=ExtResource("6_srip3")]
+[node name="NormalGunController4" parent="." index="6" instance=ExtResource("6_srip3")]
 position = Vector2(-23, 29)

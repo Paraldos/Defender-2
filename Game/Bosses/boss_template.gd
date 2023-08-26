@@ -97,3 +97,7 @@ func _on_hurtbox_hurt(hitbox, dmg):
 	if invulnerable: return
 	hurtbox_animation_player.play("hit")
 	hp -= dmg
+
+###############################################################################
+func _on_hitbox_area_entered(area):
+	SfxController._spawn_explosion_02(area.global_position)
