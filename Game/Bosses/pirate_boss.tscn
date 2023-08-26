@@ -23,13 +23,13 @@ rotation = 1.5708
 scale = Vector2(1, 1.5)
 
 [node name="NormalGunController" parent="." index="2" instance=ExtResource("6_srip3")]
-position = Vector2(-22, -28)
+position = Vector2(-23, -29)
 
 [node name="NormalGunController2" parent="." index="3" instance=ExtResource("6_srip3")]
-position = Vector2(-17, -18)
+position = Vector2(-17, -17)
 
 [node name="NormalGunController3" parent="." index="4" instance=ExtResource("6_srip3")]
-position = Vector2(-17, 18)
+position = Vector2(-17, 17)
 
 [node name="NormalGunController4" parent="." index="5" instance=ExtResource("6_srip3")]
-position = Vector2(-22, 28)
+position = Vector2(-23, 29)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ka88a8mx8xs"]
+
+[ext_resource type="PackedScene" uid="uid://voxnbub71wph" path="res://Menus/modal_template.tscn" id="1_tl5su"]
+
+[node name="StageCompleteModal" instance=ExtResource("1_tl5su")]
