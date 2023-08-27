@@ -1,9 +1,10 @@
 extends Node2D
 
 @export var spawn_afterimage = false
-var afterimage = preload("res://Game/Player/player_afterimage.tscn")
 @onready var warp_animation_player = %WarpAnimationPlayer
 @onready var main_sprite = %MainSprite
+var stage_complete_modal = preload('res://Menus/StageCompleteModal/stage_complete_modal.tscn')
+var afterimage = preload("res://Game/Player/player_afterimage.tscn")
 var afterimage_timer = 0
 
 ############################################################
@@ -18,8 +19,15 @@ func _on_scene_transition_done():
 func _start_warp_in():
 	warp_animation_player.play("warp_in")
 
+############################################################
 func _start_warp_out():
 	warp_animation_player.play("warp_out")
+
+############################################################
+func _warp_out_done():
+	var new = stage_complete_modal.instantiate()
+	get_tree().current_scene.add_child(new)
+	get_parent().queue_free()
 
 ############################################################
 func _physics_process(delta):

@@ -1,4 +1,6 @@
 Label
+HSeparator
+VBoxContainer
 MarginContainer
 PanelContainer
 Panel
@@ -25,7 +27,6 @@ CPUParticles2D
 StaticBody2D
 CharacterBody2D
 AnimatableBody2D
-VBoxContainer
 Button
 ParallaxLayer
 ParallaxBackground

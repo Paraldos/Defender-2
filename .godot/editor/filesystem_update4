@@ -1,11 +1,6 @@
-res://Game/Bosses/boss_template.tscn
+res://Menus/modal_template.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
 res://Game/SFX/warp_jump_effect.gdshader
-res://Game/Bosses/pirate_boss.tscn
-res://Tec/Utils/utils.tscn
-res://Game/World/world.tscn
-res://Menus/modal_template.tscn
-res://Menus/StageCompleteModal/stage_complete_modal.tscn
-res://Game/Bosses/boss_template.gd
+res://Menus/modal_template.gd
