@@ -23,6 +23,10 @@ var player = {
 }
 var powerup = false
 var time_to_next_powerup = 30
+var stage = {
+	enemies_total = 0,
+	enemies_killed = 0,
+}
 
 ###############################################################################
 func _ready():

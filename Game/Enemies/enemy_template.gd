@@ -14,6 +14,7 @@ var powerups = [
 ###############################################################################
 func _ready():
 	rng.randomize()
+	Utils.stage.enemies_total += 1
 	hurtbox.scale *= 1.1
 	hitbox.scale *= 1.1
 	credits = floor(hp / 4)
@@ -38,6 +39,7 @@ func _destroy():
 		call_deferred('_spawn_credit')
 	call_deferred('_spawn_powerup')
 	SfxController._spawn_explosion_02(global_position)
+	Utils.stage.enemies_killed += 1
 	queue_free()
 
 #########################
