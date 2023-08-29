@@ -1,14 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dksiywxrckw0f"]
-
-[ext_resource type="Shader" path="res://Game/SFX/warp_jump_effect.gdshader" id="1_ed5iw"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ujwu"]
-shader = ExtResource("1_ed5iw")
+[gd_scene format=3 uid="uid://dksiywxrckw0f"]
 
 [node name="WarpJumpEffect" type="Node2D"]
 
 [node name="ColorRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_3ujwu")
 offset_left = -240.0
 offset_top = -240.0
 offset_right = 240.0

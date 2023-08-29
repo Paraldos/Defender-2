@@ -1,15 +1,5 @@
-res://Menus/modal_template.tscn
+res://Game/SFX/warp_jump_effect.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
 res://Game/SFX/warp_jump_effect.gdshader
-res://Tec/Utils/utils.tscn
-res://Game/World/world.tscn
-res://Game/Bosses/boss_template.tscn
-res://Game/Player/player.tscn
-res://Menus/StageCompleteModal/stage_complete_modal.tscn
-res://Tec/Utils/utils.gd
-res://Game/Enemies/enemy_template.tscn
-res://Game/Enemies/enemy_template.gd
-res://Menus/modal_template.gd
-res://Game/Bosses/boss_template.gd
