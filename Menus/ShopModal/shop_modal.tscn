@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://642ciigj6k47"]
+
+[ext_resource type="PackedScene" uid="uid://voxnbub71wph" path="res://Menus/modal_template.tscn" id="1_u1gbc"]
+[ext_resource type="Script" path="res://Menus/ShopModal/shop_modal.gd" id="2_usd5g"]
+
+[node name="ShopModal" instance=ExtResource("1_u1gbc")]
+script = ExtResource("2_usd5g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" index="0"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="LabelCredits" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Credits: "
+vertical_alignment = 2
+
+[node name="BtnReset" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+text = "Reset"
+
+[node name="BtnNext" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Next"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="BtnGun" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Gun"
+alignment = 0
+
+[node name="BtnMagnet" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Magnet"
+alignment = 0
+
+[node name="BtnBomb" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mega Bomb"
+alignment = 0
+
+[node name="BtnLaser" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mega Laser"
+alignment = 0
+
+[node name="BtnShield" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mega Shield"
+alignment = 0
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Description" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelCost" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Description" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cost: "
+
+[node name="LabelDescription" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Description" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Description"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer2/BtnNext" to="." method="_on_btn_next_pressed"]

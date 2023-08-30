@@ -8,6 +8,7 @@ signal scene_transition_done
 signal change_background_speed(new_speed : Vector2)
 signal boss_dying
 signal boss_dead
+signal stop_modal_background
 
 var viewport_width = 480
 var viewport_height = 270
@@ -20,6 +21,11 @@ var player = {
 	node = null,
 	position = Vector2.ZERO,
 	credits = 0,
+	gun = 1,
+	magnet = 1,
+	mega_bombe = 0,
+	mega_laser = 0,
+	mega_shield = 0
 }
 var powerup = false
 var time_to_next_powerup = 30

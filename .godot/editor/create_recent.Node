@@ -1,14 +1,16 @@
+Label
+Button
+HBoxContainer
+VSeparator
+VBoxContainer
+HSeparator
 AnimationPlayer
 ColorRect
-Label
-HBoxContainer
+CanvasLayer
 GridContainer
-HSeparator
-VBoxContainer
 MarginContainer
 PanelContainer
 Panel
-CanvasLayer
 CollisionShape2D
 Node2D
 Sprite2D
@@ -28,5 +30,3 @@ VisibleOnScreenNotifier2D
 CPUParticles2D
 StaticBody2D
 CharacterBody2D
-AnimatableBody2D
-Button
