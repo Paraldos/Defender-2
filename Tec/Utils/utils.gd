@@ -20,13 +20,14 @@ var player = {
 	dmg = 5,
 	node = null,
 	position = Vector2.ZERO,
-	credits = 0,
+	credits = 500_000,
 	gun = 1,
 	magnet = 1,
-	mega_bombe = 0,
-	mega_laser = 0,
-	mega_shield = 0
+	bomb = 0,
+	laser = 0,
+	shield = 0
 }
+var player_backup
 var powerup = false
 var time_to_next_powerup = 30
 var stage = {
