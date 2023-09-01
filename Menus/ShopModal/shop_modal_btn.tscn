@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://beb2nvsn5wjmh"]
+
+[ext_resource type="Script" path="res://Menus/ShopModal/shop_modal_btn.gd" id="1_bm8a2"]
+
+[node name="ShopModalBtn" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_bm8a2")

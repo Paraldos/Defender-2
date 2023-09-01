@@ -1,11 +1,5 @@
-res://Tec/Utils/utils.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
-res://Menus/ShopModal/shop_modal.gd
-res://Game/World/world.tscn
-res://Game/Bosses/boss_template.tscn
-res://Menus/modal_template.tscn
-res://Menus/StageCompleteModal/stage_complete_modal.tscn
-res://Menus/ShopModal/shop_modal.tscn
-res://Tec/Utils/utils.gd
+res://Menus/ShopModal/shop_modal_btn.tscn
+res://Menus/ShopModal/shop_modal_btn.gd
