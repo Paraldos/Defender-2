@@ -11,7 +11,8 @@ func _physics_process(delta):
 	if get_parent().controlls_enabled:
 		if Input.is_action_pressed('ui_attack'):
 			if attack_timer > attack_wait_time:
-				_attack(global_position + Vector2.ZERO)
+				_attack(global_position + Vector2(0, -4))
+				_attack(global_position + Vector2(0, 4))
 				attack_timer = 0
 
 func _attack(target_position):
