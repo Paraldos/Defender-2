@@ -1,8 +1,20 @@
-[gd_scene format=3 uid="uid://dksiywxrckw0f"]
+[gd_scene load_steps=3 format=3 uid="uid://dksiywxrckw0f"]
+
+[ext_resource type="Shader" path="res://Game/SFX/warp_jump_effect.gdshader" id="1_et3fa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo2or"]
+shader = ExtResource("1_et3fa")
+shader_parameter/strength = 0.08
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.25
+shader_parameter/aberration = 0.425
+shader_parameter/width = 0.04
+shader_parameter/feather = 0.135
 
 [node name="WarpJumpEffect" type="Node2D"]
 
 [node name="ColorRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_wo2or")
 offset_left = -240.0
 offset_top = -240.0
 offset_right = 240.0

@@ -1,3 +1,5 @@
+res://Backgrounds
+res://Game/Enemies
 res://Menus/ShopModal
 res://Menus
 res://Menus/StageCompleteModal
@@ -5,11 +7,9 @@ res://Game/SFX
 res://Game/Bosses
 res://Game/Projectile
 res://Game
-res://Game/Enemies
 res://Game/Player
 res://Game/Collectible
 res://Game/World
-res://Backgrounds
 res://Menus/StartMenu
 res://Tec/Utils
 res://Game/Collisions

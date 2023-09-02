@@ -19,10 +19,19 @@ var asteroids = [
 	preload("res://Game/Enemies/asteroid_12.tscn"),
 	preload("res://Game/Enemies/explosive_asteroid.tscn"),
 ]
+var debris = [
+	preload("res://Game/Enemies/debris_01.tscn"),
+	preload("res://Game/Enemies/debris_02.tscn"),
+	preload("res://Game/Enemies/debris_03.tscn"),
+	preload("res://Game/Enemies/debris_04.tscn"),
+	preload("res://Game/Enemies/debris_05.tscn"),
+	preload("res://Game/Enemies/debris_06.tscn"),
+]
 var possible_waves = [
 	{name = "Fighters", spawn_time = 1.3, wave_time = 15, after_wave_pause = 3},
 	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 	{name = "GunShips", spawn_time = 2.0, wave_time = 15, after_wave_pause = 3},
+	{name = "Debris", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 ]
 var possible_bosses = [
 	{name = 'PirateBoss', node = preload('res://Game/Bosses/pirate_boss.tscn')}
@@ -31,6 +40,8 @@ var rng = RandomNumberGenerator.new()
 var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
 var gun_ships = preload("res://Game/Enemies/gunship.tscn")
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
+var debris_background = preload("res://Backgrounds/debris_background.tscn")
+
 var current_wave = null
 @export var test_wave = -1
 @export var waves_till_boss = -1
@@ -62,10 +73,13 @@ func _on_wave_timer_timeout():
 		spawn_timer.start(current_wave.spawn_time)
 		if current_wave.name == 'Asteroids':
 			_spawn_element(asteroids_background, Vector2.ZERO)
+		if current_wave.name == 'Debris':
+			_spawn_element(debris_background, Vector2.ZERO)
 	else:
 		wave_timer.stop()
 		spawn_timer.stop()
 
+###############################################################################
 func _spawn_boss():
 	var boss = possible_bosses.pick_random()
 	await get_tree().create_timer(2.0).timeout
@@ -83,7 +97,11 @@ func _on_spawn_timer_timeout():
 			_spawn_element(asteroid)
 		'GunShips': 
 			_spawn_element(gun_ships)
+		'Debris':
+			var myDebris = debris.pick_random()
+			_spawn_element(myDebris)
 
+###################################
 func _get_spawn_position(y_deviation = 100):
 	var spawn_position = spawn_point.global_position
 	spawn_position.y += randi_range(-y_deviation, y_deviation)

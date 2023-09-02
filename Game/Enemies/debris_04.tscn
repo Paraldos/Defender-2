@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b22dsb7cetuur"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_oqb2w"]
+[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_e846u"]
+[ext_resource type="Texture2D" uid="uid://dh1tvbbjk86ms" path="res://Assets/Img/Enemies/Debris-Sheet.png" id="2_jvohd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx146"]
+size = Vector2(15, 16)
+
+[node name="Debris04" instance=ExtResource("1_oqb2w")]
+script = ExtResource("2_e846u")
+explosive = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_fx146")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_fx146")
+
+[node name="MainSprite" parent="." index="3"]
+texture = ExtResource("2_jvohd")
+hframes = 7
+frame = 4
