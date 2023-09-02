@@ -9,6 +9,7 @@ signal change_background_speed(new_speed : Vector2)
 signal boss_dying
 signal boss_dead
 signal stop_modal_background
+signal update_shop_text(cost : int, text : String)
 
 var viewport_width = 480
 var viewport_height = 270
