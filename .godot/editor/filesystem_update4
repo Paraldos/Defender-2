@@ -13,3 +13,5 @@ res://Tec/Utils/utils.gd
 res://Game/Projectile/player_projectile.gd
 res://Game/Player/player.tscn
 res://Game/Player/AttackController.gd
+res://Game/Player/Magnet.gd
+res://Game/Player/player.gd

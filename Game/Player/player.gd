@@ -9,7 +9,6 @@ var invulnerable = false
 @onready var hit_animation_player = %HitAnimationPlayer
 @onready var warp_controller = %WarpController
 
-
 ############################################################
 func _ready():
 	Utils.boss_dying.connect(_on_boss_dying)

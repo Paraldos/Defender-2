@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=33 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
 [ext_resource type="PackedScene" uid="uid://df14qn6f8hjyi" path="res://Game/Collisions/hurtbox.tscn" id="2_yuc3g"]
 [ext_resource type="Script" path="res://Game/Player/AttackController.gd" id="3_2l3qt"]
+[ext_resource type="Script" path="res://Game/Player/Magnet.gd" id="3_f7cx0"]
 [ext_resource type="Texture2D" uid="uid://l43klxnu5lmv" path="res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png" id="4_6vyw6"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_cckca"]
 [ext_resource type="Script" path="res://Game/Player/WarpController.gd" id="6_yoehl"]
@@ -798,6 +799,7 @@ polygon = PackedVector2Array(14, -5, 5, -5, -6, -12, -18, -12, -22, -5, -22, 8, 
 [node name="Magnet" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("3_f7cx0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
 shape = SubResource("CircleShape2D_gv8gc")
