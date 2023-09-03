@@ -27,18 +27,20 @@ var debris = [
 	preload("res://Game/Enemies/debris_05.tscn"),
 	preload("res://Game/Enemies/debris_06.tscn"),
 ]
+var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
+var gun_ships = preload("res://Game/Enemies/gunship.tscn")
+var missile = preload("res://Game/Enemies/missile.tscn")
 var possible_waves = [
 	{name = "Fighters", spawn_time = 1.3, wave_time = 15, after_wave_pause = 3},
 	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
 	{name = "GunShips", spawn_time = 2.0, wave_time = 15, after_wave_pause = 3},
 	{name = "Debris", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
+	{name = 'Missiles', spawn_time = 1.8, wave_time = 20, after_wave_pause = 3}
 ]
 var possible_bosses = [
 	{name = 'PirateBoss', node = preload('res://Game/Bosses/pirate_boss.tscn')}
 ]
 var rng = RandomNumberGenerator.new()
-var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
-var gun_ships = preload("res://Game/Enemies/gunship.tscn")
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var debris_background = preload("res://Backgrounds/debris_background.tscn")
 
@@ -89,9 +91,10 @@ func _spawn_boss():
 func _on_spawn_timer_timeout():
 	match current_wave.name:
 		'Fighters':
-			_spawn_element(enemy_fighter)
+			var spawn_points = _get_multiple_spawn_points(2, 100)
+			_spawn_element(enemy_fighter, spawn_points[0])
 			await get_tree().create_timer(0.3).timeout
-			_spawn_element(enemy_fighter)
+			_spawn_element(enemy_fighter, spawn_points[1])
 		'Asteroids':
 			var asteroid = asteroids.pick_random()
 			_spawn_element(asteroid)
@@ -100,9 +103,29 @@ func _on_spawn_timer_timeout():
 		'Debris':
 			var myDebris = debris.pick_random()
 			_spawn_element(myDebris)
+		'Missiles':
+			var spawn_points = _get_multiple_spawn_points(3)
+			_spawn_element(missile, spawn_points[0])
+			_spawn_element(missile, spawn_points[1])
+			_spawn_element(missile, spawn_points[2])
 
-###################################
-func _get_spawn_position(y_deviation = 100):
+###############################################################################
+func _get_multiple_spawn_points(number_of_positions = 1, distance_between_points = 25):
+	var points = []
+	while points.size() < number_of_positions:
+		var newPoint = _get_spawn_position()
+		if points.size() <= 0:
+			points.append(newPoint)
+			continue
+		for point in points:
+			if abs(point.y - newPoint.y) < distance_between_points:
+				newPoint = false
+				break
+		if newPoint:
+			points.append(newPoint)
+	return points
+
+func _get_spawn_position(y_deviation = 120):
 	var spawn_position = spawn_point.global_position
 	spawn_position.y += randi_range(-y_deviation, y_deviation)
 	return spawn_position

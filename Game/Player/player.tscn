@@ -698,6 +698,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_warp_jump_effect"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ee1yy"]
 resource_name = "warp_out"
@@ -750,6 +764,20 @@ tracks/3/keys = {
 "values": [{
 "args": [],
 "method": &"_warp_out_done"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_warp_jump_effect"
 }]
 }
 
@@ -843,7 +871,6 @@ libraries = {
 [node name="WarpController" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_yoehl")
-spawn_afterimage = true
 
 [node name="WarpAnimationPlayer" type="AnimationPlayer" parent="WarpController"]
 unique_name_in_owner = true

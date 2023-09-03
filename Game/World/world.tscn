@@ -20,6 +20,5 @@ position = Vector2(170, 135)
 [node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_kw1bo")]
-waves_till_boss = 3
 
 [node name="MainCamera" parent="." instance=ExtResource("6_tts0n")]

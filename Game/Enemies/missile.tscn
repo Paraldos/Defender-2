@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2huuxi5vshe4"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_d4qm5"]
+[ext_resource type="Texture2D" uid="uid://b4dtfft0ke0ek" path="res://Assets/Img/Enemies/Missile.png" id="2_arqce"]
+[ext_resource type="Script" path="res://Game/Enemies/missile.gd" id="2_ktr3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lltxa"]
+size = Vector2(44, 6)
+
+[node name="Missile" instance=ExtResource("1_d4qm5")]
+script = ExtResource("2_ktr3m")
+
+[node name="Line" type="Line2D" parent="." index="0"]
+unique_name_in_owner = true
+points = PackedVector2Array(-800, 0, 800, 0)
+width = 1.0
+default_color = Color(0.898039, 0.109804, 0.137255, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_lltxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_lltxa")
+
+[node name="MainSprite" parent="." index="4"]
+rotation = 1.5708
+texture = ExtResource("2_arqce")
