@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var particles = %Particles
 
-
 func _ready():
 	Utils.stop_wave.connect(_on_stop_wave)
 

@@ -11,3 +11,6 @@ res://Game/Bosses/pirate_boss.tscn
 res://Game/Enemies/enemy_template.tscn
 res://Game/World/enemy_spawner.tscn
 res://Game/World/enemy_spawner.gd
+res://Backgrounds/asteroids_background.tscn
+res://Backgrounds/asteroids_background.gd
+res://Backgrounds/debris_background.tscn

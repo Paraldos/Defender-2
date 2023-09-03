@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ps5pma5fdbrg"]
+[gd_scene load_steps=5 format=3 uid="uid://ps5pma5fdbrg"]
 
+[ext_resource type="Script" path="res://Backgrounds/asteroids_background.gd" id="1_unawp"]
 [ext_resource type="Texture2D" uid="uid://dh1tvbbjk86ms" path="res://Assets/Img/Enemies/Debris-Sheet.png" id="1_uva4q"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pnjm6"]
@@ -29,6 +30,7 @@ color = Color(0.717647, 0.717647, 0.717647, 1)
 anim_offset_max = 1.0
 
 [node name="DebrisBackground" type="Node2D"]
+script = ExtResource("1_unawp")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true
