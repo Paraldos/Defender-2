@@ -71,3 +71,4 @@ func _on_hurtbox_hurt(_hitbox, dmg):
 ###########################
 func _set_invulnerable(new_state : bool):
 	invulnerable = new_state
+

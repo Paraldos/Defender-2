@@ -10,6 +10,7 @@ signal boss_dying
 signal boss_dead
 signal stop_modal_background
 signal update_shop_text(cost : int, text : String)
+signal enable_pause_button(new_state : bool)
 
 var viewport_width = 480
 var viewport_height = 270
@@ -35,6 +36,7 @@ var stage = {
 	enemies_total = 0,
 	enemies_killed = 0,
 }
+var modals = []
 
 ###############################################################################
 func _ready():
