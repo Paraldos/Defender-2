@@ -6,7 +6,7 @@ var pause_button_enabled = false
 func _ready():
 	Utils.enable_pause_button.connect(_on_enable_pause_button)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed('ui_pause') && pause_button_enabled && Utils.modals.is_empty():
 		_open_pause_menu()
 

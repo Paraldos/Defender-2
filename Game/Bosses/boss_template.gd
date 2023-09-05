@@ -95,7 +95,7 @@ func _death():
 	queue_free()
 
 ###############################################################################
-func _on_hurtbox_hurt(hitbox, dmg):
+func _on_hurtbox_hurt(_hitbox, dmg):
 	if invulnerable: return
 	hurtbox_animation_player.play("hit")
 	hp -= dmg

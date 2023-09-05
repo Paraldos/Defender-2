@@ -5,9 +5,9 @@ const MAX_SPEED = 400.0
 var input = Vector2.ZERO
 var invulnerable = false
 @export var controlls_enabled = false
-@onready var main_sprite_animation_tree = $MainSprite/AnimationTree
 @onready var hit_animation_player = %HitAnimationPlayer
 @onready var warp_controller = %WarpController
+@onready var main_sprite = %MainSprite
 
 ############################################################
 func _ready():
@@ -22,6 +22,7 @@ func _ready():
 func _on_boss_dying():
 	invulnerable = true
 	controlls_enabled = false
+	main_sprite._move_animation(0)
 	await create_tween().tween_property(
 		self, 
 		'global_position', 
@@ -38,17 +39,7 @@ func _physics_process(delta):
 	if controlls_enabled:
 		_get_input()
 		_movement(delta)
-		_movement_animation()
-
-###########################
-func _movement_animation():
-	var tween = create_tween()
-	tween.tween_property(
-		main_sprite_animation_tree,
-		"parameters/blend_position",
-		input.y,
-		0.1
-	)
+		main_sprite._move_animation(input.y)
 
 func _movement(delta):
 	velocity.y = move_toward(velocity.y, input.y * MAX_SPEED, ACCELERATION * delta)

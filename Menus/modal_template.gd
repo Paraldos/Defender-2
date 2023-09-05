@@ -24,8 +24,7 @@ func _move_panel_out():
 	_move_panel(panel_onscreen_position, panel_offscreen_left)
 
 func _panel_wait():
-	await get_tree().create_timer(panel_time)
-	await get_tree().create_timer(0.1)
+	await get_tree().create_timer(panel_time - 0.05).timeout
 	return true
 
 func _move_panel(start_position, target_position):

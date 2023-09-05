@@ -7,7 +7,7 @@ func _ready():
 	get_tree().paused = true
 	btn_return.grab_focus()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed('ui_pause') && !animation_player.is_playing():
 		animation_player.play("move_out")
 		await _panel_wait()

@@ -55,5 +55,5 @@ func _on_warp_animation_player_animation_finished(anim_name):
 	if anim_name == 'warp_in':
 		Utils.enable_pause_button.emit(true)
 
-func _on_warp_animation_player_animation_started(anim_name):
+func _on_warp_animation_player_animation_started(_anim_name):
 	Utils.enable_pause_button.emit(false)

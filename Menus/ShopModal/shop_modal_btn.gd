@@ -3,7 +3,7 @@ extends Button
 @export var btnText = ''
 @export var attribute = ''
 @export var cost_multiplier = 1_000
-@export var max = 1
+@export var max_value = 1
 @export var description_text = ''
 
 ###############################################################################
@@ -24,9 +24,9 @@ func _update_btn_text(_cost, _text):
 ###############################################################################
 func _check_if_upgrad_is_valid():
 	if attribute:
-		var max_value = Utils.player[attribute] < max
+		var value = Utils.player[attribute] < max_value
 		var cost = Utils.player.credits >= _get_cost()
-		return max_value && cost
+		return value && cost
 	else:
 		return false
 

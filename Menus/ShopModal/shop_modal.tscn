@@ -45,14 +45,14 @@ layout_mode = 2
 btnText = "Gun"
 attribute = "gun"
 cost_multiplier = 3000
-max = 5
+max_value = 5
 description_text = "This is some gun text"
 
 [node name="ShopModalBtn2" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="1" instance=ExtResource("3_s1me7")]
 layout_mode = 2
 btnText = "Magnet"
 attribute = "magnet"
-max = 5
+max_value = 5
 description_text = "This is some magnet text"
 
 [node name="ShopModalBtn3" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="2" instance=ExtResource("3_s1me7")]
@@ -60,7 +60,7 @@ layout_mode = 2
 btnText = "Mega Bomb"
 attribute = "bomb"
 cost_multiplier = 2000
-max = 3
+max_value = 3
 description_text = "This is some bomb text"
 
 [node name="ShopModalBtn4" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="3" instance=ExtResource("3_s1me7")]
@@ -68,7 +68,7 @@ layout_mode = 2
 btnText = "Mega Laser"
 attribute = "laser"
 cost_multiplier = 2000
-max = 3
+max_value = 3
 description_text = "This is some laser text"
 
 [node name="ShopModalBtn5" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Buttons" index="4" instance=ExtResource("3_s1me7")]
@@ -76,7 +76,7 @@ layout_mode = 2
 btnText = "Mega shield"
 attribute = "shield"
 cost_multiplier = 2000
-max = 3
+max_value = 3
 description_text = "This is some shield text"
 
 [node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
