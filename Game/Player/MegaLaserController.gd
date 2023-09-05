@@ -3,7 +3,7 @@ extends Node2D
 @onready var laser_timer = $LaserTimer
 @onready var hitbox = $Hitbox
 @export var laser_time = 1.0
-@export var activation_cost = 1
+@export var activation_cost = 10
 @export var base_dmg = 5
 var dmg = base_dmg + Utils.player.laser
 var active = false

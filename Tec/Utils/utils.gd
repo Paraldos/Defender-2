@@ -11,6 +11,7 @@ signal boss_dead
 signal stop_modal_background
 signal update_shop_text(cost : int, text : String)
 signal enable_pause_button(new_state : bool)
+signal back_to_start(target_node)
 
 var viewport_width = 480
 var viewport_height = 270

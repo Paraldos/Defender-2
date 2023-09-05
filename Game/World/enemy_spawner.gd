@@ -31,11 +31,11 @@ var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
 var gun_ships = preload("res://Game/Enemies/gunship.tscn")
 var missile = preload("res://Game/Enemies/missile.tscn")
 var possible_waves = [
-	{name = "Fighters", spawn_time = 1.3, wave_time = 15, after_wave_pause = 3},
-	{name = "Asteroids", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
-	{name = "GunShips", spawn_time = 2.0, wave_time = 15, after_wave_pause = 3},
-	{name = "Debris", spawn_time = 0.5, wave_time = 30, after_wave_pause = 3},
-	{name = 'Missiles', spawn_time = 1.8, wave_time = 20, after_wave_pause = 3}
+	{name = "Fighters", spawn_time = 1.3, wave_time = 12, after_wave_pause = 3},
+	{name = "Asteroids", spawn_time = 0.5, wave_time = 20, after_wave_pause = 4},
+	{name = "GunShips", spawn_time = 2.0, wave_time = 12, after_wave_pause = 3},
+	{name = "Debris", spawn_time = 0.5, wave_time = 20, after_wave_pause = 4},
+	{name = 'Missiles', spawn_time = 1.6, wave_time = 8, after_wave_pause = 3}
 ]
 var possible_bosses = [
 	{name = 'PirateBoss', node = preload('res://Game/Bosses/pirate_boss.tscn')}

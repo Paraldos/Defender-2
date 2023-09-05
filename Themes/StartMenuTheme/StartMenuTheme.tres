@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c7ow58aa04nex"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c7ow58aa04nex"]
 
 [ext_resource type="StyleBox" uid="uid://bm4ylpj3oubn1" path="res://Themes/StartMenuTheme/stylebox_btn_hover.tres" id="1_guh3r"]
 [ext_resource type="FontFile" uid="uid://bgo4yc41sr5em" path="res://Assets/Fonts/PixelSimpel.otf" id="1_utxon"]
 [ext_resource type="Texture2D" uid="uid://ugvjpjwesfiv" path="res://Assets/Img/UI/Btn02.png" id="2_0vrys"]
+[ext_resource type="Texture2D" uid="uid://xya3vioeb1ax" path="res://Assets/Img/UI/SeperatorH.png" id="3_m2bxa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bowvo"]
 content_margin_left = 10.0
@@ -14,10 +15,13 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_vdcxp"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iv41m"]
+texture = ExtResource("3_m2bxa")
+texture_margin_left = 53.0
+texture_margin_top = 2.0
+texture_margin_right = 53.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(16, 0, 80, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vid3"]
 bg_color = Color(0, 0, 0, 0.666667)
@@ -49,6 +53,6 @@ Button/styles/hover = ExtResource("1_guh3r")
 Button/styles/normal = SubResource("StyleBoxTexture_bowvo")
 Button/styles/pressed = ExtResource("1_guh3r")
 HSeparator/constants/separation = 4
-HSeparator/styles/separator = SubResource("StyleBoxLine_vdcxp")
+HSeparator/styles/separator = SubResource("StyleBoxTexture_iv41m")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2vid3")
 VSeparator/styles/separator = SubResource("StyleBoxLine_62ncj")

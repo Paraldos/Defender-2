@@ -40,3 +40,4 @@ func _on_tree_exiting():
 	var position = Utils.modals.find(self)
 	if position >= 0:
 		Utils.modals.remove_at(position)
+

@@ -1,8 +1,10 @@
+Label
+Button
+HSeparator
+VBoxContainer
+HBoxContainer
 GridContainer
 GridMap
-Label
-VBoxContainer
-HSeparator
 Timer
 Area2D
 CollisionShape2D
@@ -11,10 +13,8 @@ Sprite2D
 GPUParticles2D
 ColorRect
 Node2D
-Button
 Line2D
 CollisionPolygon2D
-HBoxContainer
 VSeparator
 CanvasLayer
 MarginContainer

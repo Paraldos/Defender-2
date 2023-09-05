@@ -12,7 +12,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" index="0"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "- Pause -"
 horizontal_alignment = 1
 uppercase = true
