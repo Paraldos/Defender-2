@@ -1,12 +1,12 @@
+AnimationPlayer
+ColorRect
+Node2D
 Button
 Label
 VBoxContainer
-AnimationPlayer
 Timer
 CollisionShape2D
 Line2D
-ColorRect
-Node2D
 CollisionPolygon2D
 HBoxContainer
 VSeparator

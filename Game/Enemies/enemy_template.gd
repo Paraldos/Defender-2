@@ -8,7 +8,7 @@ var rng = RandomNumberGenerator.new()
 var credit = preload("res://Game/Collectible/credit.tscn")
 var powerups = [
 	preload("res://Game/Collectible/hp_boost.tscn"),
-	preload("res://Game/Collectible/mp_boost.tscn")
+	preload("res://Game/Collectible/ep_boost.tscn")
 ]
 
 ###############################################################################

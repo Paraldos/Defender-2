@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=42 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_cckca"]
 [ext_resource type="Script" path="res://Game/Player/MainSprite.gd" id="5_s8shk"]
 [ext_resource type="Script" path="res://Game/Player/WarpController.gd" id="6_yoehl"]
+[ext_resource type="Shader" path="res://Game/Player/MegaShieldShader.gdshader" id="10_gijva"]
+[ext_resource type="Script" path="res://Game/Player/MegaShieldController.gd" id="10_hef4m"]
 
 [sub_resource type="Animation" id="Animation_j37db"]
 length = 0.001
@@ -40,22 +42,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath(".:invulnerable")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [true],
-"method": &"_set_invulnerable"
-}, {
-"args": [false],
-"method": &"_set_invulnerable"
-}]
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amuds"]
@@ -429,6 +426,81 @@ _data = {
 "warp_out": SubResource("Animation_ee1yy")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w84bm"]
+shader = ExtResource("10_gijva")
+shader_parameter/color = Color(0.501961, 0.870588, 0.917647, 0)
+
+[sub_resource type="Animation" id="Animation_2kfgo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.501961, 0.870588, 0.917647, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ell8"]
+resource_name = "blink"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.501961, 0.870588, 0.917647, 1), Color(0.501961, 0.870588, 0.917647, 0), Color(0.501961, 0.870588, 0.917647, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_um04o"]
+resource_name = "start"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.501961, 0.870588, 0.917647, 0), Color(0.501961, 0.870588, 0.917647, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fq7cg"]
+resource_name = "stop"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.501961, 0.870588, 0.917647, 1), Color(0.501961, 0.870588, 0.917647, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wsti5"]
+_data = {
+"RESET": SubResource("Animation_2kfgo"),
+"blink": SubResource("Animation_1ell8"),
+"start": SubResource("Animation_um04o"),
+"stop": SubResource("Animation_fq7cg")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w3u5h")
@@ -503,6 +575,22 @@ script = ExtResource("6_yoehl")
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_1ei32")
+}
+
+[node name="MegaShieldController" type="Node2D" parent="."]
+script = ExtResource("10_hef4m")
+
+[node name="ColorRect" type="ColorRect" parent="MegaShieldController"]
+material = SubResource("ShaderMaterial_w84bm")
+offset_left = -55.0
+offset_top = -52.0
+offset_right = 48.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MegaShieldController"]
+libraries = {
+"": SubResource("AnimationLibrary_wsti5")
 }
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]

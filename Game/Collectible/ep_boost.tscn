@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://rxvpcb3te7ur"]
+
+[ext_resource type="PackedScene" uid="uid://bt4hly88hupef" path="res://Game/Collectible/CollectibleTemplate.tscn" id="1_gogyj"]
+[ext_resource type="Script" path="res://Game/Collectible/ep_boost.gd" id="2_fho3o"]
+[ext_resource type="Texture2D" uid="uid://0ef2x4dhwkca" path="res://Assets/Img/Powerup/EnergyContainer.png" id="3_dkrrq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fw352"]
+
+[node name="EPBoost" instance=ExtResource("1_gogyj")]
+script = ExtResource("2_fho3o")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_dkrrq")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_fw352")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,13 +3,13 @@ extends CharacterBody2D
 const ACCELERATION = 3000.0
 const MAX_SPEED = 400.0
 var input = Vector2.ZERO
-var invulnerable = false
+@export var invulnerable = false
 @export var controlls_enabled = false
 @onready var hit_animation_player = %HitAnimationPlayer
 @onready var warp_controller = %WarpController
 @onready var main_sprite = %MainSprite
 
-############################################################
+##############################################################################
 func _ready():
 	Utils.boss_dying.connect(_on_boss_dying)
 	Utils.boss_dead.connect(_on_boss_dead)
@@ -18,7 +18,7 @@ func _ready():
 	Utils.change_hp.emit()
 	Utils.change_ep.emit()
 
-###########################
+#################################
 func _on_boss_dying():
 	invulnerable = true
 	controlls_enabled = false
@@ -33,7 +33,7 @@ func _on_boss_dead():
 	await get_tree().create_timer(1.0).timeout
 	warp_controller._start_warp_out()
 
-############################################################
+##############################################################################
 func _physics_process(delta):
 	Utils.player.position = global_position
 	if controlls_enabled:
@@ -49,7 +49,7 @@ func _movement(delta):
 func _get_input():
 	input = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
 
-############################################################
+##############################################################################
 func _on_hurtbox_hurt(_hitbox, dmg):
 	if invulnerable:
 		return
@@ -58,8 +58,3 @@ func _on_hurtbox_hurt(_hitbox, dmg):
 		Utils.change_hp.emit()
 		hit_animation_player.play("hit")
 		Utils.screen_shake.emit(6.0, 0.3)
-
-###########################
-func _set_invulnerable(new_state : bool):
-	invulnerable = new_state
-
