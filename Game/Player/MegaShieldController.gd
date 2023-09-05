@@ -4,7 +4,7 @@ var modulate_colors = [
 	Color('80deea00'),
 	Color('80deea')
 ]
-var shield_wait_time = 3 + Utils.player.shield
+var shield_time = 3 + Utils.player.shield
 @onready var animation_player = $AnimationPlayer
 @export var activation_cost = 10
 
@@ -23,7 +23,7 @@ func _enable_mega_shield():
 	get_parent().invulnerable = true
 	animation_player.play("start")
 	await animation_player.animation_finished
-	await get_tree().create_timer(shield_wait_time).timeout
+	await get_tree().create_timer(shield_time).timeout
 	for i in 3:
 		animation_player.play("blink")
 		await animation_player.animation_finished

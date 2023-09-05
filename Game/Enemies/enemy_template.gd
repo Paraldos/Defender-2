@@ -26,6 +26,13 @@ func _process(_delta):
 ###############################################################################
 func _on_hurtbox_hurt(_hitbox, dmg):
 	hp -= dmg
+	modulate = Color('000000')
+	create_tween().tween_property(
+		self,
+		'modulate',
+		Color('ffffff'),
+		0.3
+	)
 	if hp <= 0:
 		_destroy()
 

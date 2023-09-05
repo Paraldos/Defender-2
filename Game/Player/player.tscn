@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=57 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -11,6 +11,10 @@
 [ext_resource type="Script" path="res://Game/Player/WarpController.gd" id="6_yoehl"]
 [ext_resource type="Shader" path="res://Game/Player/MegaShieldShader.gdshader" id="10_gijva"]
 [ext_resource type="Script" path="res://Game/Player/MegaShieldController.gd" id="10_hef4m"]
+[ext_resource type="Script" path="res://Game/Player/MegaLaserController.gd" id="12_wem8i"]
+[ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="13_6l4ho"]
+[ext_resource type="Texture2D" uid="uid://cee853xdtdk2" path="res://Assets/Img/Projectiles And Explosions/Fragment02.png" id="14_gxbar"]
+[ext_resource type="Shader" path="res://Game/Player/MegaLaserShader.gdshader" id="15_h5r36"]
 
 [sub_resource type="Animation" id="Animation_j37db"]
 length = 0.001
@@ -444,6 +448,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.501961, 0.870588, 0.917647, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_1ell8"]
 resource_name = "blink"
@@ -476,6 +492,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.501961, 0.870588, 0.917647, 0), Color(0.501961, 0.870588, 0.917647, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fq7cg"]
 resource_name = "stop"
@@ -492,6 +520,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.501961, 0.870588, 0.917647, 1), Color(0.501961, 0.870588, 0.917647, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wsti5"]
 _data = {
@@ -501,15 +541,109 @@ _data = {
 "stop": SubResource("Animation_fq7cg")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_d75k6"]
+radius = 37.0
+
+[sub_resource type="Gradient" id="Gradient_3c2r7"]
+offsets = PackedFloat32Array(0, 0.680272)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_60quj"]
+gradient = SubResource("Gradient_3c2r7")
+
+[sub_resource type="Curve" id="Curve_kqn6o"]
+_data = [Vector2(0, 0.494737), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x0bn1"]
+curve = SubResource("Curve_kqn6o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xa5or"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 10.0
+emission_ring_inner_radius = 10.0
+particle_flag_align_y = true
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -200.0
+radial_accel_max = -200.0
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_x0bn1")
+color_ramp = SubResource("GradientTexture1D_60quj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oygu6"]
+shader = ExtResource("15_h5r36")
+shader_parameter/beams = 2
+shader_parameter/energy = 10.0
+shader_parameter/roughness = 3
+shader_parameter/frequency = 30
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.05
+shader_parameter/outline_thickness = 0.05
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.91, 1, 1, 1)
+shader_parameter/outline_color = Color(0.5, 1, 0.96, 1)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_kcu5d"]
+resource_name = "loop"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_buwip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_av1h7"]
+_data = {
+"RESET": SubResource("Animation_buwip"),
+"loop": SubResource("Animation_kcu5d")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cdn4"]
+size = Vector2(480, 2)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w3u5h")
 controlls_enabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, 3, -10, -2, -11, -2, -17, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, -2, 17, -2, 11, 3, 10, 5, 5, 14, 5, 21, 3, 23, 0)
 
 [node name="Hurtbox" parent="." instance=ExtResource("2_yuc3g")]
+visible = false
 collision_layer = 2
 
 [node name="HitAnimationPlayer" type="AnimationPlayer" parent="Hurtbox"]
@@ -523,6 +657,7 @@ libraries = {
 polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, 3, -10, -2, -11, -2, -17, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, -2, 17, -2, 11, 3, 10, 5, 5, 14, 5, 21, 3, 23, 0)
 
 [node name="Magnet" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("3_f7cx0")
@@ -584,8 +719,8 @@ script = ExtResource("10_hef4m")
 material = SubResource("ShaderMaterial_w84bm")
 offset_left = -55.0
 offset_top = -52.0
-offset_right = 48.0
-offset_bottom = 51.0
+offset_right = 49.0
+offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MegaShieldController"]
@@ -593,6 +728,60 @@ libraries = {
 "": SubResource("AnimationLibrary_wsti5")
 }
 
+[node name="Area2D" type="Area2D" parent="MegaShieldController"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegaShieldController/Area2D"]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_d75k6")
+disabled = true
+
+[node name="MegaLaserController" type="Node2D" parent="."]
+show_behind_parent = true
+script = ExtResource("12_wem8i")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="MegaLaserController"]
+modulate = Color(0.501961, 0.870588, 0.917647, 1)
+position = Vector2(22, 0)
+process_material = SubResource("ParticleProcessMaterial_xa5or")
+texture = ExtResource("13_6l4ho")
+lifetime = 0.3
+local_coords = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MegaLaserController"]
+modulate = Color(0.501961, 0.870588, 0.917647, 1)
+position = Vector2(22, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("14_gxbar")
+
+[node name="ColorRect" type="ColorRect" parent="MegaLaserController"]
+material = SubResource("ShaderMaterial_oygu6")
+offset_top = -10.0
+offset_right = 500.0
+offset_bottom = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MegaLaserController"]
+autoplay = "loop"
+libraries = {
+"": SubResource("AnimationLibrary_av1h7")
+}
+
+[node name="Hitbox" type="Area2D" parent="MegaLaserController"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegaLaserController/Hitbox"]
+position = Vector2(260, 0)
+shape = SubResource("RectangleShape2D_3cdn4")
+
+[node name="LaserTimer" type="Timer" parent="MegaLaserController"]
+wait_time = 0.2
+autostart = true
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="animation_finished" from="WarpController/WarpAnimationPlayer" to="WarpController" method="_on_warp_animation_player_animation_finished"]
 [connection signal="animation_started" from="WarpController/WarpAnimationPlayer" to="WarpController" method="_on_warp_animation_player_animation_started"]
+[connection signal="area_entered" from="MegaLaserController/Hitbox" to="MegaLaserController" method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="MegaLaserController/LaserTimer" to="MegaLaserController" method="_on_laser_timer_timeout"]
