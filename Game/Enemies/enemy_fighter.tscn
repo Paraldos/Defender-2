@@ -33,13 +33,4 @@ texture = ExtResource("2_qaxhx")
 position = Vector2(-3.62396e-05, -10)
 rotation = 1.5708
 
-[node name="RayCastUp" type="RayCast2D" parent="." index="5"]
-unique_name_in_owner = true
-position = Vector2(0, -10)
-target_position = Vector2(0, -50)
-
-[node name="RayCastDown" type="RayCast2D" parent="." index="6"]
-unique_name_in_owner = true
-position = Vector2(0, 10)
-
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
