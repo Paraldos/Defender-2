@@ -20,3 +20,4 @@ res://Menus/ShopModal/shop_modal_btn.tscn
 res://Game/Bosses/boss_template.gd
 res://Game/Collectible/hp_boost.gd
 res://Game/Player/WarpController.gd
+res://Game/Bosses/pirate_boss.gd

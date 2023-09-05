@@ -32,12 +32,12 @@ func _get_target_position_y():
 ###############################################################################
 func _attack():
 	var attacks = [
-		await _attack0()
+		await _attack_weapon_0()
 	]
 	attacks.pick_random()
 	return true
 
-func _attack0():
+func _attack_weapon_0():
 	wing_guns[0]._attack()
 	wing_guns[1]._attack()
 	wing_guns[2]._attack()
