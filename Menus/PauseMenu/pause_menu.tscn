@@ -14,16 +14,83 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "- Pause -"
+horizontal_alignment = 1
 uppercase = true
 
-[node name="BtnReturn" type="Button" parent="Panel/MarginContainer/VBoxContainer" index="1"]
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Player Attributes"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/GridContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelGun" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer/VBoxContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Gun: 1"
+horizontal_alignment = 1
+
+[node name="LabelMagnet" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Magnet: 1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/GridContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelBomb" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer/VBoxContainer2" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mega Bomb: 1"
+horizontal_alignment = 1
+
+[node name="LabelLaser" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer/VBoxContainer2" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mega Laser: 1"
+horizontal_alignment = 1
+
+[node name="LabelShield" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer/VBoxContainer2" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mega Shield: 1"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer" index="5"]
+layout_mode = 2
+columns = 2
+
+[node name="BtnReturn" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer2" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Return"
 
-[node name="BtnQuit" type="Button" parent="Panel/MarginContainer/VBoxContainer" index="2"]
+[node name="BtnQuit" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer2" index="1"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Quit"
 
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BtnReturn" to="." method="_on_btn_return_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/GridContainer2/BtnReturn" to="." method="_on_btn_return_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/GridContainer2/BtnQuit" to="." method="_on_btn_quit_pressed"]

@@ -16,3 +16,5 @@ res://Game/Player/player.gd
 res://Game/Collisions/hitbox.tscn
 res://Game/Enemies/enemy_fighter.tscn
 res://Game/Enemies/enemy_fighter.gd
+res://Menus/PauseMenu/pause_menu.tscn
+res://Menus/PauseMenu/pause_menu.gd
