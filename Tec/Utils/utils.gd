@@ -15,7 +15,7 @@ signal back_to_start(target_node)
 
 var viewport_width = 480
 var viewport_height = 270
-var player = {
+var player_start = {
 	max_hp = 50,
 	hp = 50,
 	max_ep = 40,
@@ -30,6 +30,7 @@ var player = {
 	laser = 0,
 	shield = 0
 }
+var player = {}
 var player_backup
 var powerup = false
 var time_to_next_powerup = 30
@@ -38,6 +39,10 @@ var stage = {
 	enemies_killed = 0,
 }
 var modals = []
+
+###############################################################################
+func _reset_player():
+	player = player_start.duplicate()
 
 ###############################################################################
 func _ready():

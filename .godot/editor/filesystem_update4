@@ -21,3 +21,9 @@ res://Game/Player/player.gd
 res://Menus/CreditsModal/credits_modal.tscn
 res://Menus/StageCompleteModal/stage_complete_modal.tscn
 res://Menus/PauseMenu/pause_menu.tscn
+res://Game/Player/MegaBombController.gd
+res://Game/Player/mega_bomb.tscn
+res://Game/Player/mega_bomb.gd
+res://Tec/Utils/utils.gd
+res://Menus/StartMenu/start_menu.tscn
+res://Menus/StartMenu/start_menu.gd

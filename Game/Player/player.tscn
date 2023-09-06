@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=58 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="13_6l4ho"]
 [ext_resource type="Texture2D" uid="uid://cee853xdtdk2" path="res://Assets/Img/Projectiles And Explosions/Fragment02.png" id="14_gxbar"]
 [ext_resource type="Shader" path="res://Game/Player/MegaLaserShader.gdshader" id="15_h5r36"]
+[ext_resource type="Script" path="res://Game/Player/MegaBombController.gd" id="16_7wjxu"]
 
 [sub_resource type="Animation" id="Animation_j37db"]
 length = 0.001
@@ -548,14 +549,14 @@ radius = 37.0
 offsets = PackedFloat32Array(0, 0.680272)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_60quj"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w86p1"]
 gradient = SubResource("Gradient_3c2r7")
 
 [sub_resource type="Curve" id="Curve_kqn6o"]
 _data = [Vector2(0, 0.494737), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_x0bn1"]
+[sub_resource type="CurveTexture" id="CurveTexture_whcgd"]
 curve = SubResource("Curve_kqn6o")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xa5or"]
@@ -570,8 +571,8 @@ radial_accel_min = -200.0
 radial_accel_max = -200.0
 scale_min = 0.5
 scale_max = 0.5
-scale_curve = SubResource("CurveTexture_x0bn1")
-color_ramp = SubResource("GradientTexture1D_60quj")
+scale_curve = SubResource("CurveTexture_whcgd")
+color_ramp = SubResource("GradientTexture1D_w86p1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oygu6"]
 shader = ExtResource("15_h5r36")
@@ -776,6 +777,9 @@ shape = SubResource("RectangleShape2D_3cdn4")
 [node name="LaserTimer" type="Timer" parent="MegaLaserController"]
 wait_time = 0.2
 autostart = true
+
+[node name="MegaBombController" type="Node2D" parent="."]
+script = ExtResource("16_7wjxu")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="animation_finished" from="WarpController/WarpAnimationPlayer" to="WarpController" method="_on_warp_animation_player_animation_finished"]
