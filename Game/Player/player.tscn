@@ -323,10 +323,10 @@ tracks/2/path = NodePath("..:controlls_enabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -592,6 +592,21 @@ shader_parameter/y_offset = 0.0
 shader_parameter/fixed_edge_size = 0.05
 shader_parameter/noise_scale = Vector2(1, 1)
 
+[sub_resource type="Animation" id="Animation_buwip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
 [sub_resource type="Animation" id="Animation_kcu5d"]
 resource_name = "loop"
 length = 0.2
@@ -609,21 +624,6 @@ tracks/0/keys = {
 "values": [Vector2(1.2, 1.2), Vector2(1.6, 1.6)]
 }
 
-[sub_resource type="Animation" id="Animation_buwip"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_av1h7"]
 _data = {
 "RESET": SubResource("Animation_buwip"),
@@ -636,7 +636,6 @@ size = Vector2(480, 2)
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w3u5h")
-controlls_enabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, 3, -10, -2, -11, -2, -17, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, -2, 17, -2, 11, 3, 10, 5, 5, 14, 5, 21, 3, 23, 0)

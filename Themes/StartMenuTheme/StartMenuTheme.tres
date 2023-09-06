@@ -15,11 +15,11 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iv41m"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4ck0"]
 texture = ExtResource("3_m2bxa")
-texture_margin_left = 53.0
+texture_margin_left = 30.0
 texture_margin_top = 2.0
-texture_margin_right = 53.0
+texture_margin_right = 30.0
 texture_margin_bottom = 2.0
 region_rect = Rect2(16, 0, 80, 4)
 
@@ -53,6 +53,6 @@ Button/styles/hover = ExtResource("1_guh3r")
 Button/styles/normal = SubResource("StyleBoxTexture_bowvo")
 Button/styles/pressed = ExtResource("1_guh3r")
 HSeparator/constants/separation = 4
-HSeparator/styles/separator = SubResource("StyleBoxTexture_iv41m")
+HSeparator/styles/separator = SubResource("StyleBoxTexture_w4ck0")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2vid3")
 VSeparator/styles/separator = SubResource("StyleBoxLine_62ncj")

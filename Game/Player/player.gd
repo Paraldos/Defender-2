@@ -11,6 +11,7 @@ var input = Vector2.ZERO
 
 ##############################################################################
 func _ready():
+	controlls_enabled = false
 	Utils.boss_dying.connect(_on_boss_dying)
 	Utils.boss_dead.connect(_on_boss_dead)
 	await get_tree().create_timer(0.1).timeout

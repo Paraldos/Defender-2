@@ -16,3 +16,8 @@ res://Game/World/EnemySpawner/enemy.gd
 res://Game/World/EnemySpawner/boss.tscn
 res://Game/World/EnemySpawner/boss.gd
 res://Game/Player/MegaLaserController.gd
+res://Game/Player/player.tscn
+res://Game/Player/player.gd
+res://Menus/CreditsModal/credits_modal.tscn
+res://Menus/StageCompleteModal/stage_complete_modal.tscn
+res://Menus/PauseMenu/pause_menu.tscn
