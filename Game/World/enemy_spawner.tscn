@@ -1,6 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx4nevkhs5r7n"]
+[gd_scene load_steps=27 format=3 uid="uid://cx4nevkhs5r7n"]
 
 [ext_resource type="Script" path="res://Game/World/enemy_spawner.gd" id="1_tnqcj"]
+[ext_resource type="PackedScene" uid="uid://kb6ev1rcb8kb" path="res://Game/World/EnemySpawner/enemy.tscn" id="2_2ho8a"]
+[ext_resource type="PackedScene" uid="uid://bnr41kpf8ical" path="res://Game/Enemies/enemy_fighter.tscn" id="3_klrvr"]
+[ext_resource type="PackedScene" uid="uid://bn72akfyufoid" path="res://Backgrounds/asteroids_background.tscn" id="4_l21ut"]
+[ext_resource type="PackedScene" uid="uid://bulrsrqryxvbd" path="res://Game/Enemies/asteroid_01.tscn" id="4_xjvk5"]
+[ext_resource type="PackedScene" uid="uid://bnsoo54i5d1o7" path="res://Game/Enemies/asteroid_02.tscn" id="5_gqaar"]
+[ext_resource type="PackedScene" uid="uid://chuws132ealm8" path="res://Game/Enemies/asteroid_03.tscn" id="6_mleow"]
+[ext_resource type="PackedScene" uid="uid://kacpq8qxqbr" path="res://Game/Enemies/asteroid_04.tscn" id="7_vcgss"]
+[ext_resource type="PackedScene" uid="uid://cxtcktvpljf8g" path="res://Game/Enemies/asteroid_05.tscn" id="8_ukc0l"]
+[ext_resource type="PackedScene" uid="uid://chappg8b30d2a" path="res://Game/Enemies/asteroid_06.tscn" id="9_yrb4o"]
+[ext_resource type="PackedScene" uid="uid://4qe38tydk1f0" path="res://Game/Enemies/asteroid_07.tscn" id="10_8fkj7"]
+[ext_resource type="PackedScene" uid="uid://dk7axwga3tl0c" path="res://Game/Enemies/asteroid_08.tscn" id="11_sddry"]
+[ext_resource type="PackedScene" uid="uid://d1wyvqb6gn8ey" path="res://Game/Enemies/asteroid_09.tscn" id="12_6o3mu"]
+[ext_resource type="PackedScene" uid="uid://c7mwcyrx48yrt" path="res://Game/Enemies/asteroid_10.tscn" id="13_kpxa7"]
+[ext_resource type="PackedScene" uid="uid://cvbtqhngekqp0" path="res://Game/Enemies/asteroid_11.tscn" id="14_vgutj"]
+[ext_resource type="PackedScene" uid="uid://w8hkdmsq8ssj" path="res://Game/Enemies/asteroid_12.tscn" id="15_3cbn0"]
+[ext_resource type="PackedScene" uid="uid://wekk2n8o3ruw" path="res://Game/Enemies/explosive_asteroid.tscn" id="16_ox7rq"]
+[ext_resource type="PackedScene" uid="uid://dtetp2rj5x5hq" path="res://Game/Enemies/gunship.tscn" id="17_h1v5i"]
+[ext_resource type="PackedScene" uid="uid://ccwtfe65v8d36" path="res://Game/Enemies/debris_01.tscn" id="18_mylta"]
+[ext_resource type="PackedScene" uid="uid://dl5o8jn145eb3" path="res://Game/Enemies/debris_02.tscn" id="19_03xrf"]
+[ext_resource type="PackedScene" uid="uid://ps5pma5fdbrg" path="res://Backgrounds/debris_background.tscn" id="19_jaq28"]
+[ext_resource type="PackedScene" uid="uid://6a5husf6xrup" path="res://Game/Enemies/debris_03.tscn" id="20_uod15"]
+[ext_resource type="PackedScene" uid="uid://b22dsb7cetuur" path="res://Game/Enemies/debris_04.tscn" id="21_wwu0b"]
+[ext_resource type="PackedScene" uid="uid://begiewiydprsl" path="res://Game/Enemies/debris_05.tscn" id="22_ko2km"]
+[ext_resource type="PackedScene" uid="uid://do851m8pyi2a0" path="res://Game/Enemies/debris_06.tscn" id="23_i8vrc"]
+[ext_resource type="PackedScene" uid="uid://c2huuxi5vshe4" path="res://Game/Enemies/missile.tscn" id="24_wo4ug"]
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_tnqcj")
@@ -16,6 +41,43 @@ autostart = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="Enemies" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="EnemyFighter" parent="Enemies" instance=ExtResource("2_2ho8a")]
+wave_name = "Fighters"
+spawn_time = 1.3
+wave_time = 12
+enemy_package = Array[PackedScene]([ExtResource("3_klrvr")])
+
+[node name="EnemyAsteroids" parent="Enemies" instance=ExtResource("2_2ho8a")]
+wave_name = "Asteroids"
+spawn_time = 0.5
+wave_time = 20
+after_wave_pause = 4
+background = ExtResource("4_l21ut")
+enemy_package = Array[PackedScene]([ExtResource("4_xjvk5"), ExtResource("5_gqaar"), ExtResource("6_mleow"), ExtResource("7_vcgss"), ExtResource("8_ukc0l"), ExtResource("9_yrb4o"), ExtResource("10_8fkj7"), ExtResource("11_sddry"), ExtResource("12_6o3mu"), ExtResource("13_kpxa7"), ExtResource("14_vgutj"), ExtResource("15_3cbn0"), ExtResource("16_ox7rq")])
+
+[node name="EnemyGunShips" parent="Enemies" instance=ExtResource("2_2ho8a")]
+wave_name = "GunShips"
+spawn_time = 2.0
+wave_time = 12
+enemy_package = Array[PackedScene]([ExtResource("17_h1v5i")])
+
+[node name="EnemyDebris" parent="Enemies" instance=ExtResource("2_2ho8a")]
+wave_name = "Debris"
+spawn_time = 0.5
+wave_time = 20
+after_wave_pause = 4
+background = ExtResource("19_jaq28")
+enemy_package = Array[PackedScene]([ExtResource("18_mylta"), ExtResource("19_03xrf"), ExtResource("20_uod15"), ExtResource("21_wwu0b"), ExtResource("22_ko2km"), ExtResource("23_i8vrc")])
+
+[node name="EnemyMissiles" parent="Enemies" instance=ExtResource("2_2ho8a")]
+wave_name = "Missiles"
+spawn_time = 1.6
+wave_time = 8
+enemy_package = Array[PackedScene]([ExtResource("24_wo4ug")])
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

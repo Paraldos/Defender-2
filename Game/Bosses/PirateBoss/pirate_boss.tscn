@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c272kclcw4p8a"]
+
+[ext_resource type="PackedScene" uid="uid://c8meqgfjw42c3" path="res://Game/Bosses/boss_template.tscn" id="1_jhhto"]
+[ext_resource type="Script" path="res://Game/Bosses/PirateBoss/pirate_boss.gd" id="2_t8kya"]
+[ext_resource type="Texture2D" uid="uid://dh4osjtmynxra" path="res://Assets/Img/Enemies/Pirate_Boss.png" id="3_vhydv"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_h7xhr"]
+[ext_resource type="PackedScene" uid="uid://q1udfypxoe7n" path="res://Game/Bosses/normal_gun_controller.tscn" id="5_uxjav"]
+[ext_resource type="PackedScene" uid="uid://buw8mm36yr8bn" path="res://Game/Bosses/pulse_controller.tscn" id="6_suvb0"]
+
+[node name="PirateBoss" instance=ExtResource("1_jhhto")]
+script = ExtResource("2_t8kya")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
+polygon = PackedVector2Array(-37, 0, -26, -6, -20, -15, -9, -15, -18, -42, -10, -50, 35, -4, 35, 4, -10, 50, -18, 42, -9, 15, -20, 15, -26, 6)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-37, 0, -26, -6, -20, -15, -9, -15, -18, -42, -10, -50, 35, -4, 35, 4, -10, 50, -18, 42, -9, 15, -20, 15, -26, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+rotation = 1.5708
+texture = ExtResource("3_vhydv")
+
+[node name="Exhaust" parent="Sprite2D" index="0" instance=ExtResource("4_h7xhr")]
+position = Vector2(0, -34)
+rotation = 1.5708
+scale = Vector2(1, 1.5)
+
+[node name="NormalGunController" parent="." index="3" instance=ExtResource("5_uxjav")]
+position = Vector2(-23, -29)
+
+[node name="NormalGunController2" parent="." index="4" instance=ExtResource("5_uxjav")]
+position = Vector2(-17, -17)
+
+[node name="NormalGunController3" parent="." index="5" instance=ExtResource("5_uxjav")]
+position = Vector2(-17, 17)
+
+[node name="NormalGunController4" parent="." index="6" instance=ExtResource("5_uxjav")]
+position = Vector2(-23, 29)
+
+[node name="PulseController" parent="." index="7" instance=ExtResource("6_suvb0")]

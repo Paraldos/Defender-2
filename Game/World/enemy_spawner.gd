@@ -3,6 +3,7 @@ extends Node2D
 @onready var wave_timer = %WaveTimer
 @onready var spawn_timer = %SpawnTimer
 @onready var spawn_point = %SpawnPoint
+@onready var enemies = %Enemies
 
 var asteroids = [
 	preload("res://Game/Enemies/asteroid_01.tscn"),
@@ -38,7 +39,7 @@ var possible_waves = [
 	{name = 'Missiles', spawn_time = 1.6, wave_time = 8, after_wave_pause = 3}
 ]
 var possible_bosses = [
-	{name = 'PirateBoss', node = preload('res://Game/Bosses/pirate_boss.tscn')}
+	{name = 'PirateBoss', node = preload('res://Game/Bosses/PirateBoss/pirate_boss.tscn')}
 ]
 var rng = RandomNumberGenerator.new()
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
@@ -55,31 +56,41 @@ func _ready():
 
 ###############################################################################
 func _on_wave_timer_timeout():
+	_stop_everything()
+	await _wait_between_waves()
+	_pick_next_wave()
+	_start_background()
+	_start_new_wave()
+
+func _stop_everything():
+	wave_timer.stop()
+	spawn_timer.stop()
 	Utils.stop_wave.emit()
-	####### wait timer between waves
-	if current_wave != null:
+
+func _wait_between_waves():
+	if current_wave:
 		spawn_timer.stop()
 		await get_tree().create_timer(current_wave.after_wave_pause).timeout
-	####### determinen next new wave
-	if test_wave > -1: # specific testwave
-		current_wave = possible_waves[test_wave]
-	elif waves_till_boss != -1 and wave_number >= waves_till_boss: # boss
+	return true
+
+func _pick_next_wave():
+	if test_wave > -1:
+		current_wave = enemies.get_children()[test_wave]
+	elif waves_till_boss != -1 and wave_number >= waves_till_boss:
 		current_wave = null
-		_spawn_boss()
-	else: # normal randome wave
+	else:
 		wave_number += 1
-		current_wave = possible_waves.pick_random()
-	####### spawn new wave
-	if current_wave != null:
+		current_wave = enemies.get_children().pick_random()
+
+func _start_background():
+	return
+	if current_wave.background:
+		_spawn_element(current_wave.background, Vector2.ZERO)
+
+func _start_new_wave():
+	if current_wave:
 		wave_timer.start(current_wave.wave_time)
 		spawn_timer.start(current_wave.spawn_time)
-		if current_wave.name == 'Asteroids':
-			_spawn_element(asteroids_background, Vector2.ZERO)
-		if current_wave.name == 'Debris':
-			_spawn_element(debris_background, Vector2.ZERO)
-	else:
-		wave_timer.stop()
-		spawn_timer.stop()
 
 ###############################################################################
 func _spawn_boss():
@@ -89,7 +100,7 @@ func _spawn_boss():
 
 ###############################################################################
 func _on_spawn_timer_timeout():
-	match current_wave.name:
+	match current_wave.wave_name:
 		'Fighters':
 			var spawn_points = _get_multiple_spawn_points(2, 100)
 			_spawn_element(enemy_fighter, spawn_points[0])
