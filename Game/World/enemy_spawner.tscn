@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cx4nevkhs5r7n"]
+[gd_scene load_steps=29 format=3 uid="uid://cx4nevkhs5r7n"]
 
 [ext_resource type="Script" path="res://Game/World/enemy_spawner.gd" id="1_tnqcj"]
 [ext_resource type="PackedScene" uid="uid://kb6ev1rcb8kb" path="res://Game/World/EnemySpawner/enemy.tscn" id="2_2ho8a"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://begiewiydprsl" path="res://Game/Enemies/debris_05.tscn" id="22_ko2km"]
 [ext_resource type="PackedScene" uid="uid://do851m8pyi2a0" path="res://Game/Enemies/debris_06.tscn" id="23_i8vrc"]
 [ext_resource type="PackedScene" uid="uid://c2huuxi5vshe4" path="res://Game/Enemies/missile.tscn" id="24_wo4ug"]
+[ext_resource type="PackedScene" uid="uid://6pfpty5jqjyy" path="res://Game/World/EnemySpawner/boss.tscn" id="27_cktys"]
+[ext_resource type="PackedScene" uid="uid://c272kclcw4p8a" path="res://Game/Bosses/PirateBoss/pirate_boss.tscn" id="28_b07ss"]
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_tnqcj")
@@ -49,7 +51,7 @@ unique_name_in_owner = true
 wave_name = "Fighters"
 spawn_time = 1.3
 wave_time = 12
-enemy_package = Array[PackedScene]([ExtResource("3_klrvr")])
+enemy_packages = Array[PackedScene]([ExtResource("3_klrvr")])
 
 [node name="EnemyAsteroids" parent="Enemies" instance=ExtResource("2_2ho8a")]
 wave_name = "Asteroids"
@@ -57,13 +59,13 @@ spawn_time = 0.5
 wave_time = 20
 after_wave_pause = 4
 background = ExtResource("4_l21ut")
-enemy_package = Array[PackedScene]([ExtResource("4_xjvk5"), ExtResource("5_gqaar"), ExtResource("6_mleow"), ExtResource("7_vcgss"), ExtResource("8_ukc0l"), ExtResource("9_yrb4o"), ExtResource("10_8fkj7"), ExtResource("11_sddry"), ExtResource("12_6o3mu"), ExtResource("13_kpxa7"), ExtResource("14_vgutj"), ExtResource("15_3cbn0"), ExtResource("16_ox7rq")])
+enemy_packages = Array[PackedScene]([ExtResource("4_xjvk5"), ExtResource("5_gqaar"), ExtResource("6_mleow"), ExtResource("7_vcgss"), ExtResource("8_ukc0l"), ExtResource("9_yrb4o"), ExtResource("10_8fkj7"), ExtResource("11_sddry"), ExtResource("12_6o3mu"), ExtResource("13_kpxa7"), ExtResource("14_vgutj"), ExtResource("15_3cbn0"), ExtResource("16_ox7rq")])
 
 [node name="EnemyGunShips" parent="Enemies" instance=ExtResource("2_2ho8a")]
 wave_name = "GunShips"
 spawn_time = 2.0
 wave_time = 12
-enemy_package = Array[PackedScene]([ExtResource("17_h1v5i")])
+enemy_packages = Array[PackedScene]([ExtResource("17_h1v5i")])
 
 [node name="EnemyDebris" parent="Enemies" instance=ExtResource("2_2ho8a")]
 wave_name = "Debris"
@@ -71,13 +73,20 @@ spawn_time = 0.5
 wave_time = 20
 after_wave_pause = 4
 background = ExtResource("19_jaq28")
-enemy_package = Array[PackedScene]([ExtResource("18_mylta"), ExtResource("19_03xrf"), ExtResource("20_uod15"), ExtResource("21_wwu0b"), ExtResource("22_ko2km"), ExtResource("23_i8vrc")])
+enemy_packages = Array[PackedScene]([ExtResource("18_mylta"), ExtResource("19_03xrf"), ExtResource("20_uod15"), ExtResource("21_wwu0b"), ExtResource("22_ko2km"), ExtResource("23_i8vrc")])
 
 [node name="EnemyMissiles" parent="Enemies" instance=ExtResource("2_2ho8a")]
 wave_name = "Missiles"
 spawn_time = 1.6
 wave_time = 8
-enemy_package = Array[PackedScene]([ExtResource("24_wo4ug")])
+enemy_packages = Array[PackedScene]([ExtResource("24_wo4ug")])
+
+[node name="Bosses" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="PirateBoss" parent="Bosses" instance=ExtResource("27_cktys")]
+boss_name = "PirateBoss"
+boss_package = ExtResource("28_b07ss")
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

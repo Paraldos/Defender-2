@@ -13,7 +13,7 @@ func _ready():
 	visible = false
 
 ##############################################################################
-func _physics_process(delta):
+func _physics_process(_delta):
 	if get_parent().invulnerable: return
 	if !get_parent().controlls_enabled: return
 	if Input.is_action_just_pressed('ui_mega_laser'):
@@ -36,7 +36,7 @@ func _enable_mega_laser():
 func _on_laser_timer_timeout():
 	_deal_dmg()
 
-func _on_hitbox_area_entered(area):
+func _on_hitbox_area_entered(_area):
 	_deal_dmg()
 
 func _deal_dmg():

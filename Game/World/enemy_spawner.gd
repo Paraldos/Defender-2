@@ -4,43 +4,8 @@ extends Node2D
 @onready var spawn_timer = %SpawnTimer
 @onready var spawn_point = %SpawnPoint
 @onready var enemies = %Enemies
+@onready var bosses = %Bosses
 
-var asteroids = [
-	preload("res://Game/Enemies/asteroid_01.tscn"),
-	preload("res://Game/Enemies/asteroid_02.tscn"),
-	preload("res://Game/Enemies/asteroid_03.tscn"),
-	preload("res://Game/Enemies/asteroid_04.tscn"),
-	preload("res://Game/Enemies/asteroid_05.tscn"),
-	preload("res://Game/Enemies/asteroid_06.tscn"),
-	preload("res://Game/Enemies/asteroid_07.tscn"),
-	preload("res://Game/Enemies/asteroid_08.tscn"),
-	preload("res://Game/Enemies/asteroid_09.tscn"),
-	preload("res://Game/Enemies/asteroid_10.tscn"),
-	preload("res://Game/Enemies/asteroid_11.tscn"),
-	preload("res://Game/Enemies/asteroid_12.tscn"),
-	preload("res://Game/Enemies/explosive_asteroid.tscn"),
-]
-var debris = [
-	preload("res://Game/Enemies/debris_01.tscn"),
-	preload("res://Game/Enemies/debris_02.tscn"),
-	preload("res://Game/Enemies/debris_03.tscn"),
-	preload("res://Game/Enemies/debris_04.tscn"),
-	preload("res://Game/Enemies/debris_05.tscn"),
-	preload("res://Game/Enemies/debris_06.tscn"),
-]
-var enemy_fighter = preload("res://Game/Enemies/enemy_fighter.tscn")
-var gun_ships = preload("res://Game/Enemies/gunship.tscn")
-var missile = preload("res://Game/Enemies/missile.tscn")
-var possible_waves = [
-	{name = "Fighters", spawn_time = 1.3, wave_time = 12, after_wave_pause = 3},
-	{name = "Asteroids", spawn_time = 0.5, wave_time = 20, after_wave_pause = 4},
-	{name = "GunShips", spawn_time = 2.0, wave_time = 12, after_wave_pause = 3},
-	{name = "Debris", spawn_time = 0.5, wave_time = 20, after_wave_pause = 4},
-	{name = 'Missiles', spawn_time = 1.6, wave_time = 8, after_wave_pause = 3}
-]
-var possible_bosses = [
-	{name = 'PirateBoss', node = preload('res://Game/Bosses/PirateBoss/pirate_boss.tscn')}
-]
 var rng = RandomNumberGenerator.new()
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var debris_background = preload("res://Backgrounds/debris_background.tscn")
@@ -57,10 +22,11 @@ func _ready():
 ###############################################################################
 func _on_wave_timer_timeout():
 	_stop_everything()
-	await _wait_between_waves()
 	_pick_next_wave()
+	await _wait_between_waves()
 	_start_background()
 	_start_new_wave()
+	_start_boss_fight()
 
 func _stop_everything():
 	wave_timer.stop()
@@ -83,8 +49,7 @@ func _pick_next_wave():
 		current_wave = enemies.get_children().pick_random()
 
 func _start_background():
-	return
-	if current_wave.background:
+	if current_wave and current_wave.background:
 		_spawn_element(current_wave.background, Vector2.ZERO)
 
 func _start_new_wave():
@@ -92,35 +57,38 @@ func _start_new_wave():
 		wave_timer.start(current_wave.wave_time)
 		spawn_timer.start(current_wave.spawn_time)
 
-###############################################################################
-func _spawn_boss():
-	var boss = possible_bosses.pick_random()
-	await get_tree().create_timer(2.0).timeout
-	_spawn_element(boss.node, Vector2(-800, -800))
+func _start_boss_fight():
+	if !current_wave:
+		await get_tree().create_timer(3.0).timeout
+		var boss = bosses.get_children().pick_random().boss_package
+		_spawn_element(boss, Vector2(-800, -800))
 
 ###############################################################################
 func _on_spawn_timer_timeout():
 	match current_wave.wave_name:
 		'Fighters':
+			var enemy = current_wave.enemy_packages.pick_random()
 			var spawn_points = _get_multiple_spawn_points(2, 100)
-			_spawn_element(enemy_fighter, spawn_points[0])
+			_spawn_element(enemy, spawn_points[0])
 			await get_tree().create_timer(0.3).timeout
-			_spawn_element(enemy_fighter, spawn_points[1])
+			_spawn_element(enemy, spawn_points[1])
 		'Asteroids':
-			var asteroid = asteroids.pick_random()
-			_spawn_element(asteroid)
+			var enemy = current_wave.enemy_packages.pick_random()
+			_spawn_element(enemy)
 		'GunShips': 
-			_spawn_element(gun_ships)
+			var enemy = current_wave.enemy_packages.pick_random()
+			_spawn_element(enemy)
 		'Debris':
-			var myDebris = debris.pick_random()
-			_spawn_element(myDebris)
+			var enemy = current_wave.enemy_packages.pick_random()
+			_spawn_element(enemy)
 		'Missiles':
+			var enemy = current_wave.enemy_packages.pick_random()
 			var spawn_points = _get_multiple_spawn_points(3)
-			_spawn_element(missile, spawn_points[0])
-			_spawn_element(missile, spawn_points[1])
-			_spawn_element(missile, spawn_points[2])
+			_spawn_element(enemy, spawn_points[0])
+			_spawn_element(enemy, spawn_points[1])
+			_spawn_element(enemy, spawn_points[2])
 
-###############################################################################
+##################### HELPER
 func _get_multiple_spawn_points(number_of_positions = 1, distance_between_points = 25):
 	var points = []
 	while points.size() < number_of_positions:
@@ -136,9 +104,11 @@ func _get_multiple_spawn_points(number_of_positions = 1, distance_between_points
 			points.append(newPoint)
 	return points
 
-func _get_spawn_position(y_deviation = 120):
-	var spawn_position = spawn_point.global_position
-	spawn_position.y += randi_range(-y_deviation, y_deviation)
+func _get_spawn_position(margin = 20):
+	var window_heigt = 270
+	var spawn_position = Vector2.ZERO
+	spawn_position.x = spawn_point.global_position.x
+	spawn_position.y = randi_range(0 + margin, window_heigt - margin)
 	return spawn_position
 
 func _spawn_element(element, pos = _get_spawn_position()):

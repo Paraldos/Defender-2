@@ -13,3 +13,6 @@ res://Game/World/enemy_spawner.tscn
 res://Game/World/enemy_spawner.gd
 res://Game/World/EnemySpawner/enemy.tscn
 res://Game/World/EnemySpawner/enemy.gd
+res://Game/World/EnemySpawner/boss.tscn
+res://Game/World/EnemySpawner/boss.gd
+res://Game/Player/MegaLaserController.gd
