@@ -7,6 +7,7 @@ var modulate_colors = [
 var shield_time = 3 + Utils.player.shield
 @onready var animation_player = $AnimationPlayer
 @export var activation_cost = 10
+@onready var audio_stream_player = $AudioStreamPlayer
 
 ##############################################################################
 func _physics_process(_delta):
@@ -20,6 +21,7 @@ func _physics_process(_delta):
 
 ##############################################################################
 func _enable_mega_shield():
+	audio_stream_player.play()
 	get_parent().invulnerable = true
 	animation_player.play("start")
 	await animation_player.animation_finished

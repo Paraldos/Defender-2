@@ -9,6 +9,7 @@ size = Vector2(44, 6)
 
 [node name="Missile" instance=ExtResource("1_d4qm5")]
 script = ExtResource("2_ktr3m")
+credits_factor = 2
 
 [node name="Line" type="Line2D" parent="." index="0"]
 unique_name_in_owner = true

@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var hp = 5
+@export var credits_factor = 1
 var credits = 2
 @onready var hurtbox = %Hurtbox
 @onready var hitbox = %Hitbox
@@ -17,7 +18,7 @@ func _ready():
 	Utils.stage.enemies_total += 1
 	hurtbox.scale *= 1.1
 	hitbox.scale *= 1.1
-	credits = floor(hp / 4)
+	credits = floor(hp / 5 * credits_factor)
 
 ###############################################################################
 func _process(_delta):

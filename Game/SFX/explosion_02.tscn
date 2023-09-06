@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://csm1m06q5dncj"]
+[gd_scene load_steps=7 format=3 uid="uid://csm1m06q5dncj"]
 
 [ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_444r3"]
 [ext_resource type="Texture2D" uid="uid://do1n18dn4j1st" path="res://Assets/Img/Projectiles And Explosions/Explosion02-Sheet.png" id="2_dmyt5"]
+[ext_resource type="AudioStream" uid="uid://ciw42q24v6e4x" path="res://Assets/audio/sfx/explosion3.wav" id="3_cy31r"]
 
 [sub_resource type="Animation" id="Animation_8h0ng"]
 length = 0.001
@@ -67,3 +68,6 @@ autoplay = "explosion"
 libraries = {
 "": SubResource("AnimationLibrary_lfbp0")
 }
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_cy31r")

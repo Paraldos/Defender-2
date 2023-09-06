@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://c40rjnw343x5t"]
+[gd_scene load_steps=20 format=3 uid="uid://c40rjnw343x5t"]
 
 [ext_resource type="Script" path="res://Game/Player/mega_bomb.gd" id="1_o1u3k"]
 [ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="2_eum2n"]
 [ext_resource type="Texture2D" uid="uid://cv468yaojwjws" path="res://Assets/Img/Projectiles And Explosions/Bombe-Sheet.png" id="2_njum2"]
 [ext_resource type="Texture2D" uid="uid://rf1cjscqsmh3" path="res://Assets/Img/Projectiles And Explosions/Explosion03-Sheet.png" id="4_2p46m"]
 [ext_resource type="PackedScene" uid="uid://be7x6qmtywpb4" path="res://Game/Collisions/hitbox.tscn" id="5_w7yca"]
+[ext_resource type="AudioStream" uid="uid://bbnehyeh0dax1" path="res://Assets/audio/sfx/mega_bombe_charging.wav" id="6_a76yq"]
+[ext_resource type="AudioStream" uid="uid://ds45h8egp4bvd" path="res://Assets/audio/sfx/mega_bombe_explosion.wav" id="7_y6quv"]
 
 [sub_resource type="Gradient" id="Gradient_lyigk"]
 offsets = PackedFloat32Array(0, 0.680272)
@@ -34,48 +36,6 @@ scale_min = 0.5
 scale_curve = SubResource("CurveTexture_x0bn1")
 color_ramp = SubResource("GradientTexture1D_60quj")
 
-[sub_resource type="Animation" id="Animation_hw2xn"]
-resource_name = "start"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteBomb:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteBomb:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_explosion"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_wnsaj"]
 length = 0.001
 tracks/0/type = "value"
@@ -102,65 +62,77 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vinjh"]
-_data = {
-"RESET": SubResource("Animation_wnsaj"),
-"start": SubResource("Animation_hw2xn")
-}
-
-[sub_resource type="Animation" id="Animation_gjegj"]
-resource_name = "explosion"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer_charging:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+
+[sub_resource type="Animation" id="Animation_hw2xn"]
+resource_name = "start"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteBomb:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
+tracks/1/path = NodePath("SpriteBomb:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 14]
+"update": 1,
+"values": [true, false]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox/CollisionShape2D:shape:radius")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.01, 50.0, 105.0, 145.0, 165.0, 180.0]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("..")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"queue_free"
+"method": &"_explosion"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer_charging:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vinjh"]
+_data = {
+"RESET": SubResource("Animation_wnsaj"),
+"start": SubResource("Animation_hw2xn")
 }
 
 [sub_resource type="Animation" id="Animation_y6g50"]
@@ -201,6 +173,107 @@ tracks/2/keys = {
 "update": 0,
 "values": [560.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioStreamPlayer_explosion:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gjegj"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.01, 50.0, 105.0, 145.0, 165.0, 180.0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer_explosion:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wkgby"]
 _data = {
@@ -225,6 +298,7 @@ amount = 20
 process_material = SubResource("ParticleProcessMaterial_8260u")
 texture = ExtResource("2_eum2n")
 lifetime = 0.3
+preprocess = 1.0
 local_coords = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpriteBomb"]
@@ -251,3 +325,11 @@ dmg = 40
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteExplosion/Hitbox"]
 shape = SubResource("CircleShape2D_pfbfk")
 disabled = true
+
+[node name="AudioStreamPlayer_charging" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a76yq")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer_explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y6quv")
+bus = &"SFX"

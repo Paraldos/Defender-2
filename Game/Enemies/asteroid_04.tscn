@@ -8,6 +8,7 @@
 script = ExtResource("2_r32j8")
 explosive = false
 hp = 10
+credits = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-18, -17, -14, -20, 9, -22, 15, -22, 20, -17, 20, -13, 11, -1, 11, 15, 4, 21, -2, 21, -18, -12)

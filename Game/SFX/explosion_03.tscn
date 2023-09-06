@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://e0yratt2i5a8"]
+[gd_scene load_steps=9 format=3 uid="uid://e0yratt2i5a8"]
 
 [ext_resource type="PackedScene" uid="uid://be7x6qmtywpb4" path="res://Game/Collisions/hitbox.tscn" id="1_38imn"]
 [ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_a4bb5"]
 [ext_resource type="Texture2D" uid="uid://rf1cjscqsmh3" path="res://Assets/Img/Projectiles And Explosions/Explosion03-Sheet.png" id="2_gw1jr"]
+[ext_resource type="AudioStream" uid="uid://bprjyf5bn3bbw" path="res://Assets/audio/sfx/Explosion2.wav" id="4_lewya"]
 
 [sub_resource type="Animation" id="Animation_vwolk"]
 length = 0.001
@@ -127,3 +128,6 @@ dmg = 10
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("CircleShape2D_i6016")
 disabled = true
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("4_lewya")

@@ -5,6 +5,7 @@ extends Node2D
 @export var laser_time = 1.0
 @export var activation_cost = 10
 @export var base_dmg = 5
+@onready var audio_stream_player = $AudioStreamPlayer
 var dmg = base_dmg + Utils.player.laser
 var active = false
 
@@ -24,6 +25,7 @@ func _physics_process(_delta):
 
 ##############################################################################
 func _enable_mega_laser():
+	audio_stream_player.play()
 	visible = true
 	active = true
 	_deal_dmg()

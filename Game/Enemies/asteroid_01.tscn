@@ -8,6 +8,7 @@
 script = ExtResource("2_jmotg")
 explosive = false
 hp = 15
+credits = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-31, -17, -25, -24, -17, -29, -11, -30, -2, -30, 3, -28, 10, -21, 19, -16, 28, -7, 31, 0, 31, 13, 28, 24, 23, 31, 10, 31, -1, 28, -10, 21, -21, 4, -31, -10)

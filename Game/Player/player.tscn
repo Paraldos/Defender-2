@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=62 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -9,13 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_cckca"]
 [ext_resource type="Script" path="res://Game/Player/MainSprite.gd" id="5_s8shk"]
 [ext_resource type="Script" path="res://Game/Player/WarpController.gd" id="6_yoehl"]
+[ext_resource type="AudioStream" uid="uid://xlampkeaf6oe" path="res://Assets/audio/sfx/gun.wav" id="9_oogp6"]
 [ext_resource type="Shader" path="res://Game/Player/MegaShieldShader.gdshader" id="10_gijva"]
 [ext_resource type="Script" path="res://Game/Player/MegaShieldController.gd" id="10_hef4m"]
+[ext_resource type="AudioStream" uid="uid://bidh63jjy1kbj" path="res://Assets/audio/sfx/warp.wav" id="11_yp5fv"]
 [ext_resource type="Script" path="res://Game/Player/MegaLaserController.gd" id="12_wem8i"]
 [ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="13_6l4ho"]
+[ext_resource type="AudioStream" uid="uid://cwr6e5h0ew6on" path="res://Assets/audio/sfx/mega_shield.wav" id="14_gv1rt"]
 [ext_resource type="Texture2D" uid="uid://cee853xdtdk2" path="res://Assets/Img/Projectiles And Explosions/Fragment02.png" id="14_gxbar"]
 [ext_resource type="Shader" path="res://Game/Player/MegaLaserShader.gdshader" id="15_h5r36"]
 [ext_resource type="Script" path="res://Game/Player/MegaBombController.gd" id="16_7wjxu"]
+[ext_resource type="AudioStream" uid="uid://dg1phtp1y5oeu" path="res://Assets/audio/sfx/mega_laser.wav" id="16_jrft1"]
 
 [sub_resource type="Animation" id="Animation_j37db"]
 length = 0.001
@@ -289,9 +293,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_h3cl7"]
 resource_name = "warp_in"
+length = 2.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -355,10 +372,22 @@ tracks/4/keys = {
 "method": &"_spawn_warp_jump_effect"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ee1yy"]
 resource_name = "warp_out"
-length = 0.6
+length = 2.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -422,6 +451,18 @@ tracks/4/keys = {
 "args": [],
 "method": &"_spawn_warp_jump_effect"
 }]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ei32"]
@@ -637,6 +678,7 @@ size = Vector2(480, 2)
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w3u5h")
+controlls_enabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, 3, -10, -2, -11, -2, -17, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, -2, 17, -2, 11, 3, 10, 5, 5, 14, 5, 21, 3, 23, 0)
@@ -699,15 +741,25 @@ libraries = {
 "": SubResource("AnimationLibrary_ja84q")
 }
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AttackController"]
+stream = ExtResource("9_oogp6")
+pitch_scale = 1.1
+bus = &"SFX"
+
 [node name="WarpController" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_yoehl")
+spawn_afterimage = true
 
 [node name="WarpAnimationPlayer" type="AnimationPlayer" parent="WarpController"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_1ei32")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WarpController"]
+stream = ExtResource("11_yp5fv")
+bus = &"SFX"
 
 [node name="MegaShieldController" type="Node2D" parent="."]
 script = ExtResource("10_hef4m")
@@ -735,9 +787,17 @@ position = Vector2(-3, 0)
 shape = SubResource("CircleShape2D_d75k6")
 disabled = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MegaShieldController"]
+stream = ExtResource("14_gv1rt")
+bus = &"SFX"
+
 [node name="MegaLaserController" type="Node2D" parent="."]
 show_behind_parent = true
 script = ExtResource("12_wem8i")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MegaLaserController"]
+stream = ExtResource("16_jrft1")
+bus = &"SFX"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="MegaLaserController"]
 modulate = Color(0.501961, 0.870588, 0.917647, 1)

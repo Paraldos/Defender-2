@@ -119,3 +119,6 @@ process_material = SubResource("ParticleProcessMaterial_kjmuy")
 lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+volume_db = -5.0
