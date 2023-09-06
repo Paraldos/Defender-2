@@ -2,6 +2,7 @@ extends Node2D
 
 @export var hp = 5
 @export var credits_factor = 1
+@export var disable_screen_notifier_delete = false
 var credits = 2
 @onready var hurtbox = %Hurtbox
 @onready var hitbox = %Hitbox
@@ -72,4 +73,7 @@ func _spawn_credit():
 
 ###############################################################################
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
+	if disable_screen_notifier_delete:
+		return
+	else:
+		queue_free()

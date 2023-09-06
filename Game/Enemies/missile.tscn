@@ -1,18 +1,134 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2huuxi5vshe4"]
+[gd_scene load_steps=9 format=3 uid="uid://c2huuxi5vshe4"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_d4qm5"]
 [ext_resource type="Texture2D" uid="uid://b4dtfft0ke0ek" path="res://Assets/Img/Enemies/Missile.png" id="2_arqce"]
 [ext_resource type="Script" path="res://Game/Enemies/missile.gd" id="2_ktr3m"]
+[ext_resource type="AudioStream" uid="uid://gbs6ovn1a207" path="res://Assets/audio/sfx/missile.wav" id="4_8hfrg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lltxa"]
 size = Vector2(44, 6)
 
+[sub_resource type="Animation" id="Animation_4a5x4"]
+resource_name = "attack"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1.1, 1.4, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-80.0, 0.0, 0.0, -80.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_move"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Line:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.4, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j6pmo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Line:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35yme"]
+_data = {
+"RESET": SubResource("Animation_j6pmo"),
+"attack": SubResource("Animation_4a5x4")
+}
+
 [node name="Missile" instance=ExtResource("1_d4qm5")]
+position = Vector2(-250, 0)
 script = ExtResource("2_ktr3m")
-credits_factor = 2
+disable_screen_notifier_delete = true
 
 [node name="Line" type="Line2D" parent="." index="0"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 points = PackedVector2Array(-800, 0, 800, 0)
 width = 1.0
 default_color = Color(0.898039, 0.109804, 0.137255, 1)
@@ -24,5 +140,17 @@ shape = SubResource("RectangleShape2D_lltxa")
 shape = SubResource("RectangleShape2D_lltxa")
 
 [node name="MainSprite" parent="." index="4"]
+position = Vector2(3.99994, 0)
 rotation = 1.5708
 texture = ExtResource("2_arqce")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("4_8hfrg")
+volume_db = -80.0
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+autoplay = "attack"
+libraries = {
+"": SubResource("AnimationLibrary_35yme")
+}

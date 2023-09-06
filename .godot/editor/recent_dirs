@@ -1,10 +1,10 @@
+res://Game/Enemies
 res://Game/Player
 res://Game/World/EnemySpawner
 res://Game/Bosses
 res://Menus/CreditsModal
 res://Menus/Options
 res://Menus/PauseMenu
-res://Game/Enemies
 res://Backgrounds
 res://Menus/ShopModal
 res://Menus

@@ -4,7 +4,7 @@ extends Node2D
 @onready var hitbox = $Hitbox
 @export var laser_time = 1.0
 @export var activation_cost = 10
-@export var base_dmg = 5
+@export var base_dmg = 10
 @onready var audio_stream_player = $AudioStreamPlayer
 var dmg = base_dmg + Utils.player.laser
 var active = false

@@ -1,6 +1,7 @@
-Sprite2D
-AudioStreamPlayer
 AnimationPlayer
+AudioStreamPlayer2D
+AudioStreamPlayer
+Sprite2D
 CollisionShape2D
 Node2D
 Label
@@ -29,4 +30,3 @@ TextureProgressBar
 Polygon2D
 RayCast2D
 Node
-VisibleOnScreenNotifier2D

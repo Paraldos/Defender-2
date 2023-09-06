@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bjksxokfkibnt"
-path="res://.godot/imported/Denied.wav-8efdf48b89dfd03fe9e0fecec0ea16dc.sample"
+path="res://.godot/imported/btn_denied.wav-3dbc8dc86a06df0973fa8e6ba1f0ff4c.sample"
 
 [deps]
 
-source_file="res://Assets/audio/sfx/Denied.wav"
-dest_files=["res://.godot/imported/Denied.wav-8efdf48b89dfd03fe9e0fecec0ea16dc.sample"]
+source_file="res://Assets/audio/sfx/btn_denied.wav"
+dest_files=["res://.godot/imported/btn_denied.wav-3dbc8dc86a06df0973fa8e6ba1f0ff4c.sample"]
 
 [params]
 

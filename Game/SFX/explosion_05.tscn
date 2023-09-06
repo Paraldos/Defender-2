@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_5c0ui"]
 [ext_resource type="Texture2D" uid="uid://dqpemcngx7l0r" path="res://Assets/Img/Projectiles And Explosions/Explosion04-Sheet.png" id="2_cn3p6"]
-[ext_resource type="AudioStream" uid="uid://bhfm3awscuieg" path="res://Assets/audio/sfx/explosion_big.wav" id="3_3xelq"]
+[ext_resource type="AudioStream" uid="uid://bprjyf5bn3bbw" path="res://Assets/audio/sfx/Explosion2.wav" id="3_43pnb"]
 
 [sub_resource type="Animation" id="Animation_e2pmq"]
 length = 0.001
@@ -70,4 +70,5 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" parent="." index="2"]
-stream = ExtResource("3_3xelq")
+stream = ExtResource("3_43pnb")
+volume_db = 10.0

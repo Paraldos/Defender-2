@@ -36,3 +36,5 @@ res://Game/Collectible/CollectibleTemplate.tscn
 res://Game/Collectible/CollectibleTemplate.gd
 res://Game/Collectible/credit.tscn
 res://Game/Collectible/credit.gd
+res://Game/Enemies/missile.gd
+res://Game/World/enemy_spawner.gd

@@ -835,7 +835,7 @@ position = Vector2(260, 0)
 shape = SubResource("RectangleShape2D_3cdn4")
 
 [node name="LaserTimer" type="Timer" parent="MegaLaserController"]
-wait_time = 0.2
+wait_time = 0.1
 autostart = true
 
 [node name="MegaBombController" type="Node2D" parent="."]
