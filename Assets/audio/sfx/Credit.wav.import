@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://djct8gqkyfaq7"
-path="res://.godot/imported/CreditCounter.wav-75d53527aa41a87ad5c3b42608dcf3b2.sample"
+path="res://.godot/imported/Credit.wav-053f4aeae473701ebf0e5dc92fa815a7.sample"
 
 [deps]
 
-source_file="res://Assets/audio/sfx/CreditCounter.wav"
-dest_files=["res://.godot/imported/CreditCounter.wav-75d53527aa41a87ad5c3b42608dcf3b2.sample"]
+source_file="res://Assets/audio/sfx/Credit.wav"
+dest_files=["res://.godot/imported/Credit.wav-053f4aeae473701ebf0e5dc92fa815a7.sample"]
 
 [params]
 

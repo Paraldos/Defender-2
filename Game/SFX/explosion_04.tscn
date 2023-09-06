@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhs5yrhgks2em"]
+[gd_scene load_steps=11 format=3 uid="uid://dhs5yrhgks2em"]
 
 [ext_resource type="PackedScene" uid="uid://g3dvrb6sjuoc" path="res://Game/SFX/explosion_template.tscn" id="1_jdumf"]
+[ext_resource type="AudioStream" uid="uid://djct8gqkyfaq7" path="res://Assets/audio/sfx/Credit.wav" id="2_4ciai"]
 
 [sub_resource type="Animation" id="Animation_m1n27"]
 length = 0.001
@@ -106,6 +107,7 @@ scale_curve = SubResource("CurveTexture_p2r0d")
 color_ramp = SubResource("GradientTexture1D_3f5i4")
 
 [node name="Explosion_04" instance=ExtResource("1_jdumf")]
+audio_variation = 0.0
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "explosion"
@@ -121,4 +123,5 @@ one_shot = true
 explosiveness = 1.0
 
 [node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_4ciai")
 volume_db = -5.0

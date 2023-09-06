@@ -1,16 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1694015195
+::res://::1694015920
 default_bus_layout.tres::AudioBusLayout::4741473970212416117::1694014136::0::1::::<><>::
 icon.svg::CompressedTexture2D::2454184005228381453::1692112478::1692112500::1::::<><>::
 README.md::TextFile::-1::1692112478::0::1::::<><>::
 ::res://Assets/::1694014115
 ::res://Assets/audio/::1694014115
-::res://Assets/audio/sfx/::1694015195
+::res://Assets/audio/sfx/::1694015920
 Accept.wav::AudioStreamWAV::1076724043043996457::1694014119::1694014120::1::::<><>::
 bombe.wav::AudioStreamWAV::1080610328518064470::1694014119::1694015154::1::::<><>::
 click.wav::AudioStreamWAV::6209377011351294956::1694014119::1694014120::1::::<><>::
 Crablaser.wav::AudioStreamWAV::1994747432769838233::1694014119::1694014120::1::::<><>::
-CreditCounter.wav::AudioStreamWAV::7796303293734733480::1694014119::1694014120::1::::<><>::
+Credit.wav::AudioStreamWAV::7796303293734733480::1694014119::1694015920::1::::<><>::
 Denied.wav::AudioStreamWAV::3039898784121401937::1694014119::1694014120::1::::<><>::
 explosion1.wav::AudioStreamWAV::5069096708965779974::1694014119::1694014120::1::::<><>::
 Explosion2.wav::AudioStreamWAV::3474937381096011404::1694014119::1694014780::1::::<><>::
@@ -149,19 +149,19 @@ missile.tscn::PackedScene::6683642067412252257::1694013932::0::1::::<><>::uid://
 ::res://Game/Enemies/Fighter/::1694013449
 ::res://Game/Enemies/Gunship/::1694013449
 ::res://Game/Enemies/Missile/::1694013449
-::res://Game/Player/::1694015115
+::res://Game/Player/::1694015477
 AttackController.gd::GDScript::-1::1694014447::0::1::::<>Node2D<>::
 Magnet.gd::GDScript::-1::1693652343::0::1::::<>Area2D<>::
 MainSprite.gd::GDScript::-1::1693901974::0::1::::<>Sprite2D<>::
 MegaBombController.gd::GDScript::-1::1694004125::0::1::::<>Node2D<>::
 MegaLaserController.gd::GDScript::-1::1694015115::0::1::::<>Node2D<>::
-MegaLaserShader.gdshader::Shader::-1::1694015115::0::1::::<><>::
+MegaLaserShader.gdshader::Shader::-1::1694015477::0::1::::<><>::
 MegaShieldController.gd::GDScript::-1::1694015086::0::1::::<>Node2D<>::
-MegaShieldShader.gdshader::Shader::-1::1694015115::0::1::::<><>::
+MegaShieldShader.gdshader::Shader::-1::1694015477::0::1::::<><>::
 mega_bomb.gd::GDScript::-1::1694003544::0::1::::<>Node2D<>::
-mega_bomb.tscn::PackedScene::6860976255864132379::1694012703::0::1::::<><>::res://Game/Player/mega_bomb.gd<>uid://c40gtktrjhs7u
+mega_bomb.tscn::PackedScene::6860976255864132379::1694015477::0::1::::<><>::res://Game/Player/mega_bomb.gd<>uid://c40gtktrjhs7u::::res://Assets/Img/Projectiles And Explosions/Fragment01.png<>uid://cv468yaojwjws::::res://Assets/Img/Projectiles And Explosions/Bombe-Sheet.png<>uid://rf1cjscqsmh3::::res://Assets/Img/Projectiles And Explosions/Explosion03-Sheet.png<>uid://be7x6qmtywpb4::::res://Game/Collisions/hitbox.tscn<>uid://bbnehyeh0dax1::::res://Assets/audio/sfx/mega_bombe_charging.wav<>uid://ds45h8egp4bvd::::res://Assets/audio/sfx/mega_bombe_explosion.wav
 player.gd::GDScript::-1::1693997068::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::6567954844393746520::1694015115::0::1::::<><>::uid://d33vdl37t8o8e::::res://Assets/Img/Player/Player01-Sheet.png<>res://Game/Player/player.gd<>uid://df14qn6f8hjyi::::res://Game/Collisions/hurtbox.tscn<>res://Game/Player/AttackController.gd<>res://Game/Player/Magnet.gd<>uid://l43klxnu5lmv::::res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png<>uid://untxh8qat57p::::res://Game/exhaust.tscn<>res://Game/Player/MainSprite.gd<>res://Game/Player/WarpController.gd<>uid://xlampkeaf6oe::::res://Assets/audio/sfx/gun.wav<>res://Game/Player/MegaShieldShader.gdshader<>res://Game/Player/MegaShieldController.gd<>uid://bidh63jjy1kbj::::res://Assets/audio/sfx/warp.wav<>res://Game/Player/MegaLaserController.gd<>uid://c40gtktrjhs7u::::res://Assets/Img/Projectiles And Explosions/Fragment01.png<>uid://cwr6e5h0ew6on::::res://Assets/audio/sfx/mega_shield.wav<>uid://cee853xdtdk2::::res://Assets/Img/Projectiles And Explosions/Fragment02.png<>res://Game/Player/MegaLaserShader.gdshader<>res://Game/Player/MegaBombController.gd<>uid://dg1phtp1y5oeu::::res://Assets/audio/sfx/mega_laser.wav
+player.tscn::PackedScene::6567954844393746520::1694015456::0::1::::<><>::uid://d33vdl37t8o8e::::res://Assets/Img/Player/Player01-Sheet.png<>res://Game/Player/player.gd<>uid://df14qn6f8hjyi::::res://Game/Collisions/hurtbox.tscn<>res://Game/Player/AttackController.gd<>res://Game/Player/Magnet.gd<>uid://l43klxnu5lmv::::res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png<>uid://untxh8qat57p::::res://Game/exhaust.tscn<>res://Game/Player/MainSprite.gd<>res://Game/Player/WarpController.gd<>uid://xlampkeaf6oe::::res://Assets/audio/sfx/gun.wav<>res://Game/Player/MegaShieldShader.gdshader<>res://Game/Player/MegaShieldController.gd<>uid://bidh63jjy1kbj::::res://Assets/audio/sfx/warp.wav<>res://Game/Player/MegaLaserController.gd<>uid://c40gtktrjhs7u::::res://Assets/Img/Projectiles And Explosions/Fragment01.png<>uid://cwr6e5h0ew6on::::res://Assets/audio/sfx/mega_shield.wav<>uid://cee853xdtdk2::::res://Assets/Img/Projectiles And Explosions/Fragment02.png<>res://Game/Player/MegaLaserShader.gdshader<>res://Game/Player/MegaBombController.gd<>uid://dg1phtp1y5oeu::::res://Assets/audio/sfx/mega_laser.wav
 player_afterimage.tscn::PackedScene::3247008785426946328::1692780395::0::1::::<><>::uid://d33vdl37t8o8e
 WarpController.gd::GDScript::-1::1693902721::0::1::::<>Node2D<>::
 ::res://Game/Projectile/::1693666652
@@ -171,7 +171,7 @@ player_projectile.gd::GDScript::-1::1693648558::0::1::::<>Node2D<>::
 player_projectile.tscn::PackedScene::313831442589117573::1693652311::0::1::::<><>::uid://cv7kil86lqphu
 projectile.gd::GDScript::-1::1692866777::0::1::::<>Node2D<>::
 projectile.tscn::PackedScene::6313489258352940430::1692795909::0::1::::<><>::res://Game/Projectile/projectile.gd<>uid://be7x6qmtywpb4
-::res://Game/SFX/::1694015115
+::res://Game/SFX/::1694015477
 explosion_01.tscn::PackedScene::7915867659331822729::1694014713::0::1::::<><>::uid://g3dvrb6sjuoc::::res://Game/SFX/explosion_template.tscn<>uid://bpul3w73n1h2d::::res://Assets/Img/Projectiles And Explosions/Explosion01-Sheet.png<>uid://cehrjuhj26dk5::::res://Assets/audio/sfx/explosion1.wav
 explosion_02.tscn::PackedScene::6062614518998169529::1694014786::0::1::::<><>::uid://g3dvrb6sjuoc::::res://Game/SFX/explosion_template.tscn<>uid://do1n18dn4j1st::::res://Assets/Img/Projectiles And Explosions/Explosion02-Sheet.png<>uid://ciw42q24v6e4x::::res://Assets/audio/sfx/explosion3.wav
 explosion_03.tscn::PackedScene::333852414977389481::1694014780::0::1::::<><>::uid://be7x6qmtywpb4::::res://Game/Collisions/hitbox.tscn<>uid://g3dvrb6sjuoc::::res://Game/SFX/explosion_template.tscn<>uid://rf1cjscqsmh3::::res://Assets/Img/Projectiles And Explosions/Explosion03-Sheet.png<>uid://bprjyf5bn3bbw::::res://Assets/audio/sfx/Explosion2.wav
@@ -181,9 +181,9 @@ explosion_template.gd::GDScript::-1::1694014893::0::1::::<>Node2D<>::
 explosion_template.tscn::PackedScene::479156187466856630::1694014895::0::1::::<><>::res://Game/SFX/explosion_template.gd
 sfx_controller.gd::GDScript::-1::1692885544::0::1::::<>Node<>::
 sfx_controller.tscn::PackedScene::5757490181505080517::1692885661::0::1::::<><>::res://Game/SFX/sfx_controller.gd
-warp_jump_effect.gdshader::Shader::-1::1694015115::0::1::::<><>::
+warp_jump_effect.gdshader::Shader::-1::1694015477::0::1::::<><>::
 warp_jump_effect.tscn::PackedScene::7898839073848251135::1693674580::0::1::::<><>::res://Game/SFX/warp_jump_effect.gdshader
-::res://Game/World/::1694014895
+::res://Game/World/::1694015456
 enemy_spawner.gd::GDScript::-1::1693996766::0::1::::<>Node2D<>::
 enemy_spawner.tscn::PackedScene::6447849308791963137::1694014448::0::1::::<><>::res://Game/World/enemy_spawner.gd<>uid://kb6ev1rcb8kb::::res://Game/World/EnemySpawner/enemy.tscn<>uid://bnr41kpf8ical::::res://Game/Enemies/enemy_fighter.tscn<>uid://bn72akfyufoid::::res://Backgrounds/asteroids_background.tscn<>uid://bulrsrqryxvbd::::res://Game/Enemies/asteroid_01.tscn<>uid://bnsoo54i5d1o7::::res://Game/Enemies/asteroid_02.tscn<>uid://chuws132ealm8::::res://Game/Enemies/asteroid_03.tscn<>uid://kacpq8qxqbr::::res://Game/Enemies/asteroid_04.tscn<>uid://cxtcktvpljf8g::::res://Game/Enemies/asteroid_05.tscn<>uid://chappg8b30d2a::::res://Game/Enemies/asteroid_06.tscn<>uid://4qe38tydk1f0::::res://Game/Enemies/asteroid_07.tscn<>uid://dk7axwga3tl0c::::res://Game/Enemies/asteroid_08.tscn<>uid://d1wyvqb6gn8ey::::res://Game/Enemies/asteroid_09.tscn<>uid://c7mwcyrx48yrt::::res://Game/Enemies/asteroid_10.tscn<>uid://cvbtqhngekqp0::::res://Game/Enemies/asteroid_11.tscn<>uid://w8hkdmsq8ssj::::res://Game/Enemies/asteroid_12.tscn<>uid://wekk2n8o3ruw::::res://Game/Enemies/explosive_asteroid.tscn<>uid://dtetp2rj5x5hq::::res://Game/Enemies/gunship.tscn<>uid://ccwtfe65v8d36::::res://Game/Enemies/debris_01.tscn<>uid://dl5o8jn145eb3::::res://Game/Enemies/debris_02.tscn<>uid://ps5pma5fdbrg::::res://Backgrounds/debris_background.tscn<>uid://6a5husf6xrup::::res://Game/Enemies/debris_03.tscn<>uid://b22dsb7cetuur::::res://Game/Enemies/debris_04.tscn<>uid://begiewiydprsl::::res://Game/Enemies/debris_05.tscn<>uid://do851m8pyi2a0::::res://Game/Enemies/debris_06.tscn<>uid://c2huuxi5vshe4::::res://Game/Enemies/missile.tscn<>uid://6pfpty5jqjyy::::res://Game/World/EnemySpawner/boss.tscn<>uid://c272kclcw4p8a::::res://Game/Bosses/PirateBoss/pirate_boss.tscn
 main_camera.gd::GDScript::-1::1692736937::0::1::::<>Camera2D<>::
@@ -191,7 +191,7 @@ main_camera.tscn::PackedScene::6101109474992760040::1692723249::0::1::::<><>::re
 ui.gd::GDScript::-1::1693939567::0::1::::<>CanvasLayer<>::
 ui.tscn::PackedScene::5359458374072250189::1693939678::0::1::::<><>::res://Game/World/ui.gd<>uid://23l0370xq34
 world.gd::GDScript::-1::1693902525::0::1::::<>Node2D<>::
-world.tscn::PackedScene::6285911068024962618::1694014895::0::1::::<><>::uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>res://Game/World/world.gd<>uid://c0ttiy0hm5rnk::::res://Game/Player/player.tscn<>uid://cquqd06eutva8::::res://Game/World/world_borders.tscn<>uid://cx4nevkhs5r7n::::res://Game/World/enemy_spawner.tscn<>uid://cimfq43jttxtd::::res://Game/World/ui.tscn<>uid://cs6om8hfg4kp1::::res://Game/World/main_camera.tscn
+world.tscn::PackedScene::6285911068024962618::1694015456::0::1::::<><>::uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>res://Game/World/world.gd<>uid://c0ttiy0hm5rnk::::res://Game/Player/player.tscn<>uid://cquqd06eutva8::::res://Game/World/world_borders.tscn<>uid://cx4nevkhs5r7n::::res://Game/World/enemy_spawner.tscn<>uid://cimfq43jttxtd::::res://Game/World/ui.tscn<>uid://cs6om8hfg4kp1::::res://Game/World/main_camera.tscn
 world_borders.tscn::PackedScene::5938128611123823885::1692112478::0::1::::<><>::
 ::res://Game/World/EnemySpawner/::1693996774
 boss.gd::GDScript::-1::1693995794::0::1::::<>Node2D<>::
@@ -224,13 +224,13 @@ btn.tscn::PackedScene::6282681132440818545::1692112478::0::1::::<><>::uid://c7ow
 start_menu.gd::GDScript::-1::1694004252::0::1::::<>Node2D<>::
 start_menu.tscn::PackedScene::7048713633414247425::1694012064::0::1::::<><>::res://Menus/StartMenu/start_menu.gd<>uid://chthgw2hrq8w6
 ::res://Tec/::1692607756
-::res://Tec/SceneTransition/::1694015115
+::res://Tec/SceneTransition/::1694015477
 scene_transition.gd::GDScript::-1::1693853596::0::1::::<>CanvasLayer<>::
-scene_transition.gdshader::Shader::-1::1694015115::0::1::::<><>::
+scene_transition.gdshader::Shader::-1::1694015477::0::1::::<><>::
 scene_transition.tscn::PackedScene::2281830894926206268::1693853711::0::1::::<><>::res://Tec/SceneTransition/scene_transition.gd<>res://Tec/SceneTransition/scene_transition.gdshader
-::res://Tec/Utils/::1694014895
+::res://Tec/Utils/::1694015456
 utils.gd::GDScript::-1::1694004283::0::1::::<>Node<>::
-utils.tscn::PackedScene::428607890730859115::1694014895::0::1::::<><>::res://Tec/Utils/utils.gd
+utils.tscn::PackedScene::428607890730859115::1694015456::0::1::::<><>::res://Tec/Utils/utils.gd
 ::res://Themes/::1692112478
 ::res://Themes/StartMenuTheme/::1694013485
 StartMenuTheme.tres::Theme::7049176733323202507::1694013485::0::1::::<><>::uid://bm4ylpj3oubn1::::res://Themes/StartMenuTheme/stylebox_btn_hover.tres<>uid://bgo4yc41sr5em::::res://Assets/Fonts/PixelSimpel.otf<>uid://ugvjpjwesfiv::::res://Assets/Img/UI/Btn02.png<>uid://xya3vioeb1ax::::res://Assets/Img/UI/SeperatorH.png

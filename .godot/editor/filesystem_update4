@@ -32,3 +32,7 @@ res://Game/SFX/explosion_03.tscn
 res://Game/Player/MegaShieldController.gd
 res://Game/Player/MegaLaserController.gd
 res://Game/Player/mega_bomb.tscn
+res://Game/Collectible/CollectibleTemplate.tscn
+res://Game/Collectible/CollectibleTemplate.gd
+res://Game/Collectible/credit.tscn
+res://Game/Collectible/credit.gd
