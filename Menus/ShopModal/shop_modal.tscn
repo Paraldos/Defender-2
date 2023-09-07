@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://642ciigj6k47"]
+[gd_scene load_steps=5 format=3 uid="uid://642ciigj6k47"]
 
 [ext_resource type="PackedScene" uid="uid://voxnbub71wph" path="res://Menus/modal_template.tscn" id="1_u1gbc"]
 [ext_resource type="Script" path="res://Menus/ShopModal/shop_modal.gd" id="2_usd5g"]
+[ext_resource type="PackedScene" uid="uid://bjdx8rvmxkpp4" path="res://Themes/button.tscn" id="3_b4ag0"]
 [ext_resource type="PackedScene" uid="uid://beb2nvsn5wjmh" path="res://Menus/ShopModal/shop_modal_btn.tscn" id="3_s1me7"]
 
 [node name="ShopModal" instance=ExtResource("1_u1gbc")]
@@ -22,13 +23,17 @@ size_flags_vertical = 1
 text = "Credits: "
 vertical_alignment = 2
 
-[node name="BtnReset" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
+[node name="BtnReset" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="1" instance=ExtResource("3_b4ag0")]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+size_flags_horizontal = 1
 text = "Reset"
 
-[node name="BtnNext" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="2"]
+[node name="BtnNext" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" index="2" instance=ExtResource("3_b4ag0")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+size_flags_horizontal = 1
 text = "Next"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" index="1"]

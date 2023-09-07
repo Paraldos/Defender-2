@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6juwo0buip26"]
+
+[ext_resource type="Script" path="res://Menus/Options/audio_slider.gd" id="1_wfale"]
+[ext_resource type="AudioStream" uid="uid://cup4sdgvo8fro" path="res://Assets/audio/sfx/btn_click.wav" id="2_6fxey"]
+
+[node name="AudioSlider" type="HBoxContainer"]
+custom_minimum_size = Vector2(110, 0)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+script = ExtResource("1_wfale")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Audio Slider"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6fxey")
+volume_db = 5.0
+
+[connection signal="focus_entered" from="HSlider" to="." method="_on_h_slider_focus_entered"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

@@ -1,13 +1,14 @@
+res://Menus/ShopModal
+res://Themes
+res://Menus/Options
 res://Music
 res://Game/Enemies
 res://Game/Player
 res://Game/World/EnemySpawner
 res://Game/Bosses
 res://Menus/CreditsModal
-res://Menus/Options
 res://Menus/PauseMenu
 res://Backgrounds
-res://Menus/ShopModal
 res://Menus
 res://Menus/StageCompleteModal
 res://Game/SFX
@@ -19,4 +20,3 @@ res://Menus/StartMenu
 res://Tec/Utils
 res://Game/Collisions
 res://Tec/SceneTransition
-res://Tec

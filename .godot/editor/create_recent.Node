@@ -1,15 +1,17 @@
 AudioStreamPlayer
+Button
+Label
+HBoxContainer
+ReferenceRect
+HSlider
 Node
 AnimationPlayer
 AudioStreamPlayer2D
 Sprite2D
 CollisionShape2D
 Node2D
-Label
-Button
 HSeparator
 VBoxContainer
-HBoxContainer
 GridContainer
 GridMap
 Timer
@@ -28,5 +30,3 @@ AnimationTree
 Camera2D
 Control
 TextureProgressBar
-Polygon2D
-RayCast2D

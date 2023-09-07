@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvrm3toyyyext"]
+[gd_scene load_steps=6 format=3 uid="uid://cvrm3toyyyext"]
 
 [ext_resource type="Theme" uid="uid://c7ow58aa04nex" path="res://Themes/StartMenuTheme/StartMenuTheme.tres" id="1_n8x0c"]
 [ext_resource type="Script" path="res://Menus/StartMenu/btn.gd" id="2_5wt1n"]
+[ext_resource type="AudioStream" uid="uid://cup4sdgvo8fro" path="res://Assets/audio/sfx/btn_click.wav" id="3_1dq1u"]
+[ext_resource type="AudioStream" uid="uid://pltqt0xd1c1n" path="res://Assets/audio/sfx/btn_accept.wav" id="4_ng47c"]
+[ext_resource type="AudioStream" uid="uid://bjksxokfkibnt" path="res://Assets/audio/sfx/btn_denied.wav" id="5_nw278"]
 
 [node name="Btn1" type="Button"]
 offset_right = 40.0
@@ -10,6 +13,21 @@ theme = ExtResource("1_n8x0c")
 text = "Btn"
 alignment = 0
 script = ExtResource("2_5wt1n")
+
+[node name="AudioClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1dq1u")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="AudioAccept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ng47c")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="AudioDenied" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nw278")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

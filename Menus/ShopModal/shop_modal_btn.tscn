@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://beb2nvsn5wjmh"]
+[gd_scene load_steps=5 format=3 uid="uid://beb2nvsn5wjmh"]
 
 [ext_resource type="Script" path="res://Menus/ShopModal/shop_modal_btn.gd" id="1_bm8a2"]
+[ext_resource type="AudioStream" uid="uid://cup4sdgvo8fro" path="res://Assets/audio/sfx/btn_click.wav" id="2_3gj8l"]
+[ext_resource type="AudioStream" uid="uid://pltqt0xd1c1n" path="res://Assets/audio/sfx/btn_accept.wav" id="3_17jyn"]
+[ext_resource type="AudioStream" uid="uid://bjksxokfkibnt" path="res://Assets/audio/sfx/btn_denied.wav" id="4_q2wvj"]
 
 [node name="ShopModalBtn" type="Button"]
 custom_minimum_size = Vector2(95, 0)
@@ -9,6 +12,21 @@ offset_bottom = 8.0
 text = "Shop Button"
 alignment = 0
 script = ExtResource("1_bm8a2")
+
+[node name="AudioClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3gj8l")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="AudioAccept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_17jyn")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="AudioDenied" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q2wvj")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

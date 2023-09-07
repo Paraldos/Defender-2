@@ -1,15 +1,21 @@
 extends Button
 
+@onready var audio_click = $AudioClick
+@onready var audio_accept = $AudioAccept
+@onready var audio_denied = $AudioDenied
 @export var btnText = ''
 @export var attribute = ''
 @export var cost_multiplier = 1_000
 @export var max_value = 1
 @export var description_text = ''
+var sound_enabled = false
 
 ###############################################################################
 func _ready():
 	Utils.update_shop_text.connect(_update_btn_text)
 	_update_btn_text(_get_cost(), description_text)
+	await get_tree().create_timer(0.1).timeout
+	sound_enabled = true
 
 ###############################################################################
 func _get_cost():
@@ -44,6 +50,8 @@ func _on_pressed():
 		pass
 
 func _on_focus_entered():
+	if sound_enabled:
+		audio_click.play()
 	if attribute:
 		Utils.update_shop_text.emit(_get_cost(), description_text)
 	else:

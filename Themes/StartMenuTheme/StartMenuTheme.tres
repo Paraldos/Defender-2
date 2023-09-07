@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c7ow58aa04nex"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://c7ow58aa04nex"]
 
 [ext_resource type="StyleBox" uid="uid://bm4ylpj3oubn1" path="res://Themes/StartMenuTheme/stylebox_btn_hover.tres" id="1_guh3r"]
 [ext_resource type="FontFile" uid="uid://bgo4yc41sr5em" path="res://Assets/Fonts/PixelSimpel.otf" id="1_utxon"]
 [ext_resource type="Texture2D" uid="uid://ugvjpjwesfiv" path="res://Assets/Img/UI/Btn02.png" id="2_0vrys"]
 [ext_resource type="Texture2D" uid="uid://xya3vioeb1ax" path="res://Assets/Img/UI/SeperatorH.png" id="3_m2bxa"]
+[ext_resource type="Texture2D" uid="uid://du7uc2igfkhcf" path="res://Assets/Img/UI/Grabber.png" id="4_d2w6d"]
+[ext_resource type="Texture2D" uid="uid://dhf3mev01sjqa" path="res://Assets/Img/UI/Grabber_Highlight.png" id="5_qnofj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bowvo"]
 content_margin_left = 10.0
@@ -22,6 +24,12 @@ texture_margin_top = 2.0
 texture_margin_right = 30.0
 texture_margin_bottom = 2.0
 region_rect = Rect2(16, 0, 80, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5y0r7"]
+bg_color = Color(0.376471, 0.376471, 0.376471, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vid3"]
 bg_color = Color(0, 0, 0, 0.666667)
@@ -54,5 +62,10 @@ Button/styles/normal = SubResource("StyleBoxTexture_bowvo")
 Button/styles/pressed = ExtResource("1_guh3r")
 HSeparator/constants/separation = 4
 HSeparator/styles/separator = SubResource("StyleBoxTexture_w4ck0")
+HSlider/icons/grabber = ExtResource("4_d2w6d")
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource("5_qnofj")
+HSlider/icons/tick = null
+HSlider/styles/slider = SubResource("StyleBoxFlat_5y0r7")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2vid3")
 VSeparator/styles/separator = SubResource("StyleBoxLine_62ncj")

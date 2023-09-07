@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://blg4326u72m5w"]
+[gd_scene load_steps=4 format=3 uid="uid://blg4326u72m5w"]
 
 [ext_resource type="PackedScene" uid="uid://voxnbub71wph" path="res://Menus/modal_template.tscn" id="1_g1bnj"]
 [ext_resource type="Script" path="res://Menus/CreditsModal/credits_modal.gd" id="2_kddhm"]
+[ext_resource type="PackedScene" uid="uid://bjdx8rvmxkpp4" path="res://Themes/button.tscn" id="3_dcutb"]
 
 [node name="CreditsModal" instance=ExtResource("1_g1bnj")]
 script = ExtResource("2_kddhm")
@@ -27,7 +28,7 @@ Made With Godot Game Engine
 Game Designe and Idea by LilCthuhlu"
 horizontal_alignment = 1
 
-[node name="BtnBack" type="Button" parent="Panel/MarginContainer/VBoxContainer" index="3"]
+[node name="BtnBack" parent="Panel/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_dcutb")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back"
