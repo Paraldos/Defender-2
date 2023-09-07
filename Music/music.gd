@@ -13,14 +13,14 @@ var music = [
 
 ##############################################################################
 func _ready():
-	_start_music()
+	_next_song()
 
 ##############################################################################
 func _on_audio_stream_player_finished():
-	_start_music()
+	_next_song()
 
 ################################# HELPER
-func _start_music():
+func _next_song():
 	_change_song()
 	audio_stream_player.play()
 
