@@ -1,3 +1,4 @@
+res://Music
 res://Game/Enemies
 res://Game/Player
 res://Game/World/EnemySpawner
@@ -19,4 +20,3 @@ res://Tec/Utils
 res://Game/Collisions
 res://Tec/SceneTransition
 res://Tec
-res://Themes/StartMenuTheme

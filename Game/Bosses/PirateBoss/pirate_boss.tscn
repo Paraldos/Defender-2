@@ -9,6 +9,7 @@
 
 [node name="PirateBoss" instance=ExtResource("1_jhhto")]
 script = ExtResource("2_t8kya")
+hp = 300
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-37, 0, -26, -6, -20, -15, -9, -15, -18, -42, -10, -50, 35, -4, 35, 4, -10, 50, -18, 42, -9, 15, -20, 15, -26, 6)

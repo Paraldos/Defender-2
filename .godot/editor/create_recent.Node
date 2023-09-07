@@ -1,6 +1,7 @@
+AudioStreamPlayer
+Node
 AnimationPlayer
 AudioStreamPlayer2D
-AudioStreamPlayer
 Sprite2D
 CollisionShape2D
 Node2D
@@ -29,4 +30,3 @@ Control
 TextureProgressBar
 Polygon2D
 RayCast2D
-Node

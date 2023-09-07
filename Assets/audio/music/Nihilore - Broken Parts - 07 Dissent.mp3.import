@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnrmcd04e82d7"
+path="res://.godot/imported/Nihilore - Broken Parts - 07 Dissent.mp3-4dfda2e794470e80594ac96b36bbdeac.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/music/Nihilore - Broken Parts - 07 Dissent.mp3"
+dest_files=["res://.godot/imported/Nihilore - Broken Parts - 07 Dissent.mp3-4dfda2e794470e80594ac96b36bbdeac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

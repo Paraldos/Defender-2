@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1d3ywh5tl06c"
+path="res://.godot/imported/Nihilore - Broken Parts - 10 Walks of Life.mp3-81790a0910c1563e0466d8fd3ea2fd03.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/music/Nihilore - Broken Parts - 10 Walks of Life.mp3"
+dest_files=["res://.godot/imported/Nihilore - Broken Parts - 10 Walks of Life.mp3-81790a0910c1563e0466d8fd3ea2fd03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

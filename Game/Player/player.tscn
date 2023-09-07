@@ -749,7 +749,6 @@ bus = &"SFX"
 [node name="WarpController" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_yoehl")
-spawn_afterimage = true
 
 [node name="WarpAnimationPlayer" type="AnimationPlayer" parent="WarpController"]
 unique_name_in_owner = true
@@ -842,7 +841,5 @@ autostart = true
 script = ExtResource("16_7wjxu")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
-[connection signal="animation_finished" from="WarpController/WarpAnimationPlayer" to="WarpController" method="_on_warp_animation_player_animation_finished"]
-[connection signal="animation_started" from="WarpController/WarpAnimationPlayer" to="WarpController" method="_on_warp_animation_player_animation_started"]
 [connection signal="area_entered" from="MegaLaserController/Hitbox" to="MegaLaserController" method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="MegaLaserController/LaserTimer" to="MegaLaserController" method="_on_laser_timer_timeout"]

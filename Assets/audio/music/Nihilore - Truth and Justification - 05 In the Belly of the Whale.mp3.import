@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://du4gkxf1msocl"
+path="res://.godot/imported/Nihilore - Truth and Justification - 05 In the Belly of the Whale.mp3-5ad0954727ea4ca8b273f2ca610b0538.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/music/Nihilore - Truth and Justification - 05 In the Belly of the Whale.mp3"
+dest_files=["res://.godot/imported/Nihilore - Truth and Justification - 05 In the Belly of the Whale.mp3-5ad0954727ea4ca8b273f2ca610b0538.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

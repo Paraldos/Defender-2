@@ -49,11 +49,3 @@ func _spawn_afterimage():
 	new.global_position = main_sprite.global_position
 	new.scale = main_sprite.scale
 	get_tree().current_scene.add_child(new)
-
-############################################################
-func _on_warp_animation_player_animation_finished(anim_name):
-	if anim_name == 'warp_in':
-		Utils.enable_pause_button.emit(true)
-
-func _on_warp_animation_player_animation_started(_anim_name):
-	Utils.enable_pause_button.emit(false)

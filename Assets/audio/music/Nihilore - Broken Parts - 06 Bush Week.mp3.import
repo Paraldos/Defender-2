@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg58i4l750nhm"
+path="res://.godot/imported/Nihilore - Broken Parts - 06 Bush Week.mp3-22515f8b4c1d22c6ac5820883b301277.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/music/Nihilore - Broken Parts - 06 Bush Week.mp3"
+dest_files=["res://.godot/imported/Nihilore - Broken Parts - 06 Bush Week.mp3-22515f8b4c1d22c6ac5820883b301277.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
