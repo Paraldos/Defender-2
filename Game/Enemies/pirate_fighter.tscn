@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkn6pal68lgqb"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_kj5ci"]
+[ext_resource type="Texture2D" uid="uid://cwrf6bpu0pwfi" path="res://Assets/Img/Enemies/Pirate_Fighter.png" id="2_ufo06"]
+
+[node name="PirateFighter" instance=ExtResource("1_kj5ci")]
+
+[node name="MainSprite" parent="." index="3"]
+rotation = 1.5708
+texture = ExtResource("2_ufo06")
