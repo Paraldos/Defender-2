@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvs7biwurqq0y"]
+[gd_scene load_steps=9 format=3 uid="uid://cvs7biwurqq0y"]
 
 [ext_resource type="PackedScene" uid="uid://chthgw2hrq8w6" path="res://Backgrounds/background.tscn" id="1_wvqxx"]
 [ext_resource type="Script" path="res://Game/World/world.gd" id="1_yqjfv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cx4nevkhs5r7n" path="res://Game/World/enemy_spawner.tscn" id="4_kw1bo"]
 [ext_resource type="PackedScene" uid="uid://cimfq43jttxtd" path="res://Game/World/ui.tscn" id="5_qmqkm"]
 [ext_resource type="PackedScene" uid="uid://cs6om8hfg4kp1" path="res://Game/World/main_camera.tscn" id="6_tts0n"]
+[ext_resource type="PackedScene" uid="uid://ct6g37wwracu5" path="res://Game/World/TreasureController/treasure_controller.tscn" id="7_4neae"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_yqjfv")
@@ -22,7 +23,8 @@ position = Vector2(170, 135)
 [node name="WorldBorders" parent="." instance=ExtResource("3_uvd7b")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_kw1bo")]
-test_wave = 5
 waves_till_boss = 5
+
+[node name="TreasureController" parent="." instance=ExtResource("7_4neae")]
 
 [node name="MainCamera" parent="." instance=ExtResource("6_tts0n")]

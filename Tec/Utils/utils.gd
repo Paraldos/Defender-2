@@ -11,6 +11,7 @@ signal boss_dead
 signal stop_modal_background
 signal update_shop_text(cost : int, text : String)
 signal back_to_start(target_node)
+signal spawn_treasure(amount, position)
 
 var viewport_width = 480
 var viewport_height = 270
@@ -31,8 +32,6 @@ var player_start = {
 }
 var player = {}
 var player_backup
-var powerup = false
-var time_to_next_powerup = 30
 var stage = {
 	enemies_total = 0,
 	enemies_killed = 0,
@@ -42,13 +41,3 @@ var modals = []
 ###############################################################################
 func _reset_player():
 	player = player_start.duplicate()
-
-###############################################################################
-func _ready():
-	_start_powerup_timer()
-
-#########################
-func _start_powerup_timer():
-	powerup = false
-	await get_tree().create_timer(time_to_next_powerup).timeout
-	powerup = true

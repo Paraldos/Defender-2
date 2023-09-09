@@ -27,3 +27,5 @@ scale = Vector2(0.5, 0.7)
 [node name="MovementTimer" type="Timer" parent="." index="4"]
 wait_time = 0.7
 autostart = true
+
+[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
