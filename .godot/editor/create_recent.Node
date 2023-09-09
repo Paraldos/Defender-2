@@ -1,3 +1,4 @@
+CollisionPolygon2D
 AudioStreamPlayer
 Button
 Label
@@ -19,7 +20,6 @@ Area2D
 GPUParticles2D
 ColorRect
 Line2D
-CollisionPolygon2D
 VSeparator
 CanvasLayer
 MarginContainer

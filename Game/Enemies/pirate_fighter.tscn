@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkn6pal68lgqb"]
+[gd_scene load_steps=5 format=3 uid="uid://bkn6pal68lgqb"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_kj5ci"]
+[ext_resource type="Script" path="res://Game/Enemies/pirate_fighter.gd" id="2_0y340"]
 [ext_resource type="Texture2D" uid="uid://cwrf6bpu0pwfi" path="res://Assets/Img/Enemies/Pirate_Fighter.png" id="2_ufo06"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_fu6ch"]
 
 [node name="PirateFighter" instance=ExtResource("1_kj5ci")]
+script = ExtResource("2_0y340")
+hp = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
+polygon = PackedVector2Array(-21, -2, -12, -7, -9, -7, -9, -23, 0, -23, 4, -9, 19, -9, 22, -3, 22, 3, 19, 9, 4, 9, 0, 23, -9, 23, -9, 7, -12, 7, -21, 2)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-21, -2, -12, -7, -9, -7, -9, -23, 0, -23, 4, -9, 19, -9, 22, -3, 22, 3, 19, 9, 4, 9, 0, 23, -9, 23, -9, 7, -12, 7, -21, 2)
 
 [node name="MainSprite" parent="." index="3"]
 rotation = 1.5708
 texture = ExtResource("2_ufo06")
+
+[node name="Exhaust" parent="." index="4" instance=ExtResource("4_fu6ch")]
+position = Vector2(22, -2.84217e-14)
+rotation = -3.14159
+scale = Vector2(0.7, 0.7)

@@ -87,17 +87,21 @@ func _on_spawn_timer_timeout():
 			_spawn_element(enemy, spawn_points[0])
 			_spawn_element(enemy, spawn_points[1])
 			_spawn_element(enemy, spawn_points[2])
+		'PirateFighters':
+			var enemy = current_wave.enemy_packages.pick_random()
+			var spawn_points = _get_multiple_spawn_points(3, 50)
+			_spawn_element(enemy, spawn_points[0])
+			_spawn_element(enemy, spawn_points[1])
+			_spawn_element(enemy, spawn_points[2])
 
 ##################### HELPER
 func _get_multiple_spawn_points(number_of_positions = 1, distance_between_points = 25):
 	var points = []
+	points.append(_get_spawn_position())
 	while points.size() < number_of_positions:
 		var newPoint = _get_spawn_position()
-		if points.size() <= 0:
-			points.append(newPoint)
-			continue
 		for point in points:
-			if abs(point.y - newPoint.y) < distance_between_points:
+			if point.distance_to(newPoint) < distance_between_points:
 				newPoint = false
 				break
 		if newPoint:
