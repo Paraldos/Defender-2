@@ -66,7 +66,7 @@ func _start_boss_fight():
 ###############################################################################
 func _on_spawn_timer_timeout():
 	match current_wave.wave_name:
-		'Fighters':
+		'AttackDrones':
 			var enemy = current_wave.enemy_packages.pick_random()
 			var spawn_points = _get_multiple_spawn_points(2, 100)
 			_spawn_element(enemy, spawn_points[0])

@@ -11,3 +11,6 @@ res://Game/World/enemy_spawner.gd
 res://Game/World/world.tscn
 res://Tec/Utils/utils.tscn
 res://default_bus_layout.tres
+res://Game/Enemies/attack_drone.tscn
+res://Game/Enemies/attack_drone.gd
+res://Game/Enemies/enemy_fighter.tscn
