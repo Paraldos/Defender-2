@@ -3,9 +3,9 @@ extends Node2D
 @export var hp = 5
 @export var credits_factor = 1
 @export var disable_screen_notifier_delete = false
-var credits = 2
 @onready var hurtbox = %Hurtbox
 @onready var hitbox = %Hitbox
+var credits = 2
 var rng = RandomNumberGenerator.new()
 var credit = preload("res://Game/Collectible/credit.tscn")
 var powerups = [

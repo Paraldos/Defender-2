@@ -10,20 +10,20 @@ script = ExtResource("2_0uf3p")
 hp = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
-polygon = PackedVector2Array(-15, -4, -4, -9, 1, -9, 1, -16, 5, -16, 12, -3, 12, 3, 5, 16, 1, 16, 1, 9, -4, 9, -15, 4)
+polygon = PackedVector2Array(-15, -4, -4, -9, 3, -9, 3, -16, 8, -16, 15, -3, 15, 3, 8, 16, 3, 16, 3, 9, -4, 9, -15, 4)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
-polygon = PackedVector2Array(-15, -4, -4, -9, 1, -9, 1, -16, 5, -16, 12, -3, 12, 3, 5, 16, 1, 16, 1, 9, -4, 9, -15, 4)
+polygon = PackedVector2Array(-15, -4, -4, -9, 3, -9, 3, -16, 8, -16, 15, -3, 15, 3, 8, 16, 3, 16, 3, 9, -4, 9, -15, 4)
 
 [node name="MainSprite" parent="." index="3"]
 rotation = 1.5708
 texture = ExtResource("2_3nmyt")
 
 [node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("3_ke7yh")]
-position = Vector2(-9.53674e-07, -12)
+position = Vector2(-7.24792e-05, -14.8571)
 rotation = 1.5708
 scale = Vector2(0.5, 0.7)
 
 [node name="MovementTimer" type="Timer" parent="." index="4"]
-unique_name_in_owner = true
+wait_time = 0.7
 autostart = true

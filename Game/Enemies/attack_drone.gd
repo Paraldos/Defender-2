@@ -1,15 +1,10 @@
 extends "res://Game/Enemies/enemy_template.gd"
 
+@onready var movement_timer = $MovementTimer
+@onready var main_sprite = $MainSprite
 var direction = Vector2(-1.0, 1.0)
 var speed = 300
 var changing_direction = false
-@onready var movement_timer = %MovementTimer
-
-###############################################################################
-func _ready():
-	super._ready()
-	if rng.randi_range(0, 1) == 1:
-		direction.y *= -1
 
 ###############################################################################
 func _process(delta):
