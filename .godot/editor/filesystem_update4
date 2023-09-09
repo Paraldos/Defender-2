@@ -49,3 +49,4 @@ res://Game/Projectile/pulse_projectile.gd
 res://default_bus_layout.tres
 res://Game/Projectile/projectile.tscn
 res://Game/Bosses/normal_gun_controller.tscn
+res://Menus/StartMenu/start_menu.tscn
