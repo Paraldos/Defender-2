@@ -1,11 +1,10 @@
 extends Node2D
 
 @export var hp = 5
-@export var credits_factor = 1
+@export var credits = 3
 @export var disable_screen_notifier_delete = false
 @onready var hurtbox = %Hurtbox
 @onready var hitbox = %Hitbox
-var credits = 2
 var rng = RandomNumberGenerator.new()
 
 ###############################################################################
@@ -13,7 +12,6 @@ func _ready():
 	rng.randomize()
 	Utils.stage.enemies_total += 1
 	_adapt_collision_boxes()
-	credits = floor(hp / 5 * credits_factor)
 
 func _adapt_collision_boxes():
 	hurtbox.scale *= 1.1

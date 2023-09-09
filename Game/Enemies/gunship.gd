@@ -2,7 +2,7 @@ extends "res://Game/Enemies/enemy_template.gd"
 
 @onready var muzzle = %Muzzle
 @onready var muzzle_animation_player = %MuzzleAnimationPlayer
-@export var speed = Vector2(-200, 0)
+var speed = Vector2(-200, 0)
 var projectile = preload("res://Game/Projectile/gunship_projectile.tscn")
 
 ###############################################################################

@@ -10,6 +10,7 @@ size = Vector2(15, 16)
 [node name="Debris04" instance=ExtResource("1_oqb2w")]
 script = ExtResource("2_e846u")
 explosive = false
+credits = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-1.5, 0)
