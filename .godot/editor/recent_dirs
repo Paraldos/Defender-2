@@ -1,3 +1,4 @@
+res://Game/Projectile
 res://Game/World/TreasureController
 res://Game/Enemies
 res://Menus/ShopModal
@@ -13,7 +14,6 @@ res://Backgrounds
 res://Menus
 res://Menus/StageCompleteModal
 res://Game/SFX
-res://Game/Projectile
 res://Game
 res://Game/Collectible
 res://Game/World

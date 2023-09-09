@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://buw8mm36yr8bn"]
+[gd_scene load_steps=3 format=3 uid="uid://buw8mm36yr8bn"]
 
 [ext_resource type="Script" path="res://Game/Bosses/pulse_controller.gd" id="1_r8pcu"]
+[ext_resource type="AudioStream" uid="uid://b87tg37cm612d" path="res://Assets/audio/sfx/Pulse.wav" id="2_qidda"]
 
 [node name="PulseController" type="Node2D"]
 script = ExtResource("1_r8pcu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qidda")
+volume_db = 5.0
+bus = &"SFX"

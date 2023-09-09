@@ -5,10 +5,7 @@ var projectile = preload('res://Game/Projectile/enemy_projectile.tscn')
 @onready var animation_player = $AnimationPlayer
 
 func _attack():
-	for i in 6:
-		animation_player.play("Attack")
-		await get_tree().create_timer(0.2).timeout
-	return true
+	animation_player.play("Attack")
 
 func _spawn_projectile():
 	var new = projectile.instantiate()

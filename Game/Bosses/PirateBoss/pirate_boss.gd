@@ -6,6 +6,7 @@ extends "res://Game/Bosses/boss_template.gd"
 	$NormalGunController3,
 	$NormalGunController4,
 ]
+@onready var pulse_controller = $PulseController
 
 ###############################################################################
 func _move():
@@ -32,18 +33,21 @@ func _get_target_position_y():
 ###############################################################################
 func _attack():
 	var attacks = [
-		await _attack_weapon_0()
+		'_attack01',
+		'_attack02'
 	]
-	attacks.pick_random()
+	await call(attacks.pick_random())
 	return true
 
-func _attack_weapon_0():
-	wing_guns[0]._attack()
-	wing_guns[1]._attack()
-	wing_guns[2]._attack()
-	await wing_guns[3]._attack()
+func _attack01():
+	for attack in 6:
+		for gun in wing_guns:
+			gun._attack()
+		await get_tree().create_timer(0.2).timeout
 	return true
 
-###############################################################################
-func _on_normal_gun_controller_attack_done():
-	_move()
+func _attack02():
+	for i in 3:
+		pulse_controller._attack()
+		await get_tree().create_timer(0.3).timeout
+	return true

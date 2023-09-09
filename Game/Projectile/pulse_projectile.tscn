@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bflodh1k7f4mw"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kil86lqphu" path="res://Game/Projectile/projectile.tscn" id="1_yy1fq"]
+[ext_resource type="Script" path="res://Game/Projectile/pulse_projectile.gd" id="2_esshw"]
+[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="2_fm3dp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ty1g0"]
+radius = 8.0
+
+[sub_resource type="Gradient" id="Gradient_0pxtf"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bxh1h"]
+gradient = SubResource("Gradient_0pxtf")
+
+[sub_resource type="Curve" id="Curve_d8c0m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_g8exd"]
+curve = SubResource("Curve_d8c0m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gpxuw"]
+emission_shape = 1
+emission_sphere_radius = 7.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_g8exd")
+color_ramp = SubResource("GradientTexture1D_bxh1h")
+
+[node name="PulseProjectile" instance=ExtResource("1_yy1fq")]
+script = ExtResource("2_esshw")
+
+[node name="MainSprite" parent="." index="0"]
+modulate = Color(0.0117647, 0.662745, 0.956863, 1)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_fm3dp")
+
+[node name="Hitbox" parent="." index="2"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_ty1g0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
+modulate = Color(0.0117647, 0.662745, 0.956863, 1)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_gpxuw")
+lifetime = 0.3
+preprocess = 0.5
