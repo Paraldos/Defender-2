@@ -6,6 +6,7 @@ extends Node2D
 @onready var hurtbox = %Hurtbox
 @onready var hitbox = %Hitbox
 var rng = RandomNumberGenerator.new()
+var exploding = false
 
 ###############################################################################
 func _ready():
@@ -31,13 +32,14 @@ func _on_hurtbox_hurt(_hitbox, dmg):
 		Color('ffffff'),
 		0.3
 	)
-	if hp <= 0:
+	if hp <= 0 and !exploding:
 		_destroy()
 
 func _on_hitbox_area_entered(_area):
 	_destroy()
 
 func _destroy():
+	exploding = true
 	call_deferred('_spawn_treasure')
 	SfxController._spawn_explosion_02(global_position)
 	Utils.stage.enemies_killed += 1

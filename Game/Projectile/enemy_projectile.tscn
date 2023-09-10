@@ -8,14 +8,14 @@
 offsets = PackedFloat32Array(0.537827, 1)
 colors = PackedColorArray(1, 0.921569, 0.231373, 1, 1, 0.921569, 0.231373, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_240xa"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sm3i0"]
 gradient = SubResource("Gradient_mvq18")
 
 [sub_resource type="Curve" id="Curve_0f3ol"]
 _data = [Vector2(0.493473, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_7y0it"]
+[sub_resource type="CurveTexture" id="CurveTexture_o83ks"]
 curve = SubResource("Curve_0f3ol")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cl4qn"]
@@ -27,16 +27,16 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.5
 scale_max = 0.5
-scale_curve = SubResource("CurveTexture_7y0it")
+scale_curve = SubResource("CurveTexture_o83ks")
 color = Color(1, 0.921569, 0.231373, 1)
-color_ramp = SubResource("GradientTexture1D_240xa")
+color_ramp = SubResource("GradientTexture1D_sm3i0")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vo4kr"]
 radius = 3.0
 height = 10.0
 
 [node name="EnemyProjectile" instance=ExtResource("1_egv46")]
-movement = Vector2(-300, 0)
+movement = Vector2(-400, 0)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="0"]
 position = Vector2(4, 0)
@@ -52,7 +52,6 @@ texture = ExtResource("3_w4t2u")
 
 [node name="Hitbox" parent="." index="3"]
 collision_mask = 2
-dmg = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 rotation = 1.5708

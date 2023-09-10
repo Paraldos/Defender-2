@@ -1,12 +1,13 @@
 GPUParticles2D
+ColorRect
+CollisionShape2D
+AudioStreamPlayer
+Timer
 Node2D
+CollisionPolygon2D
 AnimationPlayer
 Sprite2D
-AudioStreamPlayer
-CollisionShape2D
 Node
-Timer
-CollisionPolygon2D
 Button
 Label
 HBoxContainer
@@ -18,7 +19,6 @@ VBoxContainer
 GridContainer
 GridMap
 Area2D
-ColorRect
 Line2D
 VSeparator
 CanvasLayer

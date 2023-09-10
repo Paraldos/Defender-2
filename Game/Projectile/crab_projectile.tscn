@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://ou3sgwfupcg0"]
+
+[ext_resource type="PackedScene" uid="uid://cv7kil86lqphu" path="res://Game/Projectile/projectile.tscn" id="1_d80ts"]
+[ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="2_m0fgw"]
+
+[sub_resource type="Gradient" id="Gradient_3c35i"]
+offsets = PackedFloat32Array(0.537827, 1)
+colors = PackedColorArray(0.898039, 0.109804, 0.137255, 1, 0.898039, 0.109804, 0.137255, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fbn2h"]
+gradient = SubResource("Gradient_3c35i")
+
+[sub_resource type="Curve" id="Curve_r0w8r"]
+_data = [Vector2(0.493473, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j7rcs"]
+curve = SubResource("Curve_r0w8r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_056wc"]
+emission_shape = 1
+emission_sphere_radius = 3.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_j7rcs")
+color = Color(1, 0.921569, 0.231373, 1)
+color_ramp = SubResource("GradientTexture1D_fbn2h")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfda1"]
+radius = 4.0
+
+[node name="CrabProjectile" instance=ExtResource("1_d80ts")]
+movement = Vector2(-400, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="0"]
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_056wc")
+texture = ExtResource("2_m0fgw")
+lifetime = 0.1
+
+[node name="MainSprite" parent="." index="1"]
+modulate = Color(0.898039, 0.109804, 0.137255, 1)
+texture = ExtResource("2_m0fgw")
+
+[node name="Hitbox" parent="." index="3"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_wfda1")
