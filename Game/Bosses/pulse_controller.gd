@@ -1,14 +1,16 @@
 extends Node2D
 
 var projectile = preload('res://Game/Projectile/pulse_projectile.tscn')
-@export var projectile_speed = 200
+@export var projectile_speed = 300
 @onready var audio_stream_player = $AudioStreamPlayer
+@onready var muzzle = $Muzzle
+@onready var animation_player = $Muzzle/AnimationPlayer
+@onready var targets = $Muzzle/Targets
 
 func _attack():
-	_spawn_projectile(Vector2(projectile_speed, projectile_speed))
-	_spawn_projectile(Vector2(projectile_speed, -projectile_speed))
-	_spawn_projectile(Vector2(-projectile_speed, projectile_speed))
-	_spawn_projectile(Vector2(-projectile_speed, -projectile_speed))
+	for target in targets.get_children():
+		_spawn_projectile(muzzle.position.direction_to(target.position) * projectile_speed)
+	animation_player.play("attack")
 	audio_stream_player.play()
 
 func _spawn_projectile(movemenet):

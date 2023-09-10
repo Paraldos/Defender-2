@@ -4,4 +4,4 @@ extends "res://Game/Projectile/projectile.gd"
 
 func _process(delta):
 	super._process(delta)
-	main_sprite.rotation += 5 *delta
+	main_sprite.rotation += 5 * delta

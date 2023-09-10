@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bflodh1k7f4mw"]
+[gd_scene load_steps=11 format=3 uid="uid://bflodh1k7f4mw"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kil86lqphu" path="res://Game/Projectile/projectile.tscn" id="1_yy1fq"]
 [ext_resource type="Script" path="res://Game/Projectile/pulse_projectile.gd" id="2_esshw"]
 [ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="2_fm3dp"]
+[ext_resource type="Texture2D" uid="uid://cee853xdtdk2" path="res://Assets/Img/Projectiles And Explosions/Fragment02.png" id="4_pt54o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ty1g0"]
 radius = 8.0
@@ -24,8 +25,7 @@ curve = SubResource("Curve_d8c0m")
 emission_shape = 1
 emission_sphere_radius = 7.0
 gravity = Vector3(0, 0, 0)
-scale_min = 3.0
-scale_max = 6.0
+scale_max = 2.0
 scale_curve = SubResource("CurveTexture_g8exd")
 color_ramp = SubResource("GradientTexture1D_bxh1h")
 
@@ -45,7 +45,9 @@ shape = SubResource("CircleShape2D_ty1g0")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
 modulate = Color(0.0117647, 0.662745, 0.956863, 1)
+show_behind_parent = true
 amount = 15
 process_material = SubResource("ParticleProcessMaterial_gpxuw")
+texture = ExtResource("4_pt54o")
 lifetime = 0.3
 preprocess = 0.5

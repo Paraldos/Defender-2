@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1694265719
+::res://::1694327782
 default_bus_layout.tres::AudioBusLayout::4741473970212416117::1694265719::0::1::::<><>::
 icon.svg::CompressedTexture2D::2454184005228381453::1692112478::1692112500::1::::<><>::
 README.md::TextFile::-1::1692112478::0::1::::<><>::
@@ -60,7 +60,7 @@ Pirate_Base.png::CompressedTexture2D::1100560482615146601::1692112478::169211247
 Pirate_Boss.png::CompressedTexture2D::7711333596241552454::1693038633::1693038637::1::::<><>::
 Pirate_Boss_Gun.png::CompressedTexture2D::4617349496114094993::1692112478::1692112478::1::::<><>::
 Pirate_Fighter.png::CompressedTexture2D::6352449370454963282::1692112478::1692112478::1::::<><>::
-::res://Assets/Img/Logo/::1694277162
+::res://Assets/Img/Logo/::1694277226
 ColonyDefender_Logo.png::CompressedTexture2D::3474787102751592811::1694277222::1694277226::1::::<><>::
 ::res://Assets/Img/Player/::1692112478
 Player01-Sheet.png::CompressedTexture2D::9183633286779707606::1692112478::1692112478::1::::<><>::
@@ -100,16 +100,16 @@ background.tscn::PackedScene::5303823381457215039::1692789991::0::1::::<><>::uid
 debris_background.tscn::PackedScene::1091840382485194868::1693764242::0::1::::<><>::res://Backgrounds/asteroids_background.gd<>uid://dh1tvbbjk86ms
 ::res://Game/::1692865339
 exhaust.tscn::PackedScene::1431808899055546271::1692791044::0::1::::<><>::
-::res://Game/Bosses/::1694277164
+::res://Game/Bosses/::1694277326
 boss_template.gd::GDScript::-1::1694264443::0::1::::<>Node2D<>::
-boss_template.tscn::PackedScene::7114117504467144564::1694277164::0::1::::<><>::res://Game/Bosses/boss_template.gd<>uid://df14qn6f8hjyi::::res://Game/Collisions/hurtbox.tscn<>uid://be7x6qmtywpb4::::res://Game/Collisions/hitbox.tscn
+boss_template.tscn::PackedScene::7114117504467144564::1694277326::0::1::::<><>::res://Game/Bosses/boss_template.gd<>uid://df14qn6f8hjyi::::res://Game/Collisions/hurtbox.tscn<>uid://be7x6qmtywpb4::::res://Game/Collisions/hitbox.tscn
 NormalGunController.gd::GDScript::-1::1694266364::0::1::::<>Node2D<>::
 normal_gun_controller.tscn::PackedScene::1177915317455996061::1694266473::0::1::::<><>::res://Game/Bosses/NormalGunController.gd<>uid://l43klxnu5lmv::::res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png<>uid://xlampkeaf6oe::::res://Assets/audio/sfx/gun.wav
 pulse_controller.gd::GDScript::-1::1694265714::0::1::::<>Node2D<>::
 pulse_controller.tscn::PackedScene::3837639632307217819::1694265828::0::1::::<><>::res://Game/Bosses/pulse_controller.gd<>uid://b87tg37cm612d::::res://Assets/audio/sfx/Pulse.wav
-::res://Game/Bosses/PirateBoss/::1694277164
+::res://Game/Bosses/PirateBoss/::1694277326
 pirate_boss.gd::GDScript::-1::1694264926::0::1::::<>Node2D<>::
-pirate_boss.tscn::PackedScene::6735657572647710182::1694277164::0::1::::<><>::uid://c8meqgfjw42c3::::res://Game/Bosses/boss_template.tscn<>res://Game/Bosses/PirateBoss/pirate_boss.gd<>uid://dh4osjtmynxra::::res://Assets/Img/Enemies/Pirate_Boss.png<>uid://untxh8qat57p::::res://Game/exhaust.tscn<>uid://q1udfypxoe7n::::res://Game/Bosses/normal_gun_controller.tscn<>uid://buw8mm36yr8bn::::res://Game/Bosses/pulse_controller.tscn
+pirate_boss.tscn::PackedScene::6735657572647710182::1694277326::0::1::::<><>::uid://c8meqgfjw42c3::::res://Game/Bosses/boss_template.tscn<>res://Game/Bosses/PirateBoss/pirate_boss.gd<>uid://dh4osjtmynxra::::res://Assets/Img/Enemies/Pirate_Boss.png<>uid://untxh8qat57p::::res://Game/exhaust.tscn<>uid://q1udfypxoe7n::::res://Game/Bosses/normal_gun_controller.tscn<>uid://buw8mm36yr8bn::::res://Game/Bosses/pulse_controller.tscn
 ::res://Game/Collectible/::1694249023
 CollectibleTemplate.gd::GDScript::-1::1694248995::0::1::::<>Area2D<>::
 CollectibleTemplate.tscn::PackedScene::3780321643414245049::1694248996::0::1::::<><>::res://Game/Collectible/CollectibleTemplate.gd
@@ -155,15 +155,15 @@ missile.gd::GDScript::-1::1694020288::0::1::::<>Node2D<>::
 missile.tscn::PackedScene::6683642067412252257::1694263145::0::1::::<><>::uid://dlacothulwj6i::::res://Game/Enemies/enemy_template.tscn<>uid://b4dtfft0ke0ek::::res://Assets/Img/Enemies/Missile.png<>res://Game/Enemies/missile.gd<>uid://gbs6ovn1a207::::res://Assets/audio/sfx/missile.wav
 pirate_fighter.gd::GDScript::-1::1694241728::0::1::::<>Node2D<>::
 pirate_fighter.tscn::PackedScene::3117055063006421441::1694263241::0::1::::<><>::uid://dlacothulwj6i::::res://Game/Enemies/enemy_template.tscn<>res://Game/Enemies/pirate_fighter.gd<>uid://cwrf6bpu0pwfi::::res://Assets/Img/Enemies/Pirate_Fighter.png<>uid://untxh8qat57p::::res://Game/exhaust.tscn
-::res://Game/Player/::1694277164
+::res://Game/Player/::1694280653
 AttackController.gd::GDScript::-1::1694014447::0::1::::<>Node2D<>::
 Magnet.gd::GDScript::-1::1693652343::0::1::::<>Area2D<>::
 MainSprite.gd::GDScript::-1::1693901974::0::1::::<>Sprite2D<>::
 MegaBombController.gd::GDScript::-1::1694004125::0::1::::<>Node2D<>::
 MegaLaserController.gd::GDScript::-1::1694021151::0::1::::<>Node2D<>::
-MegaLaserShader.gdshader::Shader::-1::1694277164::0::1::::<><>::
+MegaLaserShader.gdshader::Shader::-1::1694280653::0::1::::<><>::
 MegaShieldController.gd::GDScript::-1::1694015086::0::1::::<>Node2D<>::
-MegaShieldShader.gdshader::Shader::-1::1694277164::0::1::::<><>::
+MegaShieldShader.gdshader::Shader::-1::1694280653::0::1::::<><>::
 mega_bomb.gd::GDScript::-1::1694003544::0::1::::<>Node2D<>::
 mega_bomb.tscn::PackedScene::6860976255864132379::1694021723::0::1::::<><>::res://Game/Player/mega_bomb.gd<>uid://c40gtktrjhs7u
 player.gd::GDScript::-1::1693997068::0::1::::<>CharacterBody2D<>::
@@ -177,9 +177,9 @@ player_projectile.gd::GDScript::-1::1693648558::0::1::::<>Node2D<>::
 player_projectile.tscn::PackedScene::313831442589117573::1693652311::0::1::::<><>::uid://cv7kil86lqphu
 projectile.gd::GDScript::-1::1692866777::0::1::::<>Node2D<>::
 projectile.tscn::PackedScene::6313489258352940430::1694266161::0::1::::<><>::res://Game/Projectile/projectile.gd<>uid://be7x6qmtywpb4::::res://Game/Collisions/hitbox.tscn
-pulse_projectile.tscn::PackedScene::2760928860784078986::1694266185::0::1::::<><>::uid://cv7kil86lqphu::::res://Game/Projectile/projectile.tscn<>res://Game/Projectile/pulse_projectile.gd<>uid://ctoss36efuwjt::::res://Assets/Img/Projectiles And Explosions/Projectile04.png
 pulse_projectile.gd::GDScript::-1::1694265927::0::1::::<>Node2D<>::
-::res://Game/SFX/::1694277164
+pulse_projectile.tscn::PackedScene::2760928860784078986::1694266185::0::1::::<><>::uid://cv7kil86lqphu::::res://Game/Projectile/projectile.tscn<>res://Game/Projectile/pulse_projectile.gd<>uid://ctoss36efuwjt::::res://Assets/Img/Projectiles And Explosions/Projectile04.png
+::res://Game/SFX/::1694280653
 explosion_01.tscn::PackedScene::7915867659331822729::1694014713::0::1::::<><>::uid://g3dvrb6sjuoc
 explosion_02.tscn::PackedScene::6062614518998169529::1694014786::0::1::::<><>::uid://g3dvrb6sjuoc
 explosion_03.tscn::PackedScene::333852414977389481::1694014780::0::1::::<><>::uid://be7x6qmtywpb4
@@ -189,9 +189,9 @@ explosion_template.gd::GDScript::-1::1694016196::0::1::::<>Node2D<>::
 explosion_template.tscn::PackedScene::479156187466856630::1694014895::0::1::::<><>::res://Game/SFX/explosion_template.gd
 sfx_controller.gd::GDScript::-1::1692885544::0::1::::<>Node<>::
 sfx_controller.tscn::PackedScene::5757490181505080517::1692885661::0::1::::<><>::res://Game/SFX/sfx_controller.gd
-warp_jump_effect.gdshader::Shader::-1::1694277164::0::1::::<><>::
+warp_jump_effect.gdshader::Shader::-1::1694280653::0::1::::<><>::
 warp_jump_effect.tscn::PackedScene::7898839073848251135::1693674580::0::1::::<><>::res://Game/SFX/warp_jump_effect.gdshader
-::res://Game/World/::1694277164
+::res://Game/World/::1694277326
 enemy_spawner.gd::GDScript::-1::1694247663::0::1::::<>Node2D<>::
 enemy_spawner.tscn::PackedScene::6447849308791963137::1694262995::0::1::::<><>::res://Game/World/enemy_spawner.gd<>uid://kb6ev1rcb8kb::::res://Game/World/EnemySpawner/enemy.tscn<>uid://7e3778qdjs3w::::res://Game/Enemies/attack_drone.tscn<>uid://bn72akfyufoid::::res://Backgrounds/asteroids_background.tscn<>uid://bulrsrqryxvbd::::res://Game/Enemies/asteroid_01.tscn<>uid://bnsoo54i5d1o7::::res://Game/Enemies/asteroid_02.tscn<>uid://chuws132ealm8::::res://Game/Enemies/asteroid_03.tscn<>uid://kacpq8qxqbr::::res://Game/Enemies/asteroid_04.tscn<>uid://cxtcktvpljf8g::::res://Game/Enemies/asteroid_05.tscn<>uid://chappg8b30d2a::::res://Game/Enemies/asteroid_06.tscn<>uid://4qe38tydk1f0::::res://Game/Enemies/asteroid_07.tscn<>uid://dk7axwga3tl0c::::res://Game/Enemies/asteroid_08.tscn<>uid://d1wyvqb6gn8ey::::res://Game/Enemies/asteroid_09.tscn<>uid://c7mwcyrx48yrt::::res://Game/Enemies/asteroid_10.tscn<>uid://cvbtqhngekqp0::::res://Game/Enemies/asteroid_11.tscn<>uid://w8hkdmsq8ssj::::res://Game/Enemies/asteroid_12.tscn<>uid://wekk2n8o3ruw::::res://Game/Enemies/explosive_asteroid.tscn<>uid://dtetp2rj5x5hq::::res://Game/Enemies/gunship.tscn<>uid://ccwtfe65v8d36::::res://Game/Enemies/debris_01.tscn<>uid://dl5o8jn145eb3::::res://Game/Enemies/debris_02.tscn<>uid://ps5pma5fdbrg::::res://Backgrounds/debris_background.tscn<>uid://6a5husf6xrup::::res://Game/Enemies/debris_03.tscn<>uid://b22dsb7cetuur::::res://Game/Enemies/debris_04.tscn<>uid://begiewiydprsl::::res://Game/Enemies/debris_05.tscn<>uid://do851m8pyi2a0::::res://Game/Enemies/debris_06.tscn<>uid://c2huuxi5vshe4::::res://Game/Enemies/missile.tscn<>uid://6pfpty5jqjyy::::res://Game/World/EnemySpawner/boss.tscn<>uid://bkn6pal68lgqb::::res://Game/Enemies/pirate_fighter.tscn<>uid://c272kclcw4p8a::::res://Game/Bosses/PirateBoss/pirate_boss.tscn
 main_camera.gd::GDScript::-1::1692736937::0::1::::<>Camera2D<>::
@@ -199,7 +199,7 @@ main_camera.tscn::PackedScene::6101109474992760040::1692723249::0::1::::<><>::re
 ui.gd::GDScript::-1::1693939567::0::1::::<>CanvasLayer<>::
 ui.tscn::PackedScene::5359458374072250189::1694069686::0::1::::<><>::res://Game/World/ui.gd<>uid://23l0370xq34
 world.gd::GDScript::-1::1694070723::0::1::::<>Node2D<>::
-world.tscn::PackedScene::6285911068024962618::1694277164::0::1::::<><>::uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>res://Game/World/world.gd<>uid://c0ttiy0hm5rnk::::res://Game/Player/player.tscn<>uid://cquqd06eutva8::::res://Game/World/world_borders.tscn<>uid://cx4nevkhs5r7n::::res://Game/World/enemy_spawner.tscn<>uid://cimfq43jttxtd::::res://Game/World/ui.tscn<>uid://cs6om8hfg4kp1::::res://Game/World/main_camera.tscn<>uid://ct6g37wwracu5::::res://Game/World/TreasureController/treasure_controller.tscn
+world.tscn::PackedScene::6285911068024962618::1694277326::0::1::::<><>::uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>res://Game/World/world.gd<>uid://c0ttiy0hm5rnk::::res://Game/Player/player.tscn<>uid://cquqd06eutva8::::res://Game/World/world_borders.tscn<>uid://cx4nevkhs5r7n::::res://Game/World/enemy_spawner.tscn<>uid://cimfq43jttxtd::::res://Game/World/ui.tscn<>uid://cs6om8hfg4kp1::::res://Game/World/main_camera.tscn<>uid://ct6g37wwracu5::::res://Game/World/TreasureController/treasure_controller.tscn
 world_borders.tscn::PackedScene::5938128611123823885::1692112478::0::1::::<><>::
 ::res://Game/World/EnemySpawner/::1693996774
 boss.gd::GDScript::-1::1693995794::0::1::::<>Node2D<>::
@@ -231,22 +231,22 @@ shop_modal_btn.tscn::PackedScene::2670904141553207155::1694075071::0::1::::<><>:
 ::res://Menus/StageCompleteModal/::1694075321
 stage_complete_modal.gd::GDScript::-1::1694075255::0::1::::<>CanvasLayer<>::
 stage_complete_modal.tscn::PackedScene::6688644589139438524::1694075321::0::1::::<><>::uid://voxnbub71wph
-::res://Menus/StartMenu/::1694277164
+::res://Menus/StartMenu/::1694277326
 btn.gd::GDScript::-1::1694075566::0::1::::<>Button<>::
 btn.tscn::PackedScene::6282681132440818545::1694079383::0::1::::<><>::uid://c7ow58aa04nex
 start_menu.gd::GDScript::-1::1694075561::0::1::::<>Node2D<>::
-start_menu.tscn::PackedScene::7048713633414247425::1694277164::0::1::::<><>::res://Menus/StartMenu/start_menu.gd<>uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>uid://bprhiaygpky5p::::res://Assets/Img/Logo/ColonyDefender_Logo.png<>uid://dcuh7esjp08h7::::res://Assets/Img/Backgrounds/Planet.png<>uid://c7ow58aa04nex::::res://Themes/StartMenuTheme/StartMenuTheme.tres<>uid://c2kunpmpwb60c::::res://Assets/Img/Backgrounds/SpaceStation.png<>uid://cvrm3toyyyext::::res://Menus/StartMenu/btn.tscn
+start_menu.tscn::PackedScene::7048713633414247425::1694277326::0::1::::<><>::res://Menus/StartMenu/start_menu.gd<>uid://chthgw2hrq8w6::::res://Backgrounds/background.tscn<>uid://bprhiaygpky5p::::res://Assets/Img/Logo/ColonyDefender_Logo.png<>uid://dcuh7esjp08h7::::res://Assets/Img/Backgrounds/Planet.png<>uid://c7ow58aa04nex::::res://Themes/StartMenuTheme/StartMenuTheme.tres<>uid://c2kunpmpwb60c::::res://Assets/Img/Backgrounds/SpaceStation.png<>uid://cvrm3toyyyext::::res://Menus/StartMenu/btn.tscn
 ::res://Music/::1694079536
 music.gd::GDScript::-1::1694079515::0::1::::<>Node<>::
 music.tscn::PackedScene::6755127067354324164::1694079536::0::1::::<><>::res://Music/music.gd
 ::res://Tec/::1694262985
-::res://Tec/SceneTransition/::1694277164
+::res://Tec/SceneTransition/::1694280653
 scene_transition.gd::GDScript::-1::1693853596::0::1::::<>CanvasLayer<>::
-scene_transition.gdshader::Shader::-1::1694277164::0::1::::<><>::
+scene_transition.gdshader::Shader::-1::1694280653::0::1::::<><>::
 scene_transition.tscn::PackedScene::2281830894926206268::1693853711::0::1::::<><>::res://Tec/SceneTransition/scene_transition.gd<>res://Tec/SceneTransition/scene_transition.gdshader
-::res://Tec/Utils/::1694277164
+::res://Tec/Utils/::1694277325
 utils.gd::GDScript::-1::1694249666::0::1::::<>Node<>::
-utils.tscn::PackedScene::428607890730859115::1694277164::0::1::::<><>::res://Tec/Utils/utils.gd
+utils.tscn::PackedScene::428607890730859115::1694277325::0::1::::<><>::res://Tec/Utils/utils.gd
 ::res://Themes/::1694075404
 button.gd::GDScript::-1::1694074635::0::1::::<>Button<>::
 button.tscn::PackedScene::3025769757644278999::1694075404::0::1::::<><>::uid://c7ow58aa04nex
