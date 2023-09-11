@@ -92,6 +92,7 @@ func _on_spawn_timer_timeout():
 			var spawn_points = _get_multiple_spawn_points(3, 50)
 			for i in 3:
 				_spawn_element(enemy, spawn_points[i-1])
+				await get_tree().create_timer(0.3).timeout
 		'CrabShips':
 			var enemy = _get_enemy()
 			_spawn_element(enemy)
