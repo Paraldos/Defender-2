@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var collision_shape_2d = $CollisionShape2D
+@onready var magnet_collision = $MagnetCollision
 
 func _ready():
 	var radius_bonus = Utils.player.magnet * 5
-	collision_shape_2d.shape.radius = 55 + radius_bonus
+	magnet_collision.shape.radius = 55 + radius_bonus

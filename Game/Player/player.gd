@@ -8,6 +8,7 @@ var input = Vector2.ZERO
 @onready var hit_animation_player = %HitAnimationPlayer
 @onready var warp_controller = %WarpController
 @onready var main_sprite = %MainSprite
+@onready var death_controller = %DeathController
 
 ##############################################################################
 func _ready():
@@ -57,5 +58,12 @@ func _on_hurtbox_hurt(_hitbox, dmg):
 	else:
 		Utils.player.hp -= dmg
 		Utils.change_hp.emit()
-		hit_animation_player.play("hit")
 		Utils.screen_shake.emit(6.0, 0.3)
+		hit_animation_player.play("hit")
+		invulnerable = true
+		await hit_animation_player.animation_finished
+		invulnerable = false
+	if Utils.player.hp <= 0:
+		invulnerable = true
+		controlls_enabled = false
+		death_controller._death()

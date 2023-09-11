@@ -17,7 +17,11 @@ var wave_number = 0
 
 ###############################################################################
 func _ready():
+	Utils.player_death.connect(_on_player_death)
 	rng.randomize()
+
+func _on_player_death():
+	_stop_everything()
 
 ###############################################################################
 func _on_wave_timer_timeout():

@@ -12,6 +12,7 @@ signal stop_modal_background
 signal update_shop_text(cost : int, text : String)
 signal back_to_start(target_node)
 signal spawn_treasure(amount, position)
+signal player_death
 
 var viewport_width = 480
 var viewport_height = 270
@@ -32,12 +33,27 @@ var player_start = {
 }
 var player = {}
 var player_backup
-var stage = {
-	enemies_total = 0,
-	enemies_killed = 0,
+var enemies_killed_total = 0
+var enemies_start = {
+	total = 0,
+	total_killed = 0,
+	stage = 0,
+	stage_killed = 0,
 }
+var enemies
+var bosses_start = {
+	total = 0,
+	killed =0
+}
+var bosses
 var modals = []
 
 ###############################################################################
 func _reset_player():
 	player = player_start.duplicate()
+	enemies = enemies_start.duplicate()
+	bosses = bosses_start.duplicate()
+
+func _reset_satage():
+	enemies.stage = 0
+	enemies.stage_killed = 0

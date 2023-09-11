@@ -1,4 +1,4 @@
-res://Tec/Utils/utils.tscn
+res://Menus/credits_info.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
@@ -6,6 +6,18 @@ res://Game/SFX/warp_jump_effect.gdshader
 res://Game/Player/MegaShieldShader.gdshader
 res://Game/Player/MegaLaserShader.gdshader
 res://Game/Enemies/crab_ship.gdshader
-res://Game/World/enemy_spawner.gd
+res://Menus/credits_info.gd
+res://Menus/StageCompleteModal/stage_complete_modal.tscn
+res://Menus/boss_info.tscn
+res://Menus/GameOverMenu/game_over_modal.tscn
+res://Tec/Utils/utils.tscn
 res://Game/World/world.tscn
-res://Game/World/enemy_spawner.tscn
+res://Menus/StageCompleteModal/stage_complete_modal.gd
+res://Menus/GameOverMenu/game_over_modal.gd
+res://Tec/Utils/utils.gd
+res://Menus/ShopModal/shop_modal.gd
+res://Menus/ShopModal/shop_modal.tscn
+res://Menus/enemies_info.tscn
+res://Menus/enemies_info.gd
+res://Game/Player/player.tscn
+res://Game/Player/DeathController.gd

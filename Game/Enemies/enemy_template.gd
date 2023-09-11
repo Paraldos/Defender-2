@@ -11,7 +11,8 @@ var exploding = false
 ###############################################################################
 func _ready():
 	rng.randomize()
-	Utils.stage.enemies_total += 1
+	Utils.enemies.total += 1
+	Utils.enemies.stage += 1
 	_adapt_collision_boxes()
 
 func _adapt_collision_boxes():
@@ -42,7 +43,8 @@ func _destroy():
 	exploding = true
 	call_deferred('_spawn_treasure')
 	SfxController._spawn_explosion_02(global_position)
-	Utils.stage.enemies_killed += 1
+	Utils.enemies.total_killed += 1
+	Utils.enemies.stage_killed += 1
 	queue_free()
 
 func _spawn_treasure():

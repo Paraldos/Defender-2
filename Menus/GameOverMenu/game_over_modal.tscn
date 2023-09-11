@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://da827c6d7wtrm"]
+
+[ext_resource type="PackedScene" uid="uid://voxnbub71wph" path="res://Menus/modal_template.tscn" id="1_daj6l"]
+[ext_resource type="Script" path="res://Menus/GameOverMenu/game_over_modal.gd" id="2_pgo1m"]
+[ext_resource type="PackedScene" uid="uid://rloxm23cf6sm" path="res://Menus/enemies_info.tscn" id="3_2ekgv"]
+[ext_resource type="PackedScene" uid="uid://bjdx8rvmxkpp4" path="res://Themes/button.tscn" id="3_3efma"]
+[ext_resource type="PackedScene" uid="uid://cqrhpnvjffxc8" path="res://Menus/boss_info.tscn" id="4_ebm05"]
+[ext_resource type="PackedScene" uid="uid://glbbcmmjx0aj" path="res://Menus/credits_info.tscn" id="5_iow78"]
+
+[node name="GameOverModal" instance=ExtResource("1_daj6l")]
+script = ExtResource("2_pgo1m")
+
+[node name="Panel" parent="." index="2"]
+custom_minimum_size = Vector2(200, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "- Game Over -"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="EnemiesInfo" parent="Panel/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_2ekgv")]
+layout_mode = 2
+total = true
+
+[node name="BossInfo" parent="Panel/MarginContainer/VBoxContainer" index="4" instance=ExtResource("4_ebm05")]
+layout_mode = 2
+
+[node name="CreditsInfo" parent="Panel/MarginContainer/VBoxContainer" index="5" instance=ExtResource("5_iow78")]
+layout_mode = 2
+
+[node name="BtnAgain" parent="Panel/MarginContainer/VBoxContainer" index="6" instance=ExtResource("3_3efma")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Try Again"
+
+[node name="BtnQuit" parent="Panel/MarginContainer/VBoxContainer" index="7" instance=ExtResource("3_3efma")]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BtnAgain" to="." method="_on_btn_again_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]

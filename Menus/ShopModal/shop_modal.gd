@@ -33,6 +33,7 @@ func _description_label(txt):
 
 ################################################################ NEXT
 func _on_btn_next_pressed():
+	Utils._reset_satage()
 	animation_player.play("move_out")
 	await _panel_wait()
 	SceneTransition._change_scene("res://Game/World/world.tscn")

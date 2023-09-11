@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=64 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -20,6 +20,8 @@
 [ext_resource type="Shader" path="res://Game/Player/MegaLaserShader.gdshader" id="15_h5r36"]
 [ext_resource type="Script" path="res://Game/Player/MegaBombController.gd" id="16_7wjxu"]
 [ext_resource type="AudioStream" uid="uid://dg1phtp1y5oeu" path="res://Assets/audio/sfx/mega_laser.wav" id="16_jrft1"]
+[ext_resource type="Script" path="res://Game/Player/DeathController.gd" id="21_tb4r2"]
+[ext_resource type="AudioStream" uid="uid://bbnehyeh0dax1" path="res://Assets/audio/sfx/mega_bombe_charging.wav" id="22_awdnv"]
 
 [sub_resource type="Animation" id="Animation_j37db"]
 length = 0.001
@@ -50,18 +52,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:invulnerable")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amuds"]
@@ -680,7 +670,7 @@ collision_layer = 2
 script = ExtResource("1_w3u5h")
 controlls_enabled = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="PlayerCollision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, 3, -10, -2, -11, -2, -17, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, -2, 17, -2, 11, 3, 10, 5, 5, 14, 5, 21, 3, 23, 0)
 
 [node name="Hurtbox" parent="." instance=ExtResource("2_yuc3g")]
@@ -693,7 +683,7 @@ libraries = {
 "": SubResource("AnimationLibrary_amuds")
 }
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hurtbox"]
+[node name="HurtboxCollision" type="CollisionPolygon2D" parent="Hurtbox"]
 polygon = PackedVector2Array(21, -3, 14, -5, 5, -5, 3, -10, -2, -11, -2, -17, -8, -23, -17, -23, -23, -5, -23, 5, -17, 23, -8, 23, -2, 17, -2, 11, 3, 10, 5, 5, 14, 5, 21, 3, 23, 0)
 
 [node name="Magnet" type="Area2D" parent="."]
@@ -701,7 +691,7 @@ collision_layer = 8
 collision_mask = 0
 script = ExtResource("3_f7cx0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
+[node name="MagnetCollision" type="CollisionShape2D" parent="Magnet"]
 shape = SubResource("CircleShape2D_gv8gc")
 
 [node name="MainSprite" type="Sprite2D" parent="."]
@@ -839,6 +829,13 @@ autostart = true
 
 [node name="MegaBombController" type="Node2D" parent="."]
 script = ExtResource("16_7wjxu")
+
+[node name="DeathController" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("21_tb4r2")
+
+[node name="DeathSfx" type="AudioStreamPlayer" parent="DeathController"]
+stream = ExtResource("22_awdnv")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="area_entered" from="MegaLaserController/Hitbox" to="MegaLaserController" method="_on_hitbox_area_entered"]
