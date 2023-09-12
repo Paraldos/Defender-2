@@ -22,6 +22,11 @@ func _move_panel_in():
 
 func _move_panel_out():
 	_move_panel(panel_onscreen_position, panel_offscreen_left)
+	await animation_player.animation_finished
+	queue_free()
+
+func _move_panel_to_side():
+	_move_panel(panel_onscreen_position, panel_offscreen_left)
 
 func _panel_wait():
 	await get_tree().create_timer(panel_time - 0.05).timeout
