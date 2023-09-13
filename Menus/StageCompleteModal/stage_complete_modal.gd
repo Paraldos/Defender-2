@@ -11,7 +11,7 @@ func _ready():
 ###############################################################################
 func _on_btn_next_pressed():
 	animation_player.play("move_out")
-	Utils._reset_satage()
+	Utils._next_satage()
 	await _panel_wait()
 	SceneTransition._change_scene("res://Game/World/world.tscn")
 

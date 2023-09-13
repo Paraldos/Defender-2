@@ -33,27 +33,25 @@ var player_start = {
 }
 var player = {}
 var player_backup
-var enemies_killed_total = 0
-var enemies_start = {
-	total = 0,
-	total_killed = 0,
-	stage = 0,
-	stage_killed = 0,
-}
-var enemies
-var bosses_start = {
-	total = 0,
-	killed =0
-}
-var bosses
 var modals = []
+############################ STAGE INFO
+var stage_empty = {
+	enemies_spawned = 0,
+	enemies_killed = 0,
+	bosses_spawned = 0,
+	bosses_killed = 0,
+	completed = 0
+}
+var stage = stage_empty.duplicate()
+var total = stage_empty.duplicate()
 
-###############################################################################
 func _reset_player():
 	player = player_start.duplicate()
-	enemies = enemies_start.duplicate()
-	bosses = bosses_start.duplicate()
+	stage = stage_empty.duplicate()
+	total = stage_empty.duplicate()
 
-func _reset_satage():
-	enemies.stage = 0
-	enemies.stage_killed = 0
+func _next_satage():
+	stage = stage_empty.duplicate()
+	total.completed += 1
+
+

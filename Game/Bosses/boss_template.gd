@@ -12,7 +12,9 @@ var waittime_between_actions = 0.3
 
 ###############################################################################
 func _ready():
-	Utils.bosses.total += 1
+	Utils.stage.bosses_spawned += 1
+	Utils.total.bosses_spawned += 1
+	hp += Utils.total.completed * 25
 	hurtbox.scale = Vector2(1.05, 1.05)
 	rng.randomize()
 	Utils.change_background_speed.emit(Vector2.ZERO)
@@ -79,7 +81,8 @@ func _attack(): return true
 
 # overwrite if needed
 func _death():
-	Utils.bosses.killed += 1
+	Utils.stage.bosses_killed += 1
+	Utils.total.bosses_killed += 1
 	Utils.boss_dying.emit()
 	mini_explosions = true
 	await create_tween().tween_property(

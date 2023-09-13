@@ -16,18 +16,22 @@ func _on_back_to_start(target_node):
 		'credits':
 			buttons.get_child(2).grab_focus()
 
+###############################################################################
 func _on_btn_new_game_pressed():
 	Utils._reset_player()
 	SceneTransition._change_scene("res://Game/World/world.tscn")
 
+###############################################################################
 func _on_btn_options_pressed():
 	var new = options_modal.instantiate()
 	get_tree().current_scene.add_child(new)
 
+###############################################################################
 func _on_btn_credits_pressed():
 	var new = credits_modal.instantiate()
 	get_tree().current_scene.add_child(new)
 
+###############################################################################
 func _on_btn_quit_pressed():
 	get_tree().quit()
 
