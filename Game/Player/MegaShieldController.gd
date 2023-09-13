@@ -13,6 +13,7 @@ var shield_time = 3 + Utils.player.shield
 func _physics_process(_delta):
 	if get_parent().invulnerable: return
 	if !get_parent().controlls_enabled: return
+	if Utils.player.shield <= 0: return
 	if Input.is_action_just_pressed('ui_mega_shield'):
 		if Utils.player.ep >= activation_cost:
 			Utils.player.ep -= activation_cost

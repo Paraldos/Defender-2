@@ -33,3 +33,7 @@ res://Game/Bosses/boss_template.gd
 res://Menus/ShopModal/shop_modal.gd
 res://Menus/StageCompleteModal/stage_complete_modal.gd
 res://Menus/ShopModal/shop_modal.tscn
+res://Game/Player/player.tscn
+res://Game/Player/MegaBombController.gd
+res://Game/Player/MegaLaserController.gd
+res://Game/Player/MegaShieldController.gd

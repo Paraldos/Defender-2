@@ -17,6 +17,7 @@ func _ready():
 func _physics_process(_delta):
 	if get_parent().invulnerable: return
 	if !get_parent().controlls_enabled: return
+	if Utils.player.laser <= 0: return
 	if Input.is_action_just_pressed('ui_mega_laser'):
 		if Utils.player.ep >= activation_cost:
 			Utils.player.ep -= activation_cost

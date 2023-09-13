@@ -6,6 +6,7 @@ var mega_bomb = preload("res://Game/Player/mega_bomb.tscn")
 func _physics_process(delta):
 	if get_parent().invulnerable: return
 	if !get_parent().controlls_enabled: return
+	if Utils.player.bomb <= 0: return
 	if Input.is_action_just_pressed('ui_mega_bomb'):
 		if Utils.player.ep >= activation_cost:
 			Utils.player.ep -= activation_cost
