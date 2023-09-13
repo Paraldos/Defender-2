@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var panel_offscreen_left = Vector2(-480, panel_onscreen_position.y)
 @onready var panel_offscreen_right = Vector2(480, panel_onscreen_position.y)
 var panel_time = 0.3
+var return_focus
 
 ###############################################################################
 func _ready():

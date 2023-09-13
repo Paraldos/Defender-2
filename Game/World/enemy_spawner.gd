@@ -81,16 +81,18 @@ func _on_spawn_timer_timeout():
 			_spawn_element(enemy)
 		'GunShips': 
 			var enemy = _get_enemy()
-			_spawn_element(enemy)
+			var spawn_points = _get_multiple_spawn_points(3)
+			for i in 3:
+				_spawn_element(enemy, spawn_points[i-1])
+				await get_tree().create_timer(1.0).timeout
 		'Debris':
 			var enemy = _get_enemy()
 			_spawn_element(enemy)
 		'Missiles':
 			var enemy = _get_enemy()
 			var spawn_points = _get_multiple_spawn_points(3)
-			_spawn_element(enemy, spawn_points[0])
-			_spawn_element(enemy, spawn_points[1])
-			_spawn_element(enemy, spawn_points[2])
+			for i in 3:
+				_spawn_element(enemy, spawn_points[i-1])
 		'PirateFighters':
 			var enemy = _get_enemy()
 			var spawn_points = _get_multiple_spawn_points(3, 50)
@@ -99,7 +101,10 @@ func _on_spawn_timer_timeout():
 				await get_tree().create_timer(0.3).timeout
 		'CrabShips':
 			var enemy = _get_enemy()
-			_spawn_element(enemy)
+			var spawn_points = _get_multiple_spawn_points(3)
+			for i in 3:
+				_spawn_element(enemy, spawn_points[i-1])
+				await get_tree().create_timer(1.0).timeout
 
 ##################### HELPER
 func _get_enemy():

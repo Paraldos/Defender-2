@@ -46,7 +46,7 @@ _data = {
 
 [node name="Gunship" instance=ExtResource("1_1y8ff")]
 script = ExtResource("2_3yupk")
-hp = 30
+hp = 20
 credits = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]

@@ -8,7 +8,6 @@ extends "res://Menus/modal_template.gd"
 @onready var label_laser = %LabelLaser
 @onready var label_shield = %LabelShield
 var options_modal = preload("res://Menus/Options/options_modal.tscn")
-var return_focus = btn_return
 
 ##############################################################################
 func _ready():
