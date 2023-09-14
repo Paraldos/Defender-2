@@ -1,8 +1,8 @@
+res://Game/Enemies
 res://Menus
 res://Menus/PauseMenu
 res://Menus/GameOverMenu
 res://Game/Projectile
-res://Game/Enemies
 res://Game/World/TreasureController
 res://Menus/ShopModal
 res://Themes

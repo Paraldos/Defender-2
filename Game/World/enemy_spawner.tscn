@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://cx4nevkhs5r7n"]
+[gd_scene load_steps=32 format=3 uid="uid://cx4nevkhs5r7n"]
 
 [ext_resource type="Script" path="res://Game/World/enemy_spawner.gd" id="1_tnqcj"]
 [ext_resource type="PackedScene" uid="uid://kb6ev1rcb8kb" path="res://Game/World/EnemySpawner/enemy.tscn" id="2_2ho8a"]
 [ext_resource type="PackedScene" uid="uid://7e3778qdjs3w" path="res://Game/Enemies/attack_drone.tscn" id="3_yiqe6"]
+[ext_resource type="PackedScene" uid="uid://xmqj1djh3pvq" path="res://Game/Enemies/attack_drone_2.tscn" id="4_i6578"]
 [ext_resource type="PackedScene" uid="uid://bn72akfyufoid" path="res://Backgrounds/asteroids_background.tscn" id="4_l21ut"]
 [ext_resource type="PackedScene" uid="uid://bulrsrqryxvbd" path="res://Game/Enemies/asteroid_01.tscn" id="4_xjvk5"]
 [ext_resource type="PackedScene" uid="uid://bnsoo54i5d1o7" path="res://Game/Enemies/asteroid_02.tscn" id="5_gqaar"]
@@ -53,7 +54,7 @@ unique_name_in_owner = true
 wave_name = "AttackDrones"
 spawn_time = 1.5
 wave_time = 12
-enemy_packages = Array[PackedScene]([ExtResource("3_yiqe6")])
+enemy_packages = Array[PackedScene]([ExtResource("3_yiqe6"), ExtResource("4_i6578")])
 
 [node name="EnemyAsteroids" parent="Enemies" instance=ExtResource("2_2ho8a")]
 wave_name = "Asteroids"

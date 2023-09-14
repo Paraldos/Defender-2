@@ -1,3 +1,4 @@
+CollisionPolygon2D
 Label
 HBoxContainer
 HSeparator
@@ -8,7 +9,6 @@ GPUParticles2D
 ColorRect
 CollisionShape2D
 Timer
-CollisionPolygon2D
 AnimationPlayer
 Sprite2D
 Node
