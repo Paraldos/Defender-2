@@ -22,3 +22,6 @@ res://Game/Projectile/enemy_projectile.tscn
 res://Game/Projectile/projectile.gd
 res://Game/Bosses/pulse_attack.tscn
 res://Game/Projectile/player_projectile.tscn
+res://Game/Projectile/enemy_projectile.gd
+res://Game/Projectile/projectile.tscn
+res://Game/Projectile/player_projectile.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://eqa01i0rg13f"]
+[gd_scene load_steps=14 format=3 uid="uid://eqa01i0rg13f"]
 
 [ext_resource type="PackedScene" uid="uid://cv7kil86lqphu" path="res://Game/Projectile/projectile.tscn" id="1_5m5rb"]
 [ext_resource type="Texture2D" uid="uid://bjoj5pjxrxivg" path="res://Assets/Img/Projectiles And Explosions/Projectile01.png" id="2_7u7jm"]
@@ -33,10 +33,48 @@ color = Color(1, 0.921569, 0.231373, 1)
 color_ramp = SubResource("GradientTexture1D_fbn2h")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nbul"]
-radius = 4.0
-height = 12.0
+radius = 3.0
+height = 10.0
+
+[sub_resource type="Animation" id="Animation_ktdp6"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xfqax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gf83c"]
+_data = {
+"RESET": SubResource("Animation_xfqax"),
+"start": SubResource("Animation_ktdp6")
+}
 
 [node name="PlayerProjectile" instance=ExtResource("1_5m5rb")]
+modulate = Color(1, 1, 1, 0)
 rotation = 1.5708
 script = ExtResource("2_svyp8")
 
@@ -50,10 +88,18 @@ randomness = 0.5
 
 [node name="MainSprite" parent="." index="1"]
 self_modulate = Color(1, 0.921569, 0.231373, 1)
+rotation = 1.5708
 texture = ExtResource("2_7u7jm")
 
 [node name="Hitbox" parent="." index="3"]
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2nbul")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+autoplay = "start"
+libraries = {
+"": SubResource("AnimationLibrary_gf83c")
+}

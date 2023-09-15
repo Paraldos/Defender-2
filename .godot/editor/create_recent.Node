@@ -1,4 +1,5 @@
 AnimationPlayer
+AnimationTree
 RayCast2D
 Node2D
 Sprite2D
@@ -27,6 +28,5 @@ MarginContainer
 PanelContainer
 Panel
 TextureRect
-AnimationTree
 Camera2D
 Control
