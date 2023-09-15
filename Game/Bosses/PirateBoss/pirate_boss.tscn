@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Game/Bosses/PirateBoss/pirate_boss.gd" id="2_t8kya"]
 [ext_resource type="Texture2D" uid="uid://dh4osjtmynxra" path="res://Assets/Img/Enemies/Pirate_Boss.png" id="3_vhydv"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_h7xhr"]
-[ext_resource type="PackedScene" uid="uid://q1udfypxoe7n" path="res://Game/Bosses/normal_gun_controller.tscn" id="5_uxjav"]
-[ext_resource type="PackedScene" uid="uid://buw8mm36yr8bn" path="res://Game/Bosses/pulse_controller.tscn" id="6_suvb0"]
+[ext_resource type="PackedScene" uid="uid://tlp6fehcyp0" path="res://Game/Bosses/normal_gun_attack.tscn" id="5_vyb5u"]
+[ext_resource type="PackedScene" uid="uid://cy5nhobw428h1" path="res://Game/Bosses/pulse_attack.tscn" id="6_rui7r"]
 
 [node name="PirateBoss" instance=ExtResource("1_jhhto")]
 script = ExtResource("2_t8kya")
@@ -26,17 +26,44 @@ position = Vector2(0, -34)
 rotation = 1.5708
 scale = Vector2(1, 1.5)
 
-[node name="NormalGunController" parent="." index="3" instance=ExtResource("5_uxjav")]
-position = Vector2(-23, -29)
+[node name="Weapons01" type="Node2D" parent="." index="3"]
 
-[node name="NormalGunController2" parent="." index="4" instance=ExtResource("5_uxjav")]
-position = Vector2(-17, -17)
+[node name="NormalGunAttack" parent="Weapons01" index="0" instance=ExtResource("5_vyb5u")]
+position = Vector2(-24, -29)
 
-[node name="NormalGunController3" parent="." index="5" instance=ExtResource("5_uxjav")]
-position = Vector2(-17, 17)
+[node name="NormalGunAttack2" parent="Weapons01" index="1" instance=ExtResource("5_vyb5u")]
+position = Vector2(-18, -17)
 
-[node name="NormalGunController4" parent="." index="6" instance=ExtResource("5_uxjav")]
-position = Vector2(-23, 29)
+[node name="NormalGunAttack3" parent="Weapons01" index="2" instance=ExtResource("5_vyb5u")]
+position = Vector2(-18, 17)
 
-[node name="PulseController" parent="." index="7" instance=ExtResource("6_suvb0")]
+[node name="NormalGunAttack4" parent="Weapons01" index="3" instance=ExtResource("5_vyb5u")]
+position = Vector2(-24, 29)
+
+[node name="Weapons02" type="Node2D" parent="." index="4"]
+
+[node name="PulseAttack" parent="Weapons02" index="0" instance=ExtResource("6_rui7r")]
 position = Vector2(19, 0)
+scale = Vector2(1, 1)
+target_position = Vector2(-29, -30)
+
+[node name="PulseAttack2" parent="Weapons02" index="1" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+target_position = Vector2(-49, -20)
+
+[node name="PulseAttack5" parent="Weapons02" index="2" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+target_position = Vector2(-9, -30)
+
+[node name="PulseAttack3" parent="Weapons02" index="3" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+scale = Vector2(1, 1)
+target_position = Vector2(-49, 20)
+
+[node name="PulseAttack4" parent="Weapons02" index="4" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+target_position = Vector2(-29, 30)
+
+[node name="PulseAttack6" parent="Weapons02" index="5" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+target_position = Vector2(-9, 30)

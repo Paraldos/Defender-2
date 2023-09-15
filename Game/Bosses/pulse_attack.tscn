@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://buw8mm36yr8bn"]
+[gd_scene load_steps=13 format=3 uid="uid://cy5nhobw428h1"]
 
-[ext_resource type="Script" path="res://Game/Bosses/pulse_controller.gd" id="1_r8pcu"]
-[ext_resource type="AudioStream" uid="uid://b87tg37cm612d" path="res://Assets/audio/sfx/Pulse.wav" id="2_qidda"]
-[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="3_0cbj3"]
-[ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="4_vsi3l"]
+[ext_resource type="Script" path="res://Game/Bosses/pulse_attack.gd" id="1_p7o7w"]
+[ext_resource type="AudioStream" uid="uid://b87tg37cm612d" path="res://Assets/audio/sfx/Pulse.wav" id="2_22d37"]
+[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="3_tvang"]
+[ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="4_jm185"]
 
 [sub_resource type="Animation" id="Animation_q1ldh"]
 length = 0.001
@@ -90,22 +90,22 @@ _data = {
 "attack": SubResource("Animation_a6pnj")
 }
 
-[sub_resource type="Gradient" id="Gradient_qtdk0"]
+[sub_resource type="Gradient" id="Gradient_3p1ep"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_l40lc"]
-gradient = SubResource("Gradient_qtdk0")
+gradient = SubResource("Gradient_3p1ep")
 
-[sub_resource type="Curve" id="Curve_86nq6"]
+[sub_resource type="Curve" id="Curve_4ohaw"]
 min_value = -0.01
 max_value = 100.0
 _data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(1, -0.01), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_myq50"]
-curve = SubResource("Curve_86nq6")
+curve = SubResource("Curve_4ohaw")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_stogu"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_npk5c"]
 particle_flag_align_y = true
 particle_flag_disable_z = true
 spread = 180.0
@@ -121,11 +121,11 @@ scale_min = 2.0
 scale_max = 2.0
 color_ramp = SubResource("GradientTexture1D_l40lc")
 
-[node name="PulseController" type="Node2D"]
-script = ExtResource("1_r8pcu")
+[node name="PulseAttack" type="RayCast2D"]
+script = ExtResource("1_p7o7w")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_qidda")
+stream = ExtResource("2_22d37")
 volume_db = 5.0
 bus = &"SFX"
 
@@ -135,7 +135,7 @@ bus = &"SFX"
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(0.0117647, 0.662745, 0.956863, 1)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_0cbj3")
+texture = ExtResource("3_tvang")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Muzzle"]
 root_node = NodePath("../..")
@@ -143,16 +143,13 @@ libraries = {
 "": SubResource("AnimationLibrary_gleb5")
 }
 
-[node name="Target" type="RayCast2D" parent="Muzzle"]
-target_position = Vector2(-40, 0)
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(0.0117647, 0.662745, 0.956863, 1)
 show_behind_parent = true
 emitting = false
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_stogu")
-texture = ExtResource("4_vsi3l")
+process_material = SubResource("ParticleProcessMaterial_npk5c")
+texture = ExtResource("4_jm185")
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0

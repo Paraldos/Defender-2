@@ -1,12 +1,7 @@
 extends "res://Game/Bosses/boss_template.gd"
 
-@onready var wing_guns = [
-	$NormalGunController,
-	$NormalGunController2,
-	$NormalGunController3,
-	$NormalGunController4,
-]
-@onready var pulse_controller = $PulseController
+@onready var weapons_01 = $Weapons01
+@onready var weapons_02 = $Weapons02
 
 ###############################################################################
 func _move():
@@ -40,14 +35,15 @@ func _attack():
 	return true
 
 func _attack01():
-	for attack in 6:
-		for gun in wing_guns:
-			gun._attack()
+	for i in 6:
+		for weapon in weapons_01.get_children():
+			weapon._attack()
 		await get_tree().create_timer(0.2).timeout
 	return true
 
 func _attack02():
 	for i in 3:
-		pulse_controller._attack()
+		for weapon in weapons_02.get_children():
+			weapon._attack()
 		await get_tree().create_timer(0.3).timeout
 	return true
