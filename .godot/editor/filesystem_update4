@@ -1,4 +1,3 @@
-res://Tec/Utils/utils.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
@@ -6,4 +5,3 @@ res://Game/SFX/warp_jump_effect.gdshader
 res://Game/Player/MegaShieldShader.gdshader
 res://Game/Player/MegaLaserShader.gdshader
 res://Game/Enemies/crab_ship.gdshader
-res://Game/Enemies/asteroid.gd
