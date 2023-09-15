@@ -60,10 +60,6 @@ position = Vector2(19, 0)
 scale = Vector2(1, 1)
 target_position = Vector2(-49, 20)
 
-[node name="PulseAttack4" parent="Weapons02" index="4" instance=ExtResource("6_rui7r")]
-position = Vector2(19, 0)
-target_position = Vector2(-29, 30)
-
-[node name="PulseAttack6" parent="Weapons02" index="5" instance=ExtResource("6_rui7r")]
+[node name="PulseAttack6" parent="Weapons02" index="4" instance=ExtResource("6_rui7r")]
 position = Vector2(19, 0)
 target_position = Vector2(-9, 30)

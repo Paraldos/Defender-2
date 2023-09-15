@@ -1,3 +1,4 @@
+res://Game/Enemies/Asteroids
 res://Game/Bosses
 res://Game/Enemies
 res://Menus
@@ -19,4 +20,3 @@ res://Game
 res://Game/Collectible
 res://Game/World
 res://Menus/StartMenu
-res://Tec/Utils

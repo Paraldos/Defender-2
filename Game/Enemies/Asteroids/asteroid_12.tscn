@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhwqql0dtb124"]
+
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_hcsru"]
+[ext_resource type="Texture2D" uid="uid://4wm6fwfvimbb" path="res://Assets/Img/Enemies/Asteroids-Sheet.png" id="2_gma8b"]
+[ext_resource type="Script" path="res://Game/Enemies/Asteroids/asteroid.gd" id="2_qxsl7"]
+
+[node name="Asteroid12" instance=ExtResource("1_hcsru")]
+script = ExtResource("2_qxsl7")
+explosive = false
+hp = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
+polygon = PackedVector2Array(-8, -10, -2, -16, 0, -16, 3, -13, 3, -9, 7, -7, 10, -7, 14, -6, 20, 1, 20, 4, 14, 12, 5, 12, -5, 19, -12, 15, -19, 8, -19, 6, -13, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+polygon = PackedVector2Array(-8, -10, -2, -16, 0, -16, 3, -13, 3, -9, 7, -7, 10, -7, 14, -6, 20, 1, 20, 4, 14, 12, 5, 12, -5, 19, -12, 15, -19, 8, -19, 6, -13, 0)
+
+[node name="MainSprite" parent="." index="3"]
+texture = ExtResource("2_gma8b")
+hframes = 12
+frame = 11
