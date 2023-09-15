@@ -4,11 +4,11 @@ extends Node2D
 @export var invulnerable = true
 @onready var hurtbox_animation_player = $Hurtbox/HurtboxAnimationPlayer
 @onready var hurtbox = %Hurtbox
+@export var waittime_between_actions = 0.3
 var rng = RandomNumberGenerator.new()
 var mini_explosions = false
 var mini_explosion_timer = 0
 var state = 'start'
-var waittime_between_actions = 0.3
 
 ###############################################################################
 func _ready():
@@ -26,6 +26,7 @@ func _ready():
 func _process(delta):
 	_mini_explosions(delta)
 
+########################################## Explosion
 func _mini_explosions(delta):
 	if !mini_explosions: return
 	mini_explosion_timer += delta
@@ -64,9 +65,9 @@ func _next_move():
 # overwrite if needed
 func _start(target_position):
 	await create_tween().tween_property(
-		self, 
-		'global_position', 
-		target_position, 
+		self,
+		'global_position',
+		target_position,
 		3).finished
 	await get_tree().create_timer(1).timeout
 	await get_tree().create_timer(1).timeout

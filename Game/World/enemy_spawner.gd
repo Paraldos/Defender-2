@@ -6,13 +6,14 @@ extends Node2D
 @onready var enemies = %Enemies
 @onready var bosses = %Bosses
 
+@export var test_wave = -1
+@export var waves_till_boss = 5
+@export var test_boss = -1
+
 var rng = RandomNumberGenerator.new()
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var debris_background = preload("res://Backgrounds/debris_background.tscn")
-
 var current_wave = null
-@export var test_wave = -1
-@export var waves_till_boss = -1
 var wave_number = 0
 
 ###############################################################################
@@ -62,10 +63,14 @@ func _start_new_wave():
 		spawn_timer.start(current_wave.spawn_time)
 
 func _start_boss_fight():
-	if !current_wave:
-		await get_tree().create_timer(3.0).timeout
-		var boss = bosses.get_children().pick_random().boss_package
-		_spawn_element(boss, Vector2(-800, -800))
+	if current_wave: return
+	var boss
+	await get_tree().create_timer(3.0).timeout
+	if test_boss > -1:
+		boss = bosses.get_children()[test_boss].boss_package
+	else:
+		boss = bosses.get_children().pick_random().boss_package
+	_spawn_element(boss, Vector2(-800, -800))
 
 ###############################################################################
 func _on_spawn_timer_timeout():

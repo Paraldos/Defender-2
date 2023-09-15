@@ -1,3 +1,4 @@
+res://Game/Bosses/SkullBoss
 res://Game/Enemies/Asteroids
 res://Game/Bosses
 res://Game/Enemies
@@ -19,4 +20,3 @@ res://Game/SFX
 res://Game
 res://Game/Collectible
 res://Game/World
-res://Menus/StartMenu

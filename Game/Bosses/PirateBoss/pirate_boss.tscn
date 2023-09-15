@@ -42,24 +42,26 @@ position = Vector2(-24, 29)
 
 [node name="Weapons02" type="Node2D" parent="." index="4"]
 
-[node name="PulseAttack" parent="Weapons02" index="0" instance=ExtResource("6_rui7r")]
+[node name="PulseAttack5" parent="Weapons02" index="0" instance=ExtResource("6_rui7r")]
 position = Vector2(19, 0)
-scale = Vector2(1, 1)
-target_position = Vector2(-29, -30)
+target_position = Vector2(-9, -40)
 
-[node name="PulseAttack2" parent="Weapons02" index="1" instance=ExtResource("6_rui7r")]
+[node name="PulseAttack" parent="Weapons02" index="1" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+target_position = Vector2(-29, -40)
+
+[node name="PulseAttack2" parent="Weapons02" index="2" instance=ExtResource("6_rui7r")]
 position = Vector2(19, 0)
 target_position = Vector2(-49, -20)
 
-[node name="PulseAttack5" parent="Weapons02" index="2" instance=ExtResource("6_rui7r")]
-position = Vector2(19, 0)
-target_position = Vector2(-9, -30)
-
 [node name="PulseAttack3" parent="Weapons02" index="3" instance=ExtResource("6_rui7r")]
 position = Vector2(19, 0)
-scale = Vector2(1, 1)
 target_position = Vector2(-49, 20)
 
-[node name="PulseAttack6" parent="Weapons02" index="4" instance=ExtResource("6_rui7r")]
+[node name="PulseAttack7" parent="Weapons02" index="4" instance=ExtResource("6_rui7r")]
 position = Vector2(19, 0)
-target_position = Vector2(-9, 30)
+target_position = Vector2(-29, 40)
+
+[node name="PulseAttack6" parent="Weapons02" index="5" instance=ExtResource("6_rui7r")]
+position = Vector2(19, 0)
+target_position = Vector2(-9, 40)

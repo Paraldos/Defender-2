@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cx4nevkhs5r7n"]
+[gd_scene load_steps=33 format=3 uid="uid://cx4nevkhs5r7n"]
 
 [ext_resource type="Script" path="res://Game/World/enemy_spawner.gd" id="1_tnqcj"]
 [ext_resource type="PackedScene" uid="uid://kb6ev1rcb8kb" path="res://Game/World/EnemySpawner/enemy.tscn" id="2_2ho8a"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bkn6pal68lgqb" path="res://Game/Enemies/pirate_fighter.tscn" id="27_jnt16"]
 [ext_resource type="PackedScene" uid="uid://c272kclcw4p8a" path="res://Game/Bosses/PirateBoss/pirate_boss.tscn" id="28_b07ss"]
 [ext_resource type="PackedScene" uid="uid://bwahsjpj4pyp7" path="res://Game/Enemies/crab_ship.tscn" id="28_dsdsn"]
+[ext_resource type="PackedScene" uid="uid://6aq5nabrpru3" path="res://Game/Bosses/SkullBoss/skull_boss.tscn" id="32_cwjed"]
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_tnqcj")
@@ -100,8 +101,12 @@ enemy_packages = Array[PackedScene]([ExtResource("28_dsdsn")])
 unique_name_in_owner = true
 
 [node name="PirateBoss" parent="Bosses" instance=ExtResource("27_cktys")]
-boss_name = "PirateBoss"
+boss_name = "Pirate Boss"
 boss_package = ExtResource("28_b07ss")
+
+[node name="SkullBoss" parent="Bosses" instance=ExtResource("27_cktys")]
+boss_name = "Skull Boss"
+boss_package = ExtResource("32_cwjed")
 
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

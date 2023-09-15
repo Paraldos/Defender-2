@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://6aq5nabrpru3"]
+
+[ext_resource type="PackedScene" uid="uid://c8meqgfjw42c3" path="res://Game/Bosses/boss_template.tscn" id="1_f5ut3"]
+[ext_resource type="Script" path="res://Game/Bosses/SkullBoss/skull_boss.gd" id="2_lmogr"]
+[ext_resource type="Texture2D" uid="uid://clclvwjn6xhpn" path="res://Assets/Img/Enemies/Skull_Boss.png" id="2_s5np4"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="3_c3k02"]
+[ext_resource type="Script" path="res://Game/Bosses/SkullBoss/Gun.gd" id="5_oor53"]
+[ext_resource type="Texture2D" uid="uid://c73rdnbu573ak" path="res://Assets/Img/Enemies/Skull_Boss_Gun.png" id="6_p53l3"]
+[ext_resource type="PackedScene" uid="uid://tlp6fehcyp0" path="res://Game/Bosses/normal_gun_attack.tscn" id="7_bv4wv"]
+
+[node name="SkullBoss" instance=ExtResource("1_f5ut3")]
+script = ExtResource("2_lmogr")
+hp = 300
+waittime_between_actions = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="1"]
+rotation = 1.5708
+polygon = PackedVector2Array(-44, -40, -30, -40, -30, -22, -27, -22, -9, -34, -9, -39, 9, -39, 9, -34, 27, -22, 30, -22, 30, -40, 44, -40, 44, 12, 41, 15, 33, 15, 30, 12, 30, -6, 27, -6, 18, -1, 14, 3, 8, 18, 8, 30, 4, 34, -4, 34, -8, 30, -8, 18, -14, 3, -18, -1, -27, -6, -30, -6, -30, 12, -33, 15, -41, 15, -44, 12)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Hitbox" index="0"]
+rotation = 1.5708
+polygon = PackedVector2Array(-44, -40, -30, -40, -30, -22, -27, -22, -9, -34, -9, -39, 9, -39, 9, -34, 27, -22, 30, -22, 30, -40, 44, -40, 44, 12, 41, 15, 33, 15, 30, 12, 30, -6, 27, -6, 18, -1, 14, 3, 8, 18, 8, 30, 4, 34, -4, 34, -8, 30, -8, 18, -14, 3, -18, -1, -27, -6, -30, -6, -30, 12, -33, 15, -41, 15, -44, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+rotation = 1.5708
+texture = ExtResource("2_s5np4")
+
+[node name="Exhaust" parent="." index="3" instance=ExtResource("3_c3k02")]
+position = Vector2(39, -5)
+rotation = -3.14159
+scale = Vector2(0.6, 0.7)
+
+[node name="Exhaust2" parent="." index="4" instance=ExtResource("3_c3k02")]
+position = Vector2(39, 5)
+rotation = -3.14159
+scale = Vector2(0.6, 0.7)
+
+[node name="Gun" type="Node2D" parent="." index="5"]
+position = Vector2(14, 0)
+script = ExtResource("5_oor53")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun" index="0"]
+position = Vector2(1, 0)
+rotation = -1.5708
+texture = ExtResource("6_p53l3")
+
+[node name="Attack01" type="Node2D" parent="Gun" index="1"]
+
+[node name="NormalGunAttack" parent="Gun/Attack01" index="0" instance=ExtResource("7_bv4wv")]
+position = Vector2(8, -3)
+rotation = 3.14159
+spray_margin = 2.0
+
+[node name="NormalGunAttack2" parent="Gun/Attack01" index="1" instance=ExtResource("7_bv4wv")]
+position = Vector2(8, 3)
+rotation = 3.14159
+spray_margin = 2.0
