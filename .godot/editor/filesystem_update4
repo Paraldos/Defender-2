@@ -1,3 +1,4 @@
+res://Tec/Utils/utils.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
@@ -5,20 +6,4 @@ res://Game/SFX/warp_jump_effect.gdshader
 res://Game/Player/MegaShieldShader.gdshader
 res://Game/Player/MegaLaserShader.gdshader
 res://Game/Enemies/crab_ship.gdshader
-res://Game/Enemies/Asteroids/asteroid_01.tscn
-res://Game/Enemies/Asteroids/asteroid.gd
-res://Game/Enemies/Asteroids/asteroid_02.tscn
-res://Game/Enemies/Asteroids/asteroid_04.tscn
-res://Game/Enemies/Asteroids/asteroid_05.tscn
-res://Game/Enemies/Asteroids/asteroid_06.tscn
-res://Game/Enemies/Asteroids/asteroid_07.tscn
-res://Game/Enemies/Asteroids/asteroid_09.tscn
-res://Game/Enemies/Asteroids/asteroid_10.tscn
-res://Game/Enemies/Asteroids/asteroid_11.tscn
-res://Game/Enemies/Asteroids/asteroid_12.tscn
-res://Game/Enemies/Asteroids/asteroid_03.tscn
-res://Game/Enemies/Asteroids/asteroid_08.tscn
-res://Game/Enemies/Asteroids/explosive_asteroid.tscn
-res://Game/World/world.tscn
-res://Game/World/enemy_spawner.tscn
-res://Tec/Utils/utils.tscn
+res://Game/Enemies/asteroid.gd
