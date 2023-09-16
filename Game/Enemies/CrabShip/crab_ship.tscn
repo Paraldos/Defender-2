@@ -57,7 +57,7 @@ color_ramp = SubResource("GradientTexture1D_e3b67")
 
 [node name="CrabShip" instance=ExtResource("1_j8ipa")]
 script = ExtResource("2_x2qqe")
-hp = 10
+hp = 20
 credits = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]

@@ -6,6 +6,7 @@
 
 [node name="AttackDrone2" instance=ExtResource("1_em0rt")]
 script = ExtResource("2_frxv5")
+hp = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-14, -8, 6, -14, 15, -14, 15, 14, 6, 14, -14, 8)

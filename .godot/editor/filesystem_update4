@@ -31,3 +31,9 @@ res://Game/Bosses/laser_attack.gd
 res://default_bus_layout.tres
 res://Game/Bosses/SkullBoss/skull_boss.gd
 res://Game/Bosses/PirateBoss/pirate_boss.tscn
+res://Menus/GameOverMenu/game_over_modal.tscn
+res://Game/Enemies/CrabShip/crab_ship.tscn
+res://Game/Enemies/GunShips/gunship.tscn
+res://Game/Enemies/PirateFighters/pirate_fighter.tscn
+res://Game/Enemies/AttackDrones/attack_drone.tscn
+res://Game/Enemies/AttackDrones/attack_drone_2.tscn

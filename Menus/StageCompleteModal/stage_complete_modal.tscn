@@ -28,13 +28,13 @@ layout_mode = 2
 text = "Boss beaten!"
 horizontal_alignment = 1
 
-[node name="EnemiesInfo" parent="Panel/MarginContainer/Content" index="3" instance=ExtResource("3_hfhki")]
+[node name="CreditsInfo" parent="Panel/MarginContainer/Content" index="3" instance=ExtResource("5_wokql")]
 layout_mode = 2
 
-[node name="CreditsInfo" parent="Panel/MarginContainer/Content" index="4" instance=ExtResource("5_wokql")]
+[node name="BossInfo" parent="Panel/MarginContainer/Content" index="4" instance=ExtResource("5_lvrxc")]
 layout_mode = 2
 
-[node name="BossInfo" parent="Panel/MarginContainer/Content" index="5" instance=ExtResource("5_lvrxc")]
+[node name="EnemiesInfo" parent="Panel/MarginContainer/Content" index="5" instance=ExtResource("3_hfhki")]
 layout_mode = 2
 
 [node name="Btns" type="HBoxContainer" parent="Panel/MarginContainer/Content" index="6"]

@@ -28,8 +28,8 @@ var player_start = {
 	gun = 1,
 	magnet = 1,
 	bomb = 1,
-	laser = 1,
-	shield = 1,
+	laser = 0,
+	shield = 0,
 }
 var player = {}
 var player_backup

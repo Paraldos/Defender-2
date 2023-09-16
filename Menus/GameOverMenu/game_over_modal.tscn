@@ -31,15 +31,15 @@ layout_mode = 2
 text = "Total Score:"
 horizontal_alignment = 1
 
-[node name="EnemiesInfo" parent="Panel/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_2ekgv")]
+[node name="CreditsInfo" parent="Panel/MarginContainer/VBoxContainer" index="3" instance=ExtResource("5_iow78")]
 layout_mode = 2
-total = true
 
 [node name="BossInfo" parent="Panel/MarginContainer/VBoxContainer" index="4" instance=ExtResource("4_ebm05")]
 layout_mode = 2
 
-[node name="CreditsInfo" parent="Panel/MarginContainer/VBoxContainer" index="5" instance=ExtResource("5_iow78")]
+[node name="EnemiesInfo" parent="Panel/MarginContainer/VBoxContainer" index="5" instance=ExtResource("3_2ekgv")]
 layout_mode = 2
+total = true
 
 [node name="BtnAgain" parent="Panel/MarginContainer/VBoxContainer" index="6" instance=ExtResource("3_3efma")]
 unique_name_in_owner = true
