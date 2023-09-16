@@ -549,7 +549,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cdn4"]
-size = Vector2(480, 2)
+size = Vector2(480, 6)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w84bm"]
 shader = ExtResource("10_gijva")
@@ -778,9 +778,9 @@ texture = ExtResource("14_gxbar")
 
 [node name="ColorRect" type="ColorRect" parent="MegaLaserController"]
 material = SubResource("ShaderMaterial_oygu6")
-offset_top = -10.0
+offset_top = -15.0
 offset_right = 500.0
-offset_bottom = 10.0
+offset_bottom = 15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MegaLaserController"]
 autoplay = "loop"
@@ -795,10 +795,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegaLaserController/Hitbox"]
 position = Vector2(260, 0)
 shape = SubResource("RectangleShape2D_3cdn4")
-
-[node name="LaserTimer" type="Timer" parent="MegaLaserController"]
-wait_time = 0.05
-autostart = true
 
 [node name="MegaShieldController" type="Node2D" parent="."]
 script = ExtResource("10_hef4m")
@@ -838,5 +834,3 @@ script = ExtResource("21_tb4r2")
 stream = ExtResource("22_awdnv")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
-[connection signal="area_entered" from="MegaLaserController/Hitbox" to="MegaLaserController" method="_on_hitbox_area_entered"]
-[connection signal="timeout" from="MegaLaserController/LaserTimer" to="MegaLaserController" method="_on_laser_timer_timeout"]

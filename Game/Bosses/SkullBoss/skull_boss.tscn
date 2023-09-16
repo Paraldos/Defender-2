@@ -55,3 +55,5 @@ spray_margin = 2.0
 position = Vector2(10, 2.5)
 rotation = 3.14159
 spray_margin = 2.0
+
+[node name="Attack02" type="Node2D" parent="Gun" index="2"]

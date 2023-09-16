@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var animation_player = $AnimationPlayer
 @onready var audio_stream_player = $AudioStreamPlayer
-@export var dmg = 1
 var rng = RandomNumberGenerator.new()
 var projectile = preload('res://Game/Projectile/player_projectile.tscn')
 var attack_timer = 0

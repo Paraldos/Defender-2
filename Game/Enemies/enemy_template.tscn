@@ -1,8 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlacothulwj6i"]
+[gd_scene load_steps=7 format=3 uid="uid://dlacothulwj6i"]
 
 [ext_resource type="Script" path="res://Game/Enemies/enemy_template.gd" id="1_6ssg4"]
 [ext_resource type="PackedScene" uid="uid://df14qn6f8hjyi" path="res://Game/Collisions/hurtbox.tscn" id="2_ttdr1"]
 [ext_resource type="PackedScene" uid="uid://be7x6qmtywpb4" path="res://Game/Collisions/hitbox.tscn" id="3_upfnv"]
+
+[sub_resource type="Animation" id="Animation_xkjko"]
+resource_name = "hit"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Hurtbox/..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8w353"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Hurtbox/..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xl4bi"]
+_data = {
+"RESET": SubResource("Animation_8w353"),
+"hit": SubResource("Animation_xkjko")
+}
 
 [node name="EnemyTemplate" type="Node2D"]
 script = ExtResource("1_6ssg4")
@@ -10,6 +48,11 @@ script = ExtResource("1_6ssg4")
 [node name="Hurtbox" parent="." instance=ExtResource("2_ttdr1")]
 unique_name_in_owner = true
 collision_layer = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hurtbox"]
+libraries = {
+"": SubResource("AnimationLibrary_xl4bi")
+}
 
 [node name="Hitbox" parent="." instance=ExtResource("3_upfnv")]
 unique_name_in_owner = true

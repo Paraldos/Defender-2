@@ -3,8 +3,11 @@ extends Node2D
 @export var hp = 5
 @export var credits = 3
 @export var disable_screen_notifier_delete = false
+
 @onready var hurtbox = %Hurtbox
 @onready var hitbox = %Hitbox
+@onready var animation_player = $Hurtbox/AnimationPlayer
+
 var rng = RandomNumberGenerator.new()
 var exploding = false
 
@@ -26,14 +29,8 @@ func _process(_delta):
 
 ###############################################################################
 func _on_hurtbox_hurt(_hitbox, dmg):
+	animation_player.play("hit")
 	hp -= dmg
-	modulate = Color('000000')
-	create_tween().tween_property(
-		self,
-		'modulate',
-		Color('ffffff'),
-		0.3
-	)
 	if hp <= 0 and !exploding:
 		_destroy()
 

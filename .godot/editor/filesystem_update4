@@ -15,3 +15,13 @@ res://Game/Player/MegaLaserController.gd
 res://Game/World/world.tscn
 res://Game/Player/player.tscn
 res://Game/Player/MegaShieldController.gd
+res://Game/Bosses/SkullBoss/skull_boss.tscn
+res://Game/Enemies/enemy_template.tscn
+res://Game/Enemies/enemy_template.gd
+res://Game/Player/AttackController.gd
+res://Game/Projectile/player_projectile.tscn
+res://Menus/Options/options_modal.tscn
+res://Menus/CreditsModal/credits_modal.tscn
+res://Menus/PauseMenu/pause_menu.tscn
+res://Menus/StageCompleteModal/stage_complete_modal.tscn
+res://Menus/boss_info.tscn

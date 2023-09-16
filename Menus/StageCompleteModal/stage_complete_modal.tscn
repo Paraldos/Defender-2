@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2ka88a8mx8xs"]
+[gd_scene load_steps=7 format=3 uid="uid://c2ka88a8mx8xs"]
 
 [ext_resource type="PackedScene" uid="uid://voxnbub71wph" path="res://Menus/modal_template.tscn" id="1_tl5su"]
 [ext_resource type="Script" path="res://Menus/StageCompleteModal/stage_complete_modal.gd" id="2_wrxk7"]
 [ext_resource type="PackedScene" uid="uid://bjdx8rvmxkpp4" path="res://Themes/button.tscn" id="3_ej28c"]
 [ext_resource type="PackedScene" uid="uid://rloxm23cf6sm" path="res://Menus/enemies_info.tscn" id="3_hfhki"]
+[ext_resource type="PackedScene" uid="uid://cqrhpnvjffxc8" path="res://Menus/boss_info.tscn" id="5_lvrxc"]
 [ext_resource type="PackedScene" uid="uid://glbbcmmjx0aj" path="res://Menus/credits_info.tscn" id="5_wokql"]
 
 [node name="StageCompleteModal" instance=ExtResource("1_tl5su")]
@@ -33,7 +34,10 @@ layout_mode = 2
 [node name="CreditsInfo" parent="Panel/MarginContainer/Content" index="4" instance=ExtResource("5_wokql")]
 layout_mode = 2
 
-[node name="Btns" type="HBoxContainer" parent="Panel/MarginContainer/Content" index="5"]
+[node name="BossInfo" parent="Panel/MarginContainer/Content" index="5" instance=ExtResource("5_lvrxc")]
+layout_mode = 2
+
+[node name="Btns" type="HBoxContainer" parent="Panel/MarginContainer/Content" index="6"]
 layout_mode = 2
 
 [node name="BtnShop" parent="Panel/MarginContainer/Content/Btns" index="0" instance=ExtResource("3_ej28c")]
