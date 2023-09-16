@@ -1,0 +1,399 @@
+[gd_scene load_steps=23 format=3 uid="uid://c3yboqmwi0lg2"]
+
+[ext_resource type="Script" path="res://Game/Bosses/laser_attack.gd" id="1_3xk26"]
+[ext_resource type="Shader" path="res://Game/Bosses/laser_attack.gdshader" id="1_wnfx1"]
+[ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="3_84kgk"]
+[ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="4_3bsmr"]
+[ext_resource type="AudioStream" uid="uid://bbnehyeh0dax1" path="res://Assets/audio/sfx/mega_bombe_charging.wav" id="5_s7p3h"]
+[ext_resource type="AudioStream" uid="uid://dg1phtp1y5oeu" path="res://Assets/audio/sfx/mega_laser.wav" id="6_q6uny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fixms"]
+shader = ExtResource("1_wnfx1")
+shader_parameter/beams = 5
+shader_parameter/energy = 15.0
+shader_parameter/roughness = 3
+shader_parameter/frequency = 15
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.01
+shader_parameter/outline_thickness = 0.03
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.690196, 0.0705882, 0.0392157, 1)
+shader_parameter/outline_color = Color(0.964706, 0.6, 0.533333, 1)
+shader_parameter/progress = 0.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_f5mdc"]
+resource_name = "Attack"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesCharge:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.5, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 1.0, 0.5, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParticlesAttack:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParticlesCharge:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GPUParticles2D:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GPUParticles2D:one_shot")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioCharge:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioAttack:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ParticlesAttack:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_qukn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesCharge:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParticlesAttack:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParticlesCharge:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GPUParticles2D:one_shot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioCharge:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioAttack:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ParticlesAttack:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwr5d"]
+_data = {
+"Attack": SubResource("Animation_f5mdc"),
+"RESET": SubResource("Animation_qukn5")
+}
+
+[sub_resource type="Gradient" id="Gradient_olqps"]
+offsets = PackedFloat32Array(0, 0.234568, 0.679012, 0.975309)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w86p1"]
+gradient = SubResource("Gradient_olqps")
+
+[sub_resource type="Curve" id="Curve_lp7nb"]
+_data = [Vector2(0, 0.494737), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_whcgd"]
+curve = SubResource("Curve_lp7nb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bodsa"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 20.0
+emission_ring_inner_radius = 20.0
+particle_flag_align_y = true
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = -200.0
+scale_min = 0.8
+scale_curve = SubResource("CurveTexture_whcgd")
+color_ramp = SubResource("GradientTexture1D_w86p1")
+
+[sub_resource type="Gradient" id="Gradient_6bw8n"]
+offsets = PackedFloat32Array(0, 0.617284)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rr6pe"]
+gradient = SubResource("Gradient_6bw8n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ah6nv"]
+emission_shape = 1
+emission_sphere_radius = 15.0
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_rr6pe")
+
+[sub_resource type="Curve" id="Curve_lqdwe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u2rqk"]
+curve = SubResource("Curve_lqdwe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_on1ev"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_u2rqk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bc3u"]
+size = Vector2(500, 6)
+
+[node name="LaserAttack" type="Node2D"]
+script = ExtResource("1_3xk26")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fixms")
+offset_left = -500.0
+offset_top = -30.0
+offset_bottom = 30.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vwr5d")
+}
+
+[node name="ParticlesCharge" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.909804, 0.305882, 0.25098, 1)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_bodsa")
+texture = ExtResource("3_84kgk")
+lifetime = 0.5
+local_coords = true
+
+[node name="ParticlesAttack" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.909804, 0.305882, 0.25098, 1)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_ah6nv")
+local_coords = true
+trail_enabled = true
+trail_lifetime = 0.15
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.898039, 0.109804, 0.137255, 1)
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_on1ev")
+texture = ExtResource("4_3bsmr")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.9
+local_coords = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-250, 0)
+shape = SubResource("RectangleShape2D_4bc3u")
+
+[node name="AudioCharge" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_s7p3h")
+
+[node name="AudioAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q6uny")

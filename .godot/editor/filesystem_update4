@@ -25,3 +25,9 @@ res://Menus/CreditsModal/credits_modal.tscn
 res://Menus/PauseMenu/pause_menu.tscn
 res://Menus/StageCompleteModal/stage_complete_modal.tscn
 res://Menus/boss_info.tscn
+res://Game/Bosses/laser_attack.tscn
+res://Game/Bosses/laser_attack.gdshader
+res://Game/Bosses/laser_attack.gd
+res://default_bus_layout.tres
+res://Game/Bosses/SkullBoss/skull_boss.gd
+res://Game/Bosses/PirateBoss/pirate_boss.tscn
