@@ -29,7 +29,7 @@ func _enable_mega_laser():
 	audio_stream_player.play()
 	visible = true
 	active = true
-	_deal_dmg()
+	_deal_dmg(hitbox.get_overlapping_areas())
 	laser_timer.start()
 	await get_tree().create_timer(laser_time).timeout
 	visible = false
@@ -37,14 +37,12 @@ func _enable_mega_laser():
 
 ##############################################################################
 func _on_laser_timer_timeout():
-	_deal_dmg()
+	_deal_dmg(hitbox.get_overlapping_areas())
 
 func _on_hitbox_area_entered(_area):
-	_deal_dmg()
+	_deal_dmg(_area)
 
-func _deal_dmg():
+func _deal_dmg(target):
 	if !active: return
-	var hurtboxes = hitbox.get_overlapping_areas()
-	for hurtbox in hurtboxes:
-		if not hurtbox is Hurtbox: return
-		hurtbox._take_hit(self, dmg)
+	if not target is Hurtbox: return
+	target._take_hit(self, dmg)

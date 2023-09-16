@@ -27,9 +27,9 @@ var player_start = {
 	credits = 0,
 	gun = 1,
 	magnet = 1,
-	shield = 0,
-	laser = 0,
-	bomb = 0,
+	bomb = 1,
+	laser = 1,
+	shield = 1,
 }
 var player = {}
 var player_backup

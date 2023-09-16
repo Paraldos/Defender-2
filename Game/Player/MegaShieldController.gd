@@ -4,7 +4,7 @@ var modulate_colors = [
 	Color('80deea00'),
 	Color('80deea')
 ]
-var shield_time = 3 + Utils.player.shield
+var shield_time = 2 + Utils.player.shield
 @onready var animation_player = $AnimationPlayer
 @export var activation_cost = 10
 @onready var audio_stream_player = $AudioStreamPlayer

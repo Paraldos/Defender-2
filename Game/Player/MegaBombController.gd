@@ -1,7 +1,10 @@
 extends Node2D
 
 var mega_bomb = preload("res://Game/Player/mega_bomb.tscn")
-@export var activation_cost = 10
+@export var activation_cost = 12
+
+func _ready():
+	activation_cost -= (Utils.player.bomb * 2)
 
 func _physics_process(delta):
 	if get_parent().invulnerable: return

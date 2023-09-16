@@ -7,7 +7,6 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	hitbox.dmg = 35 + (Utils.player.bomb * 10)
 
 func _physics_process(delta):
 	_wiggle()
