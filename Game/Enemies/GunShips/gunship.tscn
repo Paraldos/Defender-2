@@ -1,87 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtetp2rj5x5hq"]
+[gd_scene load_steps=5 format=3 uid="uid://dtetp2rj5x5hq"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_284ay"]
 [ext_resource type="Script" path="res://Game/Enemies/GunShips/gunship.gd" id="2_52byv"]
 [ext_resource type="Texture2D" uid="uid://wiidbst2es20" path="res://Assets/Img/Enemies/Gunship.png" id="3_1l1r0"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_e10k5"]
-[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="5_k8xgf"]
-
-[sub_resource type="Animation" id="Animation_chbnw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_taxl5"]
-resource_name = "flash"
-length = 0.1
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5v6vb"]
-_data = {
-"RESET": SubResource("Animation_chbnw"),
-"flash": SubResource("Animation_taxl5")
-}
 
 [node name="Gunship" instance=ExtResource("1_284ay")]
 script = ExtResource("2_52byv")
+speed = Vector2(-150, 0)
 hp = 20
 credits = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
-polygon = PackedVector2Array(-29, -17, 1, -17, 6, -31, 13, -31, 18, -13, 32, -13, 32, 13, 18, 13, 13, 31, 6, 31, 1, 17, -29, 17)
+polygon = PackedVector2Array(-30, -2, -28, -5, -22, -8, -6, -8, -6, -10, -3, -10, 4, -31, 10, -31, 13, -28, 16, -13, 16, -10, 19, -10, 31, -5, 31, 5, 19, 10, 16, 10, 16, 13, 13, 28, 10, 31, 4, 31, -3, 10, -6, 10, -6, 8, -22, 8, -28, 5, -30, 2)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" index="0"]
-polygon = PackedVector2Array(-29, -17, 1, -17, 6, -31, 13, -31, 18, -13, 32, -13, 32, 13, 18, 13, 13, 31, 6, 31, 1, 17, -29, 17)
+polygon = PackedVector2Array(-30, -2, -28, -5, -22, -8, -6, -8, -6, -10, -3, -10, 4, -31, 10, -31, 13, -28, 16, -13, 16, -10, 19, -10, 31, -5, 31, 5, 19, 10, 16, 10, 16, 13, 13, 28, 10, 31, 4, 31, -3, 10, -6, 10, -6, 8, -22, 8, -28, 5, -30, 2)
 
 [node name="MainSprite" parent="." index="3"]
 rotation = 1.5708
 texture = ExtResource("3_1l1r0")
 
 [node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("4_e10k5")]
-position = Vector2(-4, -32)
+position = Vector2(-3.00011, -29)
 rotation = 1.5708
+scale = Vector2(1, 0.5)
 
 [node name="Exhaust2" parent="MainSprite" index="1" instance=ExtResource("4_e10k5")]
-position = Vector2(4, -32)
+position = Vector2(2.99989, -31)
 rotation = 1.5708
+scale = Vector2(1, 0.5)
 
 [node name="AttackTimer" type="Timer" parent="." index="4"]
 wait_time = 1.5
 autostart = true
 
-[node name="Muzzle" type="Sprite2D" parent="." index="5"]
+[node name="Muzzle" type="Node2D" parent="." index="5"]
 unique_name_in_owner = true
-modulate = Color(1, 0.921569, 0.231373, 1)
-position = Vector2(6, 0)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("5_k8xgf")
-
-[node name="MuzzleAnimationPlayer" type="AnimationPlayer" parent="Muzzle" index="0"]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_5v6vb")
-}
+position = Vector2(5, 0)
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -1,11 +1,13 @@
 extends Node2D
 
+@export var dmg = 5
 @export var movement = Vector2(300, 0)
+@export var player_projectile = false
 @onready var hitbox = %Hitbox
 
 ###############################################################################
 func _ready():
-	pass
+	hitbox.dmg = dmg
 
 ###############################################################################
 func _process(delta):

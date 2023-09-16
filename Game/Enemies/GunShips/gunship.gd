@@ -1,8 +1,7 @@
 extends "res://Game/Enemies/enemy_template.gd"
 
 @onready var muzzle = %Muzzle
-@onready var muzzle_animation_player = %MuzzleAnimationPlayer
-var speed = Vector2(-200, 0)
+@export var speed = Vector2(-200, 0)
 var projectile = preload("res://Game/Projectile/gunship_projectile.tscn")
 
 ###############################################################################
@@ -25,16 +24,8 @@ func _on_attack_timer_timeout():
 
 #########################
 func _spawn_projectile(movement):
-	_muzzle_flash_animation()
 	var new = projectile.instantiate()
+	new.dmg = dmg
 	new.global_position = muzzle.global_position
 	new.movement = movement
 	get_tree().current_scene.add_child(new)
-
-func _muzzle_flash_animation():
-	muzzle_animation_player.play("flash")
-	var offset = 3.0
-	muzzle.offset = Vector2(
-		rng.randf_range(-offset, offset),
-		rng.randf_range(-offset, offset)
-	)

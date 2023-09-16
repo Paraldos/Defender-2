@@ -2,6 +2,8 @@ extends Node2D
 
 @export var hp = 5
 @export var credits = 3
+@export var dmg = 5
+@export var collision_dmg = 10
 @export var disable_screen_notifier_delete = false
 
 @onready var hurtbox = %Hurtbox
@@ -14,10 +16,18 @@ var exploding = false
 ###############################################################################
 func _ready():
 	rng.randomize()
+	_update_utils()
+	_update_attributes()
+	_adapt_collision_boxes()
+
+func _update_utils():
 	Utils.stage.enemies_spawned += 1
 	Utils.total.enemies_spawned += 1
+
+func _update_attributes():
+	dmg + Utils.total.completed
+	hitbox.dmg = collision_dmg + (Utils.total.completed * 2)
 	hp += Utils.total.completed
-	_adapt_collision_boxes()
 
 func _adapt_collision_boxes():
 	hurtbox.scale *= 1.1

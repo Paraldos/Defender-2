@@ -1,3 +1,4 @@
+res://Game/Enemies/HeavyFighter
 C:/Users/hillb/OneDrive/Desktop/Defender2/desktop
 C:/Users/hillb/OneDrive/Desktop/Defender2/web
 res://Assets/Img/Enemies
@@ -19,6 +20,3 @@ res://Menus/Options
 res://Music
 res://Game/Player
 res://Game/World/EnemySpawner
-res://Menus/CreditsModal
-res://Backgrounds
-res://Menus/StageCompleteModal

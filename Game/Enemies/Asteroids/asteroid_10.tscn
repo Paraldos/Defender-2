@@ -7,6 +7,7 @@
 [node name="Asteroid10" instance=ExtResource("1_kbil0")]
 script = ExtResource("2_bwe1r")
 explosive = false
+collision_dmg = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-11, -2, -1, -11, 2, -11, 8, -8, 13, -1, 13, 3, 9, 7, 1, 11, -2, 11, -5, 10, -11, 4)

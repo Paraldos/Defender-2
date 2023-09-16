@@ -11,6 +11,7 @@ size = Vector2(15, 16)
 script = ExtResource("2_be10y")
 explosive = false
 credits = 2
+collision_dmg = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-1.5, 0)

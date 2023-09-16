@@ -124,7 +124,9 @@ _data = {
 [node name="Missile" instance=ExtResource("1_y3bc0")]
 position = Vector2(-250, 0)
 script = ExtResource("2_0462k")
-credits = 5
+hp = 10
+credits = 6
+collision_dmg = 15
 
 [node name="Line" type="Line2D" parent="." index="0"]
 unique_name_in_owner = true

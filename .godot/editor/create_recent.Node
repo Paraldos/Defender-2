@@ -1,3 +1,5 @@
+CollisionPolygon2D
+Node2D
 AudioStreamPlayer
 GPUParticles2D
 Area2D
@@ -5,10 +7,8 @@ Sprite2D
 AnimationPlayer
 CollisionShape2D
 ColorRect
-Node2D
 AnimationTree
 RayCast2D
-CollisionPolygon2D
 Label
 HBoxContainer
 HSeparator
