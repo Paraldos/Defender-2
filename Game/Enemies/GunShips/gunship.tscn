@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtetp2rj5x5hq"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_1y8ff"]
-[ext_resource type="Script" path="res://Game/Enemies/gunship.gd" id="2_3yupk"]
-[ext_resource type="Texture2D" uid="uid://wiidbst2es20" path="res://Assets/Img/Enemies/Gunship.png" id="2_c13go"]
-[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="3_1r43a"]
-[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="5_1lukc"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_284ay"]
+[ext_resource type="Script" path="res://Game/Enemies/GunShips/gunship.gd" id="2_52byv"]
+[ext_resource type="Texture2D" uid="uid://wiidbst2es20" path="res://Assets/Img/Enemies/Gunship.png" id="3_1l1r0"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_e10k5"]
+[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="5_k8xgf"]
 
 [sub_resource type="Animation" id="Animation_chbnw"]
 length = 0.001
@@ -44,9 +44,9 @@ _data = {
 "flash": SubResource("Animation_taxl5")
 }
 
-[node name="Gunship" instance=ExtResource("1_1y8ff")]
-script = ExtResource("2_3yupk")
-hp = 20
+[node name="Gunship" instance=ExtResource("1_284ay")]
+script = ExtResource("2_52byv")
+hp = 15
 credits = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
@@ -57,13 +57,13 @@ polygon = PackedVector2Array(-29, -17, 1, -17, 6, -31, 13, -31, 18, -13, 32, -13
 
 [node name="MainSprite" parent="." index="3"]
 rotation = 1.5708
-texture = ExtResource("2_c13go")
+texture = ExtResource("3_1l1r0")
 
-[node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("3_1r43a")]
+[node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("4_e10k5")]
 position = Vector2(-4, -32)
 rotation = 1.5708
 
-[node name="Exhaust2" parent="MainSprite" index="1" instance=ExtResource("3_1r43a")]
+[node name="Exhaust2" parent="MainSprite" index="1" instance=ExtResource("4_e10k5")]
 position = Vector2(4, -32)
 rotation = 1.5708
 
@@ -76,7 +76,7 @@ unique_name_in_owner = true
 modulate = Color(1, 0.921569, 0.231373, 1)
 position = Vector2(6, 0)
 scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("5_1lukc")
+texture = ExtResource("5_k8xgf")
 
 [node name="MuzzleAnimationPlayer" type="AnimationPlayer" parent="Muzzle" index="0"]
 unique_name_in_owner = true

@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl5o8jn145eb3"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_qfr0u"]
-[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_1v2nv"]
-[ext_resource type="Texture2D" uid="uid://dh1tvbbjk86ms" path="res://Assets/Img/Enemies/Debris-Sheet.png" id="2_lyyov"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_u0amy"]
+[ext_resource type="Script" path="res://Game/Enemies/Debris/debris.gd" id="2_c6vkq"]
+[ext_resource type="Texture2D" uid="uid://dh1tvbbjk86ms" path="res://Assets/Img/Enemies/Debris-Sheet.png" id="3_5044k"]
 
-[node name="Debris02" instance=ExtResource("1_qfr0u")]
-script = ExtResource("2_1v2nv")
+[node name="Debris02" instance=ExtResource("1_u0amy")]
+script = ExtResource("2_c6vkq")
 explosive = false
-hp = 15
-credits = 4
+hp = 10
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-27, 4, -8, -19, 9, -19, 9, -23, 11, -23, 14, -18, 14, -12, 19, -12, 25, -4, 25, -1, 8, 22, 9, 27, 6, 27, 4, 21, -15, 21, -16, 14, -22, 14, -27, 7)
@@ -17,6 +16,6 @@ polygon = PackedVector2Array(-27, 4, -8, -19, 9, -19, 9, -23, 11, -23, 14, -18, 
 polygon = PackedVector2Array(-27, 4, -8, -19, 9, -19, 9, -23, 11, -23, 14, -18, 14, -12, 19, -12, 25, -4, 25, -1, 8, 22, 9, 27, 6, 27, 4, 21, -15, 21, -16, 14, -22, 14, -27, 7)
 
 [node name="MainSprite" parent="." index="3"]
-texture = ExtResource("2_lyyov")
+texture = ExtResource("3_5044k")
 hframes = 7
 frame = 2

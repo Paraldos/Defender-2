@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwahsjpj4pyp7"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_h8h4f"]
-[ext_resource type="Script" path="res://Game/Enemies/crab_ship.gd" id="2_jojg0"]
-[ext_resource type="Texture2D" uid="uid://bp6la3uwv3gg4" path="res://Assets/Img/Enemies/CrabShip.png" id="2_qy7nt"]
-[ext_resource type="Shader" path="res://Game/Enemies/crab_ship.gdshader" id="3_gxnwp"]
-[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="3_n8ei6"]
-[ext_resource type="AudioStream" uid="uid://co1tjpteqb2rh" path="res://Assets/audio/sfx/gun2.wav" id="5_fmwl8"]
-[ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="6_7x2am"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_j8ipa"]
+[ext_resource type="Script" path="res://Game/Enemies/CrabShip/crab_ship.gd" id="2_x2qqe"]
+[ext_resource type="Shader" path="res://Game/Enemies/CrabShip/crab_ship.gdshader" id="3_g8mu1"]
+[ext_resource type="Texture2D" uid="uid://bp6la3uwv3gg4" path="res://Assets/Img/Enemies/CrabShip.png" id="4_6gop8"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="5_lssat"]
+[ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="6_nol4f"]
+[ext_resource type="AudioStream" uid="uid://co1tjpteqb2rh" path="res://Assets/audio/sfx/gun2.wav" id="7_tw57x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ovi6y"]
-shader = ExtResource("3_gxnwp")
+shader = ExtResource("3_g8mu1")
 shader_parameter/beams = 5
 shader_parameter/energy = 20.0
 shader_parameter/roughness = 10
@@ -55,9 +55,9 @@ scale_min = 0.3
 scale_max = 0.3
 color_ramp = SubResource("GradientTexture1D_e3b67")
 
-[node name="CrabShip" instance=ExtResource("1_h8h4f")]
-script = ExtResource("2_jojg0")
-hp = 15
+[node name="CrabShip" instance=ExtResource("1_j8ipa")]
+script = ExtResource("2_x2qqe")
+hp = 10
 credits = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
@@ -76,9 +76,9 @@ rotation = 1.5708
 
 [node name="MainSprite" parent="." index="4"]
 rotation = 1.5708
-texture = ExtResource("2_qy7nt")
+texture = ExtResource("4_6gop8")
 
-[node name="Exhaust" parent="." index="5" instance=ExtResource("3_n8ei6")]
+[node name="Exhaust" parent="." index="5" instance=ExtResource("5_lssat")]
 position = Vector2(14, 0)
 rotation = -3.14159
 
@@ -86,7 +86,7 @@ rotation = -3.14159
 modulate = Color(0.898039, 0.109804, 0.137255, 1)
 position = Vector2(-19, 0)
 process_material = SubResource("ParticleProcessMaterial_px7eq")
-texture = ExtResource("6_7x2am")
+texture = ExtResource("6_nol4f")
 lifetime = 0.4
 local_coords = true
 
@@ -97,6 +97,6 @@ position = Vector2(-28, 0)
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
-stream = ExtResource("5_fmwl8")
+stream = ExtResource("7_tw57x")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

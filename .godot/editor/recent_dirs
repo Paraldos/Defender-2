@@ -1,3 +1,5 @@
+res://Game/Enemies/AttackDrones
+res://Game/Enemies/Debris
 res://Game/Projectile
 res://Game/Bosses/SkullBoss
 res://Game/Enemies/Asteroids
@@ -18,5 +20,3 @@ res://Backgrounds
 res://Menus/StageCompleteModal
 res://Game/SFX
 res://Game
-res://Game/Collectible
-res://Game/World

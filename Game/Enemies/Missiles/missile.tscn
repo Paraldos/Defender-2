@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2huuxi5vshe4"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_d4qm5"]
-[ext_resource type="Texture2D" uid="uid://b4dtfft0ke0ek" path="res://Assets/Img/Enemies/Missile.png" id="2_arqce"]
-[ext_resource type="Script" path="res://Game/Enemies/missile.gd" id="2_ktr3m"]
-[ext_resource type="AudioStream" uid="uid://gbs6ovn1a207" path="res://Assets/audio/sfx/missile.wav" id="4_8hfrg"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_y3bc0"]
+[ext_resource type="Script" path="res://Game/Enemies/Missiles/missile.gd" id="2_0462k"]
+[ext_resource type="Texture2D" uid="uid://b4dtfft0ke0ek" path="res://Assets/Img/Enemies/Missile.png" id="3_ioeni"]
+[ext_resource type="AudioStream" uid="uid://gbs6ovn1a207" path="res://Assets/audio/sfx/missile.wav" id="4_tjjim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lltxa"]
 size = Vector2(44, 6)
@@ -121,11 +121,10 @@ _data = {
 "attack": SubResource("Animation_4a5x4")
 }
 
-[node name="Missile" instance=ExtResource("1_d4qm5")]
+[node name="Missile" instance=ExtResource("1_y3bc0")]
 position = Vector2(-250, 0)
-script = ExtResource("2_ktr3m")
-credits = 4
-disable_screen_notifier_delete = true
+script = ExtResource("2_0462k")
+credits = 5
 
 [node name="Line" type="Line2D" parent="." index="0"]
 unique_name_in_owner = true
@@ -143,10 +142,10 @@ shape = SubResource("RectangleShape2D_lltxa")
 [node name="MainSprite" parent="." index="4"]
 position = Vector2(3.99994, 0)
 rotation = 1.5708
-texture = ExtResource("2_arqce")
+texture = ExtResource("3_ioeni")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
-stream = ExtResource("4_8hfrg")
+stream = ExtResource("4_tjjim")
 volume_db = -80.0
 bus = &"SFX"
 

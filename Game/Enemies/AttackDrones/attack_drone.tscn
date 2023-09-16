@@ -1,13 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://7e3778qdjs3w"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_327vb"]
-[ext_resource type="Script" path="res://Game/Enemies/attack_drone.gd" id="2_0uf3p"]
-[ext_resource type="Texture2D" uid="uid://c88ydl2wjwoj" path="res://Assets/Img/Enemies/AttackDrone.png" id="2_3nmyt"]
-[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="3_ke7yh"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_iy882"]
+[ext_resource type="Script" path="res://Game/Enemies/AttackDrones/attack_drone.gd" id="2_xkisj"]
+[ext_resource type="Texture2D" uid="uid://c88ydl2wjwoj" path="res://Assets/Img/Enemies/AttackDrone.png" id="3_un22h"]
+[ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_lx15p"]
 
-[node name="AttackDrone" instance=ExtResource("1_327vb")]
-script = ExtResource("2_0uf3p")
-hp = 10
+[node name="AttackDrone" instance=ExtResource("1_iy882")]
+script = ExtResource("2_xkisj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-15, -4, -4, -9, 3, -9, 3, -16, 8, -16, 15, -3, 15, 3, 8, 16, 3, 16, 3, 9, -4, 9, -15, 4)
@@ -17,9 +16,9 @@ polygon = PackedVector2Array(-15, -4, -4, -9, 3, -9, 3, -16, 8, -16, 15, -3, 15,
 
 [node name="MainSprite" parent="." index="3"]
 rotation = 1.5708
-texture = ExtResource("2_3nmyt")
+texture = ExtResource("3_un22h")
 
-[node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("3_ke7yh")]
+[node name="Exhaust" parent="MainSprite" index="0" instance=ExtResource("4_lx15p")]
 position = Vector2(-7.24792e-05, -14.8571)
 rotation = 1.5708
 scale = Vector2(0.5, 0.7)

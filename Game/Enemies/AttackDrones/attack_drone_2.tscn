@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://xmqj1djh3pvq"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_em0rt"]
+[ext_resource type="Script" path="res://Game/Enemies/AttackDrones/attack_drone.gd" id="2_frxv5"]
 [ext_resource type="Texture2D" uid="uid://ndr6hqyq2h5s" path="res://Assets/Img/Enemies/AttackDrone2.png" id="2_s0dv0"]
-[ext_resource type="Script" path="res://Game/Enemies/attack_drone.gd" id="2_tyuk6"]
 
 [node name="AttackDrone2" instance=ExtResource("1_em0rt")]
-script = ExtResource("2_tyuk6")
-hp = 10
+script = ExtResource("2_frxv5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox" index="0"]
 polygon = PackedVector2Array(-14, -8, 6, -14, 15, -14, 15, 14, 6, 14, -14, 8)

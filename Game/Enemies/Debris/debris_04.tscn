@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b22dsb7cetuur"]
 
-[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_oqb2w"]
-[ext_resource type="Script" path="res://Game/Enemies/asteroid.gd" id="2_e846u"]
-[ext_resource type="Texture2D" uid="uid://dh1tvbbjk86ms" path="res://Assets/Img/Enemies/Debris-Sheet.png" id="2_jvohd"]
+[ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_8sa2u"]
+[ext_resource type="Script" path="res://Game/Enemies/Debris/debris.gd" id="2_be10y"]
+[ext_resource type="Texture2D" uid="uid://dh1tvbbjk86ms" path="res://Assets/Img/Enemies/Debris-Sheet.png" id="3_8bqik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx146"]
 size = Vector2(15, 16)
 
-[node name="Debris04" instance=ExtResource("1_oqb2w")]
-script = ExtResource("2_e846u")
+[node name="Debris04" instance=ExtResource("1_8sa2u")]
+script = ExtResource("2_be10y")
 explosive = false
 credits = 2
 
@@ -21,6 +21,6 @@ position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_fx146")
 
 [node name="MainSprite" parent="." index="3"]
-texture = ExtResource("2_jvohd")
+texture = ExtResource("3_8bqik")
 hframes = 7
 frame = 4
