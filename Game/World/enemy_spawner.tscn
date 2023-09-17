@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cx4nevkhs5r7n"]
+[gd_scene load_steps=34 format=3 uid="uid://cx4nevkhs5r7n"]
 
 [ext_resource type="Script" path="res://Game/World/enemy_spawner.gd" id="1_tnqcj"]
 [ext_resource type="PackedScene" uid="uid://kb6ev1rcb8kb" path="res://Game/World/EnemySpawner/enemy.tscn" id="2_2ho8a"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bkn6pal68lgqb" path="res://Game/Enemies/PirateFighters/pirate_fighter.tscn" id="27_jnt16"]
 [ext_resource type="PackedScene" uid="uid://c272kclcw4p8a" path="res://Game/Bosses/PirateBoss/pirate_boss.tscn" id="28_b07ss"]
 [ext_resource type="PackedScene" uid="uid://bwahsjpj4pyp7" path="res://Game/Enemies/CrabShip/crab_ship.tscn" id="28_dsdsn"]
+[ext_resource type="PackedScene" uid="uid://863yrwy3aryy" path="res://Game/Enemies/HeavyFighter/heavy_fighter.tscn" id="30_nreun"]
 [ext_resource type="PackedScene" uid="uid://6aq5nabrpru3" path="res://Game/Bosses/SkullBoss/skull_boss.tscn" id="32_cwjed"]
 
 [node name="EnemySpawner" type="Node2D"]
@@ -96,6 +97,12 @@ wave_name = "CrabShips"
 spawn_time = 4.0
 wave_time = 15
 enemy_packages = Array[PackedScene]([ExtResource("28_dsdsn")])
+
+[node name="EnemyHeavyFighters" parent="Enemies" instance=ExtResource("2_2ho8a")]
+wave_name = "HeavyFighters"
+spawn_time = 3.0
+wave_time = 15
+enemy_packages = Array[PackedScene]([ExtResource("30_nreun")])
 
 [node name="Bosses" type="Node2D" parent="."]
 unique_name_in_owner = true

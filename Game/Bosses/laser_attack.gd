@@ -9,7 +9,7 @@ extends Node2D
 func _ready():
 	active = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_dmg()
 
 ##############################################################################

@@ -15,7 +15,7 @@ func _ready():
 	rng.randomize()
 
 ##############################################################################
-func _physics_process(delta):
+func _physics_process(_delta):
 	if wiggle:
 		var offset_x = rng.randi_range(-max_offset, max_offset)
 		var offset_y = rng.randi_range(-max_offset, max_offset)

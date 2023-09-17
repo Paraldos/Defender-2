@@ -10,6 +10,7 @@ extends Node2D
 @export var waves_till_boss = 5
 @export var test_boss = -1
 
+@onready var viewport = get_viewport_rect().size
 var rng = RandomNumberGenerator.new()
 var asteroids_background = preload("res://Backgrounds/asteroids_background.tscn")
 var debris_background = preload("res://Backgrounds/debris_background.tscn")
@@ -74,40 +75,43 @@ func _start_boss_fight():
 
 ###############################################################################
 func _on_spawn_timer_timeout():
+	var enemy = _get_enemy()
 	match current_wave.wave_name:
 		'AttackDrones':
-			var enemy = _get_enemy()
 			var spawn_point = _get_spawn_position()
 			for i in 3:
 				_spawn_element(enemy, spawn_point)
 				await get_tree().create_timer(0.3).timeout
 		'Asteroids':
-			var enemy = _get_enemy()
 			_spawn_element(enemy)
 		'GunShips': 
-			var enemy = _get_enemy()
 			var spawn_points = _get_multiple_spawn_points(3)
 			for i in 3:
 				_spawn_element(enemy, spawn_points[i-1])
 				await get_tree().create_timer(1.0).timeout
 		'Debris':
-			var enemy = _get_enemy()
 			_spawn_element(enemy)
 		'Missiles':
-			var enemy = _get_enemy()
 			var spawn_points = _get_multiple_spawn_points(3)
 			for i in 3:
 				_spawn_element(enemy, spawn_points[i-1])
 		'PirateFighters':
-			var enemy = _get_enemy()
 			var spawn_points = _get_multiple_spawn_points(3, 50)
 			for i in 3:
 				_spawn_element(enemy, spawn_points[i-1])
 				await get_tree().create_timer(0.3).timeout
 		'CrabShips':
-			var enemy = _get_enemy()
 			var spawn_points = _get_multiple_spawn_points(3)
 			for i in 3:
+				_spawn_element(enemy, spawn_points[i-1])
+				await get_tree().create_timer(1.0).timeout
+		'HeavyFighters':
+			var margin = 20
+			var spawn_points = [
+				Vector2(spawn_point.global_position.x, -margin),
+				Vector2(spawn_point.global_position.x, viewport.y + margin),
+			] 
+			for i in 2:
 				_spawn_element(enemy, spawn_points[i-1])
 				await get_tree().create_timer(1.0).timeout
 
@@ -129,7 +133,7 @@ func _get_multiple_spawn_points(number_of_positions = 1, distance_between_points
 	return points
 
 func _get_spawn_position(margin = 20):
-	var window_heigt = 270
+	var window_heigt = viewport.y
 	var spawn_position = Vector2.ZERO
 	spawn_position.x = spawn_point.global_position.x
 	spawn_position.y = randi_range(0 + margin, window_heigt - margin)

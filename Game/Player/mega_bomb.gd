@@ -8,7 +8,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_wiggle()
 
 func _wiggle():

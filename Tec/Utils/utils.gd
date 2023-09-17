@@ -16,7 +16,7 @@ signal player_death
 
 var viewport_width = 480
 var viewport_height = 270
-var player_start = {
+@export var player_start = {
 	max_hp = 50,
 	hp = 50,
 	max_ep = 40,
@@ -28,8 +28,8 @@ var player_start = {
 	gun = 1,
 	magnet = 1,
 	bomb = 1,
-	laser = 1,
-	shield = 1,
+	laser = 0,
+	shield = 0,
 }
 var player = {}
 var player_backup
