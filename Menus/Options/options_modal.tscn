@@ -41,7 +41,7 @@ text = "Next Song"
 [node name="BtnBack" parent="Panel/MarginContainer/VBoxContainer" index="6" instance=ExtResource("4_slao8")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Return"
+text = "Return "
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BtnNextSong" to="." method="_on_btn_next_song_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BtnBack" to="." method="_on_btn_back_pressed"]

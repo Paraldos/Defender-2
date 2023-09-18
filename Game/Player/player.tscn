@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=67 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -16,10 +16,10 @@
 [ext_resource type="Script" path="res://Game/Player/MegaLaserController.gd" id="12_wem8i"]
 [ext_resource type="Texture2D" uid="uid://c40gtktrjhs7u" path="res://Assets/Img/Projectiles And Explosions/Fragment01.png" id="13_6l4ho"]
 [ext_resource type="AudioStream" uid="uid://cwr6e5h0ew6on" path="res://Assets/audio/sfx/mega_shield.wav" id="14_gv1rt"]
-[ext_resource type="Texture2D" uid="uid://cee853xdtdk2" path="res://Assets/Img/Projectiles And Explosions/Fragment02.png" id="14_gxbar"]
 [ext_resource type="Shader" path="res://Game/Player/MegaLaserShader.gdshader" id="15_h5r36"]
 [ext_resource type="Script" path="res://Game/Player/MegaBombController.gd" id="16_7wjxu"]
 [ext_resource type="AudioStream" uid="uid://dg1phtp1y5oeu" path="res://Assets/audio/sfx/mega_laser.wav" id="16_jrft1"]
+[ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="16_l8ds6"]
 [ext_resource type="Script" path="res://Game/Player/DeathController.gd" id="21_tb4r2"]
 [ext_resource type="AudioStream" uid="uid://bbnehyeh0dax1" path="res://Assets/audio/sfx/mega_bombe_charging.wav" id="22_awdnv"]
 
@@ -491,20 +491,41 @@ scale_max = 0.5
 scale_curve = SubResource("CurveTexture_whcgd")
 color_ramp = SubResource("GradientTexture1D_w86p1")
 
+[sub_resource type="Gradient" id="Gradient_vpjhe"]
+offsets = PackedFloat32Array(0, 0.617284)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rr6pe"]
+gradient = SubResource("Gradient_vpjhe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3fkx5"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.3
+scale_max = 0.3
+color_ramp = SubResource("GradientTexture1D_rr6pe")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oygu6"]
 shader = ExtResource("15_h5r36")
-shader_parameter/beams = 2
-shader_parameter/energy = 10.0
+shader_parameter/beams = 5
+shader_parameter/energy = 30.0
 shader_parameter/roughness = 3
-shader_parameter/frequency = 30
+shader_parameter/frequency = 10
 shader_parameter/speed = 1.0
-shader_parameter/thickness = 0.05
+shader_parameter/thickness = 0.01
 shader_parameter/outline_thickness = 0.05
 shader_parameter/beam_difference = 0.0
 shader_parameter/glow = 0.0
 shader_parameter/outline_glow = 0.0
 shader_parameter/color = Color(0.91, 1, 1, 1)
-shader_parameter/outline_color = Color(0.5, 1, 0.96, 1)
+shader_parameter/outline_color = Color(0.501961, 1, 0.960784, 1)
 shader_parameter/progress = 1.0
 shader_parameter/y_offset = 0.0
 shader_parameter/fixed_edge_size = 0.05
@@ -515,7 +536,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/path = NodePath("MuzzleFlair:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -527,16 +548,17 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kcu5d"]
 resource_name = "loop"
-length = 0.2
+length = 0.1
 loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/path = NodePath("MuzzleFlair:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1.2, 1.2), Vector2(1.6, 1.6)]
@@ -761,7 +783,7 @@ script = ExtResource("12_wem8i")
 stream = ExtResource("16_jrft1")
 bus = &"SFX"
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="MegaLaserController"]
+[node name="ParticlesPowerUp" type="GPUParticles2D" parent="MegaLaserController"]
 modulate = Color(0.501961, 0.870588, 0.917647, 1)
 position = Vector2(22, 0)
 amount = 20
@@ -770,13 +792,23 @@ texture = ExtResource("13_6l4ho")
 lifetime = 0.3
 local_coords = true
 
-[node name="Sprite2D" type="Sprite2D" parent="MegaLaserController"]
+[node name="ParticlesAttack" type="GPUParticles2D" parent="MegaLaserController"]
+self_modulate = Color(0.501961, 1, 0.960784, 1)
+position = Vector2(22, 0)
+scale = Vector2(1, 0.900001)
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_3fkx5")
+local_coords = true
+trail_enabled = true
+trail_lifetime = 0.15
+
+[node name="MuzzleFlair" type="Sprite2D" parent="MegaLaserController"]
 modulate = Color(0.501961, 0.870588, 0.917647, 1)
 position = Vector2(22, 0)
 scale = Vector2(2, 2)
-texture = ExtResource("14_gxbar")
+texture = ExtResource("16_l8ds6")
 
-[node name="ColorRect" type="ColorRect" parent="MegaLaserController"]
+[node name="Laser" type="ColorRect" parent="MegaLaserController"]
 material = SubResource("ShaderMaterial_oygu6")
 offset_top = -15.0
 offset_right = 500.0
@@ -789,6 +821,7 @@ libraries = {
 }
 
 [node name="Hitbox" type="Area2D" parent="MegaLaserController"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
