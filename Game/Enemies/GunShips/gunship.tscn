@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtetp2rj5x5hq"]
+[gd_scene load_steps=6 format=3 uid="uid://dtetp2rj5x5hq"]
 
 [ext_resource type="PackedScene" uid="uid://dlacothulwj6i" path="res://Game/Enemies/enemy_template.tscn" id="1_284ay"]
 [ext_resource type="Script" path="res://Game/Enemies/GunShips/gunship.gd" id="2_52byv"]
 [ext_resource type="Texture2D" uid="uid://wiidbst2es20" path="res://Assets/Img/Enemies/Gunship.png" id="3_1l1r0"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_e10k5"]
+[ext_resource type="AudioStream" uid="uid://co1tjpteqb2rh" path="res://Assets/audio/sfx/gun2.wav" id="5_r34bx"]
 
 [node name="Gunship" instance=ExtResource("1_284ay")]
 script = ExtResource("2_52byv")
@@ -38,5 +39,9 @@ autostart = true
 [node name="Muzzle" type="Node2D" parent="." index="5"]
 unique_name_in_owner = true
 position = Vector2(5, 0)
+
+[node name="AudioStreamPlayerGun" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("5_r34bx")
+bus = &"SFX"
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
