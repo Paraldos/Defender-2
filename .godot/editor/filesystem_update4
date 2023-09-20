@@ -1,4 +1,4 @@
-res://Game/Projectile/gunship_projectile.tscn
+res://Tec/Utils/utils.tscn
 res://Tec/SceneTransition/scene_transition.gdshader
 res://Themes/StartMenuTheme/stylebox_btn_hover.tres
 res://Themes/StartMenuTheme/StartMenuTheme.tres
@@ -7,8 +7,7 @@ res://Game/Player/MegaShieldShader.gdshader
 res://Game/Player/MegaLaserShader.gdshader
 res://Game/Enemies/CrabShip/crab_ship.gdshader
 res://Game/Bosses/laser_attack.gdshader
-res://default_bus_layout.tres
-res://Game/Enemies/GunShips/gunship.tscn
-res://Game/Enemies/GunShips/gunship.gd
 res://Game/World/world.tscn
-res://Tec/Utils/utils.tscn
+res://Game/Enemies/GunShips/gunship.tscn
+res://Game/Projectile/gunship_projectile.tscn
+res://Game/Player/player.tscn
