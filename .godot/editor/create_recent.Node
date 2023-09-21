@@ -1,4 +1,5 @@
 AudioStreamPlayer
+RayCast2D
 AnimationPlayer
 Sprite2D
 AnimationTree
@@ -9,7 +10,6 @@ GPUParticles2D
 Area2D
 CollisionShape2D
 ColorRect
-RayCast2D
 Label
 HBoxContainer
 HSeparator
