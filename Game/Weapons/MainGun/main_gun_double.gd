@@ -1,7 +1,6 @@
 extends "res://Game/Weapons/weapon_template.gd"
 
 @export var offset = 5
-
 @onready var animation_player = $AnimationPlayer
 
 func _attack():

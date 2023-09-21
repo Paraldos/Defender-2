@@ -15,3 +15,10 @@ res://Tec/Utils/utils.tscn
 res://Game/World/world.tscn
 res://Game/Player/player.tscn
 res://Game/Player/AttackController.gd
+res://Game/Weapons/Bubblegun/bubble_projectile.tscn
+res://Game/Weapons/Bubblegun/bubble_gun.tscn
+res://Game/Enemies/CrabShip/crab_ship.tscn
+res://Game/Enemies/CrabShip/crab_ship.gd
+res://Game/Weapons/BubbleGun/bubble_projectile.tscn
+res://Game/Weapons/BubbleGun/bubble_gun.tscn
+res://Game/Weapons/BubbleGun/bubble_gun.gd

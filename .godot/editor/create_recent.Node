@@ -1,6 +1,6 @@
+CollisionShape2D
 Timer
 RayCast2D
-CollisionShape2D
 AudioStreamPlayer
 AnimationPlayer
 Sprite2D
