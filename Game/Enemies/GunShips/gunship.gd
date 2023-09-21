@@ -11,7 +11,7 @@ func _process(delta):
 	super._process(delta)
 	_move(delta)
 
-#########################
+###############################################################################
 func _move(delta):
 	global_position += speed * delta
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dccg8pr42tyxh" path="res://Game/Weapons/weapon_template.tscn" id="1_3ok6c"]
 [ext_resource type="Script" path="res://Game/Weapons/MainGun/main_gun_double.gd" id="2_c6igk"]
+[ext_resource type="PackedScene" uid="uid://bm0tkia8wbn6s" path="res://Game/Weapons/MainGun/main_gun_projectile.tscn" id="3_2th11"]
 [ext_resource type="Texture2D" uid="uid://l43klxnu5lmv" path="res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png" id="3_4idht"]
-[ext_resource type="PackedScene" uid="uid://bm0tkia8wbn6s" path="res://Game/Weapons/MainGun/main_gun_projectile.tscn" id="3_efy3j"]
 [ext_resource type="AudioStream" uid="uid://xlampkeaf6oe" path="res://Assets/audio/sfx/gun.wav" id="4_rore0"]
 
 [sub_resource type="Animation" id="Animation_klyqs"]
@@ -70,8 +70,7 @@ _data = {
 [node name="MainGunDouble" instance=ExtResource("1_3ok6c")]
 script = ExtResource("2_c6igk")
 offset = 5
-projectile = ExtResource("3_efy3j")
-projectile_speed = 600
+projectile = ExtResource("3_2th11")
 projectile_color = Color(1, 0.921569, 0.231373, 1)
 
 [node name="AttackAudio" parent="." index="1"]

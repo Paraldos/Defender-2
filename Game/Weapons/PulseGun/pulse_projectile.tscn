@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2kvpbxhafvck"]
+
+[ext_resource type="PackedScene" uid="uid://bq8hfx88m5y8v" path="res://Game/Weapons/projectile_template.tscn" id="1_kr14j"]
+[ext_resource type="Texture2D" uid="uid://ctoss36efuwjt" path="res://Assets/Img/Projectiles And Explosions/Projectile04.png" id="2_yjqmo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qeqe3"]
+radius = 9.0
+
+[node name="PulseProjectile" instance=ExtResource("1_kr14j")]
+rotation_speed = 5
+
+[node name="MainSprite" parent="." index="0"]
+texture = ExtResource("2_yjqmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_qeqe3")

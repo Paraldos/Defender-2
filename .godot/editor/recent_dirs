@@ -1,6 +1,7 @@
+res://Game/Weapons/PulseGun
+res://Game/Weapons/MainGun
 res://Game/Weapons
 res://Game/Weapons/Bubblegun
-res://Game/Weapons/MainGun
 res://Game/Projectile
 res://Game/Enemies/HeavyFighter
 C:/Users/hillb/OneDrive/Desktop/Defender2/desktop
@@ -19,4 +20,3 @@ res://Menus/GameOverMenu
 res://Game/World/TreasureController
 res://Menus/ShopModal
 res://Themes
-res://Menus/Options

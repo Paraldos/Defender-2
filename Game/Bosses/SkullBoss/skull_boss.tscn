@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c3yboqmwi0lg2" path="res://Game/Bosses/laser_attack.tscn" id="5_ltfcq"]
 [ext_resource type="Script" path="res://Game/Bosses/SkullBoss/Gun.gd" id="5_oor53"]
 [ext_resource type="Texture2D" uid="uid://c73rdnbu573ak" path="res://Assets/Img/Enemies/Skull_Boss_Gun.png" id="6_p53l3"]
-[ext_resource type="PackedScene" uid="uid://tlp6fehcyp0" path="res://Game/Bosses/normal_gun_attack.tscn" id="7_bv4wv"]
+[ext_resource type="PackedScene" uid="uid://b1kk0phpvxqh4" path="res://Game/Weapons/MainGun/main_gun.tscn" id="8_v13m1"]
 
 [node name="SkullBoss" instance=ExtResource("1_f5ut3")]
 script = ExtResource("2_lmogr")
@@ -56,12 +56,12 @@ texture = ExtResource("6_p53l3")
 
 [node name="Weapons02" type="Node2D" parent="Gun" index="1"]
 
-[node name="NormalGunAttack" parent="Gun/Weapons02" index="0" instance=ExtResource("7_bv4wv")]
-position = Vector2(10, -2.5)
+[node name="MainGun" parent="Gun/Weapons02" index="0" instance=ExtResource("8_v13m1")]
+position = Vector2(11, -2.5)
 rotation = 3.14159
-spray_margin = 2.0
+projectile_spray_margin = 3.0
 
-[node name="NormalGunAttack2" parent="Gun/Weapons02" index="1" instance=ExtResource("7_bv4wv")]
-position = Vector2(10, 2.5)
+[node name="MainGun2" parent="Gun/Weapons02" index="1" instance=ExtResource("8_v13m1")]
+position = Vector2(11, 2.5)
 rotation = 3.14159
-spray_margin = 2.0
+projectile_spray_margin = 3.0

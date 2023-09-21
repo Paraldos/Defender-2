@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://wgcvhwyjsggn"]
+
+[ext_resource type="PackedScene" uid="uid://dccg8pr42tyxh" path="res://Game/Weapons/weapon_template.tscn" id="1_s4u8n"]
+[ext_resource type="PackedScene" uid="uid://b2kvpbxhafvck" path="res://Game/Weapons/PulseGun/pulse_projectile.tscn" id="2_3cxbo"]
+[ext_resource type="AudioStream" uid="uid://b87tg37cm612d" path="res://Assets/audio/sfx/Pulse.wav" id="3_p8ven"]
+
+[node name="PulseGun" instance=ExtResource("1_s4u8n")]
+projectile = ExtResource("2_3cxbo")
+projectile_speed = 400
+projectile_color = Color(0.160784, 0.713726, 0.964706, 1)
+
+[node name="AttackAudio" parent="." index="1"]
+stream = ExtResource("3_p8ven")
+volume_db = -5.0

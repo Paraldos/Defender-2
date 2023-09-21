@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://tlp6fehcyp0"]
+[gd_scene load_steps=9 format=3 uid="uid://b1kk0phpvxqh4"]
 
-[ext_resource type="Texture2D" uid="uid://l43klxnu5lmv" path="res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png" id="1_fd0wr"]
-[ext_resource type="Script" path="res://Game/Bosses/normal_gun_attack.gd" id="1_r44hu"]
-[ext_resource type="AudioStream" uid="uid://xlampkeaf6oe" path="res://Assets/audio/sfx/gun.wav" id="2_jtbcs"]
+[ext_resource type="PackedScene" uid="uid://dccg8pr42tyxh" path="res://Game/Weapons/weapon_template.tscn" id="1_inadg"]
+[ext_resource type="Script" path="res://Game/Weapons/MainGun/main_gun.gd" id="2_o1klq"]
+[ext_resource type="Texture2D" uid="uid://l43klxnu5lmv" path="res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png" id="3_tg1id"]
+[ext_resource type="PackedScene" uid="uid://bm0tkia8wbn6s" path="res://Game/Weapons/MainGun/main_gun_projectile.tscn" id="3_w1q34"]
+[ext_resource type="AudioStream" uid="uid://xlampkeaf6oe" path="res://Assets/audio/sfx/gun.wav" id="4_863hd"]
 
 [sub_resource type="Animation" id="Animation_klyqs"]
 resource_name = "Attack"
@@ -30,20 +32,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_spawn_projectile"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_0gvyd"]
@@ -79,20 +67,23 @@ _data = {
 "RESET": SubResource("Animation_0gvyd")
 }
 
-[node name="NormalGunAttack" type="RayCast2D"]
-target_position = Vector2(-40, 0)
-script = ExtResource("1_r44hu")
+[node name="MainGun" instance=ExtResource("1_inadg")]
+script = ExtResource("2_o1klq")
+offset = 5
+projectile = ExtResource("3_w1q34")
+projectile_color = Color(1, 0.921569, 0.231373, 1)
 
-[node name="MuzzleFlash" type="Sprite2D" parent="."]
+[node name="AttackAudio" parent="." index="1"]
+stream = ExtResource("4_863hd")
+volume_db = -5.0
+
+[node name="MuzzleFlash" type="Sprite2D" parent="." index="2"]
 visible = false
 rotation = -3.14159
-texture = ExtResource("1_fd0wr")
+texture = ExtResource("3_tg1id")
 hframes = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_f8mq2")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_jtbcs")

@@ -1,11 +1,13 @@
 extends Node2D
 
-@export var dmg = 5
-@export var movement = Vector2(300, 0)
-@export var target = 'player'
-@export var projectile_color = Color("ffffff")
+@export var rotation_speed = 0
 
 @onready var hitbox = $Hitbox
+
+var dmg = 5
+var movement = Vector2(300, 0)
+var target = 'player'
+var projectile_color = Color("ffffff")
 
 ###############################################################################
 func _ready():
@@ -21,6 +23,8 @@ func _ready():
 ###############################################################################
 func _process(delta):
 	position += movement * delta
+	if rotation_speed != 0:
+		rotate(rotation_speed * delta)
 
 ###############################################################################
 func _on_hitbox_area_entered(_area):
