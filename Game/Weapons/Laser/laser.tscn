@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca1ixarftji3u"]
+
+[ext_resource type="Script" path="res://Game/Weapons/Laser/laser.gd" id="1_nihtf"]
+[ext_resource type="Texture2D" uid="uid://c352cpq2bc08f" path="res://Assets/Img/Projectiles And Explosions/Laser-Sheet.png" id="1_r6ljq"]
+[ext_resource type="AudioStream" uid="uid://dg1phtp1y5oeu" path="res://Assets/audio/sfx/mega_laser.wav" id="3_oycmv"]
+
+[sub_resource type="Animation" id="Animation_j4eux"]
+resource_name = "loop"
+length = 0.1
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_orjnv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_asa1h"]
+_data = {
+"RESET": SubResource("Animation_orjnv"),
+"loop": SubResource("Animation_j4eux")
+}
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_nihtf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240, 0)
+texture = ExtResource("1_r6ljq")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loop"
+libraries = {
+"": SubResource("AnimationLibrary_asa1h")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oycmv")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Hitbox" type="Area2D" parent="."]

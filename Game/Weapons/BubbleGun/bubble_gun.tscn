@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dccg8pr42tyxh" path="res://Game/Weapons/weapon_template.tscn" id="1_2csnc"]
 [ext_resource type="PackedScene" uid="uid://dg2mf3pvitwql" path="res://Game/Weapons/BubbleGun/bubble_projectile.tscn" id="2_bbw5e"]
-[ext_resource type="AudioStream" uid="uid://co1tjpteqb2rh" path="res://Assets/audio/sfx/gun2.wav" id="3_ym65p"]
+[ext_resource type="AudioStream" uid="uid://3ojg0153p0b2" path="res://Assets/audio/sfx/Bubblegun.wav" id="3_fc7m3"]
 
 [node name="BubbleGun" instance=ExtResource("1_2csnc")]
 projectile = ExtResource("2_bbw5e")
@@ -10,5 +10,5 @@ projectile_speed = 500
 projectile_color = Color(0.898039, 0.109804, 0.137255, 1)
 
 [node name="AttackAudio" parent="." index="1"]
-stream = ExtResource("3_ym65p")
+stream = ExtResource("3_fc7m3")
 volume_db = -5.0

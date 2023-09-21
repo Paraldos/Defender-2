@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://3ojg0153p0b2"
-path="res://.godot/imported/Crablaser.wav-756fd7c403aa1beb846b92f411234266.sample"
+path="res://.godot/imported/Bubblegun.wav-928b8e0c50da5213388981e4280cbefd.sample"
 
 [deps]
 
-source_file="res://Assets/audio/sfx/Crablaser.wav"
-dest_files=["res://.godot/imported/Crablaser.wav-756fd7c403aa1beb846b92f411234266.sample"]
+source_file="res://Assets/audio/sfx/Bubblegun.wav"
+dest_files=["res://.godot/imported/Bubblegun.wav-928b8e0c50da5213388981e4280cbefd.sample"]
 
 [params]
 

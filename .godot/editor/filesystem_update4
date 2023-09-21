@@ -19,3 +19,6 @@ res://Game/Bosses/normal_gun_attack.tscn
 res://Game/Player/player.tscn
 res://Game/Enemies/HeavyFighter/heavy_fighter.tscn
 res://Game/Enemies/HeavyFighter/heavy_fighter.gd
+res://Game/Weapons/Laser/laser.tscn
+res://default_bus_layout.tres
+res://Game/Weapons/Laser/laser.gd
