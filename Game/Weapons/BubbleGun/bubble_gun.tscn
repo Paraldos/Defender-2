@@ -7,6 +7,7 @@
 [node name="BubbleGun" instance=ExtResource("1_2csnc")]
 projectile = ExtResource("2_bbw5e")
 projectile_speed = 500
+projectile_color = Color(0.898039, 0.109804, 0.137255, 1)
 
 [node name="AttackAudio" parent="." index="1"]
 stream = ExtResource("3_ym65p")

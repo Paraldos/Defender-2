@@ -5,6 +5,7 @@ extends Node2D
 @export var dmg = 5
 @export_enum('player', 'enemy') var target = 'player'
 @export var rand_projectile_offset = Vector2.ZERO
+@export var projectile_color = Color("ffffff")
 
 @onready var ray_cast_to_target = %RayCastToTarget
 @onready var attack_audio = $AttackAudio
@@ -38,4 +39,5 @@ func _spawn_projectile(spawn_offset = Vector2.ZERO):
 		to_global(ray_cast_to_target.target_position)) * projectile_speed
 	new_projectile.dmg = dmg
 	new_projectile.target = target
+	new_projectile.projectile_color = projectile_color
 	get_tree().current_scene.add_child(new_projectile)

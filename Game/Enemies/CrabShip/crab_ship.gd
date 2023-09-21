@@ -1,7 +1,6 @@
 extends "res://Game/Enemies/enemy_template.gd"
 
 var speed = 200
-var projectile = preload('res://Game/Projectile/crab_projectile.tscn')
 @onready var bubble_gun = $BubbleGun
 
 ###############################################################################

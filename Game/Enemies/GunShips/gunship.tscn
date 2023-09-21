@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Game/Enemies/GunShips/gunship.gd" id="2_52byv"]
 [ext_resource type="Texture2D" uid="uid://wiidbst2es20" path="res://Assets/Img/Enemies/Gunship.png" id="3_1l1r0"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_e10k5"]
-[ext_resource type="AudioStream" uid="uid://co1tjpteqb2rh" path="res://Assets/audio/sfx/gun2.wav" id="5_r34bx"]
+[ext_resource type="PackedScene" uid="uid://de8mg26twp80" path="res://Game/Weapons/BubbleGun/bubble_gun.tscn" id="6_jslgx"]
 
 [node name="Gunship" instance=ExtResource("1_284ay")]
 script = ExtResource("2_52byv")
@@ -36,12 +36,16 @@ scale = Vector2(1, 0.5)
 wait_time = 1.5
 autostart = true
 
-[node name="Muzzle" type="Node2D" parent="." index="5"]
-unique_name_in_owner = true
+[node name="BubbleGun" parent="." index="5" instance=ExtResource("6_jslgx")]
 position = Vector2(5, 0)
+rotation = 0.610865
+projectile_speed = 300
+projectile_color = Color(1, 0.756863, 0.027451, 1)
 
-[node name="AudioStreamPlayerGun" type="AudioStreamPlayer" parent="." index="6"]
-stream = ExtResource("5_r34bx")
-bus = &"SFX"
+[node name="BubbleGun2" parent="." index="6" instance=ExtResource("6_jslgx")]
+position = Vector2(5, 0)
+rotation = -0.610865
+projectile_speed = 300
+projectile_color = Color(1, 0.756863, 0.027451, 1)
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

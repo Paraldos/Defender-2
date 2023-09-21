@@ -8,7 +8,6 @@ radius = 3.0
 height = 10.0
 
 [node name="MainGunProjectile" instance=ExtResource("1_tjpa7")]
-modulate = Color(1, 0.921569, 0.231373, 1)
 
 [node name="MainSprite" parent="." index="0"]
 rotation = 1.5708

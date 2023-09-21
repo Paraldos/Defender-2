@@ -22,3 +22,7 @@ res://Game/Enemies/CrabShip/crab_ship.gd
 res://Game/Weapons/BubbleGun/bubble_projectile.tscn
 res://Game/Weapons/BubbleGun/bubble_gun.tscn
 res://Game/Weapons/BubbleGun/bubble_gun.gd
+res://Game/Enemies/GunShips/gunship.tscn
+res://Game/Enemies/GunShips/gunship.gd
+res://Game/Weapons/projectile_template.tscn
+res://Game/Weapons/projectile_template.gd
