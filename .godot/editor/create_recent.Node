@@ -1,14 +1,14 @@
-AudioStreamPlayer
+Timer
 RayCast2D
+CollisionShape2D
+AudioStreamPlayer
 AnimationPlayer
 Sprite2D
 AnimationTree
 Node2D
-Timer
 CollisionPolygon2D
 GPUParticles2D
 Area2D
-CollisionShape2D
 ColorRect
 Label
 HBoxContainer

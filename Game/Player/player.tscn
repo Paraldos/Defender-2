@@ -1,15 +1,14 @@
-[gd_scene load_steps=67 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=63 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
 [ext_resource type="PackedScene" uid="uid://df14qn6f8hjyi" path="res://Game/Collisions/hurtbox.tscn" id="2_yuc3g"]
 [ext_resource type="Script" path="res://Game/Player/AttackController.gd" id="3_2l3qt"]
 [ext_resource type="Script" path="res://Game/Player/Magnet.gd" id="3_f7cx0"]
-[ext_resource type="Texture2D" uid="uid://l43klxnu5lmv" path="res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png" id="4_6vyw6"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="4_cckca"]
 [ext_resource type="Script" path="res://Game/Player/MainSprite.gd" id="5_s8shk"]
 [ext_resource type="Script" path="res://Game/Player/WarpController.gd" id="6_yoehl"]
-[ext_resource type="AudioStream" uid="uid://xlampkeaf6oe" path="res://Assets/audio/sfx/gun.wav" id="9_oogp6"]
+[ext_resource type="PackedScene" uid="uid://855reqbagfkq" path="res://Game/Weapons/MainGun/main_gun_double.tscn" id="8_dro72"]
 [ext_resource type="Shader" path="res://Game/Player/MegaShieldShader.gdshader" id="10_gijva"]
 [ext_resource type="Script" path="res://Game/Player/MegaShieldController.gd" id="10_hef4m"]
 [ext_resource type="AudioStream" uid="uid://bidh63jjy1kbj" path="res://Assets/audio/sfx/warp.wav" id="11_yp5fv"]
@@ -195,67 +194,6 @@ blend_point_3/pos = 0.7
 blend_point_4/node = SubResource("AnimationNodeAnimation_kney3")
 blend_point_4/pos = 0.0
 blend_mode = 1
-
-[sub_resource type="Animation" id="Animation_10rdm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_rjnc1"]
-resource_name = "flash"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ja84q"]
-_data = {
-"RESET": SubResource("Animation_10rdm"),
-"flash": SubResource("Animation_rjnc1")
-}
 
 [sub_resource type="Animation" id="Animation_ew80f"]
 length = 0.001
@@ -739,24 +677,16 @@ active = true
 parameters/blend_position = 0.000778198
 
 [node name="AttackController" type="Node2D" parent="."]
-position = Vector2(34, 0)
+position = Vector2(25, 0)
 script = ExtResource("3_2l3qt")
 
-[node name="AttackSprite" type="Sprite2D" parent="AttackController"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-9, 0)
-texture = ExtResource("4_6vyw6")
-hframes = 3
+[node name="MainGunDouble" parent="AttackController" instance=ExtResource("8_dro72")]
+rotation = 3.14159
+target = "enemy"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AttackController"]
-libraries = {
-"": SubResource("AnimationLibrary_ja84q")
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AttackController"]
-stream = ExtResource("9_oogp6")
-pitch_scale = 1.1
-bus = &"SFX"
+[node name="Timer" type="Timer" parent="AttackController"]
+wait_time = 0.2
+one_shot = true
 
 [node name="WarpController" type="Node2D" parent="."]
 unique_name_in_owner = true

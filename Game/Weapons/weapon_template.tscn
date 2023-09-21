@@ -9,5 +9,5 @@ script = ExtResource("1_3gg7u")
 unique_name_in_owner = true
 target_position = Vector2(-30, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AttackAudio" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"

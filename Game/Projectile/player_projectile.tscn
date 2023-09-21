@@ -77,6 +77,7 @@ _data = {
 modulate = Color(1, 1, 1, 0)
 rotation = 1.5708
 script = ExtResource("2_svyp8")
+target = "enemy"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="0"]
 amount = 3

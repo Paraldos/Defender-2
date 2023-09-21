@@ -1,5 +1,6 @@
 res://Game/Weapons/MainGun
 res://Game/Weapons
+res://Game/Projectile
 res://Game/Enemies/HeavyFighter
 C:/Users/hillb/OneDrive/Desktop/Defender2/desktop
 C:/Users/hillb/OneDrive/Desktop/Defender2/web
@@ -8,7 +9,6 @@ C:/Users/hillb/OneDrive/Desktop/Defender2
 res://Game/Bosses
 res://Game/Enemies/AttackDrones
 res://Game/Enemies/Debris
-res://Game/Projectile
 res://Game/Bosses/SkullBoss
 res://Game/Enemies/Asteroids
 res://Game/Enemies

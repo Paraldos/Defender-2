@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://855reqbagfkq"]
+
+[ext_resource type="PackedScene" uid="uid://dccg8pr42tyxh" path="res://Game/Weapons/weapon_template.tscn" id="1_3ok6c"]
+[ext_resource type="Script" path="res://Game/Weapons/MainGun/main_gun_double.gd" id="2_c6igk"]
+[ext_resource type="Texture2D" uid="uid://l43klxnu5lmv" path="res://Assets/Img/Projectiles And Explosions/MuzzleFlash-Sheet.png" id="3_4idht"]
+[ext_resource type="PackedScene" uid="uid://bm0tkia8wbn6s" path="res://Game/Weapons/MainGun/main_gun_projectile.tscn" id="3_efy3j"]
+[ext_resource type="AudioStream" uid="uid://xlampkeaf6oe" path="res://Assets/audio/sfx/gun.wav" id="4_rore0"]
+
+[sub_resource type="Animation" id="Animation_klyqs"]
+resource_name = "Attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MuzzleFlash:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_0gvyd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MuzzleFlash:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8mq2"]
+_data = {
+"Attack": SubResource("Animation_klyqs"),
+"RESET": SubResource("Animation_0gvyd")
+}
+
+[node name="MainGunDouble" instance=ExtResource("1_3ok6c")]
+script = ExtResource("2_c6igk")
+offset = 5
+projectile = ExtResource("3_efy3j")
+projectile_speed = 600
+
+[node name="AttackAudio" parent="." index="1"]
+stream = ExtResource("4_rore0")
+
+[node name="MuzzleFlash" type="Sprite2D" parent="." index="2"]
+visible = false
+rotation = -3.14159
+texture = ExtResource("3_4idht")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_f8mq2")
+}
