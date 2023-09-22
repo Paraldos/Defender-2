@@ -1,14 +1,15 @@
+CollisionShape2D
+CPUParticles2D
+GPUParticles2D
+AnimationPlayer
 Area2D
 AudioStreamPlayer
-CollisionShape2D
-AnimationPlayer
 AnimationTree
 Sprite2D
 Timer
 RayCast2D
 Node2D
 CollisionPolygon2D
-GPUParticles2D
 ColorRect
 Label
 HBoxContainer
@@ -29,4 +30,3 @@ PanelContainer
 Panel
 TextureRect
 Camera2D
-Control

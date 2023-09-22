@@ -1,26 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca1ixarftji3u"]
+[gd_scene load_steps=15 format=3 uid="uid://ca1ixarftji3u"]
 
 [ext_resource type="Script" path="res://Game/Weapons/Laser/laser.gd" id="1_nihtf"]
 [ext_resource type="Texture2D" uid="uid://c352cpq2bc08f" path="res://Assets/Img/Projectiles And Explosions/Laser-Sheet.png" id="1_r6ljq"]
 [ext_resource type="AudioStream" uid="uid://dg1phtp1y5oeu" path="res://Assets/audio/sfx/mega_laser.wav" id="3_oycmv"]
-
-[sub_resource type="Animation" id="Animation_j4eux"]
-resource_name = "loop"
-length = 0.1
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
+[ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="4_m6apd"]
 
 [sub_resource type="Animation" id="Animation_orjnv"]
 length = 0.001
@@ -37,24 +20,162 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_j4eux"]
+resource_name = "loop"
+length = 0.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_asa1h"]
 _data = {
 "RESET": SubResource("Animation_orjnv"),
 "loop": SubResource("Animation_j4eux")
 }
 
+[sub_resource type="Animation" id="Animation_btjlf"]
+resource_name = "attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:active")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_oaiww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ijq7"]
+_data = {
+"RESET": SubResource("Animation_oaiww"),
+"attack": SubResource("Animation_btjlf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipwro"]
+size = Vector2(480, 4)
+
+[sub_resource type="Curve" id="Curve_2c78h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_e7t2u"]
+offsets = PackedFloat32Array(0, 0.271698, 0.739623, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_uok7y"]
+offsets = PackedFloat32Array(0, 0.113208, 0.498113, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Laser" type="Node2D"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_nihtf")
+active = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(240, 0)
 texture = ExtResource("1_r6ljq")
-hframes = 2
+hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayerLoop" type="AnimationPlayer" parent="."]
 autoplay = "loop"
 libraries = {
 "": SubResource("AnimationLibrary_asa1h")
+}
+
+[node name="AnimationPlayerAttack" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1ijq7")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -63,3 +184,43 @@ volume_db = -5.0
 bus = &"SFX"
 
 [node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(240, 0)
+shape = SubResource("RectangleShape2D_ipwro")
+
+[node name="ParticlesBeam" type="CPUParticles2D" parent="."]
+modulate = Color(0.505882, 0.831373, 0.980392, 1)
+position = Vector2(250, 0)
+amount = 15
+lifetime = 0.5
+texture = ExtResource("4_m6apd")
+emission_shape = 3
+emission_rect_extents = Vector2(240, 5)
+direction = Vector2(-1, 0)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 0.8
+scale_amount_curve = SubResource("Curve_2c78h")
+color_ramp = SubResource("Gradient_e7t2u")
+
+[node name="ParticlesStart" type="CPUParticles2D" parent="."]
+modulate = Color(0.505882, 0.831373, 0.980392, 1)
+lifetime = 0.3
+texture = ExtResource("4_m6apd")
+emission_shape = 1
+emission_sphere_radius = 3.0
+spread = 75.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_uok7y")
