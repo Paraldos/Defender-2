@@ -1,7 +1,9 @@
 extends Node2D
 
-@onready var audio_stream_player = $AudioStreamPlayer
+@onready var animation_player_attack = $AnimationPlayerAttack
+
 @export var active = false
+@export var charge = false
 
 ##############################################################################
 func _ready():
@@ -9,4 +11,4 @@ func _ready():
 
 ##############################################################################
 func _attack():
-	audio_stream_player.play()
+	animation_player_attack.play("attack")
