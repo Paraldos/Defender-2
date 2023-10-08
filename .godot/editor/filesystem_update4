@@ -7,4 +7,3 @@ res://Game/Player/MegaShieldShader.gdshader
 res://Game/Player/MegaLaserShader.gdshader
 res://Game/Enemies/CrabShip/crab_ship.gdshader
 res://Game/Bosses/laser_attack.gdshader
-res://Game/Weapons/Laser/laser.gd
