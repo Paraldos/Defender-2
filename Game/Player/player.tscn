@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://c0ttiy0hm5rnk"]
+[gd_scene load_steps=64 format=3 uid="uid://c0ttiy0hm5rnk"]
 
 [ext_resource type="Texture2D" uid="uid://d33vdl37t8o8e" path="res://Assets/Img/Player/Player01-Sheet.png" id="1_dhjhr"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_w3u5h"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cq5k6q03o13sn" path="res://Assets/Img/Projectiles And Explosions/Projectile03.png" id="16_l8ds6"]
 [ext_resource type="Script" path="res://Game/Player/DeathController.gd" id="21_tb4r2"]
 [ext_resource type="AudioStream" uid="uid://bbnehyeh0dax1" path="res://Assets/audio/sfx/mega_bombe_charging.wav" id="22_awdnv"]
+[ext_resource type="PackedScene" uid="uid://ca1ixarftji3u" path="res://Game/Weapons/Laser/laser.tscn" id="22_on0lb"]
 
 [sub_resource type="Animation" id="Animation_j37db"]
 length = 0.001
@@ -795,5 +796,7 @@ script = ExtResource("21_tb4r2")
 
 [node name="DeathSfx" type="AudioStreamPlayer" parent="DeathController"]
 stream = ExtResource("22_awdnv")
+
+[node name="Laser" parent="." instance=ExtResource("22_on0lb")]
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
