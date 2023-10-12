@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696880668
+::res://::1697134769
 default_bus_layout.tres::AudioBusLayout::4741473970212416117::1695331162::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1694858381::0::1::::<><>::
 icon.svg::CompressedTexture2D::2454184005228381453::1692112478::1692112500::1::::<><>::
@@ -103,11 +103,11 @@ background.tscn::PackedScene::5303823381457215039::1692789991::0::1::::<><>::uid
 debris_background.tscn::PackedScene::1091840382485194868::1693764242::0::1::::<><>::res://Backgrounds/asteroids_background.gd<>uid://dh1tvbbjk86ms
 ::res://Game/::1695329114
 exhaust.tscn::PackedScene::1431808899055546271::1692791044::0::1::::<><>::
-::res://Game/Bosses/::1696880255
+::res://Game/Bosses/::1696880728
 boss_template.gd::GDScript::-1::1694805582::0::1::::<>Node2D<>::
 boss_template.tscn::PackedScene::7114117504467144564::1694811893::0::1::::<><>::res://Game/Bosses/boss_template.gd<>uid://df14qn6f8hjyi
 laser_attack.gd::GDScript::-1::1694981056::0::1::::<>Node2D<>::
-laser_attack.gdshader::Shader::-1::1696880255::0::1::::<><>::
+laser_attack.gdshader::Shader::-1::1696880728::0::1::::<><>::
 laser_attack.tscn::PackedScene::6787760633378499355::1694857324::0::1::::<><>::res://Game/Bosses/laser_attack.gd<>res://Game/Bosses/laser_attack.gdshader<>uid://c40gtktrjhs7u
 ::res://Game/Bosses/PirateBoss/::1695328256
 pirate_boss.gd::GDScript::-1::1694791895::0::1::::<>Node2D<>::
@@ -152,9 +152,9 @@ explosive_asteroid.tscn::PackedScene::3165052749806769175::1694793889::0::1::::<
 attack_drone.gd::GDScript::-1::1694847724::0::1::::<>Node2D<>::
 attack_drone.tscn::PackedScene::2256059461092794702::1694857516::0::1::::<><>::uid://dlacothulwj6i
 attack_drone_2.tscn::PackedScene::1640104851413778374::1694857521::0::1::::<><>::uid://dlacothulwj6i
-::res://Game/Enemies/CrabShip/::1696880255
+::res://Game/Enemies/CrabShip/::1696880728
 crab_ship.gd::GDScript::-1::1695326511::0::1::::<>Node2D<>::
-crab_ship.gdshader::Shader::-1::1696880255::0::1::::<><>::
+crab_ship.gdshader::Shader::-1::1696880728::0::1::::<><>::
 crab_ship.tscn::PackedScene::3931032903299974822::1695328667::0::1::::<><>::uid://dlacothulwj6i
 ::res://Game/Enemies/Debris/::1694872016
 debris.gd::GDScript::-1::1694847866::0::1::::<>Node2D<>::
@@ -176,23 +176,23 @@ missile.tscn::PackedScene::6683642067412252257::1694872085::0::1::::<><>::uid://
 ::res://Game/Enemies/PirateFighters/::1694872147
 pirate_fighter.gd::GDScript::-1::1694848095::0::1::::<>Node2D<>::
 pirate_fighter.tscn::PackedScene::3117055063006421441::1694872147::0::1::::<><>::uid://dlacothulwj6i
-::res://Game/Player/::1696880255
+::res://Game/Player/::1696880728
 AttackController.gd::GDScript::-1::1695324608::0::1::::<>Node2D<>::
 DeathController.gd::GDScript::-1::1694981086::0::1::::<>Node2D<>::
 Magnet.gd::GDScript::-1::1694454474::0::1::::<>Area2D<>::
 MainSprite.gd::GDScript::-1::1693901974::0::1::::<>Sprite2D<>::
 MegaBombController.gd::GDScript::-1::1694981086::0::1::::<>Node2D<>::
 MegaLaserController.gd::GDScript::-1::1694852943::0::1::::<>Node2D<>::
-MegaLaserShader.gdshader::Shader::-1::1696880255::0::1::::<><>::
+MegaLaserShader.gdshader::Shader::-1::1696880728::0::1::::<><>::
 MegaShieldController.gd::GDScript::-1::1694849847::0::1::::<>Node2D<>::
-MegaShieldShader.gdshader::Shader::-1::1696880255::0::1::::<><>::
+MegaShieldShader.gdshader::Shader::-1::1696880728::0::1::::<><>::
 mega_bomb.gd::GDScript::-1::1694981086::0::1::::<>Node2D<>::
 mega_bomb.tscn::PackedScene::6860976255864132379::1694849275::0::1::::<><>::res://Game/Player/mega_bomb.gd<>uid://c40gtktrjhs7u
 player.gd::GDScript::-1::1694453746::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::6567954844393746520::1696878700::0::1::::<><>::uid://d33vdl37t8o8e::::res://Assets/Img/Player/Player01-Sheet.png<>res://Game/Player/player.gd<>uid://df14qn6f8hjyi::::res://Game/Collisions/hurtbox.tscn<>res://Game/Player/AttackController.gd<>res://Game/Player/Magnet.gd<>uid://untxh8qat57p::::res://Game/exhaust.tscn<>res://Game/Player/MainSprite.gd<>res://Game/Player/WarpController.gd<>uid://855reqbagfkq::::res://Game/Weapons/MainGun/main_gun_double.tscn<>res://Game/Player/MegaShieldShader.gdshader<>res://Game/Player/MegaShieldController.gd<>uid://bidh63jjy1kbj::::res://Assets/audio/sfx/warp.wav<>res://Game/Player/MegaLaserController.gd<>uid://c40gtktrjhs7u::::res://Assets/Img/Projectiles And Explosions/Fragment01.png<>uid://cwr6e5h0ew6on::::res://Assets/audio/sfx/mega_shield.wav<>res://Game/Player/MegaLaserShader.gdshader<>res://Game/Player/MegaBombController.gd<>uid://dg1phtp1y5oeu::::res://Assets/audio/sfx/mega_laser.wav<>uid://cq5k6q03o13sn::::res://Assets/Img/Projectiles And Explosions/Projectile03.png<>res://Game/Player/DeathController.gd<>uid://bbnehyeh0dax1::::res://Assets/audio/sfx/mega_bombe_charging.wav<>uid://ca1ixarftji3u::::res://Game/Weapons/Laser/laser.tscn
+player.tscn::PackedScene::6567954844393746520::1696880727::0::1::::<><>::uid://d33vdl37t8o8e::::res://Assets/Img/Player/Player01-Sheet.png<>res://Game/Player/player.gd<>uid://df14qn6f8hjyi::::res://Game/Collisions/hurtbox.tscn<>res://Game/Player/AttackController.gd<>res://Game/Player/Magnet.gd<>uid://untxh8qat57p::::res://Game/exhaust.tscn<>res://Game/Player/MainSprite.gd<>res://Game/Player/WarpController.gd<>uid://855reqbagfkq::::res://Game/Weapons/MainGun/main_gun_double.tscn<>res://Game/Player/MegaShieldShader.gdshader<>res://Game/Player/MegaShieldController.gd<>uid://bidh63jjy1kbj::::res://Assets/audio/sfx/warp.wav<>res://Game/Player/MegaLaserController.gd<>uid://c40gtktrjhs7u::::res://Assets/Img/Projectiles And Explosions/Fragment01.png<>uid://cwr6e5h0ew6on::::res://Assets/audio/sfx/mega_shield.wav<>res://Game/Player/MegaLaserShader.gdshader<>res://Game/Player/MegaBombController.gd<>uid://dg1phtp1y5oeu::::res://Assets/audio/sfx/mega_laser.wav<>uid://cq5k6q03o13sn::::res://Assets/Img/Projectiles And Explosions/Projectile03.png<>res://Game/Player/DeathController.gd<>uid://bbnehyeh0dax1::::res://Assets/audio/sfx/mega_bombe_charging.wav
 player_afterimage.tscn::PackedScene::3247008785426946328::1692780395::0::1::::<><>::uid://d33vdl37t8o8e
 WarpController.gd::GDScript::-1::1694070112::0::1::::<>Node2D<>::
-::res://Game/SFX/::1696880255
+::res://Game/SFX/::1696880728
 explosion_01.tscn::PackedScene::7915867659331822729::1694014713::0::1::::<><>::uid://g3dvrb6sjuoc
 explosion_02.tscn::PackedScene::6062614518998169529::1694014786::0::1::::<><>::uid://g3dvrb6sjuoc
 explosion_03.tscn::PackedScene::333852414977389481::1694014780::0::1::::<><>::uid://be7x6qmtywpb4
@@ -202,7 +202,7 @@ explosion_template.gd::GDScript::-1::1694016196::0::1::::<>Node2D<>::
 explosion_template.tscn::PackedScene::479156187466856630::1694014895::0::1::::<><>::res://Game/SFX/explosion_template.gd
 sfx_controller.gd::GDScript::-1::1692885544::0::1::::<>Node<>::
 sfx_controller.tscn::PackedScene::5757490181505080517::1692885661::0::1::::<><>::res://Game/SFX/sfx_controller.gd
-warp_jump_effect.gdshader::Shader::-1::1696880255::0::1::::<><>::
+warp_jump_effect.gdshader::Shader::-1::1696880728::0::1::::<><>::
 warp_jump_effect.tscn::PackedScene::7898839073848251135::1693674580::0::1::::<><>::res://Game/SFX/warp_jump_effect.gdshader
 ::res://Game/Weapons/::1695330729
 projectile_template.gd::GDScript::-1::1695328031::0::1::::<>Node2D<>::
@@ -215,7 +215,7 @@ bubble_gun.tscn::PackedScene::220849490503080119::1695331164::0::1::::<><>::uid:
 bubble_projectile.tscn::PackedScene::7636872339941311099::1695325324::0::1::::<><>::uid://bq8hfx88m5y8v
 ::res://Game/Weapons/Laser/::1696878668
 laser.gd::GDScript::-1::1695404787::0::1::::<>Node2D<>::
-laser.tscn::PackedScene::4827042024708307140::1696878668::0::1::::<><>::res://Game/Weapons/Laser/laser.gd<>uid://c352cpq2bc08f::::res://Assets/Img/Projectiles And Explosions/Laser-Sheet.png<>uid://dg1phtp1y5oeu::::res://Assets/audio/sfx/mega_laser.wav<>uid://cq5k6q03o13sn::::res://Assets/Img/Projectiles And Explosions/Projectile03.png
+laser.tscn::PackedScene::4827042024708307140::1696878668::0::1::::<><>::res://Game/Weapons/Laser/laser.gd<>uid://c352cpq2bc08f
 ::res://Game/Weapons/MainGun/::1695329393
 main_gun.gd::GDScript::-1::1695327482::0::1::::<>Node2D<>::
 main_gun.tscn::PackedScene::4232627009972228083::1695329393::0::1::::<><>::uid://dccg8pr42tyxh
@@ -283,9 +283,9 @@ start_menu.tscn::PackedScene::7048713633414247425::1694630239::0::1::::<><>::res
 music.gd::GDScript::-1::1694079515::0::1::::<>Node<>::
 music.tscn::PackedScene::6755127067354324164::1694079536::0::1::::<><>::res://Music/music.gd
 ::res://Tec/::1694262985
-::res://Tec/SceneTransition/::1696880255
+::res://Tec/SceneTransition/::1696880728
 scene_transition.gd::GDScript::-1::1693853596::0::1::::<>CanvasLayer<>::
-scene_transition.gdshader::Shader::-1::1696880255::0::1::::<><>::
+scene_transition.gdshader::Shader::-1::1696880728::0::1::::<><>::
 scene_transition.tscn::PackedScene::2281830894926206268::1693853711::0::1::::<><>::res://Tec/SceneTransition/scene_transition.gd<>res://Tec/SceneTransition/scene_transition.gdshader
 ::res://Tec/Utils/::1695397119
 utils.gd::GDScript::-1::1694873668::0::1::::<>Node<>::
@@ -293,7 +293,7 @@ utils.tscn::PackedScene::428607890730859115::1695397119::0::1::::<><>::res://Tec
 ::res://Themes/::1694075404
 button.gd::GDScript::-1::1694074635::0::1::::<>Button<>::
 button.tscn::PackedScene::3025769757644278999::1694075404::0::1::::<><>::uid://c7ow58aa04nex
-::res://Themes/StartMenuTheme/::1696878668
-StartMenuTheme.tres::Theme::7049176733323202507::1696878668::0::1::::<><>::uid://bm4ylpj3oubn1::::res://Themes/StartMenuTheme/stylebox_btn_hover.tres<>uid://bgo4yc41sr5em::::res://Assets/Fonts/PixelSimpel.otf<>uid://ugvjpjwesfiv::::res://Assets/Img/UI/Btn02.png<>uid://xya3vioeb1ax::::res://Assets/Img/UI/SeperatorH.png<>uid://du7uc2igfkhcf::::res://Assets/Img/UI/Grabber.png<>uid://dhf3mev01sjqa::::res://Assets/Img/UI/Grabber_Highlight.png
-stylebox_btn_hover.tres::StyleBoxTexture::3290031416821752344::1696878668::0::1::::<><>::uid://c4asx13e2dwm5::::res://Assets/Img/UI/Btn01.png
+::res://Themes/StartMenuTheme/::1696880727
+StartMenuTheme.tres::Theme::7049176733323202507::1696880727::0::1::::<><>::uid://bm4ylpj3oubn1::::res://Themes/StartMenuTheme/stylebox_btn_hover.tres<>uid://bgo4yc41sr5em::::res://Assets/Fonts/PixelSimpel.otf<>uid://ugvjpjwesfiv::::res://Assets/Img/UI/Btn02.png<>uid://xya3vioeb1ax::::res://Assets/Img/UI/SeperatorH.png<>uid://du7uc2igfkhcf::::res://Assets/Img/UI/Grabber.png<>uid://dhf3mev01sjqa::::res://Assets/Img/UI/Grabber_Highlight.png
+stylebox_btn_hover.tres::StyleBoxTexture::3290031416821752344::1696880727::0::1::::<><>::uid://c4asx13e2dwm5::::res://Assets/Img/UI/Btn01.png
 stylebox_btn_normal.tres::StyleBoxFlat::4880808883393833510::1692112478::0::1::::<><>::
