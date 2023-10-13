@@ -9,5 +9,6 @@ res://Game/Enemies/CrabShip/crab_ship.gdshader
 res://Game/Bosses/laser_attack.gdshader
 res://Game/Player/player.gd
 res://Game/Player/player.tscn
+res://Game/Player/MegaLaserController.gd
 res://Tec/Utils/utils.tscn
 res://Game/World/world.tscn

@@ -9,6 +9,7 @@ var input = Vector2.ZERO
 @onready var warp_controller = %WarpController
 @onready var main_sprite = %MainSprite
 @onready var death_controller = %DeathController
+@onready var laser = $Laser
 
 ##############################################################################
 func _ready():
@@ -62,7 +63,7 @@ func _meaga_laser():
 	if Input.is_action_just_pressed('ui_mega_laser'):
 		if Utils.player.ep >= laser_cost:
 			_pay_energy()
-			print('laser')
+			laser._attack()
 
 func _pay_energy():
 	Utils.player.ep -= laser_cost

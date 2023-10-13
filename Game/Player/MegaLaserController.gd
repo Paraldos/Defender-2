@@ -14,6 +14,7 @@ func _ready():
 
 ##############################################################################
 func _physics_process(delta):
+	return
 	_active()
 	if Utils.player.laser <= 0: return
 	if get_parent().invulnerable: return
