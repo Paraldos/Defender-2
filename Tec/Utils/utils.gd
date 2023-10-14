@@ -28,7 +28,7 @@ var viewport_height = 270
 	gun = 1,
 	magnet = 1,
 	bomb = 1,
-	laser = 0,
+	laser = 1,
 	shield = 0,
 }
 var player = {}

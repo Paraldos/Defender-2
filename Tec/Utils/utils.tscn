@@ -4,18 +4,3 @@
 
 [node name="Utils" type="Node"]
 script = ExtResource("1_ar2at")
-player_start = {
-"bomb": 1,
-"credits": 0,
-"dmg": 3,
-"ep": 40,
-"gun": 1,
-"hp": 50,
-"laser": 1,
-"magnet": 1,
-"max_ep": 40,
-"max_hp": 50,
-"node": null,
-"position": Vector2(0, 0),
-"shield": 0
-}
