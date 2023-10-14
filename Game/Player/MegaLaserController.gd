@@ -5,7 +5,7 @@ var laser_cost = 10
 
 ##############################################################################
 func _ready():
-	laser.dmg = 2 + Utils.player.laser
+	laser.dmg = 9 + Utils.player.laser
 
 ##############################################################################
 func _physics_process(_delta):

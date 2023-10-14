@@ -1,3 +1,5 @@
+Node2D
+Line2D
 AnimationPlayer
 Sprite2D
 CollisionShape2D
@@ -8,7 +10,6 @@ AudioStreamPlayer
 AnimationTree
 Timer
 RayCast2D
-Node2D
 CollisionPolygon2D
 ColorRect
 Label
@@ -22,7 +23,6 @@ HSlider
 AudioStreamPlayer2D
 GridContainer
 GridMap
-Line2D
 VSeparator
 CanvasLayer
 MarginContainer

@@ -7,10 +7,11 @@ extends Node2D
 
 @export var dmg = 5
 @export_enum('player', 'enemy') var target = 'player'
+var attack_timer = 0
 
 ##############################################################################
 func _ready():
-	sprite_laser.visible = false
+	_enable_laser(false)
 	match target:
 		'player':
 			hitbox.collision_mask = 2
@@ -35,11 +36,14 @@ func _enable_laser(new_status : bool):
 
 ##############################################################################
 func _physics_process(delta):
+	attack_timer += delta
 	_deal_dmg()
 
 func _deal_dmg():
-	if !hitbox.monitoring:
-		return
+	if !hitbox.monitoring: return
+	if attack_timer < 0.05: return
 	for area in hitbox.get_overlapping_areas():
 		if not area is Hurtbox: return
 		area._take_hit(self, dmg)
+		attack_timer = 0
+		SfxController._spawn_explosion_01(area.global_position)

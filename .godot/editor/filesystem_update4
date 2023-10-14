@@ -15,3 +15,5 @@ res://Tec/Utils/utils.tscn
 res://Game/World/world.tscn
 res://Game/Player/MegaLaserController.gd
 res://Tec/Utils/utils.gd
+res://Game/Bosses/SkullBoss/skull_boss.tscn
+res://Game/Bosses/SkullBoss/skull_boss.gd

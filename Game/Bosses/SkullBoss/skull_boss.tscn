@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Game/Bosses/SkullBoss/skull_boss.gd" id="2_lmogr"]
 [ext_resource type="Texture2D" uid="uid://clclvwjn6xhpn" path="res://Assets/Img/Enemies/Skull_Boss.png" id="2_s5np4"]
 [ext_resource type="PackedScene" uid="uid://untxh8qat57p" path="res://Game/exhaust.tscn" id="3_c3k02"]
-[ext_resource type="PackedScene" uid="uid://c3yboqmwi0lg2" path="res://Game/Bosses/laser_attack.tscn" id="5_ltfcq"]
+[ext_resource type="PackedScene" uid="uid://ca1ixarftji3u" path="res://Game/Weapons/Laser/laser.tscn" id="5_njpv1"]
 [ext_resource type="Script" path="res://Game/Bosses/SkullBoss/Gun.gd" id="5_oor53"]
 [ext_resource type="Texture2D" uid="uid://c73rdnbu573ak" path="res://Assets/Img/Enemies/Skull_Boss_Gun.png" id="6_p53l3"]
 [ext_resource type="PackedScene" uid="uid://b1kk0phpvxqh4" path="res://Game/Weapons/MainGun/main_gun.tscn" id="8_v13m1"]
@@ -39,11 +39,33 @@ scale = Vector2(0.6, 0.7)
 [node name="Weapons01" type="Node2D" parent="." index="5"]
 position = Vector2(14, 0)
 
-[node name="LaserAttack" parent="Weapons01" index="0" instance=ExtResource("5_ltfcq")]
-position = Vector2(-27, -37)
+[node name="Weapons01_Lines" type="Node2D" parent="Weapons01" index="0"]
+unique_name_in_owner = true
 
-[node name="LaserAttack2" parent="Weapons01" index="1" instance=ExtResource("5_ltfcq")]
-position = Vector2(-27, 37)
+[node name="Line1" type="Line2D" parent="Weapons01/Weapons01_Lines" index="0"]
+position = Vector2(-33, -36)
+points = PackedVector2Array(0, -1, -480, -1)
+width = 1.0
+default_color = Color(0.898039, 0.109804, 0.137255, 1)
+
+[node name="Line2" type="Line2D" parent="Weapons01/Weapons01_Lines" index="1"]
+position = Vector2(-33, 38)
+points = PackedVector2Array(0, -1, -480, -1)
+width = 1.0
+default_color = Color(0.898039, 0.109804, 0.137255, 1)
+
+[node name="Weapons01_Lasers" type="Node2D" parent="Weapons01" index="1"]
+unique_name_in_owner = true
+
+[node name="Laser" parent="Weapons01/Weapons01_Lasers" index="0" instance=ExtResource("5_njpv1")]
+modulate = Color(0.898039, 0.109804, 0.137255, 1)
+position = Vector2(-33, -37)
+rotation = -3.14159
+
+[node name="Laser2" parent="Weapons01/Weapons01_Lasers" index="1" instance=ExtResource("5_njpv1")]
+modulate = Color(0.898039, 0.109804, 0.137255, 1)
+position = Vector2(-33, 37)
+rotation = -3.14159
 
 [node name="Gun" type="Node2D" parent="." index="6"]
 position = Vector2(14, 0)
