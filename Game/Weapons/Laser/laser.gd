@@ -41,7 +41,7 @@ func _physics_process(delta):
 
 func _deal_dmg():
 	if !hitbox.monitoring: return
-	if attack_timer < 0.05: return
+	if attack_timer < 0.1: return
 	for area in hitbox.get_overlapping_areas():
 		if not area is Hurtbox: return
 		area._take_hit(self, dmg)

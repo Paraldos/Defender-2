@@ -17,3 +17,5 @@ res://Game/Player/MegaLaserController.gd
 res://Tec/Utils/utils.gd
 res://Game/Bosses/SkullBoss/skull_boss.tscn
 res://Game/Bosses/SkullBoss/skull_boss.gd
+res://Game/Weapons/MainGun/main_gun_double.tscn
+res://Game/Weapons/MainGun/main_gun.tscn

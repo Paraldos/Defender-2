@@ -71,6 +71,7 @@ _data = {
 script = ExtResource("2_o1klq")
 offset = 5
 projectile = ExtResource("3_w1q34")
+projectile_speed = 450
 projectile_color = Color(1, 0.921569, 0.231373, 1)
 
 [node name="AttackAudio" parent="." index="1"]
